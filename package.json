@@ -33,7 +33,7 @@
     "prop-types": "^15.6.2",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
-    "semantic-ui-react": "^0.83.0"
+    "semantic-ui-react": "^0.87.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
