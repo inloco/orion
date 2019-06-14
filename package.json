@@ -28,7 +28,7 @@
   "license": "ISC",
   "homepage": "https://inloco.github.io/orion",
   "dependencies": {
-    "@inloco/atomic-bomb": "^1.0.0-beta.7",
+    "@inloco/atomic-bomb": "^1.0.0-beta.8",
     "classnames": "^2.2.6",
     "prop-types": "^15.6.2",
     "react": "^16.6.0",
