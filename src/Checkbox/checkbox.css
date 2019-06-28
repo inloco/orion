@@ -89,5 +89,6 @@
  */
 
 .ui.checkbox + .ui.checkbox {
-  @apply mt-16;
+  /* 16px space + 2px margin from the top checkbox + 2px margin from the bottom checkbox */
+  margin-top: 20px;
 }
