@@ -37,8 +37,8 @@ storiesOf('Layout', module)
         />
       </Layout.Topbar>
       <Layout.Main>
-        {_.times(10, () => (
-          <p>{loremIpsum({ count: 1, units: 'paragraph' })}</p>
+        {_.times(10, index => (
+          <p key={index}>{loremIpsum({ count: 1, units: 'paragraph' })}</p>
         ))}
       </Layout.Main>
     </Layout>
