@@ -8,17 +8,12 @@ const Logo = () => (
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink">
-    <g
-      id="Page-1"
-      stroke="none"
-      stroke-width="1"
-      fill="none"
-      fill-rule="evenodd">
+    <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <g
         id="Desktop-HD"
         transform="translate(-336.000000, -499.000000)"
         fill="#031D30"
-        fill-rule="nonzero">
+        fillRule="nonzero">
         <g id="logo-in-loco" transform="translate(336.000000, 499.000000)">
           <path
             d="M4.4544,2.2272 C4.4544,3.45724859 3.45724859,4.4544 2.2272,4.4544 C0.997151405,4.4544 0,3.45724859 0,2.2272 C0,0.997151405 0.997151405,0 2.2272,0 L2.2272,0 C3.45506382,0.00525858966 4.44914141,0.999336181 4.4544,2.2272"
