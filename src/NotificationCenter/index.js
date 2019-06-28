@@ -17,12 +17,12 @@ const NotificationCenter = ({ defaults, ...props }) => {
 
 NotificationCenter.propTypes = {
   defaults: PropTypes.shape({
-    errorTitle: PropTypes.object,
-    errorMessage: PropTypes.object,
-    successTitle: PropTypes.object,
-    successMessage: PropTypes.object,
-    warningTitle: PropTypes.object,
-    warningMessage: PropTypes.object
+    errorTitle: PropTypes.any,
+    errorMessage: PropTypes.any,
+    successTitle: PropTypes.any,
+    successMessage: PropTypes.any,
+    warningTitle: PropTypes.any,
+    warningMessage: PropTypes.any
   })
 }
 
