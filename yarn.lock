@@ -29,7 +29,7 @@
     semver "^5.4.1"
     source-map "^0.5.0"
 
-"@babel/core@^7.0.0", "@babel/core@^7.1.0", "@babel/core@^7.4.3", "@babel/core@^7.4.5":
+"@babel/core@^7.0.0", "@babel/core@^7.1.0", "@babel/core@^7.4.3", "@babel/core@^7.5.0":
   version "7.5.0"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.5.0.tgz#6ed6a2881ad48a732c5433096d96d1b0ee5eb734"
   integrity sha512-6Isr4X98pwXqHvtigw71CKgmhL1etZjPs5A67jL/w0TkLM9eqmFR40YrnJvEc1WnMZFsskjsmid8bHZyxKEAnw==
@@ -311,7 +311,7 @@
     "@babel/helper-create-class-features-plugin" "^7.4.0"
     "@babel/helper-plugin-utils" "^7.0.0"
 
-"@babel/plugin-proposal-class-properties@^7.3.3", "@babel/plugin-proposal-class-properties@^7.4.4":
+"@babel/plugin-proposal-class-properties@^7.3.3", "@babel/plugin-proposal-class-properties@^7.5.0":
   version "7.5.0"
   resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-class-properties/-/plugin-proposal-class-properties-7.5.0.tgz#5bc6a0537d286fcb4fd4e89975adbca334987007"
   integrity sha512-9L/JfPCT+kShiiTTzcnBJ8cOwdKVmlC1RcCf9F0F9tERVrM4iWtWnXtjWCRqNm2la2BxO1MPArWNsU9zsSJWSQ==
@@ -744,7 +744,7 @@
     resolve "^1.8.1"
     semver "^5.5.1"
 
-"@babel/plugin-transform-runtime@^7.4.4":
+"@babel/plugin-transform-runtime@^7.5.0":
   version "7.5.0"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-runtime/-/plugin-transform-runtime-7.5.0.tgz#45242c2c9281158c5f06d25beebac63e498a284e"
   integrity sha512-LmPIZOAgTLl+86gR9KjLXex6P/lRz1fWEjTz6V6QZMmKie51ja3tvzdwORqhHc4RWR8TcZ5pClpRWs0mlaA2ng==
@@ -911,7 +911,7 @@
     js-levenshtein "^1.1.3"
     semver "^5.3.0"
 
-"@babel/preset-env@^7.4.3", "@babel/preset-env@^7.4.5":
+"@babel/preset-env@^7.4.3", "@babel/preset-env@^7.4.5", "@babel/preset-env@^7.5.0":
   version "7.5.0"
   resolved "https://registry.yarnpkg.com/@babel/preset-env/-/preset-env-7.5.0.tgz#1122a751e864850b4dbce38bd9b4497840ee6f01"
   integrity sha512-/5oQ7cYg+6sH9Dt9yx5IiylnLPiUdyMHl5y+K0mKVNiW2wJ7FpU5bg8jKcT8PcCbxdYzfv6OuC63jLEtMuRSmQ==
