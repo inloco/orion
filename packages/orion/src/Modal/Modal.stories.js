@@ -22,7 +22,7 @@ storiesOf('Modal', module)
   .add('standard', () => {
     return (
       <Modal trigger={<Button>Open Modal</Button>} closeIcon size={sizes()}>
-        <Modal.Header icon="archive" content="Modal Title" />
+        <Modal.Header content="Modal Title" />
         <Modal.Content>
           <Modal.Description
             content="Your inbox is getting full, would you like us to enable automatic
@@ -39,7 +39,7 @@ storiesOf('Modal', module)
   .add('basic', () => {
     return (
       <Modal trigger={<Button>Open Modal</Button>} size={sizes()} basic>
-        <Modal.Header icon="archive" content="Modal Title" />
+        <Modal.Header content="Modal Title" />
         <Modal.Content>
           <Modal.Description
             content="Your inbox is getting full, would you like us to enable automatic
