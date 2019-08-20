@@ -1,0 +1,436 @@
+/*!
+ * # Semantic UI - Modal
+ * http://github.com/semantic-org/semantic-ui/
+ *
+ *
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+
+/*******************************
+             Modal
+*******************************/
+
+.ui.modal {
+  @apply shadow-200;
+
+  position: absolute;
+  display: none;
+  z-index: 1;
+  text-align: left;
+  opacity: 1;
+
+  background: #ffffff;
+  border: 0;
+  /*transform-origin: @transformOrigin;*/
+  flex: 0 0 auto;
+
+  border-radius: 5px;
+  user-select: text;
+  will-change: top, left, margin, transform, opacity;
+}
+
+.ui.modal > :first-child:not(.icon),
+.ui.modal > .icon:first-child + * {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.ui.modal > :last-child {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+/*******************************
+            Content
+*******************************/
+
+/*--------------
+     Close
+---------------*/
+
+.ui.modal > .close {
+  cursor: pointer;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 1;
+
+  font-size: 24px;
+  color: #616263;
+
+  width: 24px;
+  height: 24px;
+  margin: 8px;
+}
+.ui.modal > .close:hover {
+  opacity: 1;
+}
+
+/*--------------
+     Header
+---------------*/
+
+.ui.modal > .header {
+  @apply text-lg font-display;
+
+  display: block;
+  background: transparent;
+  margin: 0px;
+  padding: 16px;
+  text-align: center;
+
+  color: #616263;
+}
+.ui.modal > .header:not(.ui) {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 100;
+}
+
+/*--------------
+     Content
+---------------*/
+
+.ui.modal > .content {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 16px;
+  background: transparent;
+}
+.ui.modal > .image.content {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Image */
+.ui.modal > .content > .image {
+  display: block;
+  flex: 0 1 auto;
+  width: 30%;
+  align-self: top;
+}
+.ui.modal > [class*='top aligned'] {
+  align-self: top;
+}
+.ui.modal > [class*='middle aligned'] {
+  align-self: middle;
+}
+.ui.modal > [class*='stretched'] {
+  align-self: stretch;
+}
+
+/* Description */
+.ui.modal > .content > .description {
+  display: block;
+  flex: 1 0 auto;
+  min-width: 0px;
+  align-self: top;
+}
+
+.ui.modal > .content > .icon + .description,
+.ui.modal > .content > .image + .description {
+  flex: 0 1 auto;
+  width: auto;
+  padding-left: 24px;
+}
+
+/*--------------
+     Actions
+---------------*/
+
+.ui.modal > .actions {
+  background: transparent;
+  padding: 16px;
+  text-align: right;
+}
+.ui.modal .actions > .button {
+  margin-left: 16px;
+}
+
+/*-------------------
+       Responsive
+--------------------*/
+
+/* Modal Width */
+@media only screen and (max-width: 767px) {
+  .ui.modal {
+    width: auto;
+    margin: 24px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .ui.modal {
+    width: 700;
+    margin: 24px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .ui.modal {
+    width: 940px;
+    margin: 24px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .ui.modal {
+    width: 1250px;
+    margin: 24px;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  .ui.modal {
+    width: 1870px;
+    margin: 24px;
+  }
+}
+
+/* Tablet and Mobile */
+@media only screen and (max-width: 991px) {
+  .ui.modal > .header {
+    padding-right: 0px;
+  }
+  .ui.modal > .close {
+    top: 0px;
+    right: 0px;
+    color: #616263;
+  }
+}
+
+/* Mobile */
+@media only screen and (max-width: 767px) {
+  .ui.modal > .header {
+    padding: 8px !important;
+    padding-right: 8px !important;
+  }
+  .ui.modal > .content {
+    display: block;
+    padding: 16px !important;
+  }
+  .ui.modal > .close {
+    top: 0px !important;
+    right: 0px !important;
+  }
+
+  /*rtl:ignore*/
+  .ui.modal .image.content {
+    flex-direction: column;
+  }
+  .ui.modal .content > .image {
+    display: block;
+    max-width: 100%;
+    margin: 0em auto !important;
+    text-align: center;
+    padding: 16px !important;
+  }
+  .ui.modal > .content > .image > i.icon {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  /*rtl:ignore*/
+  .ui.modal .content > .description {
+    display: block;
+    width: 100% !important;
+    margin: 0em !important;
+    padding: 16px !important;
+    box-shadow: none;
+  }
+
+  /* Let Buttons Stack */
+  .ui.modal > .actions {
+    padding: 24px !important;
+  }
+  .ui.modal .actions > .buttons,
+  .ui.modal .actions > .button {
+    margin-bottom: 16px;
+  }
+}
+
+/*--------------
+    Coupling
+---------------*/
+
+.ui.inverted.dimmer > .ui.modal {
+  @apply shadow-200;
+}
+
+/*******************************
+             Types
+*******************************/
+
+.ui.basic.modal {
+  background-color: transparent;
+  border: none;
+  border-radius: 0em;
+  box-shadow: none !important;
+  color: #ffffff;
+}
+.ui.basic.modal > .header,
+.ui.basic.modal > .content,
+.ui.basic.modal > .actions {
+  background-color: transparent;
+}
+.ui.basic.modal > .header {
+  color: #616263;
+}
+.ui.basic.modal > .close {
+  top: 0px;
+  right: 0px;
+}
+
+.ui.inverted.dimmer > .basic.modal {
+  color: #111111;
+}
+.ui.inverted.dimmer > .ui.basic.modal > .header {
+  color: #111111;
+}
+
+/* Resort to margin positioning if legacy */
+.ui.legacy.modal,
+.ui.legacy.page.dimmer > .ui.modal {
+  top: 50%;
+  left: 50%;
+}
+
+.ui.legacy.page.dimmer > .ui.scrolling.modal,
+.ui.page.dimmer > .ui.scrolling.legacy.modal,
+.ui.top.aligned.legacy.page.dimmer > .ui.modal,
+.ui.top.aligned.dimmer > .ui.legacy.modal {
+  top: auto;
+}
+
+/*******************************
+             States
+*******************************/
+
+.ui.loading.modal {
+  display: block;
+  visibility: hidden;
+  z-index: 10;
+}
+
+.ui.active.modal {
+  display: block;
+}
+
+/*******************************
+           Variations
+*******************************/
+
+/*--------------
+   Top Aligned
+---------------*/
+
+/* Top Aligned Modal */
+.modals.dimmer[class*='top aligned'] .modal {
+  margin: 16px auto;
+}
+/* Legacy Top Aligned */
+.legacy.modals.dimmer[class*='top aligned'] {
+  padding-top: 16px;
+}
+
+/*--------------
+    Scrolling
+---------------*/
+
+/* Scrolling Dimmer */
+.scrolling.dimmable.dimmed {
+  overflow: hidden;
+}
+.scrolling.dimmable > .dimmer {
+  justify-content: flex-start;
+}
+.scrolling.dimmable.dimmed > .dimmer {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.scrolling.dimmable > .dimmer {
+  position: fixed;
+}
+.modals.dimmer .ui.scrolling.modal {
+  margin: 16px auto;
+}
+
+/* Undetached Scrolling */
+.scrolling.undetached.dimmable.dimmed {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.scrolling.undetached.dimmable.dimmed > .dimmer {
+  overflow: hidden;
+}
+.scrolling.undetached.dimmable .ui.scrolling.modal {
+  position: absolute;
+  left: 50%;
+  margin-top: 16px !important;
+}
+
+/* Scrolling Content */
+.ui.modal .scrolling.content {
+  max-height: 90%;
+  overflow: auto;
+}
+
+/*--------------
+   Full Screen
+---------------*/
+
+.ui.fullscreen.modal {
+  width: 100% !important;
+  height: 100% !important;
+  margin: 16px;
+}
+.ui.fullscreen.modal > .header {
+  padding-right: 0px;
+}
+.ui.fullscreen.modal > .close {
+  top: 0px;
+  right: 0px;
+  color: #616263;
+}
+
+/*--------------
+      Size
+---------------*/
+
+.ui.modal {
+  @apply font-medium;
+}
+
+/* Mini */
+.ui.mini.modal > .header:not(.ui) {
+  @apply font-medium;
+}
+/* Mini Modal Width */
+.ui.mini.modal {
+  width: 95%;
+  margin: 24px;
+}
+
+/* Tiny Modal Width */
+.ui.tiny.modal {
+  width: 95%;
+  margin: 24px;
+}
+
+/* Small */
+.ui.small.modal > .header:not(.ui) {
+  font-size: 24px;
+}
+.ui.small.modal {
+  width: 95%;
+  margin: 24px;
+}
+
+/* Large Modal Width */
+.ui.large.modal > .header {
+  font-size: 24px;
+}
+.ui.large.modal {
+  width: 95%;
+  margin: 24px;
+}
