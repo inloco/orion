@@ -78,15 +78,31 @@
   display: block;
   background: transparent;
   margin: 0px;
-  padding: 16px;
-  text-align: center;
-
+  padding-left: 24px;
+  padding-top: 24px;
   color: #616263;
 }
 .ui.modal > .header:not(.ui) {
   font-size: 20px;
   line-height: 24px;
   font-weight: 100;
+}
+
+/* Description */
+.ui.modal > .content > .description {
+  @apply font-display;
+
+  display: block;
+  flex: 1 0 auto;
+  min-width: 0px;
+  align-self: top;
+}
+
+.ui.modal > .content > .icon + .description,
+.ui.modal > .content > .image + .description {
+  flex: 0 1 auto;
+  width: auto;
+  padding-left: 24px;
 }
 
 /*--------------
@@ -98,7 +114,7 @@
   width: 100%;
   font-size: 14px;
   line-height: 20px;
-  padding: 16px;
+  padding: 24px;
   background: transparent;
 }
 .ui.modal > .image.content {
@@ -123,21 +139,6 @@
   align-self: stretch;
 }
 
-/* Description */
-.ui.modal > .content > .description {
-  display: block;
-  flex: 1 0 auto;
-  min-width: 0px;
-  align-self: top;
-}
-
-.ui.modal > .content > .icon + .description,
-.ui.modal > .content > .image + .description {
-  flex: 0 1 auto;
-  width: auto;
-  padding-left: 24px;
-}
-
 /*--------------
      Actions
 ---------------*/
@@ -145,10 +146,11 @@
 .ui.modal > .actions {
   background: transparent;
   padding: 16px;
+  padding-top: 0px;
   text-align: right;
 }
 .ui.modal .actions > .button {
-  margin-left: 16px;
+  margin-left: 8px;
 }
 
 /*-------------------
@@ -376,61 +378,30 @@
 }
 
 /*--------------
-   Full Screen
----------------*/
-
-.ui.fullscreen.modal {
-  width: 100% !important;
-  height: 100% !important;
-  margin: 16px;
-}
-.ui.fullscreen.modal > .header {
-  padding-right: 0px;
-}
-.ui.fullscreen.modal > .close {
-  top: 0px;
-  right: 0px;
-  color: #616263;
-}
-
-/*--------------
       Size
 ---------------*/
 
-.ui.modal {
-  @apply font-medium;
-}
-
-/* Mini */
-.ui.mini.modal > .header:not(.ui) {
-  @apply font-medium;
-}
 /* Mini Modal Width */
 .ui.mini.modal {
-  width: 95%;
-  margin: 24px;
+  width: 340px;
 }
 
 /* Tiny Modal Width */
 .ui.tiny.modal {
-  width: 95%;
-  margin: 24px;
+  width: 540px;
 }
 
-/* Small */
-.ui.small.modal > .header:not(.ui) {
-  font-size: 24px;
-}
+/* Small Modal Width */
 .ui.small.modal {
-  width: 95%;
-  margin: 24px;
+  width: 720px;
 }
 
 /* Large Modal Width */
-.ui.large.modal > .header {
-  font-size: 24px;
-}
 .ui.large.modal {
-  width: 95%;
-  margin: 24px;
+  width: 1080px;
+}
+
+/* Fullscreen Modal Width */
+.ui.fullscreen.modal {
+  width: 100%;
 }
