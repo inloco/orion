@@ -2,7 +2,7 @@
              Modal
 *******************************/
 
-.ui.modal {
+.orion.modal {
   @apply absolute hidden z-10 text-left bg-white border-0 rounded flex shadow-200 select-text;
   will-change: top, left, margin, transform, opacity;
 }
@@ -15,10 +15,10 @@
      Close
 ---------------*/
 
-.ui.modal > .close {
+.orion.modal > .close {
   @apply cursor-pointer absolute top-0 right-0 w-24 h-24 m-8 text-xl text-gray-800 opacity-80;
 }
-.ui.modal > .close:hover {
+.orion.modal > .close:hover {
   @apply opacity-100;
 }
 
@@ -26,17 +26,17 @@
      Header
 ---------------*/
 
-.ui.modal > .header {
+.orion.modal > .header {
   @apply block bg-transparent px-24 pt-24 font-display text-lg text-gray-800;
 }
 
 /* Description */
-.ui.modal > .content > .description {
+.orion.modal > .content > .description {
   @apply block flex-initial align-top font-display;
 }
 
-.ui.modal > .content > .icon + .description,
-.ui.modal > .content > .image + .description {
+.orion.modal > .content > .icon + .description,
+.orion.modal > .content > .image + .description {
   @apply flex-auto w-auto pl-24;
 }
 
@@ -44,24 +44,24 @@
      Content
 ---------------*/
 
-.ui.modal > .content {
+.orion.modal > .content {
   @apply block w-full font-normal p-24 bg-transparent;
 }
-.ui.modal > .image.content {
+.orion.modal > .image.content {
   @apply flex flex-row;
 }
 
 /* Image */
-.ui.modal > .content > .image {
+.orion.modal > .content > .image {
   @apply block flex-initial w-1/3 align-top;
 }
-.ui.modal > [class*='top aligned'] {
+.orion.modal > [class*='top aligned'] {
   @apply align-top;
 }
-.ui.modal > [class*='middle aligned'] {
+.orion.modal > [class*='middle aligned'] {
   @apply align-middle;
 }
-.ui.modal > [class*='stretched'] {
+.orion.modal > [class*='stretched'] {
   @apply self-stretch;
 }
 
@@ -69,10 +69,10 @@
      Actions
 ---------------*/
 
-.ui.modal > .actions {
+.orion.modal > .actions {
   @apply bg-transparent px-16 pb-16 text-right;
 }
-.ui.modal .actions > .button {
+.orion.modal .actions > .button {
   @apply ml-8;
 }
 
@@ -80,7 +80,7 @@
     Coupling
 ---------------*/
 
-.ui.inverted.dimmer > .ui.modal {
+.orion.inverted.dimmer > .orion.modal {
   @apply shadow-200;
 }
 
@@ -88,22 +88,22 @@
              Types
 *******************************/
 
-.ui.basic.modal {
+.orion.basic.modal {
   @apply bg-transparent border-0 rounded-none shadow-none;
 }
-.ui.basic.modal > .header,
-.ui.basic.modal > .content,
-.ui.basic.modal > .actions {
+.orion.basic.modal > .header,
+.orion.basic.modal > .content,
+.orion.basic.modal > .actions {
   @apply bg-transparent;
 }
-.ui.basic.modal > .header {
+.orion.basic.modal > .header {
   @apply text-gray-800;
 }
 
-.ui.inverted.dimmer > .basic.modal {
+.orion.inverted.dimmer > .basic.modal {
   @apply text-gray-800;
 }
-.ui.inverted.dimmer > .ui.basic.modal > .header {
+.orion.inverted.dimmer > .orion.basic.modal > .header {
   @apply text-gray-800;
 }
 
@@ -111,11 +111,11 @@
              States
 *******************************/
 
-.ui.loading.modal {
+.orion.loading.modal {
   @apply block hidden z-10;
 }
 
-.ui.active.modal {
+.orion.active.modal {
   @apply block;
 }
 
@@ -154,7 +154,7 @@
 .scrolling.dimmable > .dimmer {
   @apply fixed;
 }
-.modals.dimmer .ui.scrolling.modal {
+.modals.dimmer .orion.scrolling.modal {
   @apply m-16;
 }
 
@@ -166,13 +166,13 @@
 .scrolling.undetached.dimmable.dimmed > .dimmer {
   @apply overflow-hidden;
 }
-.scrolling.undetached.dimmable .ui.scrolling.modal {
+.scrolling.undetached.dimmable .orion.scrolling.modal {
   @apply absolute mt-16;
   left: 50%;
 }
 
 /* Scrolling Content */
-.ui.modal .scrolling.content {
+.orion.modal .scrolling.content {
   @apply overflow-auto;
   max-height: 90%;
 }
@@ -182,26 +182,26 @@
 ---------------*/
 
 /* Mini Modal Width */
-.ui.mini.modal {
+.orion.mini.modal {
   width: 340px;
 }
 
 /* Tiny Modal Width */
-.ui.tiny.modal {
+.orion.tiny.modal {
   width: 540px;
 }
 
 /* Small Modal Width */
-.ui.small.modal {
+.orion.small.modal {
   width: 720px;
 }
 
 /* Large Modal Width */
-.ui.large.modal {
+.orion.large.modal {
   width: 1080px;
 }
 
 /* Fullscreen Modal Width */
-.ui.fullscreen.modal {
+.orion.fullscreen.modal {
   width: 100%;
 }
