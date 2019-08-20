@@ -11,12 +11,13 @@
 @import './src/Input/input.css';
 @import './src/Label/label.css';
 @import './src/Loading/loading.css';
+@import './src/Layout/layout.css';
+@import './src/Menu/menu.css';
 @import './src/Message/message.css';
+@import './src/Modal/modal.css';
 @import './src/NotificationCenter/notificationCenter.css';
 @import './src/RangedDatepicker/rangedDatepicker.css';
 @import './src/Search/search.css';
-@import './src/Layout/layout.css';
-@import './src/Menu/menu.css';
 @import './src/Popup/popup.css';
 @import './src/Progress/progress.css';
 @import './src/Table/table.css';

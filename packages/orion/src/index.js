@@ -2,6 +2,7 @@ export {
   Card,
   Checkbox,
   Dimmer,
+  Modal,
   Popup,
   Search,
   Select,
