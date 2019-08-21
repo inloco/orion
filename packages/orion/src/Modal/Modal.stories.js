@@ -1,33 +1,20 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { radios, withKnobs } from '@storybook/addon-knobs'
+import { text, withKnobs } from '@storybook/addon-knobs'
 
 import { Button, Modal } from '../'
-
-const sizes = () =>
-  radios(
-    'Size',
-    {
-      Mini: 'mini',
-      Tiny: 'tiny',
-      Small: 'small',
-      Large: 'large',
-      'Full Screen': 'fullscreen'
-    },
-    'small'
-  )
 
 storiesOf('Modal', module)
   .addDecorator(withKnobs)
   .add('standard', () => {
     return (
-      <Modal trigger={<Button>Open Modal</Button>} closeIcon size={sizes()}>
-        <Modal.Header content="Modal Title" />
+      <Modal trigger={<Button>Open Modal</Button>} closeIcon>
+        <Modal.Header content={text('Title', 'Modal Title')} />
         <Modal.Content>
-          <Modal.Description
-            content="Your inbox is getting full, would you like us to enable automatic
-            archiving of old messages?"
-          />
+          {text(
+            'Content',
+            'Your inbox is getting full, would you like us to enable automatic archiving of old messages?'
+          )}
         </Modal.Content>
         <Modal.Actions>
           <Button>Cancel</Button>
@@ -38,13 +25,13 @@ storiesOf('Modal', module)
   })
   .add('basic', () => {
     return (
-      <Modal trigger={<Button>Open Modal</Button>} size={sizes()} basic>
-        <Modal.Header content="Modal Title" />
+      <Modal trigger={<Button>Open Modal</Button>} basic>
+        <Modal.Header content={text('Title', 'Modal Title')} />
         <Modal.Content>
-          <Modal.Description
-            content="Your inbox is getting full, would you like us to enable automatic
-            archiving of old messages?"
-          />
+          {text(
+            'Content',
+            'Your inbox is getting full, would you like us to enable automatic archiving of old messages?'
+          )}
         </Modal.Content>
         <Modal.Actions>
           <Button>Cancel</Button>

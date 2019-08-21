@@ -4,7 +4,7 @@
 
 .orion.modal {
   @apply absolute hidden z-10 text-left bg-white border-0 rounded flex shadow-200 select-text;
-  will-change: top, left, margin, transform, opacity;
+  min-width: 492px;
 }
 
 /*******************************
@@ -15,11 +15,11 @@
      Close
 ---------------*/
 
-.orion.modal > .close {
-  @apply cursor-pointer absolute top-0 right-0 w-24 h-24 m-8 text-xl text-gray-800 opacity-80;
+.orion.modal > .icon {
+  @apply cursor-pointer absolute top-0 right-0 m-8 text-gray-700;
 }
-.orion.modal > .close:hover {
-  @apply opacity-100;
+.orion.modal > .icon:hover {
+  @apply text-gray-800;
 }
 
 /*--------------
@@ -30,16 +30,6 @@
   @apply block bg-transparent px-24 pt-24 font-display text-lg text-gray-800;
 }
 
-/* Description */
-.orion.modal > .content > .description {
-  @apply block flex-initial align-top font-display;
-}
-
-.orion.modal > .content > .icon + .description,
-.orion.modal > .content > .image + .description {
-  @apply flex-auto w-auto pl-24;
-}
-
 /*--------------
      Content
 ---------------*/
@@ -47,14 +37,7 @@
 .orion.modal > .content {
   @apply block w-full font-normal p-24 bg-transparent;
 }
-.orion.modal > .image.content {
-  @apply flex flex-row;
-}
 
-/* Image */
-.orion.modal > .content > .image {
-  @apply block flex-initial w-1/3 align-top;
-}
 .orion.modal > [class*='top aligned'] {
   @apply align-top;
 }
@@ -130,78 +113,4 @@
 /* Top Aligned Modal */
 .modals.dimmer[class*='top aligned'] .modal {
   @apply m-16;
-}
-/* Legacy Top Aligned */
-.legacy.modals.dimmer[class*='top aligned'] {
-  @apply pt-16;
-}
-
-/*--------------
-    Scrolling
----------------*/
-
-/* Scrolling Dimmer */
-.scrolling.dimmable.dimmed {
-  @apply overflow-hidden;
-}
-.scrolling.dimmable > .dimmer {
-  @apply justify-start;
-}
-.scrolling.dimmable.dimmed > .dimmer {
-  @apply overflow-auto;
-  -webkit-overflow-scrolling: touch;
-}
-.scrolling.dimmable > .dimmer {
-  @apply fixed;
-}
-.modals.dimmer .orion.scrolling.modal {
-  @apply m-16;
-}
-
-/* Undetached Scrolling */
-.scrolling.undetached.dimmable.dimmed {
-  @apply overflow-auto;
-  -webkit-overflow-scrolling: touch;
-}
-.scrolling.undetached.dimmable.dimmed > .dimmer {
-  @apply overflow-hidden;
-}
-.scrolling.undetached.dimmable .orion.scrolling.modal {
-  @apply absolute mt-16;
-  left: 50%;
-}
-
-/* Scrolling Content */
-.orion.modal .scrolling.content {
-  @apply overflow-auto;
-  max-height: 90%;
-}
-
-/*--------------
-      Size
----------------*/
-
-/* Mini Modal Width */
-.orion.mini.modal {
-  width: 340px;
-}
-
-/* Tiny Modal Width */
-.orion.tiny.modal {
-  width: 540px;
-}
-
-/* Small Modal Width */
-.orion.small.modal {
-  width: 720px;
-}
-
-/* Large Modal Width */
-.orion.large.modal {
-  width: 1080px;
-}
-
-/* Fullscreen Modal Width */
-.orion.fullscreen.modal {
-  width: 100%;
 }
