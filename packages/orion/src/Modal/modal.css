@@ -59,58 +59,10 @@
   @apply ml-8;
 }
 
-/*--------------
-    Coupling
----------------*/
-
-.orion.inverted.dimmer > .orion.modal {
-  @apply shadow-200;
-}
-
-/*******************************
-             Types
-*******************************/
-
-.orion.basic.modal {
-  @apply bg-transparent border-0 rounded-none shadow-none;
-}
-.orion.basic.modal > .header,
-.orion.basic.modal > .content,
-.orion.basic.modal > .actions {
-  @apply bg-transparent;
-}
-.orion.basic.modal > .header {
-  @apply text-gray-800;
-}
-
-.orion.inverted.dimmer > .basic.modal {
-  @apply text-gray-800;
-}
-.orion.inverted.dimmer > .orion.basic.modal > .header {
-  @apply text-gray-800;
-}
-
 /*******************************
              States
 *******************************/
 
-.orion.loading.modal {
-  @apply block hidden z-10;
-}
-
 .orion.active.modal {
   @apply block;
-}
-
-/*******************************
-           Variations
-*******************************/
-
-/*--------------
-   Top Aligned
----------------*/
-
-/* Top Aligned Modal */
-.modals.dimmer[class*='top aligned'] .modal {
-  @apply m-16;
 }

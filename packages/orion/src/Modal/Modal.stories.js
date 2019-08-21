@@ -23,20 +23,3 @@ storiesOf('Modal', module)
       </Modal>
     )
   })
-  .add('basic', () => {
-    return (
-      <Modal trigger={<Button>Open Modal</Button>} basic>
-        <Modal.Header content={text('Title', 'Modal Title')} />
-        <Modal.Content>
-          {text(
-            'Content',
-            'Your inbox is getting full, would you like us to enable automatic archiving of old messages?'
-          )}
-        </Modal.Content>
-        <Modal.Actions>
-          <Button>Cancel</Button>
-          <Button primary>Yes</Button>
-        </Modal.Actions>
-      </Modal>
-    )
-  })
