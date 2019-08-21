@@ -38,16 +38,6 @@
   @apply block w-full font-normal p-24 bg-transparent;
 }
 
-.orion.modal > [class*='top aligned'] {
-  @apply align-top;
-}
-.orion.modal > [class*='middle aligned'] {
-  @apply align-middle;
-}
-.orion.modal > [class*='stretched'] {
-  @apply self-stretch;
-}
-
 /*--------------
      Actions
 ---------------*/
