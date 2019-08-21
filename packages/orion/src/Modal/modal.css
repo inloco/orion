@@ -5,6 +5,9 @@
 .orion.modal {
   @apply absolute hidden z-10 text-left bg-white border-0 rounded flex shadow-200 select-text;
   min-width: 492px;
+  left: 50%;
+  top: 24px;
+  transform: translate(-50%, 0);
 }
 
 /*******************************
@@ -20,6 +23,12 @@
 }
 .orion.modal > .icon:hover {
   @apply text-gray-800;
+}
+.orion.modal > .icon:focus {
+  @apply text-gray-800;
+}
+.orion.modal > .icon:active {
+  @apply text-gray-900;
 }
 
 /*--------------
