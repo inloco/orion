@@ -1,0 +1,19 @@
+.orion.stepsnav {
+  @apply flex flex-row;
+}
+
+.orion.stepsnav-step {
+  @apply flex flex-col items-center justify-center font-normal mr-40;
+}
+
+.orion.stepsnav-step > .stepsnav-step-index {
+  @apply mb-4 w-24 h-24 flex items-center justify-center rounded-full;
+}
+
+.orion.stepsnav-step.active > .stepsnav-step-index {
+  @apply bg-space-100;
+}
+
+.orion.stepsnav-step.active > .stepsnav-step-name {
+  @apply font-medium;
+}
