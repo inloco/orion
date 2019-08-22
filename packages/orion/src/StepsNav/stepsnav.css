@@ -2,15 +2,36 @@
   @apply flex flex-row;
 }
 
+.stepsnav-step-index-container {
+  @apply flex flex-row w-full;
+}
+
+.stepsnav-step-separator {
+  @apply w-48 border-b-1 border-gray-900-16;
+  transform: translate(0, -70%);
+}
+
+.stepsnav-step-separator-start {
+  @apply flex-grow border-b-1 border-gray-900-16;
+  transform: translate(0, -45%);
+}
+
+.stepsnav-step-separator-end {
+  @apply flex-grow border-b-1 border-gray-900-16;
+  transform: translate(0, -45%);
+}
+
 .orion.stepsnav-step {
-  @apply flex flex-col items-center justify-center font-normal mr-40;
+  @apply flex flex-col items-center justify-center font-normal;
 }
 
-.orion.stepsnav-step > .stepsnav-step-index {
-  @apply mb-4 w-24 h-24 flex items-center justify-center rounded-full;
+.stepsnav-step-index-container > .stepsnav-step-index {
+  @apply w-24 h-24 flex items-center justify-center rounded-full mx-8;
 }
 
-.orion.stepsnav-step.active > .stepsnav-step-index {
+.orion.stepsnav-step.active
+  > .stepsnav-step-index-container
+  > .stepsnav-step-index {
   @apply bg-space-100;
 }
 
