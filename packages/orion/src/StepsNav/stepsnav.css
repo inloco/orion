@@ -1,31 +1,37 @@
+/*******************************
+            StepsNav
+*******************************/
+
 .orion.stepsnav {
   @apply flex flex-row;
 }
 
-.stepsnav-step-index-container {
+.orion.stepsnav-step-index-container {
   @apply flex flex-row w-full;
 }
 
-.stepsnav-step-separator {
-  @apply w-48 border-b-1 border-gray-900-16;
-  transform: translate(0, -70%);
+/*--------------
+     Separator
+---------------*/
+
+.orion.stepsnav-separator {
+  @apply w-48 border-t-1 border-gray-900-16 mt-12;
 }
 
-.stepsnav-step-separator-start {
-  @apply flex-grow border-b-1 border-gray-900-16;
-  transform: translate(0, -45%);
+.orion.stepsnav-separator-start,
+.orion.stepsnav-separator-end {
+  @apply flex-grow border-t-1 border-gray-900-16 mt-12;
 }
 
-.stepsnav-step-separator-end {
-  @apply flex-grow border-b-1 border-gray-900-16;
-  transform: translate(0, -45%);
-}
+/*--------------
+     Step
+---------------*/
 
 .orion.stepsnav-step {
   @apply flex flex-col items-center justify-center font-normal;
 }
 
-.stepsnav-step-index-container > .stepsnav-step-index {
+.orion.stepsnav-step > .stepsnav-step-index-container > .stepsnav-step-index {
   @apply w-24 h-24 flex items-center justify-center rounded-full mx-8;
 }
 

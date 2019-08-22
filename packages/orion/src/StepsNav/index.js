@@ -14,17 +14,25 @@ const StepsNav = ({ stepNames, currentStep, className }) => {
         return (
           <React.Fragment>
             <div className={cx('orion stepsnav-step', { active: active })}>
-              <div className="stepsnav-step-index-container">
-                <div className="stepsnav-step-separator-start" />
+              <div className="orion stepsnav-step-index-container">
+                <div
+                  className={cx('orion stepsnav-separator-start', {
+                    'opacity-0': index === 0
+                  })}
+                />
                 <div className="stepsnav-step-index">
                   {done ? <Icon name="done" /> : <div>{index + 1}</div>}
                 </div>
-                <div className="stepsnav-step-separator-end" />
+                <div
+                  className={cx('orion stepsnav-separator-end', {
+                    'opacity-0': index === stepNames.length - 1
+                  })}
+                />
               </div>
               {<div className="stepsnav-step-name">{stepName}</div>}
             </div>
             {index < stepNames.length - 1 && (
-              <div className="stepsnav-step-separator"></div>
+              <div className="orion stepsnav-separator"></div>
             )}
           </React.Fragment>
         )
