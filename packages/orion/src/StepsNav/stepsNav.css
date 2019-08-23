@@ -18,8 +18,11 @@
   @apply flex-grow w-auto;
 }
 
-.orion.stepsnav .stepsnav-separator.stepsnav-index-separator.first,
-.orion.stepsnav .stepsnav-separator.stepsnav-index-separator.last {
+.stepsnav-step:first-child .stepsnav-index-separator:first-child {
+  @apply opacity-0;
+}
+
+.stepsnav-step:last-child .stepsnav-index-separator:last-child {
   @apply opacity-0;
 }
 

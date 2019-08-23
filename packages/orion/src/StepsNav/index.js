@@ -10,26 +10,17 @@ const StepsNav = ({ steps, currentStep, className }) => {
       {steps.map((name, index) => {
         const active = index === currentStep
         const done = index < currentStep
-        const first = index === 0
         const last = index === steps.length - 1
 
         return (
           <React.Fragment key={index}>
             <div className={cx('stepsnav-step', { active: active })}>
               <div className="stepsnav-step-index-container">
-                <div
-                  className={cx('stepsnav-separator stepsnav-index-separator', {
-                    first: first
-                  })}
-                />
+                <div className="stepsnav-separator stepsnav-index-separator" />
                 <div className="stepsnav-step-index">
                   {done ? <Icon name="done" /> : <div>{index + 1}</div>}
                 </div>
-                <div
-                  className={cx('stepsnav-separator stepsnav-index-separator', {
-                    last: last
-                  })}
-                />
+                <div className="stepsnav-separator stepsnav-index-separator" />
               </div>
               {<div className="stepsnav-step-name">{name}</div>}
             </div>
