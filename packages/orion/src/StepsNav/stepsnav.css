@@ -18,7 +18,8 @@
   @apply flex-grow w-auto;
 }
 
-.orion.stepsnav .stepsnav-separator.stepsnav-index-separator.hidden {
+.orion.stepsnav .stepsnav-separator.stepsnav-index-separator.first,
+.orion.stepsnav .stepsnav-separator.stepsnav-index-separator.last {
   @apply opacity-0;
 }
 

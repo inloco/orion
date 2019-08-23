@@ -19,7 +19,7 @@ const StepsNav = ({ steps, currentStep, className }) => {
               <div className="stepsnav-step-index-container">
                 <div
                   className={cx('stepsnav-separator stepsnav-index-separator', {
-                    hidden: first
+                    first: first
                   })}
                 />
                 <div className="stepsnav-step-index">
@@ -27,7 +27,7 @@ const StepsNav = ({ steps, currentStep, className }) => {
                 </div>
                 <div
                   className={cx('stepsnav-separator stepsnav-index-separator', {
-                    hidden: last
+                    last: last
                   })}
                 />
               </div>
