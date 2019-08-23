@@ -6,10 +6,6 @@
   @apply flex flex-row;
 }
 
-.orion.stepsnav-step-index-container {
-  @apply flex flex-row w-full;
-}
-
 /*--------------
      Separator
 ---------------*/
@@ -26,6 +22,10 @@
 /*--------------
      Step
 ---------------*/
+
+.orion.stepsnav-step-index-container {
+  @apply flex flex-row w-full;
+}
 
 .orion.stepsnav-step {
   @apply flex flex-col items-center justify-center font-normal;

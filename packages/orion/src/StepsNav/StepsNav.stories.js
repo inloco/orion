@@ -1,6 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withKnobs } from '@storybook/addon-knobs'
+import { array, number, withKnobs } from '@storybook/addon-knobs'
 
 import { StepsNav } from '../'
 
@@ -8,12 +8,12 @@ storiesOf('StepsNav', module)
   .addDecorator(withKnobs)
   .add('Default', () => (
     <StepsNav
-      stepNames={[
+      stepNames={array('Steps', [
         'The Initial Step',
         'A Long Step',
         'The Longeeeest Step',
         'Final Step'
-      ]}
-      currentStep={1}
+      ])}
+      currentStep={number('Current Step', 1)}
     />
   ))
