@@ -1,0 +1,32 @@
+.orion.fullscreen-container {
+  @apply flex flex-col items-center p-24 max-w-full bg-white;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+}
+
+.orion.fullscreen-container .fullscreen-container-title {
+  @apply font-display text-lg mb-24;
+}
+
+.orion.fullscreen-container .fullscreen-container-content {
+}
+
+/*--------------
+     Close
+---------------*/
+
+.orion.fullscreen-container > .icon {
+  @apply cursor-pointer absolute top-0 right-0 m-8 text-gray-700;
+}
+.orion.fullscreen-container > .icon:hover {
+  @apply text-gray-800;
+}
+.orion.fullscreen-container > .icon:focus {
+  @apply text-gray-800;
+}
+.orion.fullscreen-container > .icon:active {
+  @apply text-gray-900;
+}
