@@ -8,7 +8,7 @@ storiesOf('StepsNav', module)
   .addDecorator(withKnobs)
   .add('Default', () => (
     <StepsNav
-      stepNames={array('Steps', [
+      steps={array('Steps', [
         'The Initial Step',
         'A Long Step',
         'The Longeeeest Step',
