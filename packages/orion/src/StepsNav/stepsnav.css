@@ -10,12 +10,11 @@
      Separator
 ---------------*/
 
-.orion.stepsnav-separator {
+.orion.stepsnav .stepsnav-separator {
   @apply w-48 border-t-1 border-gray-900-16 mt-12;
 }
 
-.orion.stepsnav-separator-start,
-.orion.stepsnav-separator-end {
+.orion.stepsnav .stepsnav-index-separator {
   @apply flex-grow border-t-1 border-gray-900-16 mt-12;
 }
 
@@ -23,24 +22,26 @@
      Step
 ---------------*/
 
-.orion.stepsnav-step-index-container {
+.orion.stepsnav .stepsnav-step-index-container {
   @apply flex flex-row w-full;
 }
 
-.orion.stepsnav-step {
-  @apply flex flex-col items-center justify-center font-normal;
+.orion.stepsnav .stepsnav-step {
+  @apply flex flex-col items-center justify-center;
 }
 
-.orion.stepsnav-step > .stepsnav-step-index-container > .stepsnav-step-index {
+.orion.stepsnav .stepsnav-step-index {
   @apply w-24 h-24 flex items-center justify-center rounded-full mx-8;
 }
 
-.orion.stepsnav-step.active
-  > .stepsnav-step-index-container
-  > .stepsnav-step-index {
+/*--------------
+     Active
+---------------*/
+
+.orion.stepsnav .stepsnav-step.active .stepsnav-step-index {
   @apply bg-space-100;
 }
 
-.orion.stepsnav-step.active > .stepsnav-step-name {
+.orion.stepsnav .stepsnav-step.active .stepsnav-step-name {
   @apply font-medium;
 }
