@@ -28,7 +28,7 @@ const FullscreenContainer = ({
 
   return (
     <React.Fragment>
-      {<div onClick={openContainer}>{trigger}</div>}
+      {trigger && <div onClick={openContainer}>{trigger}</div>}
       {isOpen &&
         ReactDOM.createPortal(
           <div className={cx('orion fullscreen-container', className)}>
