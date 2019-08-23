@@ -31,7 +31,11 @@
 }
 
 .orion.stepsnav .stepsnav-step-index {
-  @apply w-24 h-24 flex items-center justify-center rounded-full mx-8;
+  @apply w-24 h-24 flex items-center justify-center rounded-full mx-4;
+}
+
+.orion.stepsnav .stepsnav-step-name {
+  @apply mt-4;
 }
 
 /*--------------
