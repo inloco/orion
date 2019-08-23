@@ -6,7 +6,7 @@ import Icon from '../Icon'
 
 const StepsNav = ({ steps, currentStep, className }) => {
   return (
-    <div className={cx('orion stepsnav', className)}>
+    <div className={cx('orion steps-nav', className)}>
       {steps.map((name, index) => {
         const active = index === currentStep
         const done = index < currentStep
@@ -14,17 +14,17 @@ const StepsNav = ({ steps, currentStep, className }) => {
 
         return (
           <React.Fragment key={index}>
-            <div className={cx('stepsnav-step', { active: active })}>
-              <div className="stepsnav-step-index-container">
-                <div className="stepsnav-separator stepsnav-index-separator" />
-                <div className="stepsnav-step-index">
+            <div className={cx('steps-nav-step', { active: active })}>
+              <div className="steps-nav-step-index-container">
+                <div className="steps-nav-separator steps-nav-index-separator" />
+                <div className="steps-nav-step-index">
                   {done ? <Icon name="done" /> : <div>{index + 1}</div>}
                 </div>
-                <div className="stepsnav-separator stepsnav-index-separator" />
+                <div className="steps-nav-separator steps-nav-index-separator" />
               </div>
-              {<div className="stepsnav-step-name">{name}</div>}
+              {<div className="steps-nav-step-name">{name}</div>}
             </div>
-            {!last && <div className="stepsnav-separator"></div>}
+            {!last && <div className="steps-nav-separator"></div>}
           </React.Fragment>
         )
       })}
