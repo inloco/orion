@@ -11,7 +11,7 @@
 ---------------*/
 
 .orion.stepsnav .stepsnav-separator {
-  @apply w-48 border-t-1 border-gray-900-16 mt-12;
+  @apply w-40 border-t-1 border-gray-900-16 mt-12;
 }
 
 .orion.stepsnav .stepsnav-index-separator {
@@ -27,7 +27,7 @@
 }
 
 .orion.stepsnav .stepsnav-step {
-  @apply flex flex-col items-center justify-center;
+  @apply flex flex-col;
 }
 
 .orion.stepsnav .stepsnav-step-index {
