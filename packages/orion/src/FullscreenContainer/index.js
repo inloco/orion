@@ -11,11 +11,10 @@ const FullscreenContainer = ({
   className,
   open,
   onOpen,
-  defaultOpen,
   onClose,
   trigger
 }) => {
-  const [isOpen, setOpen] = useState(open || defaultOpen)
+  const [isOpen, setOpen] = useState(open)
 
   const openContainer = () => {
     setOpen(true)
@@ -49,7 +48,6 @@ FullscreenContainer.propTypes = {
   className: PropTypes.string,
   open: PropTypes.bool,
   onOpen: PropTypes.func,
-  defaultOpen: PropTypes.bool,
   onClose: PropTypes.func,
   trigger: PropTypes.node
 }

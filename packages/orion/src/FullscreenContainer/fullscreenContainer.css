@@ -1,10 +1,9 @@
 .orion.fullscreen-container {
-  @apply fixed flex flex-col items-center p-24 max-w-full bg-white;
+  @apply fixed flex flex-col items-center p-24 max-w-full h-screen bg-white;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 100vh;
 }
 
 .orion.fullscreen-container .fullscreen-container-title {
