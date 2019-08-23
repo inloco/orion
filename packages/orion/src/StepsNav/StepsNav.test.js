@@ -26,7 +26,7 @@ describe('when rendering a StepsNav', () => {
       }
     })
 
-    expect(queryAllByText('done').length).toBe(currentStep)
+    expect(queryAllByText('done').length).toBe(1)
   })
 
   describe('when the current step is 0', () => {
