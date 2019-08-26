@@ -6,15 +6,6 @@
   @apply font-display text-lg mb-24 text-gray-800;
 }
 
-.orion.fullscreen-container > .icon {
-  @apply cursor-pointer absolute top-0 right-0 m-8 text-gray-700;
-}
-.orion.fullscreen-container > .icon:hover {
-  @apply text-gray-800;
-}
-.orion.fullscreen-container > .icon:focus {
-  @apply text-gray-800;
-}
-.orion.fullscreen-container > .icon:active {
-  @apply text-gray-900;
+.orion.fullscreen-container > .button {
+  @apply cursor-pointer absolute top-0 right-0 m-8;
 }

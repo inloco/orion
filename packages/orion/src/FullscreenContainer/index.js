@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import _ from 'lodash'
 
-import { Icon, Portal } from '../'
+import { Button, Portal } from '../'
 
 const FullscreenContainer = ({
   title,
@@ -34,7 +34,7 @@ const FullscreenContainer = ({
       onOpen={handleOpen}
       onClose={handleClose}>
       <div className={cx('orion fullscreen-container', className)}>
-        <Icon name="close" onClick={handleClose} />
+        <Button subtle icon="close" onClick={handleClose} />
         {title && <div className="fullscreen-container-title">{title}</div>}
         <div className="fullscreen-container-content">{children}</div>
       </div>
