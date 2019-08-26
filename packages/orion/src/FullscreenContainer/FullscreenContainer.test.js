@@ -3,12 +3,10 @@ import { render, fireEvent } from '@testing-library/react'
 
 import { FullscreenContainer, Button } from '../'
 
-const triggerButton = () => <Button>Open</Button>
-
 describe('when using the FullscreenContainer', () => {
   it('should only render the trigger component', () => {
     const { queryByText } = render(
-      <FullscreenContainer trigger={triggerButton()} title="My Title">
+      <FullscreenContainer trigger={<Button>Open</Button>} title="My Title">
         My Content
       </FullscreenContainer>
     )
@@ -23,7 +21,7 @@ describe('when using the FullscreenContainer', () => {
     const onOpen = jest.fn()
     const { queryByText } = render(
       <FullscreenContainer
-        trigger={triggerButton()}
+        trigger={<Button>Open</Button>}
         title="My Title"
         onOpen={onOpen}>
         My Content
@@ -44,18 +42,14 @@ describe('when using the FullscreenContainer', () => {
     const onClose = jest.fn()
     const { queryByText } = render(
       <FullscreenContainer
-        trigger={triggerButton()}
+        trigger={<Button>Open</Button>}
         title="My Title"
-        open={true}
         onClose={onClose}>
         My Content
       </FullscreenContainer>
     )
 
-    expect(queryByText('My Title')).toBeTruthy()
-    expect(queryByText('My Content')).toBeTruthy()
-    expect(queryByText('close')).toBeTruthy()
-
+    fireEvent.click(queryByText('Open'))
     fireEvent.click(queryByText('close'))
 
     expect(queryByText('My Title')).toBeFalsy()

@@ -4,6 +4,7 @@ export {
   Dimmer,
   Modal,
   Popup,
+  Portal,
   Search,
   Select
 } from '@inloco/semantic-ui-react'

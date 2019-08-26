@@ -1,44 +1,44 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import ReactDOM from 'react-dom'
+import _ from 'lodash'
 
-import { Icon } from '../'
+import { Icon, Portal } from '../'
 
 const FullscreenContainer = ({
   title,
   children,
   className,
-  open,
+  open: openProp,
   onOpen,
   onClose,
   trigger
 }) => {
-  const [isOpen, setOpen] = useState(open)
+  const [isOpen, setOpen] = useState(false)
+  const open = _.isNil(openProp) ? isOpen : openProp
 
-  const openContainer = () => {
-    setOpen(true)
+  const handleOpen = () => {
     onOpen && onOpen()
+    setOpen(true)
   }
 
-  const closeContainer = () => {
-    setOpen(false)
+  const handleClose = () => {
     onClose && onClose()
+    setOpen(false)
   }
 
   return (
-    <React.Fragment>
-      {trigger && <div onClick={openContainer}>{trigger}</div>}
-      {isOpen &&
-        ReactDOM.createPortal(
-          <div className={cx('orion fullscreen-container', className)}>
-            <Icon name="close" onClick={closeContainer} />
-            {title && <div className="fullscreen-container-title">{title}</div>}
-            <div className="fullscreen-container-content">{children}</div>
-          </div>,
-          document.body
-        )}
-    </React.Fragment>
+    <Portal
+      trigger={trigger}
+      open={open}
+      onOpen={handleOpen}
+      onClose={handleClose}>
+      <div className={cx('orion fullscreen-container', className)}>
+        <Icon name="close" onClick={handleClose} />
+        {title && <div className="fullscreen-container-title">{title}</div>}
+        <div className="fullscreen-container-content">{children}</div>
+      </div>
+    </Portal>
   )
 }
 
