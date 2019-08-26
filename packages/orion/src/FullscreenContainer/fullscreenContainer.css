@@ -1,26 +1,14 @@
-/*******************************
-            FullscreenContainer
-*******************************/
-
 .orion.fullscreen-container {
-  @apply fixed flex flex-col items-center p-24 max-w-full h-screen bg-white;
+  @apply fixed flex flex-col items-center p-24 max-w-full bg-white;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
 }
 
-/*--------------
-     Title
----------------*/
-
 .orion.fullscreen-container .fullscreen-container-title {
   @apply font-display text-lg mb-24;
 }
-
-/*--------------
-     Close
----------------*/
 
 .orion.fullscreen-container > .icon {
   @apply cursor-pointer absolute top-0 right-0 m-8 text-gray-700;
