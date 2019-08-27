@@ -1,5 +1,5 @@
 .orion.card {
-  @apply bg-white border-1 border-gray-900-16 inline-block rounded;
+  @apply relative bg-white border-1 border-gray-900-16 inline-block rounded;
 }
 
 .orion.card.fluid {
@@ -17,4 +17,28 @@
 .orion.card > .extra {
   @apply flex items-center justify-end px-24 py-8;
   @apply border-t-1 border-gray-900-16;
+}
+
+.orion.card.selectable {
+  @apply shadow-200;
+}
+.orion.card.selectable:hover {
+  @apply border-gray-900-8;
+}
+.orion.card.selectable:active {
+  @apply border-gray-900-16 shadow-none;
+}
+
+.orion.card.selectable.selected {
+  @apply bg-wave-500-8 shadow-none;
+}
+.orion.card.selectable.selected:hover {
+  @apply border-gray-900-16 shadow-200;
+}
+.orion.card.selectable.selected:active {
+  @apply bg-wave-500-16 shadow-none;
+}
+
+.orion.card.selectable .checkbox {
+  @apply absolute left-0 top-0 m-8;
 }
