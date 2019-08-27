@@ -1,5 +1,4 @@
 export {
-  Card,
   Checkbox,
   Dimmer,
   Modal,
@@ -10,6 +9,7 @@ export {
 } from '@inloco/semantic-ui-react'
 
 export { default as Button } from './Button'
+export { default as Card } from './Card'
 export { default as ClickOutside } from './ClickOutside'
 export { default as Datepicker } from './Datepicker'
 export { default as Divider } from './Divider'
