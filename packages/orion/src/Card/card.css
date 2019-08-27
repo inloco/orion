@@ -20,9 +20,12 @@
 }
 
 .orion.card.selectable {
-  @apply shadow-200;
+  @apply shadow-200 cursor-pointer;
 }
 .orion.card.selectable:hover {
+  @apply border-gray-900-8;
+}
+.orion.card.selectable:focus {
   @apply border-gray-900-8;
 }
 .orion.card.selectable:active {
@@ -33,6 +36,9 @@
   @apply bg-wave-500-8 shadow-none;
 }
 .orion.card.selectable.selected:hover {
+  @apply border-gray-900-16 shadow-200;
+}
+.orion.card.selectable.selected:focus {
   @apply border-gray-900-16 shadow-200;
 }
 .orion.card.selectable.selected:active {

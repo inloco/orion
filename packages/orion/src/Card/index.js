@@ -14,11 +14,10 @@ const Card = ({
   withCheckbox,
   ...otherProps
 }) => {
-  const classes = cx(
-    className,
-    { selectable: selectable },
-    { selected: selectable && selected }
-  )
+  const classes = cx(className, {
+    selectable,
+    selected: selectable && selected
+  })
 
   return (
     <SemanticCard className={classes} {...otherProps}>
