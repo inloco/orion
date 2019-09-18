@@ -22,10 +22,11 @@
 
 .orion.card.selectable {
   @apply shadow-200 cursor-pointer;
+  transition: box-shadow 0.2s ease-in-out;
 }
 .orion.card.selectable:hover,
 .orion.card.selectable:focus {
-  @apply border-gray-900-8;
+  @apply border-gray-900-8 shadow-300;
 }
 .orion.card.selectable:active {
   @apply border-gray-900-16 shadow-none;
