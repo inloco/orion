@@ -21,8 +21,7 @@
 }
 
 .orion.card.selectable {
-  @apply shadow-200 cursor-pointer;
-  transition: box-shadow 0.2s ease-in-out;
+  @apply shadow-200 cursor-pointer transition-default;
 }
 .orion.card.selectable:hover,
 .orion.card.selectable:focus {
