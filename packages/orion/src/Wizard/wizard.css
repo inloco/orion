@@ -1,5 +1,5 @@
 .orion.wizard .steps-nav {
-  @apply justify-center;
+  @apply justify-center mb-40;
 }
 
 .orion.wizard .wizard-controls {
