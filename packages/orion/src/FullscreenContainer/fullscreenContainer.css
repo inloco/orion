@@ -6,6 +6,11 @@
   @apply font-display text-lg mb-24 text-gray-800;
 }
 
+.orion.fullscreen-container .fullscreen-container-content {
+  @apply mx-24 w-full flex flex-col items-center;
+  max-width: 1024px;
+}
+
 .orion.fullscreen-container > .button {
   @apply cursor-pointer absolute top-0 right-0 m-8;
 }
