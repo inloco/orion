@@ -7,7 +7,7 @@
 }
 
 .orion.fullscreen-container .fullscreen-container-content {
-  @apply mx-24 w-full flex flex-col items-center;
+  @apply mx-24 w-full;
   max-width: 1024px;
 }
 
