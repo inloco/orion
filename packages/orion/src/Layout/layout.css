@@ -7,8 +7,7 @@
 }
 
 .orion.layout .layout-center-content {
-  @apply mx-24 w-full;
-  max-width: 1024px;
+  @apply layout-content;
 }
 
 .orion.layout .layout-topbar {

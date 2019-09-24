@@ -11,7 +11,7 @@ storiesOf('FullscreenContainer', module)
       <FullscreenContainer
         title={text('Title', 'My Title')}
         trigger={<Button>Open Container</Button>}>
-        <div>{text('Content', 'My Content!')}</div>
+        <div className="text-center">{text('Content', 'My Content!')}</div>
       </FullscreenContainer>
     )
   })
