@@ -27,6 +27,10 @@
   max-width: 600px;
 }
 
+.orion-message.fluid {
+  max-width: none;
+}
+
 .orion-message--shadow {
   @apply shadow-400;
 }

@@ -14,6 +14,7 @@ storiesOf('Message', module)
       error={boolean('Error', false)}
       success={boolean('Success', false)}
       warning={boolean('Warning', false)}
+      fluid={boolean('Fluid', false)}
     />
   ))
   .add('Inline', () => (
@@ -22,6 +23,7 @@ storiesOf('Message', module)
       error={boolean('Error', false)}
       success={boolean('Success', false)}
       warning={boolean('Warning', false)}
+      fluid={boolean('Fluid', false)}
     />
   ))
   .add('Dismissible', () => (
@@ -31,6 +33,7 @@ storiesOf('Message', module)
       error={boolean('Error', false)}
       success={boolean('Success', false)}
       warning={boolean('Warning', false)}
+      fluid={boolean('Fluid', false)}
       onDismiss={action('onDimiss')}
     />
   ))

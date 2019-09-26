@@ -9,6 +9,7 @@ const Message = ({
   error,
   success,
   warning,
+  fluid,
   className,
   onDismiss,
   ...otherProps
@@ -16,7 +17,8 @@ const Message = ({
   const { header } = otherProps
 
   const orionMessageClasses = cx('orion-message', {
-    'orion-message--shadow': onDismiss
+    'orion-message--shadow': onDismiss,
+    fluid
   })
 
   const semanticMessageClasses = cx(className, {
@@ -55,7 +57,8 @@ const Message = ({
 Message.propTypes = {
   error: PropTypes.bool,
   success: PropTypes.bool,
-  warning: PropTypes.bool
+  warning: PropTypes.bool,
+  fluid: PropTypes.bool
 }
 
 Message.defaultProps = {
