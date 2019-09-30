@@ -4,14 +4,15 @@ import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 
 import StepsNav from '../StepsNav'
-import WizardControls from './WizardControls'
+import WizardControls, { WizardButtons } from './WizardControls'
 
 const Wizard = ({
   children,
   className,
   currentStepIndex: currentStepProp,
   onStepIndexChange,
-  steps
+  steps,
+  buttons
 }) => {
   const [currentStepState, setCurrentStepState] = useState(currentStepProp || 0)
   const currentStepIndex = _.isNil(currentStepProp)
@@ -31,6 +32,7 @@ const Wizard = ({
       </div>
 
       <WizardControls
+        buttons={buttons}
         currentStepIndex={currentStepIndex}
         onStepIndexChange={handleStepChange}
         totalSteps={steps.length}
@@ -44,11 +46,24 @@ Wizard.propTypes = {
   className: PropTypes.string,
   currentStepIndex: PropTypes.number,
   onStepIndexChange: PropTypes.func,
-  steps: PropTypes.arrayOf(PropTypes.string).isRequired
+  steps: PropTypes.arrayOf(PropTypes.string).isRequired,
+  buttons: PropTypes.shape({
+    [WizardButtons.BACK]: PropTypes.any,
+    [WizardButtons.SAVE]: PropTypes.any,
+    [WizardButtons.NEXT]: PropTypes.any,
+    [WizardButtons.FINISH]: PropTypes.any
+  })
 }
 
 Wizard.defaultProps = {
+  buttons: {
+    [WizardButtons.BACK]: 'Back',
+    [WizardButtons.NEXT]: 'Next',
+    [WizardButtons.FINISH]: 'Finish'
+  },
   onStepIndexChange: () => {}
 }
+
+Wizard.Buttons = WizardButtons
 
 export default Wizard
