@@ -47,12 +47,7 @@ Wizard.propTypes = {
   currentStepIndex: PropTypes.number,
   onStepIndexChange: PropTypes.func,
   steps: PropTypes.arrayOf(PropTypes.string).isRequired,
-  buttons: PropTypes.shape({
-    [WizardButtons.BACK]: PropTypes.any,
-    [WizardButtons.SAVE]: PropTypes.any,
-    [WizardButtons.NEXT]: PropTypes.any,
-    [WizardButtons.FINISH]: PropTypes.any
-  })
+  buttons: PropTypes.object
 }
 
 Wizard.defaultProps = {
