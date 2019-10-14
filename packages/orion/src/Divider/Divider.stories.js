@@ -8,16 +8,22 @@ export default {
   decorators: [withKnobs]
 }
 
-export const alone = () => {
-  return <Divider />
-}
-
-export const withinContent = () => {
+export const horizontal = () => {
   return (
     <div className="text-center w-384">
       Text at top
       <Divider />
       Text at bottom
+    </div>
+  )
+}
+
+export const vertical = () => {
+  return (
+    <div className="flex text-center w-384">
+      Left Text
+      <Divider vertical className="mx-8" />
+      Right Text
     </div>
   )
 }
