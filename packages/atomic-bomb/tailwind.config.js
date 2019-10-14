@@ -77,7 +77,8 @@ module.exports = {
       '32': '32px',
       '40': '40px',
       '48': '48px',
-      '64': '64px'
+      '64': '64px',
+      '96': '96px'
     },
 
     backgroundColor: theme => ({
@@ -284,6 +285,7 @@ module.exports = {
     }),
     minWidth: theme => ({
       '0': '0',
+      '238': '238px',
       ...theme('spacing'),
       full: '100%'
     }),
@@ -344,6 +346,7 @@ module.exports = {
     width: theme => ({
       auto: 'auto',
       ...theme('spacing'),
+      '238': '238px',
       '384': '384px',
       '1/2': '50%',
       '1/3': '33.33333%',
