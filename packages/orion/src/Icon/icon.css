@@ -7,3 +7,39 @@ svg.icon {
   height: 20px;
   width: 20px;
 }
+
+i.icon.loading {
+  @apply relative;
+
+  width: 20px;
+  height: 20px;
+}
+
+i.icon.loading:before,
+i.icon.loading:after {
+  @apply absolute;
+  @apply border-2 rounded-full;
+  @apply w-full h-full;
+
+  content: '';
+}
+
+i.icon.loading:before {
+  @apply border-gray-900-16;
+}
+
+i.icon.loading:after {
+  animation: loading 0.6s linear;
+  animation-iteration-count: infinite;
+
+  border-color: #616263 transparent transparent;
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

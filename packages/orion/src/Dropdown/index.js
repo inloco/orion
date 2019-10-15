@@ -17,7 +17,7 @@ const DROPDOWN_ICON = {
 }
 
 const LOADING_ICON = {
-  className: 'dropdown-loading-icon'
+  name: 'loading'
 }
 
 const MultipleModes = {

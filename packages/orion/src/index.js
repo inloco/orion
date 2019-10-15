@@ -1,7 +1,6 @@
 export {
   Checkbox,
   Dimmer,
-  Loader,
   Modal,
   Popup,
   Portal,

@@ -15,7 +15,7 @@ describe('when the dropdown is loading', () => {
 
     const iconElement = container.querySelector('.icon')
     expect(iconElement).not.toHaveClass('dropdown-icon')
-    expect(iconElement).toHaveClass('dropdown-loading-icon')
+    expect(iconElement).toHaveClass('loading')
   })
 })
 

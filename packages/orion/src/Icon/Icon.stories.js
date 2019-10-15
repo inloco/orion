@@ -31,6 +31,7 @@ export const customIcons = () => {
       <div className="flex">
         <IconCard name="ios" />
         <IconCard name="react" />
+        <IconCard name="loading" />
       </div>
     </React.Fragment>
   )
