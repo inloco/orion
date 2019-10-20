@@ -15,7 +15,7 @@ const ClickOutside = ({ as, children, onClickOutside, ...otherProps }) => {
     return () => {
       document.removeEventListener('mouseup', handleClick, true)
     }
-  }, [onClickOutside])
+  }, [handleClick, onClickOutside])
 
   const ElementType = as
   return (

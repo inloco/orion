@@ -25,7 +25,7 @@ const RangedDatepicker = ({
   const focusedInput = focusedInputProp || focusedInputState
   const handleFocusChange = newFocusedInput => {
     setFocusedInput(newFocusedInput)
-    onFocusChange && onFocusChange(newDates)
+    onFocusChange && onFocusChange(newFocusedInput)
   }
 
   return (
@@ -51,7 +51,10 @@ RangedDatepicker.propTypes = {
   defaultDates: PropTypes.shape({
     startDate: PropTypes.any,
     endDate: PropTypes.any
-  })
+  }),
+  focusedInput: PropTypes.node,
+  onDatesChange: PropTypes.func,
+  onFocusChange: PropTypes.func
 }
 
 export default RangedDatepicker
