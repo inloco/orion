@@ -1,6 +1,8 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { object, text, withKnobs } from '@storybook/addon-knobs'
+import PropTypes from 'prop-types'
+import _ from 'lodash'
 
 import { Dropdown, Filter, Input } from '../'
 
@@ -81,3 +83,8 @@ const FilterStoryInput = ({ onChange, value, ...otherProps }) => (
     {...otherProps}
   />
 )
+
+FilterStoryInput.propTypes = {
+  onChange: PropTypes.func,
+  value: PropTypes.oneOf([PropTypes.string, PropTypes.number])
+}

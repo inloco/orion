@@ -91,6 +91,6 @@ Dropdown.Menu = SemanticDropdown.Menu
 Dropdown.SearchInput = SemanticDropdown.SearchInput
 
 Dropdown.ICON = DROPDOWN_ICON
-Dropdown.MultipleModes
+Dropdown.MultipleModes = MultipleModes
 
 export default Dropdown
