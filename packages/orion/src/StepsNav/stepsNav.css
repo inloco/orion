@@ -3,7 +3,7 @@
 *******************************/
 
 .orion.steps-nav {
-  @apply flex;
+  @apply flex text-gray-800;
 }
 
 /*--------------
@@ -55,5 +55,5 @@
 }
 
 .orion.steps-nav .steps-nav-step.active .steps-nav-step-name {
-  @apply font-medium;
+  @apply font-medium text-space-900;
 }

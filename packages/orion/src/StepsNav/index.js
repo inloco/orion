@@ -18,7 +18,11 @@ const StepsNav = ({ steps, currentStep, className }) => {
               <div className="steps-nav-step-index-container">
                 <div className="steps-nav-separator steps-nav-index-separator" />
                 <div className="steps-nav-step-index">
-                  {done ? <Icon name="done" /> : <div>{index + 1}</div>}
+                  {done ? (
+                    <Icon name="done" color="space-600" />
+                  ) : (
+                    <div>{index + 1}</div>
+                  )}
                 </div>
                 <div className="steps-nav-separator steps-nav-index-separator" />
               </div>
