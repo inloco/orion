@@ -13,6 +13,7 @@ const Loading = ({ className, inline, size, ...otherProps }) => {
   return (
     <div className={classes} {...otherProps}>
       <Lottie
+        isClickToPauseDisabled
         options={{
           loop: true,
           autoplay: true,
