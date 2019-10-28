@@ -16,7 +16,7 @@
 }
 
 .orion.search > .orion.input > input {
-  @apply h-full !important;
+  @apply h-full border-solid !important;
 }
 
 .orion.search .results {
