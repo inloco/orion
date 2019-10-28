@@ -6,6 +6,11 @@
   @apply h-32;
 }
 
+.orion.search > .orion.input > .loading.icon:before,
+.orion.search > .orion.input > .loading.icon:after {
+  @apply h-em w-em;
+}
+
 .orion.search > .orion.input {
   @apply h-full;
 }

@@ -4,7 +4,6 @@ export {
   Modal,
   Popup,
   Portal,
-  Search,
   Select
 } from '@inloco/semantic-ui-react'
 
@@ -30,6 +29,7 @@ export { default as NotificationCenter } from './NotificationCenter'
 export { default as Progress } from './Progress'
 export { default as RangedDatepicker } from './RangedDatepicker'
 export { default as StepsNav } from './StepsNav'
+export { default as Search } from './Search'
 export { default as Table } from './Table'
 export { default as Tooltip } from './Tooltip'
 export { default as Wizard } from './Wizard'
