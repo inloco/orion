@@ -6,12 +6,7 @@ const LOADING_ICON = {
 }
 
 const Search = ({ loading, icon, ...otherProps }) => {
-  const searchProps = {
-    icon: loading ? LOADING_ICON : icon,
-    ...otherProps
-  }
-
-  return <SemanticSearch {...searchProps} />
+  return <SemanticSearch {...otherProps} icon={loading ? LOADING_ICON : icon} />
 }
 
 Search.Category = SemanticSearch.Category
