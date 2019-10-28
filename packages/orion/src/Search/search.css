@@ -15,12 +15,16 @@
 }
 
 .orion.search .results {
-  @apply absolute hidden mt-8 shadow-200 left-0 w-full;
+  @apply absolute bg-white hidden mt-8 shadow-200 left-0 w-full;
   top: 100%;
 }
 
 .orion.search.active .results {
   @apply block rounded;
+}
+
+.orion.search.active .results > .message.empty {
+  @apply px-16 py-8;
 }
 
 .orion.search .results > .result {
