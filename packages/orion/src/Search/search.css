@@ -6,17 +6,12 @@
   @apply h-32;
 }
 
-.orion.search > .orion.input > .loading.icon:before,
-.orion.search > .orion.input > .loading.icon:after {
-  @apply h-em w-em;
-}
-
 .orion.search > .orion.input {
   @apply h-full;
 }
 
 .orion.search > .orion.input > input {
-  @apply h-full border-solid !important;
+  @apply h-full !important;
 }
 
 .orion.search .results {

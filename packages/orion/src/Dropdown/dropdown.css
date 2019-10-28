@@ -68,7 +68,7 @@
  */
 
 .orion.dropdown.search {
-  @apply inline-flex cursor-text border-solid;
+  @apply inline-flex cursor-text;
 }
 
 .orion.dropdown.search input {

@@ -6,7 +6,7 @@
 }
 
 .orion.input:not(.labeled) > input {
-  @apply bg-white border border-gray-900-24 rounded;
+  @apply bg-white border border-solid border-gray-900-24 rounded;
 }
 
 .orion.input > input:disabled {
@@ -20,6 +20,11 @@
 .orion.input > input:active,
 .orion.input > input:focus {
   @apply shadow-field-active;
+}
+
+.orion.input > .loading.icon:before,
+.orion.input > .loading.icon:after {
+  @apply h-em w-em;
 }
 
 .orion.input.small > input {
