@@ -25,7 +25,7 @@ describe('when the fields are passed as child', () => {
 
       const formField = getFormField(container)
       expect(formField).toHaveClass(floatingLabelCssClass)
-      expect(formField.classList.contains(filledCssClass)).toBeFalsy()
+      expect(formField).not.toHaveClass(filledCssClass)
     })
 
     it('should be filled if the Input has a value', () => {
@@ -42,7 +42,7 @@ describe('when the fields are passed as child', () => {
     })
   })
 
-  describe('the child is a Dropdown and the size is default', () => {
+  describe('when the child is a Dropdown and the size is default', () => {
     it('should have a floating label', () => {
       const { container } = render(
         <Form.Field>
@@ -66,7 +66,7 @@ describe('when the fields are passed as child', () => {
       )
 
       const formField = getFormField(container)
-      expect(formField.classList.contains(floatingLabelCssClass)).toBeFalsy()
+      expect(formField).not.toHaveClass(floatingLabelCssClass)
     })
   })
 
@@ -102,7 +102,7 @@ describe('when the fields are passed as control', () => {
 
       const formField = getFormField(container)
       expect(formField).toHaveClass(floatingLabelCssClass)
-      expect(formField.classList.contains(filledCssClass)).toBeFalsy()
+      expect(formField).not.toHaveClass(filledCssClass)
     })
 
     it('should be filled if the Input has a value', () => {
@@ -134,7 +134,7 @@ describe('when the fields are passed as control', () => {
       )
 
       const formField = getFormField(container)
-      expect(formField.classList.contains(floatingLabelCssClass)).toBeFalsy()
+      expect(formField).not.toHaveClass(floatingLabelCssClass)
     })
   })
 
