@@ -14,25 +14,43 @@ const SemanticFormField = Form.Field
 const shouldHaveFloatingLabel = (field, size) =>
   (field === Input || field === Dropdown) && size === Sizes.DEFAULT
 
+const isFilled = (value, children) => {
+  let filled = !_.isEmpty(value)
+
+  if (!_.isNil(children)) {
+    _.forEach(children, child => {
+      if (shouldHaveFloatingLabel(child.type, child.props.size)) {
+        filled = !_.isEmpty(child.props.value)
+      }
+    })
+  }
+
+  return filled
+}
+
 const Field = ({ className, children, message, onChange, ...otherProps }) => {
   const { size, control, value } = otherProps
+  const [controlFilled, setControlFilled] = useState(isFilled(value, children))
 
   let finalChildren = children
   let finalOnChange = onChange
   let floatingLabel = false
   let warning = otherProps.warning
-  let initialFilled = false
 
   const handleChange = (e, data) => {
     setControlFilled(!!data.value)
     if (onChange) onChange(e, data)
   }
 
+  if (shouldHaveFloatingLabel(control, size)) {
+    finalOnChange = handleChange
+    floatingLabel = true
+  }
+
   if (!_.isNil(children)) {
     finalChildren = React.Children.map(children, child => {
       if (shouldHaveFloatingLabel(child.type, child.props.size)) {
         floatingLabel = true
-        initialFilled = !_.isEmpty(child.props.value)
         warning = child.props.warning
         return React.cloneElement(child, {
           onChange: (e, data) => {
@@ -44,14 +62,6 @@ const Field = ({ className, children, message, onChange, ...otherProps }) => {
       return child
     })
   }
-
-  if (shouldHaveFloatingLabel(control, size)) {
-    finalOnChange = handleChange
-    floatingLabel = true
-    initialFilled = !_.isEmpty(value) || initialFilled
-  }
-
-  const [controlFilled, setControlFilled] = useState(initialFilled)
 
   const classes = cx(className, {
     filled: controlFilled,
