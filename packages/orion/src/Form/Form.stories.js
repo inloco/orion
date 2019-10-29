@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { boolean, object, text, withKnobs } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 
@@ -52,50 +52,35 @@ export const subcomponents = () => (
   </Form>
 )
 
-export const formShorthands = () => {
-  const [value, setValue] = useState('Developer')
-
-  return (
-    <Form>
-      <Form.Input
-        fluid={boolean('Fluid', false)}
-        id="fullname"
-        label={text('Input label', 'Full Name')}
-        message={text('Message', '')}
-        placeholder={text('Input placeholder', 'Enter your full name')}
-        size={sizeKnob()}
-        warning={boolean('Warning', false)}
-        onChange={action('onChange')}
-      />
-      <Form.Input
-        fluid={boolean('Fluid', false)}
-        id="profession"
-        label={text('Profession label', 'Profession')}
-        message={text('Message', '')}
-        placeholder={text('Profession placeholder', 'Enter your profession')}
-        size={sizeKnob()}
-        warning={boolean('Warning', false)}
-        onChange={(_, { value }) => setValue(value)}
-        value={value}
-      />
-      <Form.Dropdown
-        selection
-        fluid={boolean('Fluid', false)}
-        id="buddy"
-        label={text('Dropdown label', 'Buddy')}
-        message={text('Message', '')}
-        placeholder={text('Dropdown placeholder', 'Choose your buddy')}
-        options={object('Dropdown options', developerOptions)}
-        warning={boolean('Warning', false)}
-        size={sizeKnob()}
-      />
-      <Form.Checkbox
-        label="I agree to the Terms and Conditions"
-        message={text('Message', '')}
-      />
-      <Button type="submit" primary>
-        Submit
-      </Button>
-    </Form>
-  )
-}
+export const formShorthands = () => (
+  <Form>
+    <Form.Input
+      fluid={boolean('Fluid', false)}
+      id="fullname"
+      label={text('Input label', 'Full Name')}
+      message={text('Message', '')}
+      placeholder={text('Input placeholder', 'Enter your full name')}
+      size={sizeKnob()}
+      warning={boolean('Warning', false)}
+      onChange={action('onChange')}
+    />
+    <Form.Dropdown
+      selection
+      fluid={boolean('Fluid', false)}
+      id="buddy"
+      label={text('Dropdown label', 'Buddy')}
+      message={text('Message', '')}
+      placeholder={text('Dropdown placeholder', 'Choose your buddy')}
+      options={object('Dropdown options', developerOptions)}
+      warning={boolean('Warning', false)}
+      size={sizeKnob()}
+    />
+    <Form.Checkbox
+      label="I agree to the Terms and Conditions"
+      message={text('Message', '')}
+    />
+    <Button type="submit" primary>
+      Submit
+    </Button>
+  </Form>
+)
