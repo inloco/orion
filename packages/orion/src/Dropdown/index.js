@@ -16,9 +16,7 @@ const DROPDOWN_ICON = {
   name: 'keyboard_arrow_down'
 }
 
-const LOADING_ICON = {
-  name: 'loading'
-}
+const LOADING_ICON = 'loading'
 
 const MultipleModes = {
   FILTER_SELECTED: true,

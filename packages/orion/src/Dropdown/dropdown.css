@@ -151,7 +151,7 @@
  */
 
 .orion.dropdown.selection {
-  @apply bg-white border border-gray-900-24 px-16 rounded;
+  @apply bg-white border border-solid border-gray-900-24 px-16 rounded;
 }
 
 .orion.dropdown.selection.small {

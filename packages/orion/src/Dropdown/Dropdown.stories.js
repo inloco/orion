@@ -99,7 +99,9 @@ export const detailedItems = () => (
       placeholder="Select Developer"
       selection
       search
+      loading={boolean('Loading', false)}
       multiple="keep"
+      size={sizeKnob()}
       fluid>
       <Dropdown.Menu>
         <Dropdown.Item text="Strawberry" description="Red" value="1" />
