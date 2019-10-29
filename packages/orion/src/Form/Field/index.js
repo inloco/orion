@@ -18,7 +18,7 @@ const isFilled = (value, children) => {
   let filled = !_.isEmpty(value)
 
   if (!_.isNil(children)) {
-    _.forEach(children, child => {
+    React.Children.forEach(children, child => {
       if (shouldHaveFloatingLabel(child.type, child.props.size)) {
         filled = !_.isEmpty(child.props.value)
       }
