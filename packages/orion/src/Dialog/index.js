@@ -6,8 +6,8 @@ import cx from 'classnames'
 const Dialog = ({ className, warning, danger, ...otherProps }) => (
   <SemanticModal
     className={cx(className, 'dialog', {
-      warning: warning,
-      danger: danger
+      warning,
+      danger
     })}
     {...otherProps}
   />
