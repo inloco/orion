@@ -14,7 +14,7 @@ export const standard = () => {
       trigger={<Button>Open Dialog</Button>}
       warning={boolean('Warning', false)}
       danger={boolean('Danger', false)}>
-      <Dialog.Header className="flex flex-col">
+      <Dialog.Header>
         <Icon name="warning" className="mb-8" />
         {text('Title', 'Dialog Title')}
       </Dialog.Header>
