@@ -1,0 +1,77 @@
+/*******************************
+             Modal
+*******************************/
+
+.orion.modal.dialog {
+  @apply text-center;
+}
+
+/*******************************
+            Content
+*******************************/
+
+/*--------------
+     Header
+---------------*/
+
+.orion.modal.dialog > .header {
+  @apply font-default font-medium text-base text-wave-500;
+}
+
+/*--------------
+     Content
+---------------*/
+
+.orion.modal.dialog > .content {
+  @apply pt-8;
+}
+
+/*--------------
+     Actions
+---------------*/
+
+.orion.modal.dialog > .actions {
+  @apply justify-center text-center py-16;
+}
+
+/*******************************
+             States
+*******************************/
+
+/*--------------
+     Warning
+---------------*/
+
+.orion.modal.dialog.warning > .header {
+  @apply text-yellow-500;
+}
+
+.orion.modal.dialog.warning .actions > .button.primary {
+  @apply bg-yellow-500;
+}
+.orion.modal.dialog.warning .actions > .button.primary:hover,
+.orion.modal.dialog.warning .actions > .button.primary:focus {
+  @apply bg-yellow-600;
+}
+.orion.modal.dialog.warning .actions > .button.primary:active {
+  @apply bg-yellow-700;
+}
+
+/*--------------
+     Danger
+---------------*/
+
+.orion.modal.dialog.danger > .header {
+  @apply text-magenta-500;
+}
+
+.orion.modal.dialog.danger .actions > .button.primary {
+  @apply bg-magenta-500;
+}
+.orion.modal.dialog.danger .actions > .button.primary:hover,
+.orion.modal.dialog.danger .actions > .button.primary:focus {
+  @apply bg-magenta-600;
+}
+.orion.modal.dialog.danger .actions > .button.primary:active {
+  @apply bg-magenta-700;
+}
