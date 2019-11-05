@@ -15,7 +15,7 @@
 ---------------*/
 
 .orion.modal.dialog > .header {
-  @apply font-default font-medium text-base text-wave-500;
+  @apply flex flex-col font-default font-medium text-base text-wave-500;
 }
 
 /*--------------
