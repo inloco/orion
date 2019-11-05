@@ -2695,12 +2695,12 @@
     eslint-scope "^5.0.0"
 
 "@typescript-eslint/parser@2.x":
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-2.6.0.tgz#5106295c6a7056287b4719e24aae8d6293d5af49"
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-2.6.1.tgz#3c00116baa0d696bc334ca18ac5286b34793993c"
   dependencies:
     "@types/eslint-visitor-keys" "^1.0.0"
-    "@typescript-eslint/experimental-utils" "2.6.0"
-    "@typescript-eslint/typescript-estree" "2.6.0"
+    "@typescript-eslint/experimental-utils" "2.6.1"
+    "@typescript-eslint/typescript-estree" "2.6.1"
     eslint-visitor-keys "^1.1.0"
 
 "@typescript-eslint/typescript-estree@2.6.0":
