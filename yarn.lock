@@ -74,11 +74,11 @@
     "@babel/helper-explode-assignable-expression" "^7.1.0"
     "@babel/types" "^7.0.0"
 
-"@babel/helper-builder-react-jsx@^7.3.0":
-  version "7.3.0"
-  resolved "https://registry.yarnpkg.com/@babel/helper-builder-react-jsx/-/helper-builder-react-jsx-7.3.0.tgz#a1ac95a5d2b3e88ae5e54846bf462eeb81b318a4"
+"@babel/helper-builder-react-jsx@^7.7.0":
+  version "7.7.0"
+  resolved "https://registry.yarnpkg.com/@babel/helper-builder-react-jsx/-/helper-builder-react-jsx-7.7.0.tgz#c6b8254d305bacd62beb648e4dea7d3ed79f352d"
   dependencies:
-    "@babel/types" "^7.3.0"
+    "@babel/types" "^7.7.0"
     esutils "^2.0.0"
 
 "@babel/helper-call-delegate@^7.4.4":
@@ -608,11 +608,11 @@
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/plugin-syntax-jsx" "^7.2.0"
 
-"@babel/plugin-transform-react-jsx@^7.0.0":
-  version "7.3.0"
-  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-react-jsx/-/plugin-transform-react-jsx-7.3.0.tgz#f2cab99026631c767e2745a5368b331cfe8f5290"
+"@babel/plugin-transform-react-jsx@^7.0.0", "@babel/plugin-transform-react-jsx@^7.7.0":
+  version "7.7.0"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-react-jsx/-/plugin-transform-react-jsx-7.7.0.tgz#834b0723ba78cd4d24d7d629300c2270f516d0b7"
   dependencies:
-    "@babel/helper-builder-react-jsx" "^7.3.0"
+    "@babel/helper-builder-react-jsx" "^7.7.0"
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/plugin-syntax-jsx" "^7.2.0"
 
@@ -819,12 +819,12 @@
     "@babel/plugin-transform-react-jsx-source" "^7.0.0"
 
 "@babel/preset-react@^7.0.0":
-  version "7.6.3"
-  resolved "https://registry.yarnpkg.com/@babel/preset-react/-/preset-react-7.6.3.tgz#d5242c828322520205ae4eda5d4f4f618964e2f6"
+  version "7.7.0"
+  resolved "https://registry.yarnpkg.com/@babel/preset-react/-/preset-react-7.7.0.tgz#8ab0c4787d98cf1f5f22dabf115552bf9e4e406c"
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/plugin-transform-react-display-name" "^7.0.0"
-    "@babel/plugin-transform-react-jsx" "^7.0.0"
+    "@babel/plugin-transform-react-jsx" "^7.7.0"
     "@babel/plugin-transform-react-jsx-self" "^7.0.0"
     "@babel/plugin-transform-react-jsx-source" "^7.0.0"
 
@@ -878,6 +878,14 @@
 "@babel/types@^7.0.0", "@babel/types@^7.0.0-beta.49", "@babel/types@^7.2.0", "@babel/types@^7.3.0", "@babel/types@^7.4.0", "@babel/types@^7.4.4", "@babel/types@^7.5.5", "@babel/types@^7.6.0", "@babel/types@^7.6.3":
   version "7.6.3"
   resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.6.3.tgz#3f07d96f854f98e2fbd45c64b0cb942d11e8ba09"
+  dependencies:
+    esutils "^2.0.2"
+    lodash "^4.17.13"
+    to-fast-properties "^2.0.0"
+
+"@babel/types@^7.7.0":
+  version "7.7.1"
+  resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.7.1.tgz#8b08ea368f2baff236613512cf67109e76285827"
   dependencies:
     esutils "^2.0.2"
     lodash "^4.17.13"
@@ -2678,14 +2686,6 @@
     regexpp "^2.0.1"
     tsutils "^3.17.1"
 
-"@typescript-eslint/experimental-utils@2.6.0":
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/experimental-utils/-/experimental-utils-2.6.0.tgz#ed70bef72822bff54031ff0615fc888b9e2b6e8a"
-  dependencies:
-    "@types/json-schema" "^7.0.3"
-    "@typescript-eslint/typescript-estree" "2.6.0"
-    eslint-scope "^5.0.0"
-
 "@typescript-eslint/experimental-utils@2.6.1":
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/experimental-utils/-/experimental-utils-2.6.1.tgz#eddaca17a399ebf93a8628923233b4f93793acfd"
@@ -2702,16 +2702,6 @@
     "@typescript-eslint/experimental-utils" "2.6.1"
     "@typescript-eslint/typescript-estree" "2.6.1"
     eslint-visitor-keys "^1.1.0"
-
-"@typescript-eslint/typescript-estree@2.6.0":
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/typescript-estree/-/typescript-estree-2.6.0.tgz#d3e9d8e001492e2b9124c4d4bd4e7f03c0fd7254"
-  dependencies:
-    debug "^4.1.1"
-    glob "^7.1.4"
-    is-glob "^4.0.1"
-    lodash.unescape "4.0.1"
-    semver "^6.3.0"
 
 "@typescript-eslint/typescript-estree@2.6.1":
   version "2.6.1"
