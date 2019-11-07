@@ -32,7 +32,9 @@ const FullscreenContainer = ({
       trigger={trigger}
       open={open}
       onOpen={handleOpen}
-      onClose={handleClose}>
+      onClose={handleClose}
+      closeOnDocumentClick={false}
+      closeOnEscape={false}>
       <div className={cx('orion fullscreen-container', className)}>
         <Button subtle icon="close" onClick={handleClose} />
         {title && <div className="fullscreen-container-title">{title}</div>}
