@@ -128,7 +128,7 @@ module.exports = {
           .string()
       },
       space: _.pick(theme('colors.space'), ['100', '200', '300', '500']),
-      green: _.pick(theme('colors.green'), ['50', '500']),
+      green: _.pick(theme('colors.green'), ['50', '500', '800']),
       yellow: _.pick(theme('colors.yellow'), ['50', '500']),
       magenta: _.pick(theme('colors.magenta'), ['50', '500']),
       purple: theme('colors.purple')
