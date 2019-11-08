@@ -14,11 +14,7 @@
   @apply border-yellow-500 bg-yellow-50;
 }
 
-.orion.message > .icon:not(.close) {
-  @apply pr-4;
-}
-
-.orion.message.header > .icon {
+.orion.message > .icon {
   @apply pr-16;
 }
 
