@@ -13,7 +13,8 @@
 /** Remove button **/
 
 .label-remove {
-  @apply h-24 w-24 flex items-center justify-center mr-4 rounded cursor-pointer text-gray-700 -ml-4;
+  @apply h-24 w-24 flex items-center justify-center mr-4 rounded cursor-pointer text-gray-700;
+  margin-left: -4px;
 }
 
 .label-remove:hover {
@@ -25,5 +26,6 @@
 }
 
 .orion.label.small .label-remove {
-  @apply -ml-8 rounded-r-none;
+  @apply rounded-r-none;
+  margin-left: -8px;
 }
