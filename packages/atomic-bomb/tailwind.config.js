@@ -270,10 +270,9 @@ module.exports = {
       disc: 'disc',
       decimal: 'decimal'
     },
-    margin: (theme, { negative }) => ({
+    margin: theme => ({
       auto: 'auto',
-      ...theme('spacing'),
-      ...negative(theme('spacing'))
+      ...theme('spacing')
     }),
     maxHeight: {
       full: '100%',
