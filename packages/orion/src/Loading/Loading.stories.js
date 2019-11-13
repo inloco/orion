@@ -10,7 +10,7 @@ export default {
 }
 
 export const defaultStory = () => (
-  <div className="h-screen -m-8">
+  <div className="h-screen">
     <Loading size={sizeKnob()} inline={boolean('Inline', false)} />
   </div>
 )

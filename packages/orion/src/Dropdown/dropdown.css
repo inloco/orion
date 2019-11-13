@@ -52,7 +52,8 @@
 }
 
 .orion.dropdown > .icon {
-  @apply ml-auto -mr-8;
+  @apply ml-auto;
+  margin-right: -8px;
 }
 
 .orion.dropdown.active .dropdown-icon {
@@ -84,11 +85,12 @@
  */
 
 .orion.dropdown.multiple .orion.label {
-  @apply -ml-8 mr-16;
+  @apply mr-16;
+  margin-left: -8px;
 }
 
 .orion.dropdown.multiple .orion.label + input {
-  @apply -ml-8;
+  margin-left: -8px;
 }
 
 .orion.dropdown.multiple.small > .orion.label {

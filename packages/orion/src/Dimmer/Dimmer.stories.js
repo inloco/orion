@@ -10,7 +10,7 @@ export default {
 
 export const basic = () => {
   return (
-    <div className="h-screen -m-8 p-24">
+    <div className="h-screen p-24">
       <div>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla
         repudiandae a provident, temporibus doloremque voluptatibus, officia

@@ -1,5 +1,6 @@
 .orion.ranged-datepicker {
-  @apply -mx-24;
+  margin-left: -24px;
+  margin-right: -24px;
 }
 
 .CalendarDay__selected_span {
