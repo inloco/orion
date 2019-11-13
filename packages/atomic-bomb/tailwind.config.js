@@ -169,7 +169,8 @@ module.exports = {
       wave: _.pick(theme('colors.wave'), ['200', '500']),
       green: _.pick(theme('colors.green'), ['500']),
       yellow: _.pick(theme('colors.yellow'), ['500']),
-      magenta: _.pick(theme('colors.magenta'), ['500'])
+      magenta: _.pick(theme('colors.magenta'), ['500']),
+      white: theme('colors').white
     }),
     borderRadius: {
       none: '0',
