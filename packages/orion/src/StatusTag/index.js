@@ -13,19 +13,23 @@ export const types = {
   RUNNING: 'running'
 }
 
-const StatusTag = ({ className, type, size, children }) => {
-  const classes = cx('status-tag', className, type, size)
+const StatusTag = ({ className, type, size, filled, bordered, children }) => {
+  const classes = cx('status-tag', className, type, size, { filled, bordered })
 
   return <Label className={classes}>{children}</Label>
 }
 
 StatusTag.defaultProps = {
-  size: Sizes.DEFAULT
+  size: Sizes.DEFAULT,
+  bordered: true,
+  filled: false
 }
 
 StatusTag.propTypes = {
   size: sizePropType,
-  type: PropTypes.oneOf(Object.values(types))
+  type: PropTypes.oneOf(Object.values(types)),
+  bordered: PropTypes.bool,
+  filled: PropTypes.bool
 }
 
 export default StatusTag

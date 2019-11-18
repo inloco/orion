@@ -1,28 +1,96 @@
+/*******************************
+             StatusTag
+*******************************/
+
 .orion.status-tag {
   @apply text-sm h-24;
-  @apply border rounded-full bg-transparent;
+  @apply rounded-full bg-transparent;
 }
 
 .orion.status-tag.small {
   @apply h-16 !important;
 }
 
+.orion.status-tag.bordered {
+  @apply border;
+}
+
+/*--------------
+     Cancelled
+---------------*/
+
 .orion.status-tag.cancelled {
   @apply text-gray-700;
 }
+
+.orion.status-tag.cancelled.filled {
+  @apply bg-gray-200;
+}
+
+.orion.status-tag.cancelled.bordered {
+  @apply border-gray-700;
+}
+
+/*--------------
+     Waiting
+---------------*/
 
 .orion.status-tag.waiting {
   @apply text-space-600;
 }
 
-.orion.status-tag.pending {
-  @apply text-yellow-600 border-yellow-500;
+.orion.status-tag.waiting.filled {
+  @apply bg-space-50;
 }
+
+.orion.status-tag.waiting.bordered {
+  @apply border-space-600;
+}
+
+/*--------------
+     Pending
+---------------*/
+
+.orion.status-tag.pending {
+  @apply text-yellow-600;
+}
+
+.orion.status-tag.pending.filled {
+  @apply bg-yellow-50;
+}
+
+.orion.status-tag.pending.bordered {
+  @apply border-yellow-500;
+}
+
+/*--------------
+     Error
+---------------*/
 
 .orion.status-tag.error {
   @apply text-magenta-500;
 }
 
+.orion.status-tag.error.filled {
+  @apply bg-magenta-50;
+}
+
+.orion.status-tag.error.bordered {
+  @apply border-magenta-500;
+}
+
+/*--------------
+     Running
+---------------*/
+
 .orion.status-tag.running {
-  @apply text-green-700 border-green-500;
+  @apply text-green-700;
+}
+
+.orion.status-tag.running.filled {
+  @apply bg-green-50;
+}
+
+.orion.status-tag.running.bordered {
+  @apply border-green-500;
 }
