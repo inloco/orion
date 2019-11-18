@@ -342,9 +342,9 @@ module.exports = {
       white: theme('colors.white'),
       gray: _.pick(theme('colors.gray'), ['600', '700', '800', '900']),
       wave: _.pick(theme('colors.wave'), ['500', '600', '700', '800']),
-      green: _.pick(theme('colors.green'), ['500', '800']),
+      green: _.pick(theme('colors.green'), ['500', '700', '800']),
       magenta: _.pick(theme('colors.magenta'), ['500', '600']),
-      yellow: _.pick(theme('colors.yellow'), ['500', '700']),
+      yellow: _.pick(theme('colors.yellow'), ['500', '600', '700']),
       space: _.pick(theme('colors.space'), ['500', '600', '900']),
       purple: theme('colors.purple')
     }),

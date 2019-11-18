@@ -1,0 +1,28 @@
+.orion.status-tag {
+  @apply text-sm h-24;
+  @apply border rounded-full bg-transparent;
+}
+
+.orion.status-tag.small {
+  @apply h-16 !important;
+}
+
+.orion.status-tag.cancelled {
+  @apply text-gray-700;
+}
+
+.orion.status-tag.waiting {
+  @apply text-space-600;
+}
+
+.orion.status-tag.pending {
+  @apply text-yellow-600 border-yellow-500;
+}
+
+.orion.status-tag.error {
+  @apply text-magenta-500;
+}
+
+.orion.status-tag.running {
+  @apply text-green-700 border-green-500;
+}
