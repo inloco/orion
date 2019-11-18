@@ -131,7 +131,7 @@ module.exports = {
           .alpha(0.4)
           .string()
       },
-      space: _.pick(theme('colors.space'), ['100', '200', '300', '500']),
+      space: _.pick(theme('colors.space'), ['50', '100', '200', '300', '500']),
       green: _.pick(theme('colors.green'), ['50', '500', '600', '700', '800']),
       yellow: _.pick(theme('colors.yellow'), ['50', '500', '600', '700']),
       magenta: _.pick(theme('colors.magenta'), ['50', '500', '600', '700']),
@@ -156,6 +156,7 @@ module.exports = {
     },
     borderColor: theme => ({
       gray: {
+        '700': Color(theme('colors').gray['700']).string(),
         '900-8': Color(theme('colors').gray['900'])
           .alpha(0.08)
           .string(),
@@ -166,6 +167,7 @@ module.exports = {
           .alpha(0.24)
           .string()
       },
+      space: _.pick(theme('colors.space'), ['600']),
       wave: _.pick(theme('colors.wave'), ['200', '500']),
       green: _.pick(theme('colors.green'), ['500']),
       yellow: _.pick(theme('colors.yellow'), ['500']),
@@ -342,9 +344,9 @@ module.exports = {
       white: theme('colors.white'),
       gray: _.pick(theme('colors.gray'), ['600', '700', '800', '900']),
       wave: _.pick(theme('colors.wave'), ['500', '600', '700', '800']),
-      green: _.pick(theme('colors.green'), ['500', '800']),
+      green: _.pick(theme('colors.green'), ['500', '700', '800']),
       magenta: _.pick(theme('colors.magenta'), ['500', '600']),
-      yellow: _.pick(theme('colors.yellow'), ['500', '700']),
+      yellow: _.pick(theme('colors.yellow'), ['500', '600', '700']),
       space: _.pick(theme('colors.space'), ['500', '600', '900']),
       purple: theme('colors.purple')
     }),
