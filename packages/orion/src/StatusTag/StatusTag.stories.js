@@ -4,7 +4,6 @@ import { withKnobs, text, boolean } from '@storybook/addon-knobs'
 import { sizeKnob } from '../utils/stories'
 import { Sizes } from '../utils/sizes'
 import { StatusTag } from '..'
-import { types } from './'
 
 export default {
   title: 'StatusTag',
@@ -21,7 +20,7 @@ export const cancelled = () => {
       size={size}
       bordered={bordered}
       filled={filled}
-      type={types.CANCELLED}>
+      type={StatusTag.Types.CANCELLED}>
       {text('Label', 'Cancelled')}
     </StatusTag>
   )
@@ -37,7 +36,7 @@ export const waiting = () => {
       size={size}
       bordered={bordered}
       filled={filled}
-      type={types.WAITING}>
+      type={StatusTag.Types.WAITING}>
       {text('Label', 'Waiting')}
     </StatusTag>
   )
@@ -53,7 +52,7 @@ export const pending = () => {
       size={size}
       bordered={bordered}
       filled={filled}
-      type={types.PENDING}>
+      type={StatusTag.Types.PENDING}>
       {text('Label', 'Pending')}
     </StatusTag>
   )
@@ -69,7 +68,7 @@ export const error = () => {
       size={size}
       bordered={bordered}
       filled={filled}
-      type={types.ERROR}>
+      type={StatusTag.Types.ERROR}>
       {text('Label', 'Error')}
     </StatusTag>
   )
@@ -85,7 +84,7 @@ export const running = () => {
       size={size}
       bordered={bordered}
       filled={filled}
-      type={types.RUNNING}>
+      type={StatusTag.Types.RUNNING}>
       {text('Label', 'Running')}
     </StatusTag>
   )

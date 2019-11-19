@@ -5,7 +5,7 @@ import { Label } from '@inloco/semantic-ui-react'
 
 import { Sizes, sizePropType } from '../utils/sizes'
 
-export const types = {
+const Types = {
   CANCELLED: 'cancelled',
   WAITING: 'waiting',
   PENDING: 'pending',
@@ -19,6 +19,8 @@ const StatusTag = ({ className, type, size, filled, bordered, children }) => {
   return <Label className={classes}>{children}</Label>
 }
 
+StatusTag.Types = Types
+
 StatusTag.defaultProps = {
   size: Sizes.DEFAULT,
   bordered: true,
@@ -27,7 +29,7 @@ StatusTag.defaultProps = {
 
 StatusTag.propTypes = {
   size: sizePropType,
-  type: PropTypes.oneOf(Object.values(types)),
+  type: PropTypes.oneOf(Object.values(Types)),
   bordered: PropTypes.bool,
   filled: PropTypes.bool
 }
