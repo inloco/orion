@@ -6,11 +6,11 @@ import { Label } from '@inloco/semantic-ui-react'
 import { Sizes, sizePropType } from '../utils/sizes'
 
 const Types = {
-  CANCELLED: 'cancelled',
-  WAITING: 'waiting',
-  PENDING: 'pending',
+  INACTIVE: 'inactive',
+  NEUTRAL: 'neutral',
+  WARNING: 'warning',
   ERROR: 'error',
-  RUNNING: 'running'
+  SUCCESS: 'success'
 }
 
 const StatusTag = ({ className, type, size, filled, bordered, children }) => {

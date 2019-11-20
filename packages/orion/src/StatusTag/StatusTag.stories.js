@@ -10,7 +10,7 @@ export default {
   decorators: [withKnobs]
 }
 
-export const cancelled = () => {
+export const inactive = () => {
   const size = sizeKnob(Sizes.SMALL)
   const bordered = boolean('Bordered', true)
   const filled = boolean('Filled', false)
@@ -20,13 +20,13 @@ export const cancelled = () => {
       size={size}
       bordered={bordered}
       filled={filled}
-      type={StatusTag.Types.CANCELLED}>
+      type={StatusTag.Types.INACTIVE}>
       {text('Label', 'Cancelled')}
     </StatusTag>
   )
 }
 
-export const waiting = () => {
+export const neutral = () => {
   const size = sizeKnob(Sizes.SMALL)
   const bordered = boolean('Bordered', true)
   const filled = boolean('Filled', false)
@@ -36,13 +36,13 @@ export const waiting = () => {
       size={size}
       bordered={bordered}
       filled={filled}
-      type={StatusTag.Types.WAITING}>
+      type={StatusTag.Types.NEUTRAL}>
       {text('Label', 'Waiting')}
     </StatusTag>
   )
 }
 
-export const pending = () => {
+export const warning = () => {
   const size = sizeKnob(Sizes.SMALL)
   const bordered = boolean('Bordered', true)
   const filled = boolean('Filled', false)
@@ -52,7 +52,7 @@ export const pending = () => {
       size={size}
       bordered={bordered}
       filled={filled}
-      type={StatusTag.Types.PENDING}>
+      type={StatusTag.Types.WARNING}>
       {text('Label', 'Pending')}
     </StatusTag>
   )
@@ -74,7 +74,7 @@ export const error = () => {
   )
 }
 
-export const running = () => {
+export const success = () => {
   const size = sizeKnob(Sizes.SMALL)
   const bordered = boolean('Bordered', true)
   const filled = boolean('Filled', false)
@@ -84,7 +84,7 @@ export const running = () => {
       size={size}
       bordered={bordered}
       filled={filled}
-      type={StatusTag.Types.RUNNING}>
+      type={StatusTag.Types.SUCCESS}>
       {text('Label', 'Running')}
     </StatusTag>
   )
