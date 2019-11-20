@@ -19,15 +19,15 @@
      Cancelled
 ---------------*/
 
-.orion.status-tag.cancelled {
+.orion.status-tag.inactive {
   @apply text-gray-700;
 }
 
-.orion.status-tag.cancelled.filled {
+.orion.status-tag.inactive.filled {
   @apply bg-gray-200;
 }
 
-.orion.status-tag.cancelled.bordered {
+.orion.status-tag.inactive.bordered {
   @apply border-gray-700;
 }
 
@@ -35,15 +35,15 @@
      Waiting
 ---------------*/
 
-.orion.status-tag.waiting {
+.orion.status-tag.neutral {
   @apply text-space-600;
 }
 
-.orion.status-tag.waiting.filled {
+.orion.status-tag.neutral.filled {
   @apply bg-space-50;
 }
 
-.orion.status-tag.waiting.bordered {
+.orion.status-tag.neutral.bordered {
   @apply border-space-600;
 }
 
@@ -51,15 +51,15 @@
      Pending
 ---------------*/
 
-.orion.status-tag.pending {
+.orion.status-tag.warning {
   @apply text-yellow-600;
 }
 
-.orion.status-tag.pending.filled {
+.orion.status-tag.warning.filled {
   @apply bg-yellow-50;
 }
 
-.orion.status-tag.pending.bordered {
+.orion.status-tag.warning.bordered {
   @apply border-yellow-500;
 }
 
@@ -83,14 +83,14 @@
      Running
 ---------------*/
 
-.orion.status-tag.running {
+.orion.status-tag.success {
   @apply text-green-700;
 }
 
-.orion.status-tag.running.filled {
+.orion.status-tag.success.filled {
   @apply bg-green-50;
 }
 
-.orion.status-tag.running.bordered {
+.orion.status-tag.success.bordered {
   @apply border-green-500;
 }
