@@ -1,3 +1,5 @@
+export { default as Colors } from '@inloco/atomic-bomb'
+
 export {
   Checkbox,
   Dimmer,

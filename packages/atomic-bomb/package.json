@@ -6,7 +6,7 @@
     "css",
     "tailwind.config.js"
   ],
-  "main": "./dist/atomic-bomb.js",
+  "main": "./index.js",
   "description": "In Loco Atomic CSS",
   "author": "In Loco Team",
   "license": "MIT",

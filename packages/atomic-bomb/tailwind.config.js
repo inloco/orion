@@ -1,6 +1,8 @@
 const _ = require('lodash')
 const Color = require('color')
 
+const Colors = require('./')
+
 module.exports = {
   prefix: '',
   important: true,
@@ -14,66 +16,66 @@ module.exports = {
       transparent: 'transparent',
       white: '#fff',
       gray: {
-        50: '#FAFBFC',
-        100: '#F5F6F7',
-        200: '#EEEFF0',
-        300: '#E3E4E5',
-        400: '#D7D8D9',
-        500: '#BDBEBF',
-        600: '#9E9FA0',
-        700: '#757677',
-        800: '#616263',
-        900: '#3D3E3F'
+        50: Colors.GRAY_50,
+        100: Colors.GRAY_100,
+        200: Colors.GRAY_200,
+        300: Colors.GRAY_300,
+        400: Colors.GRAY_400,
+        500: Colors.GRAY_500,
+        600: Colors.GRAY_600,
+        700: Colors.GRAY_700,
+        800: Colors.GRAY_800,
+        900: Colors.GRAY_900
       },
       green: {
-        50: '#F5FAF1',
-        500: '#7DBB4E',
-        600: '#68A838',
-        700: '#528F24',
-        800: '#448017'
+        50: Colors.GREEN_50,
+        500: Colors.GREEN_500,
+        600: Colors.GREEN_600,
+        700: Colors.GREEN_700,
+        800: Colors.GREEN_800
       },
       magenta: {
-        50: '#FDF0F2',
-        500: '#DE425B',
-        600: '#C92C46',
-        700: '#B81B35'
+        50: Colors.MAGENTA_50,
+        500: Colors.MAGENTA_500,
+        600: Colors.MAGENTA_600,
+        700: Colors.MAGENTA_700
       },
       space: {
-        50: '#F0F4F7',
-        100: '#DDE5ED',
-        200: '#C3CFE0',
-        300: '#A8BACE',
-        400: '#8F9BA3',
-        500: '#748AA2',
-        600: '#5F768D',
-        700: '#486076',
-        800: '#31495E',
-        900: '#031D30'
+        50: Colors.SPACE_50,
+        100: Colors.SPACE_100,
+        200: Colors.SPACE_200,
+        300: Colors.SPACE_300,
+        400: Colors.SPACE_400,
+        500: Colors.SPACE_500,
+        600: Colors.SPACE_600,
+        700: Colors.SPACE_700,
+        800: Colors.SPACE_800,
+        900: Colors.SPACE_900
       },
       wave: {
-        50: '#EBF7F9',
-        100: '#C4E9F5',
-        200: '#A4DAEB',
-        300: '#79C7DC',
-        400: '#5AB5CC',
-        500: '#0096B4',
-        600: '#027996',
-        700: '#01667D',
-        800: '#004F61',
-        900: '#003C4A'
+        50: Colors.WAVE_50,
+        100: Colors.WAVE_100,
+        200: Colors.WAVE_200,
+        300: Colors.WAVE_300,
+        400: Colors.WAVE_400,
+        500: Colors.WAVE_500,
+        600: Colors.WAVE_600,
+        700: Colors.WAVE_700,
+        800: Colors.WAVE_800,
+        900: Colors.WAVE_900
       },
       yellow: {
-        50: '#FDF6EB',
-        500: '#E68600',
-        600: '#CF6E00',
-        700: '#B05800'
+        50: Colors.YELLOW_50,
+        500: Colors.YELLOW_500,
+        600: Colors.YELLOW_600,
+        700: Colors.YELLOW_700
       },
       chart: {
-        purple: '#D18ECF',
-        magenta: '#F296A6',
-        orange: '#ECAE8F',
-        yellow: '#D5C798',
-        green: '#C0DBBA'
+        purple: Colors.CHART_PURPLE,
+        magenta: Colors.CHART_MAGENTA,
+        orange: Colors.CHART_ORANGE,
+        yellow: Colors.CHART_YELLOW,
+        green: Colors.CHART_GREEN
       }
     },
     spacing: {
