@@ -2,6 +2,7 @@
   "name": "@inloco/atomic-bomb",
   "version": "1.0.25",
   "files": [
+    "index.js",
     "dist",
     "css",
     "tailwind.config.js"
