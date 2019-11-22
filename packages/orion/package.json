@@ -29,6 +29,7 @@
   "license": "ISC",
   "homepage": "https://inloco.github.io/orion",
   "dependencies": {
+    "@inloco/atomic-bomb": "^1.0.26",
     "@inloco/semantic-ui-react": "^0.88.1",
     "classnames": "^2.2.6",
     "keyboard-key": "^1.0.4",
@@ -45,7 +46,6 @@
     "@babel/plugin-transform-runtime": "^7.4.4",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
-    "@inloco/atomic-bomb": "^1.0.26",
     "@storybook/addon-actions": "^5.2.1",
     "@storybook/addon-knobs": "^5.2.1",
     "@storybook/addons": "^5.2.1",
