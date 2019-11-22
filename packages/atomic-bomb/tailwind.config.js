@@ -68,7 +68,13 @@ module.exports = {
         600: '#CF6E00',
         700: '#B05800'
       },
-      purple: '#D18ECF'
+      chart: {
+        purple: '#D18ECF',
+        magenta: '#F296A6',
+        orange: '#ECAE8F',
+        yellow: '#D5C798',
+        green: '#C0DBBA'
+      }
     },
     spacing: {
       '0': '0',
@@ -131,11 +137,18 @@ module.exports = {
           .alpha(0.4)
           .string()
       },
-      space: _.pick(theme('colors.space'), ['50', '100', '200', '300', '500']),
+      space: _.pick(theme('colors.space'), [
+        '50',
+        '100',
+        '200',
+        '300',
+        '500',
+        '800'
+      ]),
       green: _.pick(theme('colors.green'), ['50', '500', '600', '700', '800']),
       yellow: _.pick(theme('colors.yellow'), ['50', '500', '600', '700']),
       magenta: _.pick(theme('colors.magenta'), ['50', '500', '600', '700']),
-      purple: theme('colors.purple')
+      chart: theme('colors.chart')
     }),
 
     backgroundPosition: {
