@@ -5,7 +5,9 @@ import { action } from '@storybook/addon-actions'
 import Pagination from './'
 
 const actions = {
-  onPageChange: action('onPageChange')
+  onPageChange: action('onPageChange'),
+  onPrevPage: action('onPrevPage'),
+  onNextPage: action('onNextPage')
 }
 
 export default {

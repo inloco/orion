@@ -12,6 +12,8 @@ const Pagination = ({
   disabled,
   i18n,
   onPageChange,
+  onPrevPage,
+  onNextPage,
   pageSize,
   alignButtonsLeft,
   totalItems,
@@ -49,13 +51,23 @@ const Pagination = ({
           disabled={disabled || possibleActivePage === ACTIVE_PAGE_MIN}
           icon="keyboard_arrow_left"
           data-testid="previous"
-          onClick={e => onPageChange(e, { activePage: possibleActivePage - 1 })}
+          onClick={e => {
+            if (onPageChange) {
+              onPageChange(e, { activePage: possibleActivePage - 1 })
+            }
+            if (onPrevPage) onPrevPage(e)
+          }}
         />
         <Button
           disabled={disabled || possibleActivePage === activePageMax}
           icon="keyboard_arrow_right"
           data-testid="next"
-          onClick={e => onPageChange(e, { activePage: possibleActivePage + 1 })}
+          onClick={e => {
+            if (onPageChange) {
+              onPageChange(e, { activePage: possibleActivePage + 1 })
+            }
+            if (onNextPage) onNextPage(e)
+          }}
         />
       </div>
     </div>
@@ -65,6 +77,8 @@ const Pagination = ({
 Pagination.propTypes = {
   activePage: PropTypes.number,
   onPageChange: PropTypes.func,
+  onPrevPage: PropTypes.func,
+  onNextPage: PropTypes.func,
   pageSize: PropTypes.number,
   alignButtonsLeft: PropTypes.bool,
   totalItems: PropTypes.number.isRequired,
