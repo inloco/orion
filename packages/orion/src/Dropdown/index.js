@@ -23,48 +23,49 @@ const MultipleModes = {
   KEEP_SELECTED: 'keep'
 }
 
-const Dropdown = ({
-  className,
-  icon,
-  inlineMenu,
-  multiple,
-  size,
-  warning,
-  ...otherProps
-}) => {
-  const { loading, options } = otherProps
-  const shouldKeepSelected = options && multiple === MultipleModes.KEEP_SELECTED
-  const classes = cx(className, size, {
-    'inline-menu': inlineMenu,
-    'keep-selected': shouldKeepSelected,
-    warning
-  })
+const Dropdown = React.forwardRef(
+  (
+    { className, icon, inlineMenu, multiple, size, warning, ...otherProps },
+    ref
+  ) => {
+    const { loading, options } = otherProps
+    const shouldKeepSelected =
+      options && multiple === MultipleModes.KEEP_SELECTED
+    const classes = cx(className, size, {
+      'inline-menu': inlineMenu,
+      'keep-selected': shouldKeepSelected,
+      warning
+    })
 
-  const dropdownProps = {
-    className: classes,
-    icon: loading ? LOADING_ICON : icon,
-    multiple: !!multiple,
-    ...otherProps
+    const dropdownProps = {
+      className: classes,
+      icon: loading ? LOADING_ICON : icon,
+      multiple: !!multiple,
+      ref,
+      ...otherProps
+    }
+
+    const ElementType = shouldKeepSelected
+      ? DropdownKeepSelected
+      : SemanticDropdown
+    const element = <ElementType {...dropdownProps} />
+
+    const [wrapperRef, wrapperMargin] = useInlineMenuWrapper(options)
+    if (inlineMenu) {
+      return (
+        <div ref={wrapperRef} style={{ marginBottom: `${wrapperMargin}px` }}>
+          {element}
+        </div>
+      )
+    }
+
+    return element
   }
-
-  const ElementType = shouldKeepSelected
-    ? DropdownKeepSelected
-    : SemanticDropdown
-  const element = <ElementType {...dropdownProps} />
-
-  const [wrapperRef, wrapperMargin] = useInlineMenuWrapper(options)
-  if (inlineMenu) {
-    return (
-      <div ref={wrapperRef} style={{ marginBottom: `${wrapperMargin}px` }}>
-        {element}
-      </div>
-    )
-  }
-
-  return element
-}
+)
 
 Dropdown.propTypes = {
+  className: PropTypes.string,
+  icon: PropTypes.any,
   inlineMenu: PropTypes.bool,
   multiple: PropTypes.oneOfType([
     PropTypes.bool,
