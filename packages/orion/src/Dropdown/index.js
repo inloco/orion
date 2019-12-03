@@ -25,7 +25,17 @@ const MultipleModes = {
 
 const Dropdown = React.forwardRef(
   (
-    { className, icon, inlineMenu, multiple, size, warning, ...otherProps },
+    {
+      className,
+      icon,
+      inlineMenu,
+      multiple,
+      noSelectedLabels,
+      placeholder,
+      size,
+      warning,
+      ...otherProps
+    },
     ref
   ) => {
     const { loading, options } = otherProps
@@ -34,6 +44,7 @@ const Dropdown = React.forwardRef(
     const classes = cx(className, size, {
       'inline-menu': inlineMenu,
       'keep-selected': shouldKeepSelected,
+      'no-selected-labels': noSelectedLabels,
       warning
     })
 
@@ -42,6 +53,8 @@ const Dropdown = React.forwardRef(
       icon: loading ? LOADING_ICON : icon,
       multiple: !!multiple,
       ref,
+      searchInput: noSelectedLabels ? { placeholder } : 'text',
+      placeholder: noSelectedLabels ? null : placeholder,
       ...otherProps
     }
 
@@ -71,6 +84,8 @@ Dropdown.propTypes = {
     PropTypes.bool,
     PropTypes.oneOf(_.values(MultipleModes))
   ]),
+  noSelectedLabels: PropTypes.bool,
+  placeholder: PropTypes.string,
   size: sizePropType,
   direction: directionPropType,
   warning: PropTypes.bool

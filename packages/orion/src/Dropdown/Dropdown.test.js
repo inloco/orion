@@ -73,3 +73,33 @@ describe('when an option is selected', () => {
     })
   })
 })
+
+describe('when using a multiple dropdown without selected labels ', () => {
+  it('should render a special element with the given placeholder instead of a real placeholder', () => {
+    const placeholder = 'Select Color'
+    const { queryByText, queryByPlaceholderText } = render(
+      <Dropdown placeholder={placeholder} search selection options={options} />
+    )
+
+    expect(queryByText(placeholder)).toBeTruthy()
+    expect(queryByPlaceholderText(placeholder)).toBeNull()
+  })
+
+  describe('when dropdown shows no selected labels', () => {
+    it('should render the given placeholder as a real placeholder', () => {
+      const placeholder = 'Select Color'
+      const { queryByText, queryByPlaceholderText } = render(
+        <Dropdown
+          noSelectedLabels
+          placeholder={placeholder}
+          search
+          selection
+          options={options}
+        />
+      )
+
+      expect(queryByPlaceholderText(placeholder)).toBeTruthy()
+      expect(queryByText(placeholder)).toBeNull()
+    })
+  })
+})
