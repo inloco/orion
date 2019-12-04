@@ -98,6 +98,25 @@
 }
 
 /**
+ * Multiple + No Selected Labels
+ */
+.orion.dropdown.multiple.no-selected-labels .orion.label {
+  @apply hidden;
+}
+
+.orion.dropdown.multiple.no-selected-labels .orion.label + input {
+  @apply ml-0;
+}
+
+.orion.dropdown.multiple.no-selected-labels input {
+  @apply flex-grow;
+}
+
+.orion.dropdown.multiple.no-selected-labels input::placeholder {
+  @apply text-gray-800;
+}
+
+/**
  * Multiple + Keep selected
  */
 

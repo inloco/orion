@@ -1,10 +1,15 @@
 import React from 'react'
+import { action } from '@storybook/addon-actions'
 import { boolean, object, text, withKnobs } from '@storybook/addon-knobs'
 
 import Dropdown from './'
 import { Sizes } from '../utils/sizes'
 import { Directions } from '../utils/directions'
 import { sizeKnob } from '../utils/stories'
+
+const actions = {
+  onChange: action('onChange')
+}
 
 const developerOptions = [
   { text: 'Francisco Gileno', value: 1 },
@@ -25,6 +30,7 @@ export const basic = () => {
       options={object('Menu options', menuOptions)}
       compact={boolean('Compact', true)}
       size={sizeKnob('small')}
+      {...actions}
     />
   )
 }
@@ -38,6 +44,7 @@ export const direction = () => {
         compact={boolean('Compact', true)}
         size={sizeKnob('small')}
         direction={Directions.LEFT}
+        {...actions}
       />
       <Dropdown
         text={text('Right Label', 'Right menu')}
@@ -45,6 +52,7 @@ export const direction = () => {
         compact={boolean('Compact', true)}
         size={sizeKnob('small')}
         direction={Directions.RIGHT}
+        {...actions}
       />
     </div>
   )
@@ -62,12 +70,14 @@ export const selection = () => {
       compact={boolean('Compact', false, 'Size')}
       search={boolean('Search', false, 'Type')}
       multiple={boolean('Multiple', false, 'Type')}
+      noSelectedLabels={boolean('No Selected Labels', false, 'Type')}
       inlineMenu={boolean('Inline Menu', false, 'Type')}
       size={sizeKnob(Sizes.DEFAULT, 'Size')}
       disabled={boolean('Disabled', false, 'State')}
       loading={boolean('Loading', false, 'State')}
       error={boolean('Error', false, 'State')}
       warning={boolean('Warning', false, 'State')}
+      {...actions}
     />
   )
 }
@@ -81,9 +91,11 @@ export const multipleSelectionKeepingSelected = () => {
         icon="search"
         search
         multiple="keep"
+        noSelectedLabels={boolean('No Selected Labels', false)}
         inlineMenu
         fluid
         options={object('Options', developerOptions)}
+        {...actions}
       />
     </div>
   )
@@ -102,7 +114,8 @@ export const detailedItems = () => (
       loading={boolean('Loading', false)}
       multiple="keep"
       size={sizeKnob()}
-      fluid>
+      fluid
+      {...actions}>
       <Dropdown.Menu>
         <Dropdown.Item text="Strawberry" description="Red" value="1" />
         <Dropdown.Divider />
