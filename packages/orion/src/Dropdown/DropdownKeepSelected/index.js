@@ -32,49 +32,49 @@ const getOriginalValue = doubleValue => doubleValue.split(DOUBLE_PREFIX)[1]
  *
  * Crazy shit, huh?
  */
-const DropdownKeepSelected = ({
-  defaultValue,
-  options,
-  onChange,
-  value: propValue,
-  ...otherProps
-}) => {
-  const [stateValue, setValue] = useState(defaultValue)
-  const value = propValue || stateValue
+const DropdownKeepSelected = React.forwardRef(
+  (
+    { defaultValue, options, onChange, value: propValue, ...otherProps },
+    ref
+  ) => {
+    const [stateValue, setValue] = useState(defaultValue)
+    const value = propValue || stateValue
 
-  const addDoubleIfOptionIsSelected = option => {
-    return _.includes(value, option.value)
-      ? [option, buildDoubleOption(option)]
-      : option
-  }
-  options = _.flatten(options.map(addDoubleIfOptionIsSelected))
+    const addDoubleIfOptionIsSelected = option => {
+      return _.includes(value, option.value)
+        ? [option, buildDoubleOption(option)]
+        : option
+    }
+    options = _.flatten(options.map(addDoubleIfOptionIsSelected))
 
-  const handleChange = (event, data) => {
-    let { value: valueArray } = data
-    const double = _.find(valueArray, isDoubleValue)
+    const handleChange = (event, data) => {
+      let { value: valueArray } = data
+      const double = _.find(valueArray, isDoubleValue)
 
-    if (double) {
-      // A "double" has been selected by the user, meaning that he wishes to
-      // unselect the original option. We'll remove both here to achive it.
-      const original = getOriginalValue(double)
-      valueArray = _.filter(
-        valueArray,
-        value => value !== double && _.toString(value) !== original
-      )
+      if (double) {
+        // A "double" has been selected by the user, meaning that he wishes to
+        // unselect the original option. We'll remove both here to achive it.
+        const original = getOriginalValue(double)
+        valueArray = _.filter(
+          valueArray,
+          value => value !== double && _.toString(value) !== original
+        )
+      }
+
+      onChange && onChange(event, { ...data, value: valueArray })
+      setValue(valueArray)
     }
 
-    onChange && onChange(event, { ...data, value: valueArray })
-    setValue(valueArray)
+    return (
+      <SemanticDropdown
+        ref={ref}
+        options={options}
+        onChange={handleChange}
+        value={value || []}
+        {...otherProps}
+      />
+    )
   }
-
-  return (
-    <SemanticDropdown
-      options={options}
-      onChange={handleChange}
-      value={value || []}
-      {...otherProps}
-    />
-  )
-}
+)
 
 export default DropdownKeepSelected
