@@ -69,6 +69,6 @@
 }
 
 .orion.loading-bar .loading-bar-content {
-  @apply w-1/2 h-4 rounded bg-wave-500;
+  @apply w-1/2 h-4 rounded;
   animation: loader 1.5s ease infinite;
 }
