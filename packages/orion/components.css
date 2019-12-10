@@ -14,6 +14,7 @@
 @import './src/Input/input.css';
 @import './src/Label/label.css';
 @import './src/Loading/loading.css';
+@import './src/LoadingBar/loadingBar.css';
 @import './src/Layout/layout.css';
 @import './src/Menu/menu.css';
 @import './src/Message/message.css';
