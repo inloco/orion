@@ -1,0 +1,16 @@
+.orion.filter-bar .filter-bar-filter {
+  @apply inline-block;
+}
+
+.orion.filter-bar .filter-bar-filter + .filter-bar-filter,
+.orion.filter-bar .filter-bar-filter + .orion.button {
+  @apply ml-16;
+}
+
+.orion.filter-bar .filter-bar-filter.pending .filter-trigger {
+  @apply bg-gray-100 border-dashed border-gray-900-16 text-gray-800;
+}
+
+.filter-bar-filter-popup.orion.popup.filter .filter-buttons {
+  @apply hidden;
+}
