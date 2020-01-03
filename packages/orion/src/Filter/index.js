@@ -2,9 +2,10 @@ import cx from 'classnames'
 import keyboardKey from 'keyboard-key'
 import _ from 'lodash'
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { Button, ClickOutside, Popup } from '../'
+import FilterClearIcon from './FilterClearIcon'
 
 const Filter = ({
   applyButton,
@@ -31,6 +32,10 @@ const Filter = ({
   const [localValue, setLocalValue] = useState(value)
 
   const isSelected = !_.isEmpty(value)
+
+  useEffect(() => {
+    setLocalValue(value)
+  }, [value])
 
   const handleApply = event => {
     setValue(localValue)
@@ -64,10 +69,14 @@ const Filter = ({
     if (open) {
       onClose && onClose()
     } else {
-      setLocalValue(value)
       onOpen && onOpen()
     }
     setOpen(!open)
+  }
+
+  const handleClearIconClick = () => {
+    setValue(null)
+    onApply && onApply(null)
   }
 
   const triggerClasses = cx('filter-trigger', {
@@ -77,6 +86,7 @@ const Filter = ({
   const trigger = (
     <Button className={triggerClasses} onClick={handleTriggerClick}>
       {isSelected ? selectedText(value) : text}
+      {isSelected && <FilterClearIcon onClick={handleClearIconClick} />}
     </Button>
   )
 
