@@ -2,11 +2,12 @@ import cx from 'classnames'
 import keyboardKey from 'keyboard-key'
 import _ from 'lodash'
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { Button, ClickOutside, Popup } from '../'
 
 const Filter = ({
+  allowApply,
   applyButton,
   clearButton,
   children,
@@ -32,12 +33,27 @@ const Filter = ({
 
   const isSelected = !_.isEmpty(value)
 
-  const handleApply = event => {
-    setValue(localValue)
-    onApply && onApply(localValue)
+  useEffect(() => {
+    setLocalValue(value)
+  }, [value])
 
+  const closePopup = () => {
     setOpen(false)
     onClose && onClose()
+  }
+
+  const openPopup = () => {
+    setOpen(true)
+    onOpen && onOpen()
+  }
+
+  const handleApply = event => {
+    if (allowApply) {
+      setValue(localValue)
+      onApply && onApply(localValue)
+    }
+
+    closePopup()
 
     // Prevent form submission.
     event.preventDefault()
@@ -62,12 +78,10 @@ const Filter = ({
 
   const handleTriggerClick = () => {
     if (open) {
-      onClose && onClose()
+      closePopup()
     } else {
-      setLocalValue(value)
-      onOpen && onOpen()
+      openPopup()
     }
-    setOpen(!open)
   }
 
   const triggerClasses = cx('filter-trigger', {
@@ -95,37 +109,42 @@ const Filter = ({
         <div className="filter-content">
           {children({ onChange: handleChange, value: localValue })}
         </div>
-        <div className="filter-buttons">
-          <div className={cx({ invisible: _.isEmpty(localValue) })}>
-            {Button.create(clearButton, {
-              autoGenerateKey: false,
-              defaultProps: {
-                subtle: true,
-                type: 'button',
-                onClick: handleClear
-              }
-            })}
+        {allowApply && (
+          <div className="filter-buttons">
+            <div className={cx({ invisible: _.isEmpty(localValue) })}>
+              {Button.create(clearButton, {
+                autoGenerateKey: false,
+                defaultProps: {
+                  subtle: true,
+                  type: 'button',
+                  onClick: handleClear
+                }
+              })}
+            </div>
+            <div className="flex items-baseline">
+              {extraFooterContent && (
+                <div className="filter-footer-content">
+                  {extraFooterContent}
+                </div>
+              )}
+              {Button.create(applyButton, {
+                autoGenerateKey: false,
+                defaultProps: {
+                  primary: true,
+                  subtle: true,
+                  type: 'submit'
+                }
+              })}
+            </div>
           </div>
-          <div className="flex items-baseline">
-            {extraFooterContent && (
-              <div className="filter-footer-content">{extraFooterContent}</div>
-            )}
-            {Button.create(applyButton, {
-              autoGenerateKey: false,
-              defaultProps: {
-                primary: true,
-                subtle: true,
-                type: 'submit'
-              }
-            })}
-          </div>
-        </div>
+        )}
       </ClickOutside>
     </Popup>
   )
 }
 
 Filter.propTypes = {
+  allowApply: PropTypes.bool,
   applyButton: PropTypes.oneOfType([PropTypes.node, PropTypes.object]),
   clearButton: PropTypes.oneOfType([PropTypes.node, PropTypes.object]),
   children: PropTypes.func.isRequired,
@@ -143,6 +162,7 @@ Filter.propTypes = {
 }
 
 Filter.defaultProps = {
+  allowApply: true,
   applyButton: 'Apply',
   clearButton: 'Clear',
   selectedText: value => value

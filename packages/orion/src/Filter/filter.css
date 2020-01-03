@@ -31,11 +31,11 @@
 }
 
 .orion.popup.filter .filter-content {
-  @apply p-8 pb-24;
+  @apply p-8;
 }
 
 .orion.popup.filter .filter-buttons {
-  @apply flex justify-between;
+  @apply flex justify-between pt-16;
 }
 
 .orion.popup.filter .filter-footer-content {

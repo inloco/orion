@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { object, text, withKnobs } from '@storybook/addon-knobs'
+import { object, text, withKnobs, boolean } from '@storybook/addon-knobs'
 import PropTypes from 'prop-types'
 import _ from 'lodash'
 
@@ -22,6 +22,7 @@ export default {
 export const withInput = () => (
   <Filter
     text={text('Label', 'Open')}
+    allowApply={boolean('Allow Apply', true)}
     extraFooterContent={text('Extra footer content', '')}
     {...actions}>
     {filterProps => (

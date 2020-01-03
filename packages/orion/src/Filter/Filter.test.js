@@ -191,6 +191,22 @@ describe("when the filter's value changes", () => {
     })
   })
 
+  describe('when an element outside the filter is clicked', () => {
+    beforeEach(() => {
+      const { container } = renderResult
+      fireEvent.mouseUp(container.parentElement)
+    })
+
+    it('should render the selected value in the trigger', () => {
+      const { queryByText } = renderResult
+      expect(queryByText(newValue)).toBeTruthy()
+    })
+
+    it('should call "onApply" with the new value', () => {
+      expect(onApply).toHaveBeenCalledWith(newValue)
+    })
+  })
+
   describe('when the "ESC" key is pressed', () => {
     beforeEach(() => {
       const { getByPlaceholderText } = renderResult
@@ -218,8 +234,66 @@ describe("when the filter's value changes", () => {
       expect(onClear).toHaveBeenCalled()
     })
 
-    it('should call "onChange" with the "null"', () => {
+    it('should call "onChange" with "null"', () => {
       expect(onChange).toHaveBeenCalledWith(null)
+    })
+  })
+
+  describe('when applying is not allowed', () => {
+    beforeEach(() => {
+      const { rerender } = renderResult
+      rerender(
+        <Filter
+          allowApply={false}
+          text="Open"
+          onChange={onChange}
+          onClose={onClose}
+          onApply={onApply}
+          onClear={onClear}>
+          {childFn}
+        </Filter>
+      )
+    })
+
+    it('should not render the "apply" button', () => {
+      const { queryByText } = renderResult
+      expect(queryByText('Apply')).toBeNull()
+    })
+
+    it('should not render the "clear" button', () => {
+      const { queryByText } = renderResult
+      expect(queryByText('Clear')).toBeNull()
+    })
+
+    describe('when an element outside the filter is clicked', () => {
+      beforeEach(() => {
+        const { container } = renderResult
+        fireEvent.mouseUp(container.parentElement)
+      })
+
+      it('should not call "onApply" with the new value', () => {
+        expect(onApply).not.toHaveBeenCalled()
+      })
+
+      it('should call "onClose"', () => {
+        expect(onClose).toHaveBeenCalled()
+      })
+    })
+
+    describe('when the "ESC" key is pressed', () => {
+      beforeEach(() => {
+        const { getByPlaceholderText } = renderResult
+        const input = getByPlaceholderText('Input')
+        fireEvent.keyDown(input, { key: 'Escape', code: keyboardKey.Escape })
+      })
+
+      it('should not call "onApply" with the new value', () => {
+        expect(onApply).not.toHaveBeenCalled()
+      })
+
+      it('should call "onClose"', () => {
+        expect(onClose).toHaveBeenCalled()
+      })
     })
   })
 })
