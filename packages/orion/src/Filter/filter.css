@@ -1,17 +1,22 @@
 .orion.button.filter-trigger {
-  @apply bg-white border border-gray-900-24 cursor-pointer font-normal rounded transition-default;
-  @apply inline-flex h-32 items-center text-gray-800;
+  @apply bg-white border border-gray-900-24 cursor-pointer font-normal transition-default;
+  @apply inline-flex h-32 items-center min-w-0 text-gray-800;
   @apply outline-none;
   @apply px-16 !important;
+  border-radius: 16px;
   transition-property: background-color, color;
 }
 
+.orion.button.filter-trigger.active,
 .orion.button.filter-trigger:hover,
 .orion.button.filter-trigger:focus {
   @apply bg-gray-900-8;
 }
 
-.orion.button.filter-trigger.active,
+.orion.button.filter-trigger.active:hover {
+  @apply bg-gray-900-16;
+}
+
 .orion.button.filter-trigger.selected {
   @apply bg-space-100 border-none text-space-900;
 
@@ -24,7 +29,6 @@
   padding-right: 17px !important;
 }
 
-.orion.button.filter-trigger.active:hover,
 .orion.button.filter-trigger.selected:hover,
 .orion.button.filter-trigger.selected:focus {
   @apply bg-space-200;

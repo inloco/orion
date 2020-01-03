@@ -1,5 +1,7 @@
 .orion.button {
   @apply h-40 rounded-full text-base font-default font-medium outline-none inline-flex items-center transition-default;
+  @apply px-24 justify-center;
+  min-width: 96px;
   transition-property: background-color, opacity;
 }
 
@@ -17,15 +19,10 @@
   vertical-align: sub;
 }
 
-.orion.button:not(.icon):not(.subtle) {
-  @apply px-24 justify-center;
-  min-width: 96px;
-}
-
 /* Icon only */
 
 .orion.button.icon {
-  @apply justify-center p-0 w-40;
+  @apply justify-center min-w-0 p-0 w-40;
 }
 
 .orion.button.icon:hover,
@@ -80,7 +77,7 @@
 /* Subtle */
 
 .orion.button.subtle {
-  @apply bg-transparent;
+  @apply bg-transparent min-w-0 p-0;
 }
 
 /* Subtle Primary */
