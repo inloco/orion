@@ -5,7 +5,6 @@
   @apply inline-flex h-32 items-center min-w-0 text-gray-800;
   @apply outline-none;
   @apply px-16;
-  border-radius: 16px;
   transition-property: background-color, color;
 }
 
