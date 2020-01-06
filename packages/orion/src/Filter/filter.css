@@ -2,9 +2,8 @@
 
 .orion.button.filter-trigger {
   @apply bg-white border border-gray-900-24 cursor-pointer font-normal transition-default;
-  @apply inline-flex h-32 items-center min-w-0 text-gray-800;
+  @apply inline-flex items-center text-gray-800;
   @apply outline-none;
-  @apply px-16;
   transition-property: background-color, color;
 }
 

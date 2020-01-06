@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
 
 import { Button, ClickOutside, Popup } from '../'
+import { Sizes } from '../utils/sizes'
 import FilterClearIcon from './FilterClearIcon'
 
 const Filter = ({
@@ -84,7 +85,10 @@ const Filter = ({
     selected: isSelected
   })
   const trigger = (
-    <Button className={triggerClasses} onClick={handleTriggerClick}>
+    <Button
+      className={triggerClasses}
+      onClick={handleTriggerClick}
+      size={Sizes.SMALL}>
       {isSelected ? selectedText(value) : text}
       {isSelected && <FilterClearIcon onClick={handleClearIconClick} />}
     </Button>
