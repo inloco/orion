@@ -11629,8 +11629,8 @@ react-textarea-autosize@^7.1.0:
     prop-types "^15.6.0"
 
 react-toastify@^5.3.1:
-  version "5.4.1"
-  resolved "https://registry.yarnpkg.com/react-toastify/-/react-toastify-5.4.1.tgz#27533ca33753631016c44122934c7b6548352fcb"
+  version "5.5.0"
+  resolved "https://registry.yarnpkg.com/react-toastify/-/react-toastify-5.5.0.tgz#f55de44f6b5e3ce3b13b69e5bb4427f2c9404822"
   dependencies:
     "@babel/runtime" "^7.4.2"
     classnames "^2.2.6"
