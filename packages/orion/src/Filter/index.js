@@ -28,7 +28,7 @@ const Filter = ({
   const [open, setOpen] = useState(false)
   const [stateValue, setValue] = useState(initialValue)
 
-  const value = propValue || stateValue
+  const value = _.isUndefined(propValue) ? stateValue : propValue
 
   const [localValue, setLocalValue] = useState(value)
 
