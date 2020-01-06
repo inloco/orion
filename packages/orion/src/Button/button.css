@@ -19,6 +19,12 @@
   vertical-align: sub;
 }
 
+/* Sizes */
+
+.orion.button.small {
+  @apply h-32 min-w-0 px-16;
+}
+
 /* Icon only */
 
 .orion.button.icon {
@@ -32,6 +38,10 @@
 
 .orion.button.icon:active {
   @apply bg-gray-900-12;
+}
+
+.orion.button.icon.small {
+  @apply w-32;
 }
 
 /* Disabled */
