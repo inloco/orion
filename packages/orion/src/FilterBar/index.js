@@ -22,10 +22,6 @@ const FilterBar = ({
 
   const [localValue, setLocalValue] = useState(value)
 
-  useEffect(() => {
-    setLocalValue(value)
-  }, [value])
-
   const pendingFilters = {}
   React.Children.forEach(children, child => {
     const name = child.props.name
@@ -45,6 +41,8 @@ const FilterBar = ({
   const updateValue = newValue => {
     setValue(newValue)
     onChange && onChange(newValue)
+
+    setLocalValue(newValue)
   }
 
   const shouldRenderClearAllButton = !hasPendingFilters && !_.isEmpty(value)
