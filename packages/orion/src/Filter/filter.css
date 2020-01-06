@@ -1,8 +1,10 @@
+/** Trigger button **/
+
 .orion.button.filter-trigger {
   @apply bg-white border border-gray-900-24 cursor-pointer font-normal transition-default;
   @apply inline-flex h-32 items-center min-w-0 text-gray-800;
   @apply outline-none;
-  @apply px-16 !important;
+  @apply px-16;
   border-radius: 16px;
   transition-property: background-color, color;
 }
@@ -19,20 +21,29 @@
 
 .orion.button.filter-trigger.selected {
   @apply bg-space-100 border-none text-space-900;
-
-  /*
-   * We remove the border for the selected filter, but need its width
-   * to be the same as before (to avoid movement between states). We
-   * achieve this by adding an extra 1px padding on both sides.
-   */
-  padding-left: 17px !important;
-  padding-right: 17px !important;
+  @apply pr-8;
 }
 
 .orion.button.filter-trigger.selected:hover,
 .orion.button.filter-trigger.selected:focus {
   @apply bg-space-200;
 }
+
+/** Trigger button's icon **/
+
+.orion.button.filter-trigger .icon {
+  @apply ml-4 rounded-full text-space-600;
+  @apply h-16 w-16;
+  @apply transition-default;
+  font-size: 16px;
+  transition-property: background-color, color;
+}
+
+.orion.button.filter-trigger .icon:hover {
+  @apply bg-space-100 text-space-900;
+}
+
+/** Popup content **/
 
 .orion.popup.filter .filter-content {
   @apply p-8 pb-24;

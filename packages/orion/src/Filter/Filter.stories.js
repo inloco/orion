@@ -86,5 +86,5 @@ const FilterStoryInput = ({ onChange, value, ...otherProps }) => (
 
 FilterStoryInput.propTypes = {
   onChange: PropTypes.func,
-  value: PropTypes.oneOf([PropTypes.string, PropTypes.number])
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 }

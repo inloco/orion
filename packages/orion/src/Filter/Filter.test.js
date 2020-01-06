@@ -69,27 +69,43 @@ describe('when an initial value is given', () => {
 })
 
 describe('when a value is given', () => {
+  let renderResult
+  let onApply
   const value = 'Controlled value'
 
-  it('should render the given value in the trigger', () => {
-    const { queryByText } = render(
-      <Filter text="Open" value={value}>
+  beforeEach(() => {
+    onApply = jest.fn()
+    renderResult = render(
+      <Filter text="Open" onApply={onApply} value={value}>
         {childFn}
       </Filter>
     )
+  })
+
+  it('should render the given value in the trigger', () => {
+    const { queryByText } = renderResult
     expect(queryByText(value)).toBeTruthy()
   })
 
   it("should pass the given value to the filter's contents", () => {
-    const { getByText, getByPlaceholderText } = render(
-      <Filter text="Open" value={value}>
-        {childFn}
-      </Filter>
-    )
+    const { getByText, getByPlaceholderText } = renderResult
 
     fireEvent.click(getByText(value))
     const input = getByPlaceholderText('Input')
     expect(input.value).toEqual(value)
+  })
+
+  it('should render a cancel icon', () => {
+    const { queryByText } = renderResult
+    expect(queryByText('clear')).toBeTruthy()
+  })
+
+  describe('when the cancel icon is clicked', () => {
+    it('should call "onApply" with "null', () => {
+      const { getByText } = renderResult
+      fireEvent.click(getByText('clear'))
+      expect(onApply).toHaveBeenCalledWith(null)
+    })
   })
 
   describe('when the given "value" prop changes', () => {
@@ -218,7 +234,7 @@ describe("when the filter's value changes", () => {
       expect(onClear).toHaveBeenCalled()
     })
 
-    it('should call "onChange" with the "null"', () => {
+    it('should call "onChange" with "null"', () => {
       expect(onChange).toHaveBeenCalledWith(null)
     })
   })
