@@ -1,0 +1,88 @@
+/*-------------------
+      General
+--------------------*/
+
+.orion.placeholder {
+  @apply static overflow-hidden bg-white max-w-384;
+  animation: placeholderShimmer 2s linear;
+  animation-iteration-count: infinite;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.08) 0%,
+    rgba(0, 0, 0, 0.15) 15%,
+    rgba(0, 0, 0, 0.08) 30%
+  );
+  background-size: 1200px 100%;
+}
+
+@keyframes placeholderShimmer {
+  0% {
+    background-position: -1200px 0;
+  }
+  100% {
+    background-position: 1200px 0;
+  }
+}
+
+.orion.placeholder,
+.orion.placeholder > :before,
+.orion.placeholder .line,
+.orion.placeholder .line:after {
+  background-color: inherit;
+}
+
+/*---------------
+      Line
+----------------*/
+
+.orion.placeholder .line {
+  @apply relative h-8 mb-8;
+}
+
+.orion.placeholder .line:before,
+.orion.placeholder .line:after {
+  @apply absolute h-8;
+  top: 100%;
+  content: '';
+  background-color: inherit;
+}
+
+.orion.placeholder .line:before {
+  @apply left-0;
+}
+
+.orion.placeholder .line:after {
+  @apply right-0;
+}
+
+/*-------------------
+        Sizes
+--------------------*/
+
+.orion.placeholder .full.line.line.line:after {
+  @apply w-0;
+  /* width: 0%; */
+}
+.orion.placeholder .very.long.line.line.line:after {
+  @apply w-1/6;
+}
+.orion.placeholder .long.line.line.line:after {
+  @apply w-2/6;
+}
+.orion.placeholder .medium.line.line.line:after {
+  @apply w-3/6;
+}
+.orion.placeholder .short.line.line.line:after {
+  @apply w-4/6;
+}
+.orion.placeholder .very.short.line.line.line:after {
+  @apply w-5/6;
+}
+
+/*-------------------
+        Fluid
+--------------------*/
+
+.orion.placeholder.fluid {
+  max-width: none;
+}
