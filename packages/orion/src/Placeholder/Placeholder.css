@@ -59,23 +59,27 @@
         Sizes
 --------------------*/
 
-.orion.placeholder .full.line.line.line:after {
+.orion.placeholder .full.line:after {
   @apply w-0;
-  /* width: 0%; */
 }
-.orion.placeholder .very.long.line.line.line:after {
+
+.orion.placeholder .very.long.line:after {
   @apply w-1/6;
 }
-.orion.placeholder .long.line.line.line:after {
+
+.orion.placeholder .long.line:after {
   @apply w-2/6;
 }
-.orion.placeholder .medium.line.line.line:after {
+
+.orion.placeholder .medium.line:after {
   @apply w-3/6;
 }
-.orion.placeholder .short.line.line.line:after {
+
+.orion.placeholder .short.line:after {
   @apply w-4/6;
 }
-.orion.placeholder .very.short.line.line.line:after {
+
+.orion.placeholder .very.short.line:after {
   @apply w-5/6;
 }
 
