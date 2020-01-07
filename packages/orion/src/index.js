@@ -4,6 +4,7 @@ export {
   Checkbox,
   Dimmer,
   Modal,
+  Placeholder,
   Popup,
   Portal,
   Select
