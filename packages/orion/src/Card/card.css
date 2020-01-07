@@ -1,5 +1,5 @@
 .orion.card {
-  @apply relative bg-white border-1 border-gray-900-16 inline-block rounded;
+  @apply relative bg-white border-1 border-gray-900-8 inline-block rounded;
   @apply inline-flex flex-col;
 }
 
@@ -25,7 +25,7 @@
 }
 .orion.card.selectable:hover,
 .orion.card.selectable:focus {
-  @apply border-gray-900-8 shadow-300;
+  @apply shadow-300;
 }
 .orion.card.selectable:active {
   @apply border-gray-900-16 shadow-none;
