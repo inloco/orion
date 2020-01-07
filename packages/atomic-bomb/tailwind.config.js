@@ -97,7 +97,7 @@ module.exports = {
       transparent: 'transparent',
       white: theme('colors').white,
       gray: {
-        ..._.pick(theme('colors.gray'), ['50', '100', '200', '800']),
+        ..._.pick(theme('colors.gray'), ['50', '100', '200', '400', '800']),
         '50-80': Color(theme('colors').gray['50'])
           .alpha(0.8)
           .string(),
@@ -357,7 +357,7 @@ module.exports = {
     },
     textColor: theme => ({
       white: theme('colors.white'),
-      gray: _.pick(theme('colors.gray'), ['600', '700', '800', '900']),
+      gray: _.pick(theme('colors.gray'), ['500', '600', '700', '800', '900']),
       wave: _.pick(theme('colors.wave'), ['500', '600', '700', '800']),
       green: _.pick(theme('colors.green'), ['500', '700', '800']),
       magenta: _.pick(theme('colors.magenta'), ['500', '600']),
