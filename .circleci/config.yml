@@ -19,6 +19,9 @@ jobs:
             - ~/.cache/yarn
             - node_modules
       - run:
+          name: Run Lint Checks
+          command: yarn orion:lint --max-warnings=0 --format junit --output-file ../../reports/junit/eslint.xml
+      - run:
           name: Run Tests
           command: yarn workspace @inloco/orion test --ci --maxWorkers=2 --reporters=default --reporters=jest-junit
       - store_test_results:
