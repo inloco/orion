@@ -4,9 +4,7 @@ import { fireEvent, render } from '@testing-library/react'
 import Label from './'
 
 it('should not render remove button if no "onRemove" prop was given', () => {
-  const onRemove = jest.fn()
   const { queryByText } = render(<Label />)
-
   expect(queryByText('clear')).toBeFalsy()
 })
 

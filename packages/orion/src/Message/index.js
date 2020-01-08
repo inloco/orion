@@ -55,7 +55,9 @@ const Message = ({
 }
 
 Message.propTypes = {
+  className: PropTypes.string,
   error: PropTypes.bool,
+  onDismiss: PropTypes.func,
   success: PropTypes.bool,
   warning: PropTypes.bool,
   fluid: PropTypes.bool

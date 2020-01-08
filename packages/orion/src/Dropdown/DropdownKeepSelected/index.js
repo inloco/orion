@@ -1,4 +1,5 @@
 import _ from 'lodash'
+import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { Dropdown as SemanticDropdown } from '@inloco/semantic-ui-react'
 
@@ -76,5 +77,12 @@ const DropdownKeepSelected = React.forwardRef(
     )
   }
 )
+
+DropdownKeepSelected.propTypes = {
+  defaultValue: PropTypes.any,
+  options: PropTypes.any,
+  onChange: PropTypes.func,
+  value: PropTypes.any
+}
 
 export default DropdownKeepSelected

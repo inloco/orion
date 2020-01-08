@@ -1,4 +1,5 @@
 import _ from 'lodash'
+import PropTypes from 'prop-types'
 import React from 'react'
 import { Dropdown as SemanticDropdown } from '@inloco/semantic-ui-react'
 
@@ -24,6 +25,13 @@ const DropdownItem = ({
   return (
     <SemanticDropdown.Item {...otherProps}>{children}</SemanticDropdown.Item>
   )
+}
+
+DropdownItem.propTypes = {
+  children: PropTypes.node,
+  content: PropTypes.node,
+  description: PropTypes.node,
+  text: PropTypes.node
 }
 
 // Overriding original factory. See src/utils/factories.js for more details.

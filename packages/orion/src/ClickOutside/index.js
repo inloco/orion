@@ -4,18 +4,18 @@ import PropTypes from 'prop-types'
 const ClickOutside = ({ as, children, onClickOutside, ...otherProps }) => {
   const ref = useRef()
 
-  const handleClick = event => {
-    if (!ref.current.contains(event.target)) {
-      onClickOutside(event)
-    }
-  }
-
   useEffect(() => {
+    const handleClick = event => {
+      if (!ref.current.contains(event.target)) {
+        onClickOutside(event)
+      }
+    }
+
     document.addEventListener('mouseup', handleClick, true)
     return () => {
       document.removeEventListener('mouseup', handleClick, true)
     }
-  }, [handleClick, onClickOutside])
+  }, [onClickOutside])
 
   const ElementType = as
   return (

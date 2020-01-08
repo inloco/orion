@@ -1,4 +1,3 @@
-import _ from 'lodash'
 import cx from 'classnames'
 import React from 'react'
 import PropTypes from 'prop-types'

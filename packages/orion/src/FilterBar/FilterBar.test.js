@@ -1,4 +1,3 @@
-import keyboardKey from 'keyboard-key'
 import _ from 'lodash'
 import React from 'react'
 import { fireEvent, render } from '@testing-library/react'

@@ -6,7 +6,7 @@ import NotificationCenter from './index'
 it('should show a success notification', async () => {
   const successMessage = 'Success Message'
   const buttonText = 'Click me'
-  const { getByText, queryByText, debug } = render(
+  const { getByText, queryByText } = render(
     <>
       <NotificationCenter />
       <button onClick={() => NotificationCenter.success(successMessage)}>

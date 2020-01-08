@@ -1,7 +1,9 @@
 import React from 'react'
 import { fireEvent, render } from '@testing-library/react'
 
-import Icon from '../Icon' //This import is needed to prevent warnings on Test envirionment
+// This import is needed to prevent warnings on Test envirionment
+import Icon from '../Icon' // eslint-disable-line
+
 import Pagination from './'
 
 describe('Exceptions', () => {

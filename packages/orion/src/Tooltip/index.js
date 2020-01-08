@@ -1,4 +1,5 @@
 import cx from 'classnames'
+import PropTypes from 'prop-types'
 import React from 'react'
 import { Popup } from '@inloco/semantic-ui-react'
 
@@ -11,5 +12,9 @@ const Tooltip = ({ className, ...otherProps }) => (
     {...otherProps}
   />
 )
+
+Tooltip.propTypes = {
+  className: PropTypes.string
+}
 
 export default Tooltip

@@ -1,5 +1,5 @@
-import _ from 'lodash'
 import cx from 'classnames'
+import PropTypes from 'prop-types'
 import React from 'react'
 import { Label as SemanticLabel } from '@inloco/semantic-ui-react'
 
@@ -36,6 +36,10 @@ const Label = ({
 }
 
 Label.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+  content: PropTypes.node,
+  onRemove: PropTypes.func,
   size: sizePropType
 }
 

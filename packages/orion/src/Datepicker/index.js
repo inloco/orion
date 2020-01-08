@@ -31,7 +31,9 @@ const Datepicker = ({
 }
 
 Datepicker.propTypes = {
-  defaultDate: PropTypes.any
+  date: PropTypes.any,
+  defaultDate: PropTypes.any,
+  onDateChange: PropTypes.func
 }
 
 export default Datepicker

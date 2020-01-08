@@ -89,6 +89,7 @@ Field.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
   message: PropTypes.string,
+  onChange: PropTypes.func,
   size: sizePropType
 }
 
