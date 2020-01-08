@@ -34,10 +34,6 @@ const Filter = ({
 
   const isSelected = !_.isEmpty(value)
 
-  useEffect(() => {
-    setLocalValue(value)
-  }, [value])
-
   const handleApply = event => {
     setValue(localValue)
     onApply && onApply(localValue)
@@ -70,6 +66,7 @@ const Filter = ({
     if (open) {
       onClose && onClose()
     } else {
+      setLocalValue(value)
       onOpen && onOpen()
     }
     setOpen(!open)
