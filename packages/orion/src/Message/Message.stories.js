@@ -16,6 +16,7 @@ export const basic = () => (
     error={boolean('Error', false)}
     success={boolean('Success', false)}
     warning={boolean('Warning', false)}
+    info={boolean('Info', false)}
     fluid={boolean('Fluid', false)}
   />
 )
@@ -26,6 +27,7 @@ export const inline = () => (
     error={boolean('Error', false)}
     success={boolean('Success', false)}
     warning={boolean('Warning', false)}
+    info={boolean('Info', false)}
     fluid={boolean('Fluid', false)}
   />
 )
@@ -38,6 +40,7 @@ export const dismissible = () => (
     success={boolean('Success', false)}
     warning={boolean('Warning', false)}
     fluid={boolean('Fluid', false)}
+    info={boolean('Info', false)}
     onDismiss={action('onDimiss')}
   />
 )
