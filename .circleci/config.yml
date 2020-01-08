@@ -1,7 +1,7 @@
-version: 2
+version: 2.1
 
 jobs:
-  build:
+  test:
     docker:
       - image: circleci/node:12.2.0-stretch
     steps:
@@ -19,9 +19,19 @@ jobs:
             - ~/.cache/yarn
             - node_modules
       - run:
+          name: Run Lint Checks
+          command: yarn orion:lint --max-warnings=0 --format junit --output-file ../../reports/junit/eslint.xml
+      - run:
           name: Run Tests
           command: yarn workspace @inloco/orion test --ci --maxWorkers=2 --reporters=default --reporters=jest-junit
       - store_test_results:
           path: ./reports
-    branches:
-      ignore: gh-pages
+
+workflows:
+  version: 2.1
+  test:
+    jobs:
+      - test:
+          filters:
+            branches:
+              ignore: gh-pages
