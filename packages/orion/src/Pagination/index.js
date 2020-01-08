@@ -76,6 +76,7 @@ const Pagination = ({
 
 Pagination.propTypes = {
   activePage: PropTypes.number,
+  disabled: PropTypes.bool,
   onPageChange: PropTypes.func,
   onPrevPage: PropTypes.func,
   onNextPage: PropTypes.func,

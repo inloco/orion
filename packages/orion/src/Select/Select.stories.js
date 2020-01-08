@@ -1,11 +1,5 @@
 import React from 'react'
-import {
-  boolean,
-  object,
-  radios,
-  text,
-  withKnobs
-} from '@storybook/addon-knobs'
+import { boolean, object, text, withKnobs } from '@storybook/addon-knobs'
 
 import Select from './'
 import { Sizes } from '../utils/sizes'

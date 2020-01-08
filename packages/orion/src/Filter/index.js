@@ -2,7 +2,7 @@ import cx from 'classnames'
 import keyboardKey from 'keyboard-key'
 import _ from 'lodash'
 import PropTypes from 'prop-types'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 import { Button, ClickOutside, Popup } from '../'
 import { Sizes } from '../utils/sizes'

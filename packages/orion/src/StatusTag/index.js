@@ -28,6 +28,8 @@ StatusTag.defaultProps = {
 }
 
 StatusTag.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
   size: sizePropType,
   type: PropTypes.oneOf(Object.values(Types)),
   bordered: PropTypes.bool,

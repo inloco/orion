@@ -28,6 +28,7 @@ const TableHeaderCell = ({
 
 TableHeaderCell.propTypes = {
   children: PropTypes.node,
+  className: PropTypes.string,
   divider: PropTypes.oneOfType([PropTypes.node, PropTypes.bool]),
   horizontalAlign: PropTypes.oneOf(_.values(HorizontalAlignValues))
 }

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 import { text, withKnobs } from '@storybook/addon-knobs'
 
@@ -19,6 +20,10 @@ export const customIcons = () => {
       <div className="text-sm">{name}</div>
     </Card>
   )
+  IconCard.propTypes = {
+    name: PropTypes.string
+  }
+
   return (
     <React.Fragment>
       <div>

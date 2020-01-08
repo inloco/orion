@@ -4,6 +4,9 @@ import { fireEvent, render } from '@testing-library/react'
 
 import Filter from './'
 
+// `childFn` é só uma função, não um componente. Ignorando o ESLint aqui,
+// que reclama de falta de prop types.
+// eslint-disable-next-line
 const childFn = ({ onChange, value }) => (
   <input
     onChange={event => onChange(event.target.value)}
