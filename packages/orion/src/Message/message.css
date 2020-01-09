@@ -6,6 +6,10 @@
   @apply font-medium;
 }
 
+.orion.message.info {
+  @apply border-gray-900-8 bg-gray-100;
+}
+
 .orion.message.error {
   @apply border-magenta-500 bg-magenta-50;
 }

@@ -11,6 +11,7 @@ const Message = ({
   warning,
   fluid,
   className,
+  info,
   onDismiss,
   ...otherProps
 }) => {
@@ -25,6 +26,7 @@ const Message = ({
     error,
     success,
     warning,
+    info,
     header
   })
 
@@ -32,6 +34,8 @@ const Message = ({
     <Icon name="warning" className="text-yellow-500" />
   ) : error ? (
     <Icon name="error" className="text-magenta-500" />
+  ) : info ? (
+    <Icon name="info_outline" className="text-gray-700" />
   ) : (
     <Icon name="check" className="text-green-500" />
   )
@@ -60,6 +64,7 @@ Message.propTypes = {
   onDismiss: PropTypes.func,
   success: PropTypes.bool,
   warning: PropTypes.bool,
+  info: PropTypes.bool,
   fluid: PropTypes.bool
 }
 
