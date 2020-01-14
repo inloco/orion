@@ -25,7 +25,7 @@ Icon.propTypes = {
   className: PropTypes.string,
   color: PropTypes.string,
   name: PropTypes.string,
-  as: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
+  as: PropTypes.elementType
 }
 
 // Overriding original factory. See src/utils/factories.js for more details.
