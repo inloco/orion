@@ -3,6 +3,7 @@ import { action } from '@storybook/addon-actions'
 import { object, withKnobs } from '@storybook/addon-knobs'
 
 import { Menu } from '../'
+import { sizeKnob } from '../utils/stories'
 
 export default {
   title: 'Menu',
@@ -49,6 +50,7 @@ export const switcher = () => {
       ])}
       defaultActiveIndex={0}
       onItemClick={action('onItemClick')}
+      size={sizeKnob()}
     />
   )
 }

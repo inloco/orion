@@ -1,6 +1,18 @@
 .orion.menu.switcher .item {
-  @apply h-32 ml-8 outline-none pl-8 pr-12 rounded-full transition-default;
+  @apply h-32 ml-8 outline-none px-12 rounded-full transition-default;
   transition-property: background-color, color;
+}
+
+.orion.menu.switcher .item > .icon {
+  margin-left: -4px;
+}
+
+.orion.menu.switcher.small .item {
+  @apply text-sm px-16;
+}
+
+.orion.menu.switcher.small .item > .icon {
+  margin-left: -8px;
 }
 
 .orion.menu.switcher .item:first-child {
