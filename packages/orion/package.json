@@ -51,7 +51,7 @@
     "@storybook/addons": "^5.2.1",
     "@storybook/react": "^5.2.1",
     "@storybook/storybook-deployer": "^2.8.1",
-    "@testing-library/jest-dom": "^4.0.0",
+    "@testing-library/jest-dom": "^5.0.0",
     "@testing-library/react": "^9.1.0",
     "@typescript-eslint/eslint-plugin": "2.x",
     "@typescript-eslint/parser": "2.x",
