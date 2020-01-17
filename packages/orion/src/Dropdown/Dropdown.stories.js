@@ -23,7 +23,10 @@ export default {
 }
 
 export const basic = () => {
-  const menuOptions = [{ text: 'Account' }, { text: 'Logout' }]
+  const menuOptions = [
+    { text: 'Account', value: 1 },
+    { text: 'Logout', value: 2 }
+  ]
   return (
     <Dropdown
       text={text('Label', 'Maira Bello')}
