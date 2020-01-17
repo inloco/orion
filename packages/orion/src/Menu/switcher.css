@@ -1,5 +1,5 @@
 .orion.menu.switcher .item {
-  @apply h-32 ml-8 outline-none px-8 rounded transition-default;
+  @apply h-32 ml-8 outline-none pl-8 pr-12 rounded-full transition-default;
   transition-property: background-color, color;
 }
 
