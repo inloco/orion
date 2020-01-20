@@ -1,11 +1,15 @@
 .orion.checkbox {
-  @apply my-2 relative;
+  @apply my-2 relative h-16;
 }
 
 .orion.checkbox input[type='checkbox'] {
   @apply absolute top-0 left-0 h-16 w-16;
   @apply opacity-0;
   @apply block !important;
+}
+
+.orion.checkbox.fitted > label {
+  @apply pl-0;
 }
 
 .orion.checkbox input[type='checkbox'] ~ label {
@@ -15,7 +19,7 @@
 
 .orion.checkbox input[type='checkbox'] ~ label:before {
   @apply absolute top-0 left-0 h-16 w-16;
-  @apply border border-gray-900-24 rounded;
+  @apply border border-gray-900-24 bg-white rounded;
   content: '';
 }
 
