@@ -86,6 +86,8 @@ Dropdown.propTypes = {
   ]),
   noSelectedLabels: PropTypes.bool,
   placeholder: PropTypes.string,
+  selectOnBlur: PropTypes.bool,
+  selectOnNavigation: PropTypes.bool,
   size: sizePropType,
   direction: directionPropType,
   warning: PropTypes.bool
@@ -95,7 +97,9 @@ Dropdown.defaultProps = {
   deburr: true,
   icon: DROPDOWN_ICON,
   size: Sizes.DEFAULT,
-  direction: Directions.LEFT
+  direction: Directions.LEFT,
+  selectOnBlur: false,
+  selectOnNavigation: false
 }
 
 Dropdown.Divider = Divider
