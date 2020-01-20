@@ -3,16 +3,7 @@
 --------------------*/
 
 .orion.placeholder {
-  @apply static overflow-hidden bg-white max-w-384;
-  animation: placeholderShimmer 2s linear;
-  animation-iteration-count: infinite;
-  background-image: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0.08) 0%,
-    rgba(0, 0, 0, 0.15) 15%,
-    rgba(0, 0, 0, 0.08) 30%
-  );
-  background-size: 1200px 100%;
+  @apply static overflow-hidden bg-white max-w-384 w-full;
 }
 
 @keyframes placeholderShimmer {
@@ -28,7 +19,7 @@
 .orion.placeholder > :before,
 .orion.placeholder .line,
 .orion.placeholder .line:after {
-  background-color: inherit;
+  background-color: transparent;
 }
 
 /*---------------
@@ -36,7 +27,21 @@
 ----------------*/
 
 .orion.placeholder .line {
-  @apply relative h-8 mb-8;
+  @apply relative h-8 mt-4 mb-8;
+
+  animation: placeholderShimmer 2s linear;
+  animation-iteration-count: infinite;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.08) 0%,
+    rgba(0, 0, 0, 0.15) 15%,
+    rgba(0, 0, 0, 0.08) 30%
+  );
+  background-size: 1200px 100%;
+}
+
+.orion.placeholder .line:last-child {
+  @apply mb-4;
 }
 
 .orion.placeholder .line:before,
@@ -59,28 +64,28 @@
         Sizes
 --------------------*/
 
-.orion.placeholder .full.line:after {
-  @apply w-0;
+.orion.placeholder .full.line {
+  @apply w-full;
 }
 
-.orion.placeholder .very.long.line:after {
-  @apply w-1/6;
+.orion.placeholder .very.long.line {
+  @apply w-5/6;
 }
 
-.orion.placeholder .long.line:after {
-  @apply w-2/6;
-}
-
-.orion.placeholder .medium.line:after {
-  @apply w-3/6;
-}
-
-.orion.placeholder .short.line:after {
+.orion.placeholder .long.line {
   @apply w-4/6;
 }
 
-.orion.placeholder .very.short.line:after {
-  @apply w-5/6;
+.orion.placeholder .medium.line {
+  @apply w-3/6;
+}
+
+.orion.placeholder .short.line {
+  @apply w-2/6;
+}
+
+.orion.placeholder .very.short.line {
+  @apply w-1/6;
 }
 
 /*-------------------
