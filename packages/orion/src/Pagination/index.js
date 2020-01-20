@@ -2,7 +2,7 @@ import React from 'react'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 
-import Button from '../Button'
+import { Placeholder, Button } from '../'
 
 const ACTIVE_PAGE_MIN = 1
 
@@ -17,13 +17,24 @@ const Pagination = ({
   pageSize,
   alignButtonsLeft,
   totalItems,
+  loading,
   ...otherProps
 }) => {
-  if (pageSize < 1) return null
+  if (!loading && pageSize < 1) return null
 
   const orionPaginationClasses = cx('orion-pagination', className, {
     'orion-pagination-align-buttons-left': alignButtonsLeft
   })
+
+  if (loading) {
+    return (
+      <div className={orionPaginationClasses} {...otherProps}>
+        <Placeholder className="orion-pagination-placeholder">
+          <Placeholder.Line length="full" />
+        </Placeholder>
+      </div>
+    )
+  }
 
   const orionPaginationContent = cx({
     'orion-pagination-content-disabled': disabled
@@ -36,6 +47,7 @@ const Pagination = ({
   )
   const firstPageItem = pageSize * (possibleActivePage - 1) + 1
   const lastPageItem = Math.min(pageSize * possibleActivePage, totalItems)
+
   return (
     <div className={orionPaginationClasses} {...otherProps}>
       <div className={orionPaginationContent}>
@@ -93,6 +105,7 @@ Pagination.propTypes = {
   pageSize: PropTypes.number,
   alignButtonsLeft: PropTypes.bool,
   totalItems: PropTypes.number.isRequired,
+  loading: PropTypes.bool,
   className: PropTypes.string,
   i18n: PropTypes.shape({
     of: PropTypes.string,

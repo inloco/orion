@@ -8,7 +8,11 @@
 }
 
 .orion-pagination-actions {
-  @apply ml-8;
+  @apply ml-8 inline-flex;
+}
+
+.orion-pagination-placeholder {
+  min-width: 152px;
 }
 
 .orion-pagination-align-buttons-left .orion-pagination-actions {
