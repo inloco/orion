@@ -4,10 +4,9 @@ import _ from 'lodash'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 
-import { Button, ClickOutside, Popup } from '../'
+import { Button, ClickOutside, Popup, Tooltip } from '../'
 import { Sizes } from '../utils/sizes'
 import FilterClearIcon from './FilterClearIcon'
-import Tooltip from '../Tooltip'
 
 const Filter = ({
   applyButton,
