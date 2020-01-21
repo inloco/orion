@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Modal as SemanticModal } from '@inloco/semantic-ui-react'
 import cx from 'classnames'
 
+import Modal from '../Modal'
+
 const Dialog = ({ className, warning, danger, ...otherProps }) => (
-  <SemanticModal
+  <Modal
     className={cx(className, 'dialog', {
       warning,
       danger
@@ -19,9 +20,9 @@ Dialog.propTypes = {
   warning: PropTypes.bool
 }
 
-Dialog.Actions = SemanticModal.Actions
-Dialog.Content = SemanticModal.Content
-Dialog.Description = SemanticModal.Description
-Dialog.Header = SemanticModal.Header
+Dialog.Actions = Modal.Actions
+Dialog.Content = Modal.Content
+Dialog.Description = Modal.Description
+Dialog.Header = Modal.Header
 
 export default Dialog

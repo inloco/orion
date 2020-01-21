@@ -8,3 +8,7 @@
 .orion.dimmer.active {
   @apply opacity-100 pointer-events-auto;
 }
+
+.orion.dimmer.inverted {
+  background-color: rgba(0, 0, 0, 0.66);
+}

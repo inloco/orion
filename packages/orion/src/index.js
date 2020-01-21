@@ -3,7 +3,6 @@ export { default as Colors } from '@inloco/atomic-bomb'
 export {
   Checkbox,
   Dimmer,
-  Modal,
   Placeholder,
   Popup,
   Portal,
@@ -31,6 +30,7 @@ export { default as LoadingBar } from './LoadingBar'
 export { default as Logo } from './Logo'
 export { default as Menu } from './Menu'
 export { default as Message } from './Message'
+export { default as Modal } from './Modal'
 export { default as NotificationCenter } from './NotificationCenter'
 export { default as Pagination } from './Pagination'
 export { default as Progress } from './Progress'

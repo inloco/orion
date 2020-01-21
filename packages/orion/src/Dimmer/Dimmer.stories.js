@@ -24,7 +24,10 @@ export const basic = () => {
         adipisci! Dolorum aspernatur laborum sapiente aliquid.
       </div>
       <Button primary>Lorem Lorem</Button>
-      <Dimmer active={boolean('Active', true)} />
+      <Dimmer
+        active={boolean('Active', true)}
+        inverted={boolean('Inverted', false)}
+      />
     </div>
   )
 }
