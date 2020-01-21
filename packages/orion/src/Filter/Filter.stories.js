@@ -74,6 +74,20 @@ export const multiple = () => (
   </React.Fragment>
 )
 
+export const withHover = () => (
+  <Filter
+    text={text('Label', 'Filter')}
+    hoverTooltipContent={text('Hover Content', 'This is a filter')}
+    tooltipProps={{
+      position: text('Tooltip position', 'right center')
+    }}
+    {...actions}>
+    {filterProps => (
+      <FilterStoryInput {...filterProps} placeholder="Type your name" />
+    )}
+  </Filter>
+)
+
 const FilterStoryInput = ({ onChange, value, ...otherProps }) => (
   <Input
     autoFocus
