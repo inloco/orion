@@ -1,9 +1,7 @@
 import cx from 'classnames'
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Card as SemanticCard } from '@inloco/semantic-ui-react'
-
-import { Checkbox } from '../'
+import { Checkbox, Card as SemanticCard } from '@inloco/semantic-ui-react'
 
 const Card = ({
   children,

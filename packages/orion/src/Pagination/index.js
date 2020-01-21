@@ -1,8 +1,9 @@
 import React from 'react'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
+import { Placeholder } from '@inloco/semantic-ui-react'
 
-import { Placeholder, Button } from '../'
+import Button from '../Button'
 
 const ACTIVE_PAGE_MIN = 1
 

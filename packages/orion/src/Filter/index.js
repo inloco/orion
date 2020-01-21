@@ -3,8 +3,11 @@ import keyboardKey from 'keyboard-key'
 import _ from 'lodash'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
+import { Popup } from '@inloco/semantic-ui-react'
 
-import { Button, ClickOutside, Popup, Tooltip } from '../'
+import Button from '../Button'
+import ClickOutside from '../ClickOutside'
+import Tooltip from '../Tooltip'
 import { Sizes } from '../utils/sizes'
 import FilterClearIcon from './FilterClearIcon'
 
