@@ -33,7 +33,7 @@ const Slider = ({ onChange, labelsMask, ...otherProps }) => {
         type="range"
         className="orion-slider"
         {...otherProps}
-        value={`${controlledValue}`}
+        value={controlledValue}
         onChange={handleChange}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
