@@ -7,6 +7,7 @@ import React, { useState } from 'react'
 import { Button, ClickOutside, Popup } from '../'
 import { Sizes } from '../utils/sizes'
 import FilterClearIcon from './FilterClearIcon'
+import Tooltip from '../Tooltip'
 
 const Filter = ({
   applyButton,
@@ -23,6 +24,8 @@ const Filter = ({
   selectedText,
   text,
   value: propValue,
+  hoverTooltipContent,
+  tooltipProps,
   ...otherProps
 }) => {
   const [open, setOpen] = useState(false)
@@ -82,13 +85,20 @@ const Filter = ({
     selected: isSelected
   })
   const trigger = (
-    <Button
-      className={triggerClasses}
-      onClick={handleTriggerClick}
-      size={Sizes.SMALL}>
-      {isSelected ? selectedText(value) : text}
-      {isSelected && <FilterClearIcon onClick={handleClearIconClick} />}
-    </Button>
+    <Tooltip
+      {...tooltipProps}
+      disabled={_.isEmpty(hoverTooltipContent)}
+      content={hoverTooltipContent}
+      trigger={
+        <Button
+          className={triggerClasses}
+          onClick={handleTriggerClick}
+          size={Sizes.SMALL}>
+          {isSelected ? selectedText(value) : text}
+          {isSelected && <FilterClearIcon onClick={handleClearIconClick} />}
+        </Button>
+      }
+    />
   )
 
   return (
@@ -150,7 +160,9 @@ Filter.propTypes = {
   onOpen: PropTypes.func,
   selectedText: PropTypes.func,
   text: PropTypes.string.isRequired,
-  value: PropTypes.any
+  value: PropTypes.any,
+  hoverTooltipContent: PropTypes.any,
+  tooltipProps: PropTypes.object
 }
 
 Filter.defaultProps = {
