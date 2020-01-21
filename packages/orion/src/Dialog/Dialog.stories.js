@@ -1,7 +1,7 @@
 import React from 'react'
 import { text, boolean, withKnobs } from '@storybook/addon-knobs'
 
-import { Button, Dialog, Icon } from '../'
+import { Button, Dialog } from '../'
 
 export default {
   title: 'Dialog',
@@ -14,10 +14,7 @@ export const standard = () => {
       trigger={<Button>Open Dialog</Button>}
       warning={boolean('Warning', false)}
       danger={boolean('Danger', false)}>
-      <Dialog.Header>
-        <Icon name="warning" className="mb-8" />
-        {text('Title', 'Dialog Title')}
-      </Dialog.Header>
+      <Dialog.Header>{text('Title', 'Dialog Title')}</Dialog.Header>
       <Dialog.Content>
         {text(
           'Content',
