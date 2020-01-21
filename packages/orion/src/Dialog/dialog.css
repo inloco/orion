@@ -15,7 +15,12 @@
 ---------------*/
 
 .orion.modal.dialog > .header {
-  @apply flex flex-col font-default font-medium text-base text-wave-500;
+  @apply flex flex-col font-default font-medium text-base text-space-600;
+}
+
+.orion.modal.dialog > .header::before {
+  @apply font-icons mb-8 text-lg text-space-600;
+  content: 'info';
 }
 
 /*--------------
@@ -43,7 +48,12 @@
 ---------------*/
 
 .orion.modal.dialog.warning > .header {
+  @apply text-yellow-700;
+}
+
+.orion.modal.dialog.warning > .header::before {
   @apply text-yellow-500;
+  content: 'warning';
 }
 
 .orion.modal.dialog.warning .actions > .button.primary {
@@ -62,7 +72,12 @@
 ---------------*/
 
 .orion.modal.dialog.danger > .header {
+  @apply text-magenta-600;
+}
+
+.orion.modal.dialog.danger > .header::before {
   @apply text-magenta-500;
+  content: 'error';
 }
 
 .orion.modal.dialog.danger .actions > .button.primary {
