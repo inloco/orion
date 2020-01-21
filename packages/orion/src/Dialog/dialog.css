@@ -15,7 +15,7 @@
 ---------------*/
 
 .orion.modal.dialog > .header {
-  @apply flex flex-col font-default font-medium text-base text-wave-500;
+  @apply flex flex-col font-default font-medium text-base text-space-600;
 }
 
 /*--------------
@@ -43,6 +43,10 @@
 ---------------*/
 
 .orion.modal.dialog.warning > .header {
+  @apply text-yellow-700;
+}
+
+.orion.modal.dialog.warning > .header .icon {
   @apply text-yellow-500;
 }
 
@@ -62,6 +66,10 @@
 ---------------*/
 
 .orion.modal.dialog.danger > .header {
+  @apply text-magenta-600;
+}
+
+.orion.modal.dialog.danger > .header .icon {
   @apply text-magenta-500;
 }
 
