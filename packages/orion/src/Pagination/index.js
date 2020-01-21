@@ -19,7 +19,7 @@ const Pagination = ({
   totalItems,
   ...otherProps
 }) => {
-  if (totalItems <= 1 || pageSize < 1 || totalItems <= pageSize) return null
+  if (pageSize < 1) return null
 
   const orionPaginationClasses = cx('orion-pagination', className, {
     'orion-pagination-align-buttons-left': alignButtonsLeft
@@ -39,11 +39,17 @@ const Pagination = ({
   return (
     <div className={orionPaginationClasses} {...otherProps}>
       <div className={orionPaginationContent}>
-        <span className="orion-pagination-value">
-          {firstPageItem}-{lastPageItem}
-        </span>
-        <span className="orion-pagination-text">{i18n.of}</span>
-        <span className="orion-pagination-value">{totalItems}</span>
+        {totalItems <= 1 ? (
+          <span className="orion-pagination-value">{totalItems}</span>
+        ) : (
+          <>
+            <span className="orion-pagination-value">
+              {firstPageItem}-{lastPageItem}
+            </span>
+            <span className="orion-pagination-text">{i18n.of}</span>
+            <span className="orion-pagination-value">{totalItems}</span>
+          </>
+        )}
         <span className="orion-pagination-text">{i18n.results}</span>
       </div>
       <div className="orion-pagination-actions">
@@ -59,7 +65,9 @@ const Pagination = ({
           }}
         />
         <Button
-          disabled={disabled || possibleActivePage === activePageMax}
+          disabled={
+            disabled || !activePageMax || possibleActivePage === activePageMax
+          }
           icon="keyboard_arrow_right"
           data-testid="next"
           onClick={e => {
