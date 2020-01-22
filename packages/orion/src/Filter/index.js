@@ -4,7 +4,7 @@ import _ from 'lodash'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 
-import { Button, ClickOutside, Popup } from '../'
+import { Button, ClickOutside, Popup, Tooltip } from '../'
 import { Sizes } from '../utils/sizes'
 import FilterClearIcon from './FilterClearIcon'
 
@@ -23,6 +23,7 @@ const Filter = ({
   selectedText,
   text,
   value: propValue,
+  tooltipProps,
   ...otherProps
 }) => {
   const [open, setOpen] = useState(false)
@@ -82,13 +83,19 @@ const Filter = ({
     selected: isSelected
   })
   const trigger = (
-    <Button
-      className={triggerClasses}
-      onClick={handleTriggerClick}
-      size={Sizes.SMALL}>
-      {isSelected ? selectedText(value) : text}
-      {isSelected && <FilterClearIcon onClick={handleClearIconClick} />}
-    </Button>
+    <Tooltip
+      disabled={_.isEmpty(_.get(tooltipProps, 'content'))}
+      {...tooltipProps}
+      trigger={
+        <Button
+          className={triggerClasses}
+          onClick={handleTriggerClick}
+          size={Sizes.SMALL}>
+          {isSelected ? selectedText(value) : text}
+          {isSelected && <FilterClearIcon onClick={handleClearIconClick} />}
+        </Button>
+      }
+    />
   )
 
   return (
@@ -150,7 +157,8 @@ Filter.propTypes = {
   onOpen: PropTypes.func,
   selectedText: PropTypes.func,
   text: PropTypes.string.isRequired,
-  value: PropTypes.any
+  value: PropTypes.any,
+  tooltipProps: PropTypes.object
 }
 
 Filter.defaultProps = {
