@@ -87,5 +87,8 @@
   "jest-junit": {
     "outputDirectory": "./reports/junit",
     "outputName": "./jest.xml"
+  },
+  "storybook-deployer": {
+    "commitMessage": "Deploy Storybook to GitHub Pages [ci skip]"
   }
 }
