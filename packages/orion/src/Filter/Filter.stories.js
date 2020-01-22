@@ -77,9 +77,9 @@ export const multiple = () => (
 export const withHover = () => (
   <Filter
     text={text('Label', 'Filter')}
-    hoverTooltipContent={text('Hover Content', 'This is a filter')}
     tooltipProps={{
-      position: text('Tooltip position', 'right center')
+      position: text('Tooltip position', 'right center'),
+      content: text('Hover Content', 'This is a filter')
     }}
     {...actions}>
     {filterProps => (

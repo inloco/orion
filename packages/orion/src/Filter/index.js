@@ -23,7 +23,6 @@ const Filter = ({
   selectedText,
   text,
   value: propValue,
-  hoverTooltipContent,
   tooltipProps,
   ...otherProps
 }) => {
@@ -85,9 +84,8 @@ const Filter = ({
   })
   const trigger = (
     <Tooltip
+      disabled={_.isEmpty(_.get(tooltipProps, 'content'))}
       {...tooltipProps}
-      disabled={_.isEmpty(hoverTooltipContent)}
-      content={hoverTooltipContent}
       trigger={
         <Button
           className={triggerClasses}
@@ -160,7 +158,6 @@ Filter.propTypes = {
   selectedText: PropTypes.func,
   text: PropTypes.string.isRequired,
   value: PropTypes.any,
-  hoverTooltipContent: PropTypes.any,
   tooltipProps: PropTypes.object
 }
 
