@@ -28,7 +28,7 @@ const Slider = ({ onChange, labelsMask, ...otherProps }) => {
         type="range"
         className="orion-slider"
         {...otherProps}
-        value={`${controlledValue}`}
+        value={controlledValue}
         onChange={handleChange}
       />
       <div className="orion-slider-labels">
