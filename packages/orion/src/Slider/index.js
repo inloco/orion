@@ -11,7 +11,7 @@ const Slider = ({ onChange, labelsMask, ...otherProps }) => {
     if (value !== controlledValue) {
       setControlledValue(value)
     }
-  }, [controlledValue, value])
+  }, [value])
 
   const handleChange = e => {
     const value = Number(e.target.value)
