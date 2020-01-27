@@ -39,7 +39,7 @@ const Pagination = ({
   return (
     <div className={orionPaginationClasses} {...otherProps}>
       <div className={orionPaginationContent}>
-        {totalItems <= 1 ? (
+        {totalItems <= pageSize ? (
           <span className="orion-pagination-value">{totalItems}</span>
         ) : (
           <>
@@ -52,32 +52,34 @@ const Pagination = ({
         )}
         <span className="orion-pagination-text">{i18n.results}</span>
       </div>
-      <div className="orion-pagination-actions">
-        <Button
-          disabled={disabled || possibleActivePage === ACTIVE_PAGE_MIN}
-          icon="keyboard_arrow_left"
-          data-testid="previous"
-          onClick={e => {
-            if (onPageChange) {
-              onPageChange(e, { activePage: possibleActivePage - 1 })
+      {totalItems > pageSize && (
+        <div className="orion-pagination-actions">
+          <Button
+            disabled={disabled || possibleActivePage === ACTIVE_PAGE_MIN}
+            icon="keyboard_arrow_left"
+            data-testid="previous"
+            onClick={e => {
+              if (onPageChange) {
+                onPageChange(e, { activePage: possibleActivePage - 1 })
+              }
+              if (onPrevPage) onPrevPage(e)
+            }}
+          />
+          <Button
+            disabled={
+              disabled || !activePageMax || possibleActivePage === activePageMax
             }
-            if (onPrevPage) onPrevPage(e)
-          }}
-        />
-        <Button
-          disabled={
-            disabled || !activePageMax || possibleActivePage === activePageMax
-          }
-          icon="keyboard_arrow_right"
-          data-testid="next"
-          onClick={e => {
-            if (onPageChange) {
-              onPageChange(e, { activePage: possibleActivePage + 1 })
-            }
-            if (onNextPage) onNextPage(e)
-          }}
-        />
-      </div>
+            icon="keyboard_arrow_right"
+            data-testid="next"
+            onClick={e => {
+              if (onPageChange) {
+                onPageChange(e, { activePage: possibleActivePage + 1 })
+              }
+              if (onNextPage) onNextPage(e)
+            }}
+          />
+        </div>
+      )}
     </div>
   )
 }

@@ -38,7 +38,7 @@ describe('Happy path', () => {
 
   it('should render one page if totalItems <= pageSize', () => {
     const { queryByText } = render(<Pagination totalItems={20} pageSize={30} />)
-    const expectedResult = '1-20'
+    const expectedResult = '20'
     expect(queryByText(expectedResult)).toBeTruthy()
   })
 
@@ -91,6 +91,14 @@ describe('Happy path', () => {
       )
       expect(queryByTestId('previous')).toBeDisabled()
       expect(queryByTestId('next')).toBeDisabled()
+    })
+
+    it('should not show buttons if totalItems <= pageSize ', () => {
+      const { queryByTestId } = render(
+        <Pagination pageSize={10} totalItems={10} />
+      )
+      expect(queryByTestId('previous')).toBeFalsy()
+      expect(queryByTestId('next')).toBeFalsy()
     })
 
     it('should call "onChange" with the next active page when the "next" button is clicked', () => {
