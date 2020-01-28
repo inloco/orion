@@ -9,7 +9,7 @@ export default {
 }
 
 export const basic = () => {
-  return <Slider onChange={setValue} />
+  return <Slider />
 }
 
 export const MinMaxAndStep = () => {
