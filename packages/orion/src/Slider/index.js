@@ -4,23 +4,22 @@ import PropTypes from 'prop-types'
 import SliderPopup from './SliderPopup'
 
 const Slider = ({ onChange, labelsMask, ...otherProps }) => {
-  const { min, max, value = min } = otherProps
+  const { min, max, value: propValue } = otherProps
 
-  const [controlledValue, setControlledValue] = React.useState()
-  React.useEffect(() => {
-    if (value !== controlledValue) {
-      setControlledValue(value)
-    }
-  }, [value])
+  const [stateValue, setStateValue] = React.useState(propValue || min)
+  const [hover, setHover] = React.useState(false)
+  const [focus, setFocus] = React.useState(false)
 
   const handleChange = e => {
     const value = Number(e.target.value)
-    setControlledValue(value)
+    setStateValue(value)
     if (onChange) onChange(value)
   }
 
   const maskedMin = labelsMask ? labelsMask(min) : min
   const maskedMax = labelsMask ? labelsMask(max) : max
+  const value = propValue || stateValue
+  const showSlider = hover || focus
 
   return (
     <div className="orion-slider-wrapper">
@@ -28,18 +27,22 @@ const Slider = ({ onChange, labelsMask, ...otherProps }) => {
         type="range"
         className="orion-slider"
         {...otherProps}
-        value={controlledValue}
+        value={value}
         onChange={handleChange}
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+        onFocus={() => setFocus(true)}
+        onBlur={() => setFocus(false)}
       />
       <div className="orion-slider-labels">
         <div>{maskedMin}</div>
         <div>{maskedMax}</div>
       </div>
-      {controlledValue && (
+      {showSlider && (
         <SliderPopup
           min={min}
           max={max}
-          value={controlledValue}
+          value={value}
           labelsMask={labelsMask}
         />
       )}

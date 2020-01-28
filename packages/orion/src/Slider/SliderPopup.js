@@ -12,7 +12,7 @@ const SliderPopup = ({ min, max, value, labelsMask }) => {
   const valuePercentage = calculateValuePercentage(value, min, max)
   const thumbVariation = calculateThumbVariation(valuePercentage)
 
-  const leftMargin = `calc(${valuePercentage}% + ${thumbVariation}px)`
+  const position = `calc(${valuePercentage}% + ${thumbVariation}px)`
   const maskedValue = labelsMask ? labelsMask(value) : value
 
   return (
@@ -20,7 +20,7 @@ const SliderPopup = ({ min, max, value, labelsMask }) => {
       ref={popupRef}
       className="orion-slider-popup"
       style={{
-        left: leftMargin,
+        left: position,
         marginLeft: -popupWidth / 2,
         marginRight: -popupWidth / 2
       }}>

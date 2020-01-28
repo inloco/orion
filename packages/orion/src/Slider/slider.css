@@ -590,13 +590,8 @@ input[type='range'].orion-slider::-webkit-slider-thumb {
 }
 
 .orion-slider-popup {
-  @apply hidden absolute px-16 shadow-300 border border-gray-900-8 rounded-full bg-white font-medium;
+  @apply absolute px-16 shadow-300 border border-gray-900-8 rounded-full bg-white font-medium whitespace-no-wrap;
   margin-top: 28px;
-}
-
-.orion-slider:hover ~ .orion-slider-popup,
-.orion-slider:focus ~ .orion-slider-popup {
-  @apply block;
 }
 
 .orion-slider-popup:before {
