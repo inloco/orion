@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import _ from 'lodash'
+import { Portal } from '@inloco/semantic-ui-react'
 
-import { Button, Portal } from '../'
+import Button from '../Button'
 
 const FullscreenContainer = ({
   title,

@@ -27,6 +27,7 @@ export const basic = () => (
       of: 'of',
       results: 'results'
     })}
+    loading={boolean('loading', false)}
     {...actions}
   />
 )
