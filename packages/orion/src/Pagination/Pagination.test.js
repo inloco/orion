@@ -7,18 +7,8 @@ import Icon from '../Icon' // eslint-disable-line
 import Pagination from './'
 
 describe('Exceptions', () => {
-  it('should not render if totalItems <= 1', () => {
-    const { container } = render(<Pagination totalItems={1} />)
-    expect(container.firstChild).toBeNull()
-  })
-
   it('should not render if pageSize < 1', () => {
     const { container } = render(<Pagination totalItems={40} pageSize={0} />)
-    expect(container.firstChild).toBeNull()
-  })
-
-  it('should not render if totalItems <= pageSize', () => {
-    const { container } = render(<Pagination totalItems={20} pageSize={30} />)
     expect(container.firstChild).toBeNull()
   })
 
@@ -40,6 +30,18 @@ describe('Exceptions', () => {
 })
 
 describe('Happy path', () => {
+  it('should render one page if totalItems <= 1', () => {
+    const { queryByText } = render(<Pagination totalItems={0} />)
+    const expectedResult = 'results'
+    expect(queryByText(expectedResult)).toBeTruthy()
+  })
+
+  it('should render one page if totalItems <= pageSize', () => {
+    const { queryByText } = render(<Pagination totalItems={20} pageSize={30} />)
+    const expectedResult = '20'
+    expect(queryByText(expectedResult)).toBeTruthy()
+  })
+
   it('should show items range starting with 1 when there is no activePage set', () => {
     const { queryByText } = render(<Pagination pageSize={10} totalItems={20} />)
     const expectedResult = '1-10'
@@ -89,6 +91,14 @@ describe('Happy path', () => {
       )
       expect(queryByTestId('previous')).toBeDisabled()
       expect(queryByTestId('next')).toBeDisabled()
+    })
+
+    it('should not show buttons if totalItems <= pageSize ', () => {
+      const { queryByTestId } = render(
+        <Pagination pageSize={10} totalItems={10} />
+      )
+      expect(queryByTestId('previous')).toBeFalsy()
+      expect(queryByTestId('next')).toBeFalsy()
     })
 
     it('should call "onChange" with the next active page when the "next" button is clicked', () => {

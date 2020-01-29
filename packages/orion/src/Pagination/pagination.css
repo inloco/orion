@@ -1,5 +1,6 @@
 .orion-pagination {
   @apply inline-flex items-center;
+  min-height: 40px;
 }
 
 .orion-pagination-align-buttons-left {
