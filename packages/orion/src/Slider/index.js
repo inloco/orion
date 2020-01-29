@@ -2,8 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import SliderPopup from './SliderPopup'
+import cx from 'classnames'
 
-const Slider = ({ onChange, labelsMask, ...otherProps }) => {
+const Slider = ({ onChange, labelsMask, className, ...otherProps }) => {
   const { min, max, value: propValue } = otherProps
 
   const [stateValue, setStateValue] = React.useState(propValue || min)
@@ -21,8 +22,9 @@ const Slider = ({ onChange, labelsMask, ...otherProps }) => {
   const value = propValue || stateValue
   const showSlider = hover || focus
 
+  const classNames = cx('orion-slider-wrapper', className)
   return (
-    <div className="orion-slider-wrapper">
+    <div className={classNames}>
       <input
         type="range"
         className="orion-slider"
@@ -56,6 +58,7 @@ Slider.defaultProps = {
 }
 
 Slider.propTypes = {
+  className: PropTypes.string,
   labelsMask: PropTypes.func,
   max: PropTypes.number,
   min: PropTypes.number,

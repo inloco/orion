@@ -1,0 +1,3 @@
+.custom-slider input[type='range'].orion-slider::-webkit-slider-runnable-track {
+  background-color: #f00;
+}
