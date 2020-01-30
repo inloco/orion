@@ -2,6 +2,7 @@ import React from 'react'
 import { withKnobs, number } from '@storybook/addon-knobs'
 
 import { Slider } from '..'
+import './Slider.stories.css'
 
 export default {
   title: 'Slider',
@@ -21,4 +22,8 @@ export const MinMaxAndStep = () => {
       labelsMask={value => 'R$ ' + value}
     />
   )
+}
+
+export const CustomTrackColor = () => {
+  return <Slider className="custom-slider" />
 }
