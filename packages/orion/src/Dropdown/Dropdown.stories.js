@@ -1,6 +1,9 @@
+import _ from 'lodash'
 import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { boolean, object, text, withKnobs } from '@storybook/addon-knobs'
+
+import appImage from '../../storyImages/app.png'
 
 import Dropdown from './'
 import { Sizes } from '../utils/sizes'
@@ -128,3 +131,18 @@ export const detailedItems = () => (
     </Dropdown>
   </div>
 )
+
+export const withImages = () => {
+  const optionsWithImages = _.map(developerOptions, option => ({
+    ...option,
+    image: appImage
+  }))
+  return (
+    <Dropdown
+      placeholder="Select Developer"
+      selection
+      options={object('Options', optionsWithImages)}
+      {...actions}
+    />
+  )
+}
