@@ -50,7 +50,7 @@ describe('when an option is selected', () => {
 
     const option = getAllByText('Red')[1]
     expect(option).toBeTruthy()
-    expect(option.parentNode).toHaveClass('item active')
+    expect(option.closest('.item')).toHaveClass('active')
   })
 
   describe('when a selected option is clicked', () => {
@@ -68,8 +68,7 @@ describe('when an option is selected', () => {
       const { getByText } = renderResult
 
       const option = getByText('Red')
-      expect(option.parentNode).toHaveClass('item')
-      expect(option.parentNode).not.toHaveClass('active')
+      expect(option.closest('.item')).not.toHaveClass('active')
     })
   })
 })

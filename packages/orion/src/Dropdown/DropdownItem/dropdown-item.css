@@ -22,3 +22,7 @@
 .orion.dropdown .menu > .item .description {
   @apply mt-4 leading-14 text-gray-800 text-sm truncate;
 }
+
+.orion.dropdown .menu > .item .image {
+  @apply mr-8 w-32;
+}

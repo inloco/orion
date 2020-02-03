@@ -1,7 +1,7 @@
 import _ from 'lodash'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { Dropdown as SemanticDropdown } from '@inloco/semantic-ui-react'
+import { Dropdown as SemanticDropdown, Image } from '@inloco/semantic-ui-react'
 
 import { createShorthandFactory } from '../../utils/factories'
 
@@ -9,17 +9,25 @@ const DropdownItem = ({
   children,
   content,
   description,
+  image,
   text,
   ...otherProps
 }) => {
   if (!children) {
     children = (
-      <React.Fragment>
-        <div className="text">{_.isNil(content) ? text : content}</div>
-        {!_.isNil(description) && (
-          <div className="description">{description}</div>
+      <div className="flex items-center">
+        {image && (
+          <div className="flex-shrink-0">
+            {Image.create(image, { autoGenerateKey: false })}
+          </div>
         )}
-      </React.Fragment>
+        <div className="flex-1">
+          <div className="text">{_.isNil(content) ? text : content}</div>
+          {!_.isNil(description) && (
+            <div className="description">{description}</div>
+          )}
+        </div>
+      </div>
     )
   }
   return (
@@ -31,6 +39,7 @@ DropdownItem.propTypes = {
   children: PropTypes.node,
   content: PropTypes.node,
   description: PropTypes.node,
+  image: PropTypes.oneOfType([PropTypes.node, PropTypes.object]),
   text: PropTypes.node
 }
 
