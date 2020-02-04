@@ -6,7 +6,7 @@ import { Popup } from '@inloco/semantic-ui-react'
 import Icon from '../Icon'
 import { Sizes } from '../utils/sizes'
 
-const InfoIcon = ({ className, content, ...otherProps }) => (
+const InfoIcon = ({ className, content, popupProps, ...otherProps }) => (
   <Popup
     size={Sizes.SMALL}
     trigger={
@@ -18,12 +18,14 @@ const InfoIcon = ({ className, content, ...otherProps }) => (
     }
     position="right center"
     content={content}
+    {...popupProps}
   />
 )
 
 InfoIcon.propTypes = {
   className: PropTypes.string,
-  content: PropTypes.node
+  content: PropTypes.node,
+  popupProps: PropTypes.object
 }
 
 export default InfoIcon
