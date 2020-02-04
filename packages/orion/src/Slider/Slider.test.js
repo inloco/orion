@@ -4,11 +4,8 @@ import { render } from '@testing-library/react'
 import Slider from './'
 
 it('should show popup if slider is focused', () => {
-  const { queryByText, queryByDisplayValue, debug } = render(
-    <Slider value={30} />
-  )
+  const { queryByText, queryByDisplayValue } = render(<Slider value={30} />)
 
-  console.log(debug())
   queryByDisplayValue('30').focus()
   expect(queryByText('30')).toBeVisible()
 })

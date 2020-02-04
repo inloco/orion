@@ -21,7 +21,7 @@ const Label = ({
         <div className="label-remove" onClick={e => onRemove(e, otherProps)}>
           <Icon name="clear" size="big" />
         </div>
-        {children || content}
+        <div className="label-text">{children || content}</div>
       </React.Fragment>
     )
   }

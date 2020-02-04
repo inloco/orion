@@ -42,7 +42,7 @@ describe('when an option is selected', () => {
 
     const [label] = getAllByText('Red')
     expect(label).toBeTruthy()
-    expect(label).toHaveClass('orion label')
+    expect(label.closest('.orion.label')).toBeTruthy()
   })
 
   it('should show option on the list, as selected', () => {
