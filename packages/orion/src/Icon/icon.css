@@ -1,5 +1,5 @@
-i.icon {
-  @apply text-lg;
+i.orion.icon {
+  @apply text-lg text-left;
 }
 
 svg.icon {
@@ -8,15 +8,15 @@ svg.icon {
   width: 20px;
 }
 
-i.icon.loading {
+i.orion.icon.loading {
   @apply relative;
 
   width: 20px;
   height: 20px;
 }
 
-i.icon.loading:before,
-i.icon.loading:after {
+i.orion.icon.loading:before,
+i.orion.icon.loading:after {
   @apply absolute;
   @apply border-2 rounded-full;
   @apply w-full h-full;
@@ -24,18 +24,18 @@ i.icon.loading:after {
   content: '';
 }
 
-i.icon.loading:before {
+i.orion.icon.loading:before {
   @apply border-gray-900-16;
 }
 
-i.icon.loading:after {
-  animation: loading 0.6s linear;
+i.orion.icon.loading:after {
+  animation: orionLoading 0.6s linear;
   animation-iteration-count: infinite;
 
   border-color: #616263 transparent transparent;
 }
 
-@keyframes loading {
+@keyframes orionLoading {
   from {
     transform: rotate(0deg);
   }
