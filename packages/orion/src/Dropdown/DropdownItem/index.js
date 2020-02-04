@@ -21,7 +21,7 @@ const DropdownItem = ({
             {Image.create(image, { autoGenerateKey: false })}
           </div>
         )}
-        <div className="flex-1">
+        <div className="flex-1 min-w-0">
           <div className="text">{_.isNil(content) ? text : content}</div>
           {!_.isNil(description) && (
             <div className="description">{description}</div>
