@@ -23,7 +23,11 @@
 }
 
 .orion.dropdown .text {
-  @apply text-gray-900 z-10;
+  @apply text-gray-900 truncate z-10;
+}
+
+.orion.dropdown > .text {
+  @apply flex-1;
 }
 
 .orion.dropdown .text.default {

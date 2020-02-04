@@ -1,5 +1,5 @@
 .orion.dropdown .menu > .item .text {
-  @apply leading-20 truncate;
+  @apply leading-20;
 }
 
 .orion.dropdown .menu > .item,

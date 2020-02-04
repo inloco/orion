@@ -1,5 +1,5 @@
 .orion.label {
-  @apply inline-flex items-center px-8 bg-gray-900-8 rounded leading-20 text-gray-900 h-32;
+  @apply inline-flex items-center px-8 bg-gray-900-8 rounded leading-20 text-gray-900 truncate h-32;
 }
 
 .orion.label.small {
@@ -28,4 +28,8 @@
 .orion.label.small .label-remove {
   @apply rounded-r-none;
   margin-left: -8px;
+}
+
+.label-text {
+  @apply truncate;
 }
