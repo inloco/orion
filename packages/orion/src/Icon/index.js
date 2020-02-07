@@ -9,7 +9,7 @@ import { createShorthandFactory } from '../utils/factories'
 const Icon = ({ as: AsElementType, className, color, name, ...otherProps }) => {
   const isCustomIcon = !!CUSTOM_ICONS_MAP[name] || !!AsElementType
   const ElementType = AsElementType || CUSTOM_ICONS_MAP[name] || 'i'
-  const classes = cx(className, 'icon', {
+  const classes = cx(className, 'orion icon', {
     'material-icons': !isCustomIcon,
     [`text-${color}`]: !isCustomIcon && color,
     [`fill-${color}`]: isCustomIcon && color
