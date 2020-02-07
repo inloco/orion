@@ -13,6 +13,12 @@ input[type='range'].orion-slider {
   padding: 0 1px;
 }
 
+@supports (-moz-appearance: none) {
+  input[type='range'].orion-slider {
+    @apply overflow-visible p-0;
+  }
+}
+
 /* focus */
 input[type='range'].orion-slider:focus {
   @apply outline-none;
