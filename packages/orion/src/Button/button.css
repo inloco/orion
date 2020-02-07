@@ -16,6 +16,8 @@
 .orion.button:not(.icon) > .icon {
   @apply flex justify-center;
   @apply h-24 w-24;
+  @apply mr-2;
+  margin-left: -5px;
   vertical-align: sub;
 }
 
