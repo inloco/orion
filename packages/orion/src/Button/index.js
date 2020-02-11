@@ -9,16 +9,18 @@ import { createShorthandFactory } from '../utils/factories'
 const Button = ({
   className,
   ghost,
+  icon,
   secondary,
   size,
   subtle,
   ...otherProps
 }) => {
-  const { primary } = otherProps
+  const { loading, primary } = otherProps
   const classes = cx(className, size, { ghost, subtle })
   return (
     <SemanticButton
       className={classes}
+      icon={loading ? 'loading' : icon}
       secondary={secondary || (!primary && !ghost)}
       {...otherProps}
     />
@@ -28,6 +30,12 @@ const Button = ({
 Button.propTypes = {
   className: PropTypes.string,
   ghost: PropTypes.bool,
+  icon: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.bool,
+    PropTypes.element,
+    PropTypes.object
+  ]),
   secondary: PropTypes.bool,
   size: sizePropType,
   subtle: PropTypes.bool

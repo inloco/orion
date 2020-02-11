@@ -189,3 +189,26 @@
 .orion.button + .orion.button {
   @apply ml-16;
 }
+
+/* Loading */
+
+.orion.button.loading {
+  @apply relative;
+  color: transparent !important;
+}
+
+.orion.button.loading .icon.loading {
+  @apply absolute ml-0;
+}
+
+.orion.button.loading .icon.loading::before {
+  @apply border-gray-900-24;
+}
+
+.orion.button.loading .icon.loading::after {
+  border-color: white transparent transparent;
+}
+
+.orion.button.ghost.loading .icon.loading::after {
+  border-color: #0096b4 transparent transparent;
+}
