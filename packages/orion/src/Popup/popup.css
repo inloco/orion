@@ -1,5 +1,5 @@
 .orion.popup {
-  @apply bg-white border border-gray-900-8 leading-14 max-w-384 p-16 rounded shadow-300 text-gray-800 z-50;
+  @apply bg-white border border-gray-900-8 leading-20 max-w-384 p-16 rounded shadow-300 text-gray-800 z-50;
 }
 
 .orion.popup:before {
