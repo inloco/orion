@@ -17,6 +17,7 @@ export default {
 
 export const primary = () => {
   const disabled = boolean('Disabled')
+  const loading = boolean('Loading')
   const sizeValue = sizeKnob()
   return (
     <React.Fragment>
@@ -26,6 +27,7 @@ export const primary = () => {
         content={text('Content', 'Click Me')}
         disabled={disabled}
         icon={text('First Icon', '') || null}
+        loading={loading}
         size={sizeValue}
         {...actions}
       />
@@ -36,6 +38,7 @@ export const primary = () => {
         primary
         disabled={disabled}
         icon={text('Second Icon', 'cloud')}
+        loading={loading}
         size={sizeValue}
         {...actions}
       />
@@ -45,6 +48,7 @@ export const primary = () => {
 
 export const secondary = () => {
   const disabled = boolean('Disabled')
+  const loading = boolean('Loading')
   const sizeValue = sizeKnob()
   return (
     <React.Fragment>
@@ -54,6 +58,7 @@ export const secondary = () => {
         content={text('Content', 'Click Me')}
         disabled={disabled}
         icon={text('First Icon', '') || null}
+        loading={loading}
         size={sizeValue}
         {...actions}
       />
@@ -64,6 +69,7 @@ export const secondary = () => {
         secondary
         disabled={disabled}
         icon={text('Second Icon', 'cloud')}
+        loading={loading}
         size={sizeValue}
         {...actions}
       />
@@ -73,6 +79,7 @@ export const secondary = () => {
 
 export const ghost = () => {
   const disabled = boolean('Disabled')
+  const loading = boolean('Loading')
   const sizeValue = sizeKnob()
   return (
     <React.Fragment>
@@ -82,6 +89,7 @@ export const ghost = () => {
         content={text('Content', 'Click Me')}
         disabled={disabled}
         icon={text('First Icon', '') || null}
+        loading={loading}
         size={sizeValue}
         {...actions}
       />
@@ -92,6 +100,7 @@ export const ghost = () => {
         ghost
         disabled={disabled}
         icon={text('Second Icon', 'cloud')}
+        loading={loading}
         size={sizeValue}
         {...actions}
       />
@@ -101,6 +110,7 @@ export const ghost = () => {
 
 export const subtlePrimary = () => {
   const disabled = boolean('Disabled')
+  const loading = boolean('Loading')
   const sizeValue = sizeKnob()
   return (
     <React.Fragment>
@@ -111,6 +121,7 @@ export const subtlePrimary = () => {
         content={text('Content', 'Click Me')}
         disabled={disabled}
         icon={text('First Icon', '') || null}
+        loading={loading}
         size={sizeValue}
         {...actions}
       />
@@ -122,6 +133,7 @@ export const subtlePrimary = () => {
         subtle
         disabled={disabled}
         icon={text('Second Icon', 'apps')}
+        loading={loading}
         size={sizeValue}
         {...actions}
       />
@@ -131,6 +143,7 @@ export const subtlePrimary = () => {
 
 export const subtleSecondary = () => {
   const disabled = boolean('Disabled')
+  const loading = boolean('Loading')
   const sizeValue = sizeKnob()
   return (
     <React.Fragment>
@@ -141,6 +154,7 @@ export const subtleSecondary = () => {
         content={text('Content', 'Click Me')}
         disabled={disabled}
         icon={text('First Icon', '') || null}
+        loading={loading}
         size={sizeValue}
         {...actions}
       />
@@ -152,6 +166,7 @@ export const subtleSecondary = () => {
         subtle
         disabled={disabled}
         icon={text('Second Icon', 'apps')}
+        loading={loading}
         size={sizeValue}
         {...actions}
       />
