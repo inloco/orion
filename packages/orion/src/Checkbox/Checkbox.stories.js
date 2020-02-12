@@ -11,7 +11,7 @@ export default {
 export const regular = () => (
   <React.Fragment>
     <Checkbox
-      label={!boolean('No label', false) && text('Label', 'Click Me')}
+      label={boolean('No label', false) ? null : text('Label', 'Click Me')}
       defaultChecked
       indeterminate={boolean('Indeterminate', false)}
       disabled={boolean('Disabled', false)}
