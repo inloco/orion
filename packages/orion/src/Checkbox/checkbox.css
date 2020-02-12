@@ -1,5 +1,5 @@
 .orion.checkbox {
-  @apply my-2 relative h-16;
+  @apply my-2 relative min-h-16;
 }
 
 .orion.checkbox input[type='checkbox'] {
@@ -8,7 +8,11 @@
   @apply block !important;
 }
 
-.orion.checkbox.fitted > label {
+.orion.checkbox.fitted {
+  @apply min-w-16;
+}
+
+.orion.checkbox.fitted input[type='checkbox'] ~ label {
   @apply pl-0;
 }
 
@@ -37,27 +41,15 @@
   @apply bg-wave-500;
 }
 
-.orion.checkbox:not(.disabled)
-  input[type='checkbox']:checked
-  ~ label:hover:before,
-.orion.checkbox:not(.disabled)
-  input[type='checkbox']:indeterminate
-  ~ label:hover:before {
+.orion.checkbox input[type='checkbox']:checked ~ label:hover:before,
+.orion.checkbox input[type='checkbox']:indeterminate ~ label:hover:before {
   @apply bg-wave-600;
 }
 
-.orion.checkbox:not(.disabled)
-  input[type='checkbox']:checked
-  ~ label:active:before,
-.orion.checkbox:not(.disabled)
-  input[type='checkbox']:indeterminate
-  ~ label:active:before,
-.orion.checkbox:not(.disabled)
-  input[type='checkbox']:checked:focus
-  ~ label:before,
-.orion.checkbox:not(.disabled)
-  input[type='checkbox']:indeterminate:focus
-  ~ label:before {
+.orion.checkbox input[type='checkbox']:checked ~ label:active:before,
+.orion.checkbox input[type='checkbox']:indeterminate ~ label:active:before,
+.orion.checkbox input[type='checkbox']:checked:focus ~ label:before,
+.orion.checkbox input[type='checkbox']:indeterminate:focus ~ label:before {
   @apply bg-wave-700;
 }
 
@@ -79,6 +71,10 @@
 /**
  * Disabled
  */
+
+.orion.checkbox.disabled {
+  pointer-events: none;
+}
 
 .orion.checkbox.disabled input[type='checkbox'] ~ label {
   @apply text-gray-800;
