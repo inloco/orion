@@ -1,7 +1,6 @@
 export { default as Colors } from '@inloco/atomic-bomb'
 
 export {
-  Checkbox,
   Dimmer,
   Placeholder,
   Popup,
@@ -11,6 +10,7 @@ export {
 
 export { default as Button } from './Button'
 export { default as Card } from './Card'
+export { default as Checkbox } from './Checkbox'
 export { default as ClickOutside } from './ClickOutside'
 export { default as Datepicker } from './Datepicker'
 export { default as Dialog } from './Dialog'
@@ -34,6 +34,7 @@ export { default as Modal } from './Modal'
 export { default as NotificationCenter } from './NotificationCenter'
 export { default as Pagination } from './Pagination'
 export { default as Progress } from './Progress'
+export { default as Radio } from './Radio'
 export { default as RangedDatepicker } from './RangedDatepicker'
 export { default as StatusTag } from './StatusTag'
 export { default as StepsNav } from './StepsNav'
