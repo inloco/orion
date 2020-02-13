@@ -1,8 +1,9 @@
 .orion.input {
-  @apply inline-flex relative;
+  @apply h-48 inline-flex relative;
+  width: 256px;
 }
 .orion.input > input {
-  @apply h-48 pl-16 flex justify-center outline-none;
+  @apply h-full pl-16 flex justify-center outline-none w-full;
 }
 
 .orion.input:not(.labeled) > input {
@@ -27,7 +28,7 @@
   @apply h-em w-em;
 }
 
-.orion.input.small > input {
+.orion.input.small {
   @apply h-32;
 }
 
@@ -59,7 +60,7 @@
   @apply shadow-warning-field-active;
 }
 
-.orion.input.fluid > input {
+.orion.input.fluid {
   @apply w-full;
 }
 
