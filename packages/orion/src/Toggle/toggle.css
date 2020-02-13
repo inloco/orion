@@ -1,0 +1,74 @@
+.orion.checkbox.toggle input[type='checkbox'] {
+  @apply w-32;
+}
+
+.orion.checkbox.toggle input[type='checkbox'] ~ label {
+  padding-left: 40px;
+}
+
+.orion.checkbox.toggle.fitted {
+  @apply min-w-32;
+}
+
+.orion.checkbox.toggle.fitted input[type='checkbox'] ~ label {
+  @apply pl-0;
+}
+
+/** Toggle Bar **/
+
+.orion.checkbox.toggle input[type='checkbox'] ~ label:before {
+  @apply bg-gray-900-16 rounded-full w-32;
+}
+
+.orion.checkbox.toggle input[type='checkbox'] ~ label:hover:before {
+  @apply bg-gray-900-24;
+}
+
+.orion.checkbox.toggle input[type='checkbox'] ~ label:active:before,
+.orion.checkbox.toggle input[type='checkbox']:focus ~ label:before {
+  @apply bg-gray-900-32;
+}
+
+/** Toggle Circle **/
+
+.orion.checkbox.toggle input[type='checkbox'] ~ label:after {
+  @apply absolute bg-white h-12 w-12 rounded-full transition-default;
+  content: '';
+  left: 2px;
+  top: 2px;
+  transition-duration: 0.3;
+  transition-property: background-color, left;
+}
+
+/** Selected Toggle Bar **/
+
+.orion.checkbox.toggle input[type='checkbox']:checked ~ label:before {
+  @apply bg-wave-500;
+}
+
+.orion.checkbox.toggle input[type='checkbox']:checked ~ label:hover:before {
+  @apply bg-wave-600;
+}
+
+.orion.checkbox.toggle input[type='checkbox']:checked ~ label:active:before,
+.orion.checkbox.toggle input[type='checkbox']:checked:focus ~ label:before {
+  @apply bg-wave-700;
+}
+
+/** Selected Toggle Circle **/
+
+.orion.checkbox.toggle input[type='checkbox']:checked ~ label:after {
+  left: 18px;
+}
+
+/** Disabled Toggle Bar **/
+
+.orion.checkbox.toggle.disabled input[type='checkbox'] ~ label:before {
+  @apply bg-gray-900-8;
+}
+
+/** Disabled Toggle Circle **/
+
+.orion.checkbox.toggle.disabled input[type='checkbox'] ~ label:after {
+  @apply bg-gray-900-24;
+}
