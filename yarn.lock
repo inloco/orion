@@ -2147,16 +2147,16 @@
     uuid "^3.3.2"
 
 "@storybook/addon-knobs@^5.2.1":
-  version "5.3.12"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-knobs/-/addon-knobs-5.3.12.tgz#743f816bc8c2260d1794fa5dd945521fb4a30a80"
-  integrity sha512-BZaFg0sb9EAk/SUAFG7PArMlywrIKDfbeg073zcf7fGa1Aa2M0AauBZ/eAiidCZsWcrOlt0FWwfPs+SHNSqEOA==
+  version "5.3.13"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-knobs/-/addon-knobs-5.3.13.tgz#fe8be71eadd118edf19656442388e2e7262d2fad"
+  integrity sha512-Ef3D8bbV+6fywjR4JUX699gT7ZfuNBXlXqZB1qgGde5swbuttEGty1+RRwK1fqIeBr6EbzPvhRBTVOFIQp5Ysg==
   dependencies:
-    "@storybook/addons" "5.3.12"
-    "@storybook/api" "5.3.12"
-    "@storybook/client-api" "5.3.12"
-    "@storybook/components" "5.3.12"
-    "@storybook/core-events" "5.3.12"
-    "@storybook/theming" "5.3.12"
+    "@storybook/addons" "5.3.13"
+    "@storybook/api" "5.3.13"
+    "@storybook/client-api" "5.3.13"
+    "@storybook/components" "5.3.13"
+    "@storybook/core-events" "5.3.13"
+    "@storybook/theming" "5.3.13"
     "@types/react-color" "^3.0.1"
     copy-to-clipboard "^3.0.8"
     core-js "^3.0.1"
