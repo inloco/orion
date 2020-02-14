@@ -22,9 +22,6 @@ import React, { cloneElement, isValidElement } from 'react'
  * @returns {object|null}
  */
 export function createShorthand(Component, mapValueToProps, val, options = {}) {
-  if (typeof Component !== 'function' && typeof Component !== 'string') {
-    throw new Error('createShorthand() Component must be a string or function.')
-  }
   // short circuit noop values
   if (_.isNil(val) || _.isBoolean(val)) return null
 
@@ -146,12 +143,6 @@ export function createShorthand(Component, mapValueToProps, val, options = {}) {
  * @returns {function} A shorthand factory function waiting for `val` and `defaultProps`.
  */
 export function createShorthandFactory(Component, mapValueToProps) {
-  if (typeof Component !== 'function' && typeof Component !== 'string') {
-    throw new Error(
-      'createShorthandFactory() Component must be a string or function.'
-    )
-  }
-
   return (val, options) =>
     createShorthand(Component, mapValueToProps, val, options)
 }

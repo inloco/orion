@@ -6,14 +6,16 @@ import { Input as SemanticInput } from '@inloco/semantic-ui-react'
 import { createShorthandFactory } from '../utils/factories'
 import { Sizes, sizePropType } from '../utils/sizes'
 
-const Input = ({ className, warning, size, ...otherProps }) => {
-  const { fluid } = otherProps
-  const classes = cx(className, size, {
-    warning,
-    'w-full': fluid
-  })
-  return <SemanticInput className={classes} {...otherProps} />
-}
+const Input = React.forwardRef(
+  ({ className, warning, size, ...otherProps }, ref) => {
+    const { fluid } = otherProps
+    const classes = cx(className, size, {
+      warning,
+      'w-full': fluid
+    })
+    return <SemanticInput className={classes} ref={ref} {...otherProps} />
+  }
+)
 
 Input.propTypes = {
   className: PropTypes.string,
