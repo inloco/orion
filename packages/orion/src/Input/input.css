@@ -4,9 +4,6 @@
 }
 .orion.input > input {
   @apply h-full pl-16 flex justify-center outline-none w-full;
-}
-
-.orion.input:not(.labeled) > input {
   @apply bg-white border border-solid border-gray-900-24 rounded;
 }
 
@@ -74,4 +71,30 @@
 
 .orion.input.icon > input ~ .icon {
   @apply absolute right-0 w-40 h-full flex items-center justify-center;
+}
+
+/** Labeled **/
+
+.orion.input.labeled {
+  @apply bg-white border border-solid border-gray-900-24 rounded;
+}
+
+.orion.input.labeled > .label {
+  @apply h-full flex-shrink-0 rounded-none text-gray-700;
+}
+
+.orion.input.labeled > input {
+  @apply bg-transparent border-none flex-1 rounded-none;
+}
+
+.orion.input.labeled.error {
+  @apply border-magenta-500;
+}
+
+.orion.input.labeled.warning {
+  @apply border-yellow-500;
+}
+
+.orion.input.labeled.disabled {
+  @apply bg-gray-900-8;
 }
