@@ -18,7 +18,8 @@ const LayoutTopbar = ({ className, children, logo, dimmed, ...otherProps }) => {
 LayoutTopbar.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
-  logo: PropTypes.node
+  logo: PropTypes.node,
+  dimmed: PropTypes.bool
 }
 
 export default LayoutTopbar
