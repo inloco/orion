@@ -10,16 +10,13 @@ export default {
 }
 
 export const defaultStory = () => {
-  const error = boolean('error', false)
-  const warning = boolean('warning', false)
-  const disabled = boolean('disabled', false)
   return (
     <Input
-      placeholder="Input placeholder"
-      warning={warning}
-      error={error}
+      placeholder={text('Placeholder', 'Type here')}
       size={sizeKnob()}
-      disabled={disabled}
+      error={boolean('error', false)}
+      warning={boolean('warning', false)}
+      disabled={boolean('disabled', false)}
       fluid={boolean('fluid', false)}
       icon={text('Icon')}
     />
@@ -28,4 +25,19 @@ export const defaultStory = () => {
 
 defaultStory.story = {
   name: 'default'
+}
+
+export const labeled = () => {
+  return (
+    <Input
+      label={text('Label', 'https://')}
+      placeholder={text('Placeholder', 'Type an URL')}
+      size={sizeKnob()}
+      error={boolean('error', false)}
+      warning={boolean('warning', false)}
+      disabled={boolean('disabled', false)}
+      fluid={boolean('fluid', false)}
+      icon={text('Icon')}
+    />
+  )
 }
