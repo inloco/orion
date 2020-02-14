@@ -1,13 +1,18 @@
 .orion.search {
   @apply relative inline-block h-48;
+  min-width: 256px;
 }
 
 .orion.search.small {
   @apply h-32;
 }
 
+.orion.search.fluid {
+  @apply w-full;
+}
+
 .orion.search > .orion.input {
-  @apply h-full;
+  @apply h-full w-full;
 }
 
 .orion.search > .orion.input > input {

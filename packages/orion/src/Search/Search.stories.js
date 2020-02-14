@@ -25,6 +25,7 @@ export const basic = () => {
       error={boolean('Error', false)}
       warning={boolean('Warning', false)}
       loading={boolean('Loading', false)}
+      fluid={boolean('Fluid', false)}
     />
   )
 }
