@@ -16,6 +16,10 @@
   @apply border-b-1 border-gray-900-16;
 }
 
+.orion.layout .layout-topbar.dimmed {
+  @apply bg-gray-100 border-space-900-8;
+}
+
 .orion.layout .layout-topbar > .layout-center-content {
   @apply flex items-center;
 }
