@@ -1,0 +1,56 @@
+.orion.textarea {
+  @apply inline-flex relative;
+  width: 256px;
+}
+
+.orion.textarea > textarea {
+  @apply h-full p-16 flex justify-center outline-none w-full;
+  @apply bg-white border border-solid border-gray-900-24 rounded;
+}
+
+.orion.textarea > textarea:hover {
+  @apply shadow-field-hover;
+}
+
+.orion.textarea > textarea:active,
+.orion.textarea > textarea:focus {
+  @apply shadow-field-active;
+}
+
+.orion.textarea.fluid {
+  @apply w-full;
+}
+
+/** Disabled **/
+
+.orion.textarea > textarea:disabled {
+  @apply bg-gray-900-8 pointer-events-none;
+}
+
+/* Error */
+.orion.textarea.error > textarea {
+  @apply border-magenta-500;
+}
+
+.orion.textarea.error > textarea:hover {
+  @apply shadow-error-field-hover;
+}
+
+.orion.textarea.error > textarea:active,
+.orion.textarea.error > textarea:focus {
+  @apply shadow-error-field-active;
+}
+
+/* Warning */
+.orion.textarea.warning > textarea {
+  @apply border-yellow-500;
+}
+
+.orion.textarea.warning > textarea:hover {
+  @apply shadow-warning-field-hover;
+}
+
+.orion.textarea.warning > textarea:active,
+.orion.textarea.warning > textarea:focus {
+  @apply shadow-warning-field-active;
+}
