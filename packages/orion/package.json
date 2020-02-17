@@ -30,7 +30,7 @@
   "homepage": "https://inloco.github.io/orion",
   "dependencies": {
     "@inloco/atomic-bomb": "^1.0.28",
-    "@inloco/semantic-ui-react": "^0.88.1",
+    "@inloco/semantic-ui-react": "^0.88.2",
     "classnames": "^2.2.6",
     "keyboard-key": "^1.0.4",
     "lodash": "^4.17.14",

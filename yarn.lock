@@ -1140,9 +1140,10 @@
   version "0.2.4"
   resolved "https://registry.yarnpkg.com/@icons/material/-/material-0.2.4.tgz#e90c9f71768b3736e76d7dd6783fc6c2afa88bc8"
 
-"@inloco/semantic-ui-react@^0.88.1":
-  version "0.88.1"
-  resolved "https://registry.yarnpkg.com/@inloco/semantic-ui-react/-/semantic-ui-react-0.88.1.tgz#708320cb3464c04360123f26bc3b3e2ba02ddb1c"
+"@inloco/semantic-ui-react@^0.88.2":
+  version "0.88.2"
+  resolved "https://registry.yarnpkg.com/@inloco/semantic-ui-react/-/semantic-ui-react-0.88.2.tgz#bc0387f120b6d4f83476b087055e2fdfc87dd81c"
+  integrity sha512-5t4cBDkGDyx8LSeb/QGrqspzmPbOzPslQYcJNLrmx/mQRwTVXErYfO9FA4iJ+9sVLqQVi4r/1nij1WHI3OOorg==
   dependencies:
     "@babel/runtime" "^7.1.2"
     "@semantic-ui-react/event-stack" "^3.1.0"
