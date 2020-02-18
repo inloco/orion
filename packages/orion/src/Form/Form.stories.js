@@ -84,3 +84,16 @@ export const formShorthands = () => (
     </Button>
   </Form>
 )
+
+export const checkboxes = () => {
+  return (
+    <Form>
+      <Form.Group inline={boolean('Inline', false)}>
+        <label>Job</label>
+        <Form.Checkbox label="Backend Engineer" />
+        <Form.Checkbox label="Frontend Engineer" />
+        <Form.Checkbox label="Mobile Engineer" />
+      </Form.Group>
+    </Form>
+  )
+}
