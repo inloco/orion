@@ -2,9 +2,14 @@
   @apply relative;
 }
 
+.orion.form .field > label,
+.orion.form .fields > label {
+  @apply block mb-8;
+}
+
 /* Floated label */
 .orion.form .field.floatingLabel label {
-  @apply absolute border-l-1 top-0 block .cursor-text ml-16 text-gray-800 text-base transition-default z-10;
+  @apply absolute border-l-1 top-0 block .cursor-text ml-16 pb-0 text-gray-800 text-base transition-default z-10;
   transition-property: margin-top, font-size;
   border-color: transparent !important;
   margin-top: 17px;
@@ -54,4 +59,19 @@
 
 .orion-form-field__message--warning {
   @apply text-yellow-500;
+}
+
+/* Inline */
+
+.orion.form .fields.inline {
+  @apply flex !important;
+  @apply flex-wrap items-center;
+}
+
+.orion.form .fields.inline > label {
+  @apply w-full;
+}
+
+.orion.form .fields.inline > .field {
+  @apply mr-16;
 }
