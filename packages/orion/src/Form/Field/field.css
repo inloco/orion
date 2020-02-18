@@ -15,7 +15,7 @@
   @apply mt-8 text-sm;
 }
 
-.orion.form .field.floatingLabel .dropdown .text,
+.orion.form .field.floatingLabel .dropdown > .text,
 .orion.form .field.floatingLabel input {
   @apply pt-16;
 }
