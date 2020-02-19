@@ -190,7 +190,12 @@ module.exports = {
           .alpha(0.24)
           .string()
       },
-      space: _.pick(theme('colors.space'), ['600']),
+      space: {
+        ..._.pick(theme('colors.space'), ['600']),
+        '900-8': Color(theme('colors').space['900'])
+          .alpha(0.08)
+          .string()
+      },
       wave: _.pick(theme('colors.wave'), ['200', '500', '600', '700']),
       green: _.pick(theme('colors.green'), ['500']),
       yellow: _.pick(theme('colors.yellow'), ['500']),

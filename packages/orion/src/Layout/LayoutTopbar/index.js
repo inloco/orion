@@ -5,8 +5,8 @@ import React from 'react'
 import LayoutCenter from '../LayoutCenter'
 import Logo from '../../Logo'
 
-const LayoutTopbar = ({ className, children, logo, ...otherProps }) => {
-  const classes = cx('layout-topbar', className)
+const LayoutTopbar = ({ className, children, logo, dimmed, ...otherProps }) => {
+  const classes = cx('layout-topbar', { dimmed }, className)
   return (
     <LayoutCenter className={classes} {...otherProps}>
       {logo || <Logo className="mb-4" />}
@@ -18,7 +18,8 @@ const LayoutTopbar = ({ className, children, logo, ...otherProps }) => {
 LayoutTopbar.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
-  logo: PropTypes.node
+  logo: PropTypes.node,
+  dimmed: PropTypes.bool
 }
 
 export default LayoutTopbar
