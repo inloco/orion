@@ -1,0 +1,11 @@
+.orion.datepicker-input > .icon {
+  @apply cursor-pointer text-gray-700;
+}
+
+.datepicker-input-trigger.disabled {
+  @apply pointer-events-none;
+}
+
+.orion.popup.datepicker-input-popup {
+  @apply pb-0;
+}
