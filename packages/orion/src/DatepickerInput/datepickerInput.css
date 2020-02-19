@@ -9,3 +9,7 @@
 .orion.popup.datepicker-input-popup {
   @apply pb-0;
 }
+
+.orion.popup.datepicker-input-popup.opening {
+  @apply invisible !important;
+}
