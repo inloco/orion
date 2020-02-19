@@ -191,7 +191,7 @@ module.exports = {
           .string()
       },
       space: {
-        ..._.pick(theme('colors.space'), ['600', '900']),
+        ..._.pick(theme('colors.space'), ['600']),
         '900-8': Color(theme('colors').space['900'])
           .alpha(0.08)
           .string()
