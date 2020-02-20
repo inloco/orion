@@ -22,6 +22,9 @@ export const basic = () => (
     warning={boolean('warning', false)}
     disabled={boolean('disabled', false)}
     fluid={boolean('fluid', false)}
+    popupProps={{
+      position: text('Popup position', 'bottom left')
+    }}
     {...actions}
   />
 )
