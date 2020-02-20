@@ -44,6 +44,12 @@ i.icon.ranged-datepicker-input-separator {
   width: 40px;
 }
 
+/* Disabled */
+
+.datepicker-input-trigger.disabled .ranged-datepicker-input {
+  @apply bg-gray-900-8;
+}
+
 /* Floating label */
 
 .orion.form .field.floatingLabel .ranged-datepicker-input-separator {
