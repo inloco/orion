@@ -22,6 +22,7 @@ const formatDates = (dates, displayFormat) => {
 const RangedDatepickerInput = ({
   className,
   defaultValue,
+  disabled,
   displayFormat,
   endPlaceholder,
   onChange,
@@ -79,21 +80,24 @@ const RangedDatepickerInput = ({
 
   return (
     <DatepickerSharedInput
+      disabled={disabled}
       input={
         <div className="ranged-datepicker-input">
           <Input
+            disabled={disabled}
             onChange={handleStartInputChange}
             placeholder={startPlaceholder}
-            value={_.get(inputValues, 'startDate') || ''}
+            value={_.get(value, 'startDate') || ''}
           />
           <Icon
             className="ranged-datepicker-input-separator"
             name="arrow_forward"
           />
           <Input
+            disabled={disabled}
             onChange={handleEndInputChange}
             placeholder={endPlaceholder}
-            value={_.get(inputValues, 'endDate') || ''}
+            value={_.get(value, 'endDate') || ''}
           />
           <Icon name="date_range" />
         </div>
@@ -118,6 +122,7 @@ RangedDatepickerInput.propTypes = {
     startDate: PropTypes.any,
     endDate: PropTypes.any
   }),
+  disabled: PropTypes.bool,
   displayFormat: PropTypes.string,
   endPlaceholder: PropTypes.string,
   onChange: PropTypes.func,

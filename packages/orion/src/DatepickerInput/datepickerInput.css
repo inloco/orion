@@ -6,6 +6,10 @@
   width: fit-content;
 }
 
+.datepicker-input-trigger.fluid {
+  @apply w-full;
+}
+
 .datepicker-input-trigger.disabled {
   @apply pointer-events-none;
 }
