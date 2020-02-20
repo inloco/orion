@@ -87,7 +87,7 @@ const RangedDatepickerInput = ({
             disabled={disabled}
             onChange={handleStartInputChange}
             placeholder={startPlaceholder}
-            value={_.get(inputValues, 'startDate') || ''}
+            value={_.get(value, 'startDate') || ''}
           />
           <Icon
             className="ranged-datepicker-input-separator"
@@ -97,7 +97,7 @@ const RangedDatepickerInput = ({
             disabled={disabled}
             onChange={handleEndInputChange}
             placeholder={endPlaceholder}
-            value={_.get(inputValues, 'endDate') || ''}
+            value={_.get(value, 'endDate') || ''}
           />
           <Icon name="date_range" />
         </div>
