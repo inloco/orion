@@ -68,7 +68,7 @@ DatepickerInput.propTypes = {
 }
 
 DatepickerInput.defaultProps = {
-  displayFormat: 'MM/DD/YYYY',
+  displayFormat: 'L',
   pickerProps: {},
   size: Sizes.DEFAULT
 }

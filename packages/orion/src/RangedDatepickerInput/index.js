@@ -131,7 +131,7 @@ RangedDatepickerInput.propTypes = {
 }
 
 RangedDatepickerInput.defaultProps = {
-  displayFormat: 'MM/DD/YYYY',
+  displayFormat: 'L',
   pickerProps: {},
   size: Sizes.DEFAULT
 }
