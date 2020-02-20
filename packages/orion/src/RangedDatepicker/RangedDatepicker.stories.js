@@ -38,3 +38,11 @@ export const disabledMonths = () => {
     />
   )
 }
+
+export const disabledDates = () => {
+  const isOutsideRange = date => {
+    const dayOfWeek = date.format('dddd')
+    return dayOfWeek === 'Saturday' || dayOfWeek === 'Sunday'
+  }
+  return <RangedDatepicker isOutsideRange={isOutsideRange} {...actions} />
+}

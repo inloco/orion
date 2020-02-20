@@ -115,6 +115,7 @@
   @apply bg-wave-700;
 }
 
-.CalendarDay__blocked_calendar {
-  @apply cursor-not-allowed opacity-40;
+.CalendarDay__blocked_calendar,
+.CalendarDay__blocked_out_of_range {
+  @apply cursor-not-allowed opacity-32;
 }
