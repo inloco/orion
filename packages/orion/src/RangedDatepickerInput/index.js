@@ -33,7 +33,7 @@ const RangedDatepickerInput = ({
   )
 
   const toMomentIfKnown = date =>
-    date === UNKNOWN_DATE ? null : toMoment(date)
+    date === UNKNOWN_DATE ? null : toMoment(date, displayFormat)
   const toDatesObject = datesStr => {
     const [startDateStr, endDateStr] = (datesStr || '').split(SEPARATOR)
     return startDateStr || endDateStr

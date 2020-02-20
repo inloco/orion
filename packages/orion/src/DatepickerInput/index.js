@@ -23,7 +23,7 @@ const DatepickerInput = ({
 
   const handleInputChange = (event, { value }) => {
     setInputValue(value)
-    onChange && onChange(event, { value: toMoment(value) })
+    onChange && onChange(event, { value: toMoment(value, displayFormat) })
   }
   const handlePickerChange = momentDate => {
     const inputValue = formatDate(momentDate, displayFormat)
@@ -47,7 +47,7 @@ const DatepickerInput = ({
         <Datepicker
           {...pickerProps}
           defaultDate={defaultValue}
-          date={value}
+          date={toMoment(value, displayFormat)}
           onDateChange={handlePickerChange}
         />
       }
