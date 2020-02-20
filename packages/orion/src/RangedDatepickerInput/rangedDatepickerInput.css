@@ -4,6 +4,10 @@
   width: 256px;
 }
 
+.datepicker-input-trigger.fluid .ranged-datepicker-input {
+  @apply w-full;
+}
+
 .ranged-datepicker-input:hover {
   @apply shadow-field-hover;
 }
@@ -14,7 +18,8 @@
 }
 
 .ranged-datepicker-input .orion.input {
-  @apply flex-1 h-full;
+  @apply h-full;
+  width: 87px;
 }
 
 .ranged-datepicker-input .orion.input > input {
@@ -40,7 +45,7 @@ i.icon.ranged-datepicker-input-separator {
 }
 
 .ranged-datepicker-input .icon:last-child {
-  @apply justify-center text-gray-700;
+  @apply justify-center ml-auto text-gray-700;
   width: 40px;
 }
 

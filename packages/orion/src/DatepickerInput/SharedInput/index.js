@@ -8,6 +8,7 @@ import Input from '../../Input'
 const DatepickerSharedInput = ({
   className,
   disabled,
+  fluid,
   input,
   onChange,
   picker,
@@ -36,13 +37,14 @@ const DatepickerSharedInput = ({
       on="click"
       trigger={
         <div
-          className={cx('datepicker-input-trigger', { disabled })}
+          className={cx('datepicker-input-trigger', { disabled, fluid })}
           data-testid="datepicker-trigger"
           onClick={handleTriggerClick}>
           {input || (
             <Input
               className={cx('datepicker-input', className)}
               disabled={disabled}
+              fluid
               icon="date_range"
               onChange={onChange}
               value={value || ''}
@@ -61,6 +63,7 @@ const DatepickerSharedInput = ({
 DatepickerSharedInput.propTypes = {
   className: PropTypes.string,
   disabled: PropTypes.bool,
+  fluid: PropTypes.bool,
   input: PropTypes.node,
   onChange: PropTypes.func,
   picker: PropTypes.node.isRequired,
