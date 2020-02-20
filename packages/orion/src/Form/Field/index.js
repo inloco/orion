@@ -7,12 +7,18 @@ import { Form } from '@inloco/semantic-ui-react'
 import Input from '../../Input'
 import Dropdown from '../../Dropdown'
 import DatepickerInput from '../../DatepickerInput'
+import RangedDatepickerInput from '../../RangedDatepickerInput'
 
 import { Sizes, sizePropType } from '../../utils/sizes'
 
 const SemanticFormField = Form.Field
 
-const FLOATING_LABEL_COMPONENTS = [Input, Dropdown, DatepickerInput]
+const FLOATING_LABEL_COMPONENTS = [
+  Input,
+  Dropdown,
+  DatepickerInput,
+  RangedDatepickerInput
+]
 
 const shouldHaveFloatingLabel = (field, size) =>
   FLOATING_LABEL_COMPONENTS.includes(field) && size === Sizes.DEFAULT

@@ -2,17 +2,11 @@ import _ from 'lodash'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 
+import Datepicker from '../Datepicker'
 import { toMoment } from '../utils/datetime'
 import { Sizes, sizePropType } from '../utils/sizes'
 import DatepickerSharedInput from './SharedInput'
-import Datepicker from '../Datepicker'
-
-const formatDate = (date, displayFormat) => {
-  const momentDate = toMoment(date)
-  return momentDate && momentDate.isValid()
-    ? momentDate.format(displayFormat)
-    : null
-}
+import { formatDate } from './utils'
 
 const DatepickerInput = ({
   className,
