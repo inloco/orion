@@ -4,63 +4,74 @@ import React, { useState } from 'react'
 
 import DatepickerSharedInput from '../DatepickerInput/SharedInput'
 import { formatDate } from '../DatepickerInput/utils'
+import Icon from '../Icon'
+import Input from '../Input'
 import RangedDatepicker from '../RangedDatepicker'
 import { toMoment } from '../utils/datetime'
 import { Sizes, sizePropType } from '../utils/sizes'
 
-const SEPARATOR = ' - '
-const UNKNOWN_DATE = '?'
-
 const formatDates = (dates, displayFormat) => {
   if (!dates) return null
   const { startDate, endDate } = dates
-  const formattedStart = formatDate(startDate, displayFormat) || UNKNOWN_DATE
-  const formattedEnd = formatDate(endDate, displayFormat) || UNKNOWN_DATE
-  return formattedStart + SEPARATOR + formattedEnd
+  return {
+    startDate: formatDate(startDate, displayFormat),
+    endDate: formatDate(endDate, displayFormat)
+  }
 }
 
 const RangedDatepickerInput = ({
   className,
   defaultValue,
   displayFormat,
+  endPlaceholder,
   onChange,
   pickerProps,
+  startPlaceholder,
   value: valueProp,
   ...otherProps
 }) => {
-  const [inputValue, setInputValue] = useState(
+  const [inputValues, setInputValues] = useState(
     formatDates(defaultValue, displayFormat)
   )
 
-  const toMomentIfKnown = date =>
-    date === UNKNOWN_DATE ? null : toMoment(date, displayFormat)
-  const toDatesObject = datesStr => {
-    const [startDateStr, endDateStr] = (datesStr || '').split(SEPARATOR)
-    return startDateStr || endDateStr
-      ? {
-          startDate: toMomentIfKnown(startDateStr),
-          endDate: toMomentIfKnown(endDateStr)
-        }
-      : null
+  const toMomentDates = strDates => {
+    if (!strDates) return null
+    const { startDate, endDate } = strDates
+    return {
+      startDate: toMoment(startDate, displayFormat),
+      endDate: toMoment(endDate, displayFormat)
+    }
   }
 
-  const handleInputChange = (event, { value }) => {
-    setInputValue(value)
-    onChange && onChange(event, { value: toDatesObject(value) })
+  const handleStartInputChange = (event, { value }) => {
+    const newInputValues = { ...inputValues, startDate: value }
+    setInputValues(newInputValues)
+    onChange && onChange(event, { value: toMomentDates(newInputValues) })
+  }
+  const handleEndInputChange = (event, { value }) => {
+    const newInputValues = { ...inputValues, endDate: value }
+    setInputValues(newInputValues)
+    onChange && onChange(event, { value: toMomentDates(newInputValues) })
   }
   const handlePickerChange = newDates => {
-    const inputValue = formatDates(newDates, displayFormat)
-    setInputValue(inputValue)
+    const inputValues = formatDates(newDates, displayFormat)
+    setInputValues(inputValues)
     onChange && onChange({}, { value: newDates })
   }
 
-  let value = inputValue
+  let value = inputValues
   const formattedValueProp = formatDates(valueProp, displayFormat)
   const formattedInputValue = formatDates(
-    toDatesObject(inputValue),
+    toMomentDates(inputValues),
     displayFormat
   )
-  if (!_.isUndefined(valueProp) && formattedValueProp !== formattedInputValue) {
+  if (
+    !_.isUndefined(valueProp) &&
+    _.get(formattedValueProp, 'startDate') !==
+      _.get(formattedInputValue, 'startDate') &&
+    _.get(formattedValueProp, 'endDate') !==
+      _.get(formattedInputValue, 'endDate')
+  ) {
     // We ignore values from prop if they reference the same date as the latest
     // input value, to avoid changing what the user has typed while he types it.
     value = formattedValueProp
@@ -68,12 +79,30 @@ const RangedDatepickerInput = ({
 
   return (
     <DatepickerSharedInput
-      onChange={handleInputChange}
+      input={
+        <div className="ranged-datepicker-input">
+          <Input
+            onChange={handleStartInputChange}
+            placeholder={startPlaceholder}
+            value={_.get(inputValues, 'startDate') || ''}
+          />
+          <Icon
+            className="ranged-datepicker-input-separator"
+            name="arrow_forward"
+          />
+          <Input
+            onChange={handleEndInputChange}
+            placeholder={endPlaceholder}
+            value={_.get(inputValues, 'endDate') || ''}
+          />
+          <Icon name="date_range" />
+        </div>
+      }
       picker={
         <RangedDatepicker
           {...pickerProps}
           defaultDates={defaultValue}
-          dates={toDatesObject(value)}
+          dates={toMomentDates(value)}
           onDatesChange={handlePickerChange}
         />
       }
@@ -90,9 +119,11 @@ RangedDatepickerInput.propTypes = {
     endDate: PropTypes.any
   }),
   displayFormat: PropTypes.string,
+  endPlaceholder: PropTypes.string,
   onChange: PropTypes.func,
   pickerProps: PropTypes.object,
   size: sizePropType,
+  startPlaceholder: PropTypes.string,
   value: PropTypes.shape({
     startDate: PropTypes.any,
     endDate: PropTypes.any

@@ -5,11 +5,17 @@ import { fireEvent, render } from '@testing-library/react'
 import { RangedDatepickerInput } from '../'
 
 describe('when the input is clicked', () => {
-  const placeholder = 'Choose a date range'
+  const startPlaceholder = 'Start'
+  const endPlaceholder = 'End'
   let renderResult
 
   beforeEach(() => {
-    renderResult = render(<RangedDatepickerInput placeholder={placeholder} />)
+    renderResult = render(
+      <RangedDatepickerInput
+        startPlaceholder={startPlaceholder}
+        endPlaceholder={endPlaceholder}
+      />
+    )
 
     const { getByTestId } = renderResult
     fireEvent.click(getByTestId('datepicker-trigger'))
@@ -28,9 +34,9 @@ describe('when the input is clicked', () => {
       fireEvent.click(dayElement)
     })
 
-    it('should display the selected date in the input with an unknown end date', () => {
+    it('should display the selected date in the input', () => {
       const { queryByDisplayValue } = renderResult
-      expect(queryByDisplayValue('02/20/2020 - ?')).toBeTruthy()
+      expect(queryByDisplayValue('02/20/2020')).toBeTruthy()
     })
 
     it('should show the chosen date as selected in the calendar', () => {
@@ -46,9 +52,10 @@ describe('when the input is clicked', () => {
         fireEvent.click(dayElement)
       })
 
-      it('should display the selected date in the input with an unknown end date', () => {
+      it('should display both selected dates in the input', () => {
         const { queryByDisplayValue } = renderResult
-        expect(queryByDisplayValue('02/20/2020 - 02/22/2020')).toBeTruthy()
+        expect(queryByDisplayValue('02/20/2020')).toBeTruthy()
+        expect(queryByDisplayValue('02/22/2020')).toBeTruthy()
       })
 
       it('should show the chosen date as selected in the calendar', () => {
@@ -70,18 +77,21 @@ describe('when the input is clicked', () => {
     })
   })
 
-  describe('when a new date is typed in the input', () => {
+  describe('when a new date range is typed in the inpupt', () => {
     beforeEach(() => {
       const { getByPlaceholderText } = renderResult
-      const inputElement = getByPlaceholderText(placeholder)
-      fireEvent.change(inputElement, {
-        target: { value: '02/22/2020 - 02/24/2020' }
-      })
+
+      let inputElement = getByPlaceholderText(startPlaceholder)
+      fireEvent.change(inputElement, { target: { value: '02/22/2020' } })
+
+      inputElement = getByPlaceholderText(endPlaceholder)
+      fireEvent.change(inputElement, { target: { value: '02/24/2020' } })
     })
 
-    it('should display the new date in the input', () => {
+    it('should display the new dates in the input', () => {
       const { queryByDisplayValue } = renderResult
-      expect(queryByDisplayValue('02/22/2020 - 02/24/2020')).toBeTruthy()
+      expect(queryByDisplayValue('02/22/2020')).toBeTruthy()
+      expect(queryByDisplayValue('02/24/2020')).toBeTruthy()
     })
 
     it('should show the chosen date as selected in the calendar', () => {
@@ -105,7 +115,7 @@ describe('when the input is clicked', () => {
   describe('when an invalid date is typed in the input', () => {
     beforeEach(() => {
       const { getByPlaceholderText } = renderResult
-      const inputElement = getByPlaceholderText(placeholder)
+      const inputElement = getByPlaceholderText(startPlaceholder)
       fireEvent.change(inputElement, { target: { value: 'Not a date' } })
     })
 
@@ -118,10 +128,10 @@ describe('when the input is clicked', () => {
       const { rerender } = renderResult
       rerender(
         <RangedDatepickerInput
-          placeholder={placeholder}
+          startPlaceholder={startPlaceholder}
+          endPlaceholder={endPlaceholder}
           value={{
-            startDate: moment('Also not a date'),
-            endDate: moment('Also not a date')
+            startDate: moment('Also not a date')
           }}
         />
       )

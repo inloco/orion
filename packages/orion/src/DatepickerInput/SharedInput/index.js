@@ -1,6 +1,6 @@
 import cx from 'classnames'
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Popup } from '@inloco/semantic-ui-react'
 
 import Input from '../../Input'
@@ -8,6 +8,7 @@ import Input from '../../Input'
 const DatepickerSharedInput = ({
   className,
   disabled,
+  input,
   onChange,
   picker,
   popupProps,
@@ -16,13 +17,18 @@ const DatepickerSharedInput = ({
 }) => {
   const [opening, setOpening] = useState()
 
+  useEffect(() => {
+    if (opening) {
+      const timeout = setTimeout(() => setOpening(false))
+      return () => clearTimeout(timeout)
+    }
+  }, [opening])
+
   // We add a special CSS class for a short time after opening the
   // popup. That's because react dates takes a while to render, so
   // we wait a little bit until it's done to avoid flickering.
-  const handleTriggerClick = () => {
-    setOpening(true)
-    setTimeout(() => setOpening(false))
-  }
+  const handleTriggerClick = () => setOpening(true)
+
   return (
     <Popup
       className={cx('datepicker-input-popup', { opening })}
@@ -33,14 +39,16 @@ const DatepickerSharedInput = ({
           className={cx('datepicker-input-trigger', { disabled })}
           data-testid="datepicker-trigger"
           onClick={handleTriggerClick}>
-          <Input
-            className={cx('datepicker-input', className)}
-            disabled={disabled}
-            icon="date_range"
-            onChange={onChange}
-            value={value || ''}
-            {...otherProps}
-          />
+          {input || (
+            <Input
+              className={cx('datepicker-input', className)}
+              disabled={disabled}
+              icon="date_range"
+              onChange={onChange}
+              value={value || ''}
+              {...otherProps}
+            />
+          )}
         </div>
       }
       content={picker}
@@ -53,10 +61,11 @@ const DatepickerSharedInput = ({
 DatepickerSharedInput.propTypes = {
   className: PropTypes.string,
   disabled: PropTypes.bool,
+  input: PropTypes.node,
   onChange: PropTypes.func,
   picker: PropTypes.node.isRequired,
   popupProps: PropTypes.object,
-  value: PropTypes.string
+  value: PropTypes.any
 }
 
 DatepickerSharedInput.defaultProps = {

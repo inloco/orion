@@ -16,15 +16,16 @@ export default {
 
 export const basic = () => (
   <RangedDatepickerInput
-    placeholder={text('Placeholder', 'Type here')}
+    pickerProps={{
+      numberOfMonths: number('Number of months', 1)
+    }}
+    startPlaceholder={text('Start placeholder', 'Start')}
+    endPlaceholder={text('End placeholder', 'End')}
     size={sizeKnob()}
     error={boolean('error', false)}
     warning={boolean('warning', false)}
     disabled={boolean('disabled', false)}
     fluid={boolean('fluid', false)}
-    pickerProps={{
-      numberOfMonths: number('Number of months', 1)
-    }}
     {...actions}
   />
 )
@@ -42,7 +43,11 @@ const ControlledRangedDatepickerInput = props => {
 
 export const controlled = () => (
   <ControlledRangedDatepickerInput
-    placeholder={text('Placeholder', 'Type here')}
+    pickerProps={{
+      numberOfMonths: number('Number of months', 1)
+    }}
+    startPlaceholder={text('Start placeholder', 'Start')}
+    endPlaceholder={text('End placeholder', 'End')}
     size={sizeKnob()}
     error={boolean('error', false)}
     warning={boolean('warning', false)}
@@ -55,12 +60,14 @@ export const controlled = () => (
 export const insideForm = () => (
   <Form>
     <Form.Field>
-      <label htmlFor="date">
-        {text('RangedDatepickerInput label', 'Date Range')}
-      </label>
+      <label htmlFor="date">{text('Label', 'Date Range')}</label>
       <RangedDatepickerInput
         id="date"
-        placeholder={text('Placeholder', 'Type here')}
+        pickerProps={{
+          numberOfMonths: number('Number of months', 1)
+        }}
+        startPlaceholder={text('Start placeholder', 'Start')}
+        endPlaceholder={text('End placeholder', 'End')}
         size={sizeKnob()}
         error={boolean('error', false)}
         warning={boolean('warning', false)}

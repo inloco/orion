@@ -1,0 +1,58 @@
+.ranged-datepicker-input {
+  @apply flex items-center h-48 pl-16;
+  @apply bg-white border border-solid border-gray-900-24 rounded;
+  width: 256px;
+}
+
+.ranged-datepicker-input:hover {
+  @apply shadow-field-hover;
+}
+
+.ranged-datepicker-input:active,
+.ranged-datepicker-input:focus {
+  @apply shadow-field-active;
+}
+
+.ranged-datepicker-input .orion.input {
+  @apply flex-1 h-full;
+}
+
+.ranged-datepicker-input .orion.input > input {
+  @apply bg-transparent border-0 p-0;
+}
+
+.ranged-datepicker-input .orion.input > input:hover {
+  @apply shadow-none;
+}
+
+.ranged-datepicker-input .orion.input > input:active,
+.ranged-datepicker-input .orion.input > input:focus {
+  @apply shadow-none;
+}
+
+.ranged-datepicker-input .icon:not(.input) {
+  @apply flex flex-shrink-0 h-full items-center;
+}
+
+i.icon.ranged-datepicker-input-separator {
+  @apply mx-4 text-gray-500;
+  font-size: 16px;
+}
+
+.ranged-datepicker-input .icon:last-child {
+  @apply justify-center text-gray-700;
+  width: 40px;
+}
+
+/* Floating label */
+
+.orion.form .field.floatingLabel .ranged-datepicker-input-separator {
+  @apply hidden;
+}
+
+.orion.form .field.floatingLabel.filled .ranged-datepicker-input-separator,
+.orion.form
+  .field.floatingLabel:focus-within
+  .ranged-datepicker-input-separator {
+  @apply flex pt-16;
+}
