@@ -2,7 +2,7 @@ import React from 'react'
 import { boolean, object, text, withKnobs } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 
-import { Button, Checkbox, Input, Dropdown, Form } from '../'
+import { Button, Checkbox, DatepickerInput, Input, Dropdown, Form } from '../'
 import { sizeKnob } from '../utils/stories'
 
 const developerOptions = [
@@ -44,6 +44,16 @@ export const subcomponents = () => (
       />
     </Form.Field>
     <Form.Field message={text('Message', '')}>
+      <label htmlFor="date">{text('DatepickerInput label', 'Date')}</label>
+      <DatepickerInput
+        id="date"
+        fluid={boolean('Fluid', false)}
+        message={text('Message', '')}
+        placeholder={text('Date picker placeholder', 'Choose a date')}
+        warning={boolean('Warning', false)}
+      />
+    </Form.Field>
+    <Form.Field message={text('Message', '')}>
       <Checkbox label="I agree to the Terms and Conditions" />
     </Form.Field>
     <Button type="submit" primary>
@@ -74,6 +84,14 @@ export const formShorthands = () => (
       options={object('Dropdown options', developerOptions)}
       warning={boolean('Warning', false)}
       size={sizeKnob()}
+    />
+    <Form.Field
+      control={DatepickerInput}
+      fluid={boolean('Fluid', false)}
+      label={text('Date picker label', 'Date')}
+      message={text('Message', '')}
+      placeholder={text('Date picker placeholder', 'Choose a date')}
+      warning={boolean('Warning', false)}
     />
     <Form.Checkbox
       label="I agree to the Terms and Conditions"
