@@ -57,7 +57,6 @@
 
 .orion.dropdown > .icon {
   @apply ml-auto;
-  margin-right: -8px;
 }
 
 .orion.dropdown.active .dropdown-icon {
@@ -176,7 +175,7 @@
  */
 
 .orion.dropdown.selection {
-  @apply bg-white border border-solid border-gray-900-24 px-16 rounded;
+  @apply bg-white border border-solid border-gray-900-24 pl-16 pr-8 rounded;
 }
 
 .orion.dropdown.selection.small {
