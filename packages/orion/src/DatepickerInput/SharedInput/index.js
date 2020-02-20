@@ -10,6 +10,7 @@ const DatepickerSharedInput = ({
   disabled,
   onChange,
   picker,
+  popupProps,
   value,
   ...otherProps
 }) => {
@@ -43,6 +44,8 @@ const DatepickerSharedInput = ({
         </div>
       }
       content={picker}
+      position="bottom left"
+      {...popupProps}
     />
   )
 }
@@ -52,7 +55,12 @@ DatepickerSharedInput.propTypes = {
   disabled: PropTypes.bool,
   onChange: PropTypes.func,
   picker: PropTypes.node.isRequired,
+  popupProps: PropTypes.object,
   value: PropTypes.string
+}
+
+DatepickerSharedInput.defaultProps = {
+  popupProps: {}
 }
 
 export default DatepickerSharedInput

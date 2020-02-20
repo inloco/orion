@@ -34,7 +34,7 @@
 }
 
 .DayPicker_weekHeader_ul {
-  @apply flex;
+  @apply flex m-0;
 }
 
 .DayPicker_weekHeader_li {
