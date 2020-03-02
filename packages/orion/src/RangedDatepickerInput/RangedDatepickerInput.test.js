@@ -4,6 +4,20 @@ import { fireEvent, render } from '@testing-library/react'
 
 import { RangedDatepickerInput } from '../'
 
+const FIRST_DAY = '1'
+const SECOND_DAY = '2'
+const TWO_DAYS_AFTER = '3'
+
+const firstDayMoment = moment()
+firstDayMoment.set('date', FIRST_DAY)
+const secondDayMoment = moment()
+secondDayMoment.set('date', SECOND_DAY)
+const twoDaysAfterMoment = moment()
+twoDaysAfterMoment.set('date', TWO_DAYS_AFTER)
+
+const FIRST_DAY_DATE = firstDayMoment.format('MM/DD/YYYY')
+const TWO_DAYS_AFTER_DATE = twoDaysAfterMoment.format('MM/DD/YYYY')
+
 describe('when the input is clicked', () => {
   const startPlaceholder = 'Start'
   const endPlaceholder = 'End'
@@ -30,46 +44,46 @@ describe('when the input is clicked', () => {
   describe('when a date is selected from the calendar', () => {
     beforeEach(() => {
       const { getAllByText } = renderResult
-      const dayElement = getAllByText('20')[1]
+      const dayElement = getAllByText(FIRST_DAY)[1]
       fireEvent.click(dayElement)
     })
 
     it('should display the selected date in the input', () => {
       const { queryByDisplayValue } = renderResult
-      expect(queryByDisplayValue('02/20/2020')).toBeTruthy()
+      expect(queryByDisplayValue(FIRST_DAY_DATE)).toBeTruthy()
     })
 
     it('should show the chosen date as selected in the calendar', () => {
       const { getAllByText } = renderResult
-      const dayElement = getAllByText('20')[1]
+      const dayElement = getAllByText(FIRST_DAY)[1]
       expect(dayElement).toHaveClass('CalendarDay__selected')
     })
 
     describe('when a second date is selected from the calendar', () => {
       beforeEach(() => {
         const { getAllByText } = renderResult
-        const dayElement = getAllByText('22')[1]
+        const dayElement = getAllByText(TWO_DAYS_AFTER)[1]
         fireEvent.click(dayElement)
       })
 
       it('should display both selected dates in the input', () => {
         const { queryByDisplayValue } = renderResult
-        expect(queryByDisplayValue('02/20/2020')).toBeTruthy()
-        expect(queryByDisplayValue('02/22/2020')).toBeTruthy()
+        expect(queryByDisplayValue(FIRST_DAY_DATE)).toBeTruthy()
+        expect(queryByDisplayValue(TWO_DAYS_AFTER_DATE)).toBeTruthy()
       })
 
       it('should show the chosen date as selected in the calendar', () => {
         const { getAllByText } = renderResult
 
-        const startDayElement = getAllByText('20')[1]
+        const startDayElement = getAllByText(FIRST_DAY)[1]
         expect(startDayElement).toHaveClass(
           'CalendarDay__selected CalendarDay__selected_start'
         )
 
-        const middleDayElement = getAllByText('21')[1]
+        const middleDayElement = getAllByText(SECOND_DAY)[1]
         expect(middleDayElement).toHaveClass('CalendarDay__selected_span')
 
-        const endDayElement = getAllByText('22')[1]
+        const endDayElement = getAllByText(TWO_DAYS_AFTER)[1]
         expect(endDayElement).toHaveClass(
           'CalendarDay__selected CalendarDay__selected_end'
         )
@@ -82,30 +96,30 @@ describe('when the input is clicked', () => {
       const { getByPlaceholderText } = renderResult
 
       let inputElement = getByPlaceholderText(startPlaceholder)
-      fireEvent.change(inputElement, { target: { value: '02/22/2020' } })
+      fireEvent.change(inputElement, { target: { value: FIRST_DAY_DATE } })
 
       inputElement = getByPlaceholderText(endPlaceholder)
-      fireEvent.change(inputElement, { target: { value: '02/24/2020' } })
+      fireEvent.change(inputElement, { target: { value: TWO_DAYS_AFTER_DATE } })
     })
 
     it('should display the new dates in the input', () => {
       const { queryByDisplayValue } = renderResult
-      expect(queryByDisplayValue('02/22/2020')).toBeTruthy()
-      expect(queryByDisplayValue('02/24/2020')).toBeTruthy()
+      expect(queryByDisplayValue(FIRST_DAY_DATE)).toBeTruthy()
+      expect(queryByDisplayValue(TWO_DAYS_AFTER_DATE)).toBeTruthy()
     })
 
     it('should show the chosen date as selected in the calendar', () => {
       const { getAllByText } = renderResult
 
-      const startDayElement = getAllByText('22')[1]
+      const startDayElement = getAllByText(FIRST_DAY)[1]
       expect(startDayElement).toHaveClass(
         'CalendarDay__selected CalendarDay__selected_start'
       )
 
-      const middleDayElement = getAllByText('23')[1]
+      const middleDayElement = getAllByText(SECOND_DAY)[1]
       expect(middleDayElement).toHaveClass('CalendarDay__selected_span')
 
-      const endDayElement = getAllByText('24')[1]
+      const endDayElement = getAllByText(TWO_DAYS_AFTER)[1]
       expect(endDayElement).toHaveClass(
         'CalendarDay__selected CalendarDay__selected_end'
       )
