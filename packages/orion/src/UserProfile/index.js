@@ -74,18 +74,18 @@ const UserProfile = ({
 }
 
 UserProfile.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.node,
   name: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
   label: PropTypes.string,
-  className: PropTypes.string,
-  children: PropTypes.node
+  logoutUrl: PropTypes.string,
+  logoutText: PropTypes.string
 }
 
 UserProfile.HeaderItem = UserProfileHeaderItem
 UserProfile.Icon = UserProfileIcon
 UserProfile.Button = UserProfileButton
 UserProfile.Item = UserProfileItem
-// Layout.Main = LayoutMain
-// Layout.Topbar = LayoutTopbar
 
 export default UserProfile
