@@ -4,6 +4,11 @@ import { fireEvent, render } from '@testing-library/react'
 
 import { DatepickerInput } from '../'
 
+const DAY = '1'
+const dayMoment = moment()
+dayMoment.set('date', DAY)
+const DATE = dayMoment.format('MM/DD/YYYY')
+
 describe('when the input is clicked', () => {
   const placeholder = 'Choose a date'
   let renderResult
@@ -24,18 +29,18 @@ describe('when the input is clicked', () => {
   describe('when a date is selected from the calendar', () => {
     beforeEach(() => {
       const { getAllByText } = renderResult
-      const dayElement = getAllByText('20')[1]
+      const dayElement = getAllByText(DAY)[1]
       fireEvent.click(dayElement)
     })
 
     it('should display the selected date in the input', () => {
       const { queryByDisplayValue } = renderResult
-      expect(queryByDisplayValue('02/20/2020')).toBeTruthy()
+      expect(queryByDisplayValue(DATE)).toBeTruthy()
     })
 
     it('should show the chosen date as selected in the calendar', () => {
       const { getAllByText } = renderResult
-      const dayElement = getAllByText('20')[1]
+      const dayElement = getAllByText(DAY)[1]
       expect(dayElement).toHaveClass('CalendarDay__selected')
     })
   })
@@ -44,17 +49,17 @@ describe('when the input is clicked', () => {
     beforeEach(() => {
       const { getByPlaceholderText } = renderResult
       const inputElement = getByPlaceholderText(placeholder)
-      fireEvent.change(inputElement, { target: { value: '02/22/2020' } })
+      fireEvent.change(inputElement, { target: { value: DATE } })
     })
 
     it('should display the new date in the input', () => {
       const { queryByDisplayValue } = renderResult
-      expect(queryByDisplayValue('02/22/2020')).toBeTruthy()
+      expect(queryByDisplayValue(DATE)).toBeTruthy()
     })
 
     it('should show the chosen date as selected in the calendar', () => {
       const { getAllByText } = renderResult
-      const dayElement = getAllByText('22')[1]
+      const dayElement = getAllByText(DAY)[1]
       expect(dayElement).toHaveClass('CalendarDay__selected')
     })
   })
