@@ -101,9 +101,7 @@
  * User Profile Icon
  */
 .orion-user-profile-icon {
-  @apply rounded-full mr-8 bg-gray-400 flex items-center justify-center overflow-hidden;
-  width: 40px;
-  height: 40px;
+  @apply rounded-full w-40 h-40 mr-8 bg-gray-400 flex items-center justify-center overflow-hidden;
   grid-column: icon-start / icon-end;
   grid-row: span 2;
 }
