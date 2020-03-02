@@ -45,7 +45,7 @@
 }
 
 .orion-user-profile-header-item {
-  @apply relative flex p-16;
+  @apply cursor-auto relative flex p-16;
 }
 
 .orion-user-profile-header-item.selected {
