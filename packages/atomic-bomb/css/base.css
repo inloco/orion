@@ -9,12 +9,9 @@ body {
   @apply font-default text-gray-900 leading-20 text-base;
 }
 
-h1 {
-  @apply font-display tracking-h1 text-xl text-gray-800 leading-28;
-}
-
+h1,
 h2 {
-  @apply font-display tracking-h2 text-lg text-gray-800 leading-24;
+  @apply font-display tracking-h1 text-lg text-gray-800 leading-24;
 }
 
 a {

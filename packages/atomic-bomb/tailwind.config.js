@@ -265,8 +265,8 @@ module.exports = {
     fontSize: {
       sm: '12px',
       base: '14px',
-      lg: '20px',
-      xl: '24px'
+      lg: '18px',
+      xl: '20px'
     },
     fontWeight: {
       normal: '400',
@@ -292,8 +292,7 @@ module.exports = {
       // 12/14, 14/20, 20/24, 24/28
       '14': '14px',
       '20': '20px',
-      '24': '24px',
-      '28': '28px'
+      '24': '24px'
     },
     listStyleType: {
       none: 'none',
