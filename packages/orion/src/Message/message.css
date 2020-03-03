@@ -1,5 +1,9 @@
 .orion.message {
-  @apply border-1 border-green-500 rounded bg-green-50 p-16 text-base flex items-center;
+  @apply rounded bg-green-50 p-8 text-base flex items-center;
+}
+
+.orion.message.header {
+  @apply p-16;
 }
 
 .orion.message .header {
@@ -7,18 +11,22 @@
 }
 
 .orion.message.info {
-  @apply border-gray-900-8 bg-gray-100;
+  @apply bg-gray-100;
 }
 
 .orion.message.error {
-  @apply border-magenta-500 bg-magenta-50;
+  @apply bg-magenta-50;
 }
 
 .orion.message.warning {
-  @apply border-yellow-500 bg-yellow-50;
+  @apply bg-yellow-50;
 }
 
 .orion.message > .icon {
+  @apply p-2 pr-8;
+}
+
+.orion.message.header > .icon {
   @apply pr-16;
 }
 
