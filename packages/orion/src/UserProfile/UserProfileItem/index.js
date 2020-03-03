@@ -20,12 +20,12 @@ const UserProfileItem = ({
 
   return (
     <Dropdown.Item
-      className={cx('orion-user-profile-item', className)}
+      className={cx('orion user-profile-item', className)}
       {...otherProps}>
-      <div className="orion-user-profile-item__content">
+      <div className="orion user-profile-item__content">
         {iconChildren}
-        <div className="orion-user-profile-item__title">{title}</div>
-        <div className="orion-user-profile-item__label">{label}</div>
+        <div className="orion user-profile-item__title">{title}</div>
+        <div className="orion user-profile-item__label">{label}</div>
       </div>
       {otherChildren}
     </Dropdown.Item>

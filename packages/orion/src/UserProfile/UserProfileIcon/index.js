@@ -4,7 +4,7 @@ import React from 'react'
 
 const UserProfileIcon = ({ className, children, ...otherProps }) => {
   return (
-    <div className={cx('orion-user-profile-icon', className)} {...otherProps}>
+    <div className={cx('orion user-profile-icon', className)} {...otherProps}>
       {children}
     </div>
   )

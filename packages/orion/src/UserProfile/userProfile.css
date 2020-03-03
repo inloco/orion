@@ -1,58 +1,58 @@
 /**
  * Dropdown trigger
  */
-.orion-user-profile {
+.orion.user-profile {
   @apply rounded px-8 py-4 whitespace-no-wrap;
 }
 
-.orion-user-profile:hover,
-.orion-user-profile.active {
+.orion.user-profile:hover,
+.orion.user-profile.active {
   @apply bg-gray-900-8;
 }
 
-.orion-user-profile > .icon {
+.orion.user-profile > .icon {
   margin-left: 4px !important;
 }
 
-.orion-user-profile__name {
+.orion.user-profile__name {
   @apply text-base leading-20;
 }
 
-.orion-user-profile__label {
+.orion.user-profile__label {
   @apply text-sm leading-14 text-gray-800;
 }
 
 /**
  * Dropdown Menu
  */
-.orion-user-profile__menu {
+.orion.user-profile__menu {
   width: 320px !important;
 }
 
 /**
  * Dropdown Header
  */
-.orion-user-profile__header {
+.orion.user-profile__header {
   @apply cursor-auto;
 }
 
-.orion-user-profile__header-name {
+.orion.user-profile__header-name {
   @apply text-center font-medium pt-16;
 }
 
-.orion-user-profile__header-email {
+.orion.user-profile__header-email {
   @apply text-center pb-16;
 }
 
-.orion-user-profile-header-item {
+.orion.user-profile-header-item {
   @apply cursor-auto relative flex p-16;
 }
 
-.orion-user-profile-header-item.selected {
+.orion.user-profile-header-item.selected {
   @apply pl-32;
 }
 
-.orion-user-profile-header-item.selected:before {
+.orion.user-profile-header-item.selected:before {
   @apply absolute w-8 h-8 rounded-full bg-wave-500;
   content: ' ';
   top: 50%;
@@ -63,36 +63,31 @@
 /**
  * Dropdown Items 
  */
-.orion-user-profile-item {
-  @apply bg-gray-100;
+
+.orion.user-profile__menu > .orion.user-profile-item.item {
+  @apply flex bg-gray-100 relative flex ml-0 py-16 pr-16 pl-32;
 }
 
-.orion-user-profile-item:hover {
-  background-color: #eeeff0 !important;
+.orion.user-profile__menu > .orion.user-profile-item.item:hover {
+  @apply bg-gray-200;
 }
 
-.orion-user-profile-item {
-  @apply relative;
-  display: flex !important;
-  padding: 16px 16px 16px 32px !important;
-}
-
-.orion-user-profile-item__content,
-.orion-user-profile-header-item__content {
+.orion.user-profile-item__content,
+.orion.user-profile-header-item__content {
   @apply flex-grow;
   display: grid;
   grid-template-columns: [icon-start] fit-content(40px) [icon-end] auto;
   grid-template-rows: 1fr auto;
 }
 
-.orion-user-profile-item__title,
-.orion-user-profile-header-item__title {
+.orion.user-profile-item__title,
+.orion.user-profile-header-item__title {
   @apply text-gray-900 font-medium self-center;
   grid-column: icon-end;
 }
 
-.orion-user-profile-item__label,
-.orion-user-profile-header-item__label {
+.orion.user-profile-item__label,
+.orion.user-profile-header-item__label {
   @apply text-sm text-gray-800 capitalize;
   grid-column: icon-end;
 }
@@ -100,7 +95,7 @@
 /**
  * User Profile Icon
  */
-.orion-user-profile-icon {
+.orion.user-profile-icon {
   @apply rounded-full w-40 h-40 mr-8 bg-gray-400 flex items-center justify-center overflow-hidden;
   grid-column: icon-start / icon-end;
   grid-row: span 2;
@@ -109,13 +104,11 @@
 /**
  * Dropdown Logout option 
  */
-.orion-user-profile__logout-button {
-  @apply items-center justify-center w-full text-sm text-gray-800;
-  display: flex !important;
-  padding: 8px !important;
+.orion.user-profile__logout-button.item {
+  @apply flex items-center justify-center w-full text-sm text-gray-800 ml-0 p-8;
 }
 
-.orion-user-profile__logout-icon {
+.orion.user-profile__logout-icon {
   @apply leading-20 text-center mr-4;
   font-size: 16px !important;
 }

@@ -20,15 +20,15 @@ const UserProfileHeaderItem = ({
 
   return (
     <div
-      className={cx('orion-user-profile-header-item', {
+      className={cx('orion user-profile-header-item', {
         selected
       })}
       {...otherProps}>
-      <div className="orion-user-profile-header-item__content">
+      <div className="orion user-profile-header-item__content">
         {iconChildren}
-        <div className="orion-user-profile-header-item__title">{title}</div>
+        <div className="orion user-profile-header-item__title">{title}</div>
         {label && (
-          <div className="orion-user-profile-header-item__label">{label}</div>
+          <div className="orion user-profile-header-item__label">{label}</div>
         )}
       </div>
       {otherChildren}

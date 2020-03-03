@@ -10,7 +10,7 @@ const UserProfileButton = ({ className, children, ...otherProps }) => {
       secondary
       subtle
       icon
-      className={cx('orion-user-profile-button', className)}
+      className={cx('orion user-profile-button', className)}
       {...otherProps}>
       {children}
     </Button>
