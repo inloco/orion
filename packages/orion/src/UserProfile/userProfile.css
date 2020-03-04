@@ -107,10 +107,17 @@
  * Dropdown Logout option 
  */
 .orion.user-profile-logout {
-  @apply flex items-center justify-center w-full text-sm text-gray-800 ml-0 p-8;
+  @apply flex justify-center w-full p-8 cursor-auto;
 }
 
-.orion.user-profile-logout > .icon {
-  @apply leading-20 text-center mr-4;
-  font-size: 16px !important;
+.orion.user-profile-logout > button {
+  @apply flex items-center text-sm bg-transparent text-gray-800;
+}
+
+.orion.user-profile-logout > button:hover {
+  @apply text-gray-900;
+}
+
+.orion.user-profile-logout > button > .icon {
+  @apply leading-20 text-center mr-4 text-icon-sm;
 }

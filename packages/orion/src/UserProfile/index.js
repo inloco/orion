@@ -56,15 +56,16 @@ const UserProfile = ({
           </>
         )}
         <Dropdown.Divider />
-        <form method="post" action={logoutUrl} id="orion-logout-form" />
-        <Dropdown.Item
+        <form
           className="orion user-profile-logout"
-          as="button"
-          type="submit"
-          form="orion-logout-form">
-          <Icon name="exit_to_app" />
-          {logoutText}
-        </Dropdown.Item>
+          method="post"
+          action={logoutUrl}
+          id="orion-logout-form">
+          <button>
+            <Icon name="exit_to_app" />
+            {logoutText}
+          </button>
+        </form>
       </Dropdown.Menu>
     </Dropdown>
   )
