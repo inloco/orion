@@ -24,11 +24,13 @@ const UserProfileHeaderItem = ({
         selected
       })}
       {...otherProps}>
-      <div className="orion user-profile-header-item__content">
+      <div className="orion user-profile-header-item-content">
         {iconChildren}
-        <div className="orion user-profile-header-item__title">{title}</div>
+        <div className="orion user-profile-header-item-title">{title}</div>
         {label && (
-          <div className="orion user-profile-header-item__label">{label}</div>
+          <label className="orion user-profile-header-item-label">
+            {label}
+          </label>
         )}
       </div>
       {otherChildren}
