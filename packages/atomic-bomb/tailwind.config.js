@@ -266,7 +266,9 @@ module.exports = {
       sm: '12px',
       base: '14px',
       lg: '18px',
-      xl: '20px'
+      xl: '20px',
+      'icon-sm': '16px',
+      'icon-md': '20px'
     },
     fontWeight: {
       normal: '400',
