@@ -48,7 +48,7 @@
  * UserProfileHeaderItem
  */
 .orion.user-profile-header-item {
-  @apply cursor-auto relative flex p-16;
+  @apply flex items-center cursor-auto relative  p-16;
 }
 
 .orion.user-profile-header-item.selected {
@@ -58,9 +58,7 @@
 .orion.user-profile-header-item.selected:before {
   @apply absolute w-8 h-8 rounded-full bg-wave-500;
   content: ' ';
-  top: 50%;
   left: 16px;
-  transform: translateY(-50%);
 }
 
 /**
@@ -119,5 +117,5 @@
 }
 
 .orion.user-profile-logout > button > .icon {
-  @apply leading-20 text-center mr-4 text-icon-sm;
+  @apply leading-20 text-center mr-4;
 }
