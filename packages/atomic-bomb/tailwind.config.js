@@ -307,10 +307,11 @@ module.exports = {
       full: '100%',
       screen: '100vh'
     },
-    maxWidth: {
+    maxWidth: theme => ({
+      ...theme('spacing'),
       '384': '384px',
       full: '100%'
-    },
+    }),
     minHeight: theme => ({
       '0': '0',
       ...theme('spacing'),
