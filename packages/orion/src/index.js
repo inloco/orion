@@ -8,6 +8,7 @@ export {
   Select
 } from '@inloco/semantic-ui-react'
 
+export { default as AppsDropdown } from './AppsDropdown'
 export { default as Button } from './Button'
 export { default as Card } from './Card'
 export { default as Checkbox } from './Checkbox'

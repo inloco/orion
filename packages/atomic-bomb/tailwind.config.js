@@ -179,6 +179,7 @@ module.exports = {
     },
     borderColor: theme => ({
       gray: {
+        '400': Color(theme('colors').gray['400']).string(),
         '700': Color(theme('colors').gray['700']).string(),
         '900-8': Color(theme('colors').gray['900'])
           .alpha(0.08)
