@@ -309,7 +309,6 @@ module.exports = {
       screen: '100vh'
     },
     maxWidth: theme => ({
-      ...theme('spacing'),
       '384': '384px',
       full: '100%'
     }),

@@ -24,5 +24,6 @@
 }
 
 .orion.dropdown .menu > .item .image {
-  @apply mr-8 max-w-32;
+  @apply mr-8;
+  max-width: 32px;
 }
