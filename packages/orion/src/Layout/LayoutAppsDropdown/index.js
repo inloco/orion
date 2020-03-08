@@ -4,23 +4,28 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { Image, Dropdown } from '@inloco/semantic-ui-react'
 
-const AppsDropdown = ({ className, options, onChange, ...otherProps }) => {
+const LayoutAppsDropdown = ({
+  className,
+  options,
+  onChange,
+  ...otherProps
+}) => {
   const [selectedOptions, otherOptions] = _.partition(options, 'selected')
 
   return (
     <Dropdown
-      className={cx('orion apps-dropdown', className)}
+      className={cx('layout-apps-dropdown', className)}
       icon="apps"
       {...otherProps}>
       <Dropdown.Menu>
         {_.map(selectedOptions, ({ text, image }, index) => (
           <Dropdown.Header key={index}>
             {image && (
-              <div className="orion apps-dropdown-image">
+              <div className="layout-apps-dropdown-image">
                 <Image {...image} />
               </div>
             )}
-            <div className="orion text">{text}</div>
+            <div>{text}</div>
           </Dropdown.Header>
         ))}
         <Dropdown.Divider />
@@ -28,11 +33,11 @@ const AppsDropdown = ({ className, options, onChange, ...otherProps }) => {
           return (
             <Dropdown.Item key={index} onClick={onChange} {...otherProps}>
               {image && (
-                <div className="orion apps-dropdown-image">
+                <div className="layout-apps-dropdown-image">
                   <Image {...image} />
                 </div>
               )}
-              <div className="orion text">{text}</div>
+              <div>{text}</div>
             </Dropdown.Item>
           )
         })}
@@ -41,7 +46,7 @@ const AppsDropdown = ({ className, options, onChange, ...otherProps }) => {
   )
 }
 
-AppsDropdown.propTypes = {
+LayoutAppsDropdown.propTypes = {
   className: PropTypes.string,
   options: PropTypes.arrayOf(
     PropTypes.shape({
@@ -54,4 +59,4 @@ AppsDropdown.propTypes = {
   onChange: PropTypes.func
 }
 
-export default AppsDropdown
+export default LayoutAppsDropdown

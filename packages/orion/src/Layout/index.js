@@ -2,6 +2,7 @@ import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
 
+import LayoutAppsDropdown from './LayoutAppsDropdown'
 import LayoutCenter from './LayoutCenter'
 import LayoutMain from './LayoutMain'
 import LayoutTopbar from './LayoutTopbar'
@@ -20,6 +21,7 @@ Layout.propTypes = {
   children: PropTypes.node
 }
 
+Layout.AppsDropdown = LayoutAppsDropdown
 Layout.Center = LayoutCenter
 Layout.Main = LayoutMain
 Layout.Topbar = LayoutTopbar
