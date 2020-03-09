@@ -34,7 +34,7 @@
   @apply flex-1 ml-40;
 }
 
-.orion.layout .layout-topbar .topbar-separator {
+.orion.layout .layout-topbar .topbar-divider {
   @apply bg-gray-900-12 h-24 mx-8;
   width: 1px;
 }

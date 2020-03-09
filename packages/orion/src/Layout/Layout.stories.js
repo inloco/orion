@@ -52,7 +52,7 @@ export const basic = () => (
         )}
         onChange={action('onChange')}
       />
-      <Layout.Topbar.Separator />
+      <Layout.Topbar.Divider />
       <Layout.UserProfile
         name={text('Name', 'Mark Weiser', 'UserProfile')}
         label={text('Label', 'In Loco', 'UserProfile')}
