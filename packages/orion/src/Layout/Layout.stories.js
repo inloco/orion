@@ -7,10 +7,6 @@ import { text, boolean, object, withKnobs } from '@storybook/addon-knobs'
 import appImage from '../../storyImages/app.png'
 import { Icon, Layout, Menu } from '../'
 
-const actions = {
-  onChange: action('onChange')
-}
-
 export default {
   title: 'Layout',
   decorators: [withKnobs]
