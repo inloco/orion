@@ -18,7 +18,7 @@
   @apply text-base leading-20;
 }
 
-.orion.layout .layout-user-profile > label {
+.orion.layout .layout-user-profile-name + label {
   cursor: inherit;
 }
 
