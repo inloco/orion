@@ -179,6 +179,7 @@ module.exports = {
     },
     borderColor: theme => ({
       gray: {
+        '400': Color(theme('colors').gray['400']).string(),
         '700': Color(theme('colors').gray['700']).string(),
         '900-8': Color(theme('colors').gray['900'])
           .alpha(0.08)
@@ -309,10 +310,10 @@ module.exports = {
       full: '100%',
       screen: '100vh'
     },
-    maxWidth: {
+    maxWidth: theme => ({
       '384': '384px',
       full: '100%'
-    },
+    }),
     minHeight: theme => ({
       '0': '0',
       ...theme('spacing'),
