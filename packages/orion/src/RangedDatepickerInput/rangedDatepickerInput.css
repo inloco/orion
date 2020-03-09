@@ -40,8 +40,7 @@
 }
 
 i.icon.ranged-datepicker-input-separator {
-  @apply mx-4 text-gray-500;
-  font-size: 16px;
+  @apply mx-4 text-gray-500 text-icon-sm;
 }
 
 .ranged-datepicker-input .icon:last-child {

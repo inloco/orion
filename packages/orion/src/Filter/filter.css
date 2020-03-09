@@ -30,10 +30,9 @@
 /** Trigger button's icon **/
 
 .orion.button.filter-trigger .icon {
-  @apply ml-4 rounded-full text-space-600;
+  @apply ml-4 rounded-full text-space-600 text-icon-sm;
   @apply h-16 w-16;
   @apply transition-default;
-  font-size: 16px;
   transition-property: background-color, color;
 }
 

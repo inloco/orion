@@ -92,7 +92,7 @@
 }
 
 .orion.table.sortable th.sorted > .inner-cell::after {
-  @apply absolute text-gray-700 text-lg transition-default font-icons;
+  @apply absolute text-gray-700 text-icon-md transition-default font-icons;
   content: 'keyboard_arrow_up';
   transition-property: transform;
 }
