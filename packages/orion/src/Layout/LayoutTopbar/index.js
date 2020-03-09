@@ -2,7 +2,7 @@ import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import TopbarSeparator from './TopbarSeparator'
+import TopbarDivider from './TopbarDivider'
 import LayoutCenter from '../LayoutCenter'
 import Logo from '../../Logo'
 
@@ -23,6 +23,6 @@ LayoutTopbar.propTypes = {
   dimmed: PropTypes.bool
 }
 
-LayoutTopbar.Separator = TopbarSeparator
+LayoutTopbar.Divider = TopbarDivider
 
 export default LayoutTopbar
