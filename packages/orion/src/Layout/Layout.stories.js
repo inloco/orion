@@ -2,10 +2,10 @@ import _ from 'lodash'
 import { loremIpsum } from 'lorem-ipsum'
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { boolean, object, withKnobs } from '@storybook/addon-knobs'
+import { text, boolean, object, withKnobs } from '@storybook/addon-knobs'
 
 import appImage from '../../storyImages/app.png'
-import { Dropdown, Layout, Menu } from '../'
+import { Icon, Layout, Menu } from '../'
 
 const actions = {
   onChange: action('onChange')
@@ -25,13 +25,7 @@ export const basic = () => (
           [
             { name: 'Onboarding', key: 0 },
             { name: 'Insights', key: 1 },
-            { name: 'Automation', key: 2 },
-            {
-              name: 'My Stuff',
-              key: 3,
-              icon: 'library_books',
-              position: 'right'
-            }
+            { name: 'Automation', key: 2 }
           ],
           'Topbar'
         )}
@@ -60,15 +54,45 @@ export const basic = () => (
           ],
           'AppsDropdown'
         )}
-        {...actions}
+        onChange={action('onChange')}
       />
-      <Dropdown
-        className="ml-auto"
-        text="Maira Bello"
-        options={[{ text: 'Account', value: 1 }, { text: 'Logout', value: 2 }]}
-        compact
-        size="small"
-      />
+      <Layout.Topbar.Separator />
+      <Layout.UserProfile
+        name={text('Name', 'Mark Weiser', 'UserProfile')}
+        label={text('Label', 'In Loco', 'UserProfile')}
+        email={text('Email', 'mark.weiser@inloco.com.br', 'UserProfile')}
+        logoutUrl={text('Logout URL', '#', 'UserProfile')}
+        logoutText={text('Logout Text', 'Logout', 'UserProfile')}>
+        {boolean('Enabled', true, 'UserProfile.HeaderItem') && (
+          <Layout.UserProfile.HeaderItem
+            selected={boolean('Selected', true, 'UserProfile.HeaderItem')}
+            title={text('Title', 'In Loco', 'UserProfile.HeaderItem')}
+            label={text('Label', 'admin', 'UserProfile.HeaderItem')}>
+            <Layout.UserProfile.Icon>
+              <img src={appImage} alt="organization icon" />
+            </Layout.UserProfile.Icon>
+            {boolean('Button', true, 'UserProfile.HeaderItem') && (
+              <Layout.UserProfile.Button>
+                <Icon name="home" />
+              </Layout.UserProfile.Button>
+            )}
+          </Layout.UserProfile.HeaderItem>
+        )}
+        {boolean('Enabled', true, 'UserProfile.Items') && (
+          <>
+            <Layout.UserProfile.Item title="Tim" label="developer">
+              <Layout.UserProfile.Icon>
+                <img src={appImage} alt="organization icon" />
+              </Layout.UserProfile.Icon>
+            </Layout.UserProfile.Item>
+            <Layout.UserProfile.Item title="Intimissimi" label="reviewer">
+              <Layout.UserProfile.Icon>
+                <img src={appImage} alt="organization icon" />
+              </Layout.UserProfile.Icon>
+            </Layout.UserProfile.Item>
+          </>
+        )}
+      </Layout.UserProfile>
     </Layout.Topbar>
     <Layout.Main>
       {_.times(10, index => (
