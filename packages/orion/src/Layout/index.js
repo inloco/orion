@@ -6,6 +6,7 @@ import LayoutAppsDropdown from './LayoutAppsDropdown'
 import LayoutCenter from './LayoutCenter'
 import LayoutMain from './LayoutMain'
 import LayoutTopbar from './LayoutTopbar'
+import LayoutUserProfile from './LayoutUserProfile'
 
 const Layout = ({ className, children, ...otherProps }) => {
   const classes = cx('orion layout', className)
@@ -25,5 +26,6 @@ Layout.AppsDropdown = LayoutAppsDropdown
 Layout.Center = LayoutCenter
 Layout.Main = LayoutMain
 Layout.Topbar = LayoutTopbar
+Layout.UserProfile = LayoutUserProfile
 
 export default Layout
