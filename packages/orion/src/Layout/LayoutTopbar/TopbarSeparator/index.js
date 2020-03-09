@@ -3,8 +3,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 const TopbarSeparator = ({ className, ...otherProps }) => {
-  const classes = cx('topbar-separator', className)
-  return <div className={classes} {...otherProps} />
+  return <div className={cx('topbar-separator', className)} {...otherProps} />
 }
 
 TopbarSeparator.propTypes = {
