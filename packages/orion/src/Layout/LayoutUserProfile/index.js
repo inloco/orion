@@ -3,14 +3,14 @@ import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import Icon from '../Icon'
-import Dropdown from '../Dropdown'
+import Icon from '../../Icon'
+import Dropdown from '../../Dropdown'
 import UserProfileHeaderItem from './UserProfileHeaderItem'
 import UserProfileIcon from './UserProfileIcon'
 import UserProfileButton from './UserProfileButton'
 import UserProfileItem from './UserProfileItem'
 
-const UserProfile = ({
+const LayoutUserProfile = ({
   className,
   children,
   name,
@@ -27,11 +27,11 @@ const UserProfile = ({
 
   return (
     <Dropdown
-      className={cx('orion user-profile', className)}
+      className={cx('layout-user-profile', className)}
       trigger={
         <div>
-          <div className="orion user-profile-name">{name}</div>
-          {label && <div className="orion user-profile-label ">{label}</div>}
+          <div className="layout-user-profile-name">{name}</div>
+          {label && <label>{label}</label>}
         </div>
       }
       compact
@@ -40,8 +40,8 @@ const UserProfile = ({
       {...otherProps}>
       <Dropdown.Menu>
         <Dropdown.Header>
-          <div className="orion user-profile-header-name">{name}</div>
-          <div className="orion user-profile-header-email">{email}</div>
+          <div className="layout-user-profile-header-name">{name}</div>
+          <div className="layout-user-profile-header-email">{email}</div>
           {!_.isEmpty(headerChildren) && (
             <>
               <Dropdown.Divider />
@@ -57,7 +57,7 @@ const UserProfile = ({
         )}
         <Dropdown.Divider />
         <form
-          className="orion user-profile-logout"
+          className="layout-user-profile-logout"
           method="post"
           action={logoutUrl}
           id="orion-logout-form">
@@ -71,7 +71,7 @@ const UserProfile = ({
   )
 }
 
-UserProfile.propTypes = {
+LayoutUserProfile.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
   name: PropTypes.string.isRequired,
@@ -81,9 +81,9 @@ UserProfile.propTypes = {
   logoutText: PropTypes.string
 }
 
-UserProfile.HeaderItem = UserProfileHeaderItem
-UserProfile.Icon = UserProfileIcon
-UserProfile.Button = UserProfileButton
-UserProfile.Item = UserProfileItem
+LayoutUserProfile.HeaderItem = UserProfileHeaderItem
+LayoutUserProfile.Icon = UserProfileIcon
+LayoutUserProfile.Button = UserProfileButton
+LayoutUserProfile.Item = UserProfileItem
 
-export default UserProfile
+export default LayoutUserProfile

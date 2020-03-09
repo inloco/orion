@@ -3,14 +3,14 @@ import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import Dropdown from '../../Dropdown'
 import UserProfileIcon from '../UserProfileIcon'
 
-const UserProfileItem = ({
-  title,
-  label,
+const UserProfileHeaderItem = ({
   className,
   children,
+  title,
+  label,
+  selected,
   ...otherProps
 }) => {
   const [iconChildren, otherChildren] = _.partition(
@@ -19,26 +19,27 @@ const UserProfileItem = ({
   )
 
   return (
-    <Dropdown.Item
-      className={cx('orion user-profile-item', className)}
+    <div
+      className={cx('header-item', {
+        selected
+      })}
       {...otherProps}>
-      <div className="orion user-profile-item-content">
+      <div className="header-item-content">
         {iconChildren}
-        <div className="orion user-profile-item-title">{title}</div>
-        {label && (
-          <label className="orion user-profile-item-label">{label}</label>
-        )}
+        <div className="header-item-title">{title}</div>
+        {label && <label>{label}</label>}
       </div>
       {otherChildren}
-    </Dropdown.Item>
+    </div>
   )
 }
 
-UserProfileItem.propTypes = {
+UserProfileHeaderItem.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
   title: PropTypes.string.isRequired,
-  label: PropTypes.string
+  label: PropTypes.string,
+  selected: PropTypes.bool
 }
 
-export default UserProfileItem
+export default UserProfileHeaderItem

@@ -2,6 +2,7 @@ import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
 
+import TopbarSeparator from './TopbarSeparator'
 import LayoutCenter from '../LayoutCenter'
 import Logo from '../../Logo'
 
@@ -21,5 +22,7 @@ LayoutTopbar.propTypes = {
   logo: PropTypes.node,
   dimmed: PropTypes.bool
 }
+
+LayoutTopbar.Separator = TopbarSeparator
 
 export default LayoutTopbar
