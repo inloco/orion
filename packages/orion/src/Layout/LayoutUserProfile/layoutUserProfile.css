@@ -90,6 +90,7 @@
 .orion.layout .layout-user-profile .header-item label {
   @apply capitalize;
   grid-column: icon-end;
+  cursor: inherit;
 }
 
 /**
