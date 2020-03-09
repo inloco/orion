@@ -34,6 +34,11 @@
   @apply flex-1 ml-40;
 }
 
+.orion.layout .layout-topbar .topbar-separator {
+  @apply bg-gray-900-12 h-24 mx-8;
+  width: 1px;
+}
+
 /**
  * Main
  */
@@ -45,7 +50,7 @@
  * Apps Dropdown Trigger
  */
 .orion.layout .layout-apps-dropdown {
-  @apply min-w-40 min-h-40 mx-8;
+  @apply min-w-40 min-h-40;
 }
 
 .orion.layout .layout-apps-dropdown > .text {
