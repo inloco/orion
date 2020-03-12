@@ -5,12 +5,20 @@
   @apply rounded px-8 py-4 whitespace-no-wrap;
 }
 
-.orion.layout .layout-user-profile:hover,
-.orion.layout .layout-user-profile.active {
+.orion.layout .layout-user-profile-trigger {
+  @apply flex flex-col;
+}
+
+.orion.layout .layout-user-profile:hover {
   @apply bg-gray-900-8;
 }
 
+.orion.layout .layout-user-profile.active {
+  @apply bg-gray-900-12;
+}
+
 .orion.layout .layout-user-profile > .icon {
+  @apply text-gray-700;
   margin-left: 4px !important;
 }
 

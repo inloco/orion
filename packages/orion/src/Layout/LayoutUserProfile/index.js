@@ -29,7 +29,7 @@ const LayoutUserProfile = ({
     <Dropdown
       className={cx('layout-user-profile', className)}
       trigger={
-        <div>
+        <div className="layout-user-profile-trigger">
           <div className="layout-user-profile-name">{name}</div>
           {label && <label>{label}</label>}
         </div>
