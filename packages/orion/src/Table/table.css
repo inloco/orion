@@ -80,7 +80,7 @@
 
 .orion.table.sortable th:hover,
 .orion.table.sortable th:focus {
-  @apply text-gray-700;
+  @apply text-gray-900;
 }
 
 .orion.table.sortable th:active {
@@ -92,18 +92,18 @@
 }
 
 .orion.table.sortable th.sorted > .inner-cell::after {
-  @apply absolute text-gray-700 text-icon-md transition-default font-icons;
+  @apply absolute text-wave-500 text-icon-md transition-default font-icons;
   content: 'keyboard_arrow_up';
   transition-property: transform;
 }
 
 .orion.table.sortable th.sorted:hover > .inner-cell::after,
 .orion.table.sortable th.sorted:focus > .inner-cell::after {
-  @apply text-gray-800;
+  @apply text-wave-600;
 }
 
 .orion.table.sortable th.sorted:active > .inner-cell::after {
-  @apply text-gray-900;
+  @apply text-wave-700;
 }
 
 .orion.table.sortable th.sorted.descending > .inner-cell::after {
