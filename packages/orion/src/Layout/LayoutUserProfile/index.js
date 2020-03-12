@@ -49,12 +49,14 @@ const LayoutUserProfile = ({
             </>
           )}
         </Dropdown.Header>
-        {!_.isEmpty(otherChildren) && (
-          <>
-            <Dropdown.Divider />
-            {otherChildren}
-          </>
-        )}
+        <div className="layout-user-profile-children-container">
+          {!_.isEmpty(otherChildren) && (
+            <>
+              <Dropdown.Divider />
+              {otherChildren}
+            </>
+          )}
+        </div>
         <Dropdown.Divider />
         <form
           className="layout-user-profile-logout"
