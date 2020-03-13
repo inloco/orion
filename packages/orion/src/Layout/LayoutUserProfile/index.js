@@ -18,6 +18,7 @@ const LayoutUserProfile = ({
   label,
   logoutUrl,
   logoutText,
+  onLogout,
   ...otherProps
 }) => {
   const [headerChildren, otherChildren] = _.partition(
@@ -63,7 +64,7 @@ const LayoutUserProfile = ({
           method="post"
           action={logoutUrl}
           id="orion-logout-form">
-          <button>
+          <button onClick={onLogout}>
             <Icon name="exit_to_app" />
             {logoutText}
           </button>
@@ -80,7 +81,8 @@ LayoutUserProfile.propTypes = {
   email: PropTypes.string.isRequired,
   label: PropTypes.string,
   logoutUrl: PropTypes.string,
-  logoutText: PropTypes.string
+  logoutText: PropTypes.string,
+  onLogout: PropTypes.func
 }
 
 LayoutUserProfile.HeaderItem = UserProfileHeaderItem
