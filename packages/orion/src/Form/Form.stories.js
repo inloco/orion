@@ -115,3 +115,50 @@ export const checkboxes = () => {
     </Form>
   )
 }
+
+export const dropdowns = () => {
+  const label = text('Dropdown label', 'Buddy')
+  const fluid = boolean('Fluid', false)
+  const placeholder = text('Dropdown placeholder', 'Choose your buddy')
+  const options = object('Dropdown options', developerOptions)
+  const warning = boolean('Warning', false)
+  const error = boolean('Error', false)
+  const size = sizeKnob()
+
+  return (
+    <Form>
+      <Form.Dropdown
+        selection
+        label={label}
+        fluid={fluid}
+        placeholder={placeholder}
+        options={options}
+        warning={warning}
+        error={error}
+        size={size}
+        defaultValue={developerOptions[1].value}
+      />
+      <Form.Dropdown
+        selection
+        label={label}
+        fluid={fluid}
+        placeholder={placeholder}
+        options={options}
+        warning={warning}
+        error={error}
+        size={size}
+        value={developerOptions[1].value}
+      />
+      <Form.Dropdown
+        selection
+        label={label}
+        fluid={fluid}
+        placeholder={placeholder}
+        options={options}
+        warning={warning}
+        error={error}
+        size={size}
+      />
+    </Form>
+  )
+}
