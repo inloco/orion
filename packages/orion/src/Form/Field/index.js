@@ -24,12 +24,13 @@ const shouldHaveFloatingLabel = (field, size) =>
   FLOATING_LABEL_COMPONENTS.includes(field) && size === Sizes.DEFAULT
 
 const isFilled = (value, children) => {
-  let filled = !_.isEmpty(value)
+  let filled = !_.isNil(value)
 
   if (!_.isNil(children)) {
     React.Children.forEach(children, child => {
       if (shouldHaveFloatingLabel(child.type, child.props.size)) {
-        filled = !_.isEmpty(child.props.value)
+        const { value, defaultValue } = child.props
+        filled = !_.isNil(value || defaultValue)
       }
     })
   }
@@ -38,8 +39,10 @@ const isFilled = (value, children) => {
 }
 
 const Field = ({ className, children, message, onChange, ...otherProps }) => {
-  const { size, control, value } = otherProps
-  const [controlFilled, setControlFilled] = useState(isFilled(value, children))
+  const { size, control, value, defaultValue } = otherProps
+  const [controlFilled, setControlFilled] = useState(
+    isFilled(value || defaultValue, children)
+  )
 
   let finalChildren = children
   let finalOnChange = onChange
