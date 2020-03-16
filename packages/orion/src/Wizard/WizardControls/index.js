@@ -5,8 +5,9 @@ import React from 'react'
 import Button from '../../Button'
 
 export const WizardButtons = {
-  BACK: 'back',
+  CANCEL: 'cancel',
   SAVE: 'save',
+  BACK: 'back',
   NEXT: 'next',
   FINISH: 'finish'
 }
@@ -28,26 +29,32 @@ const WizardControls = ({
 
   return (
     <div className="wizard-controls">
-      {currentStepIndex > 0 &&
-        Button.create(buttons[WizardButtons.BACK], {
+      {buttons[WizardButtons.CANCEL] &&
+        Button.create(buttons[WizardButtons.CANCEL], {
           autoGenerateKey: false,
           defaultProps: {
             type: 'button'
-          },
-          overrideProps: overrideOnClick(() =>
-            onStepIndexChange(currentStepIndex - 1)
-          )
+          }
+        })}
+
+      {buttons[WizardButtons.SAVE] &&
+        !isLastStep &&
+        Button.create(buttons[WizardButtons.SAVE], {
+          autoGenerateKey: false,
+          defaultProps: {
+            type: 'submit'
+          }
         })}
       <div className="wizard-controls-right">
-        {buttons[WizardButtons.SAVE] &&
-          !isLastStep &&
-          Button.create(buttons[WizardButtons.SAVE], {
+        {currentStepIndex > 0 &&
+          Button.create(buttons[WizardButtons.BACK], {
             autoGenerateKey: false,
             defaultProps: {
-              className: 'mr-8',
-              ghost: true,
-              type: 'submit'
-            }
+              type: 'button'
+            },
+            overrideProps: overrideOnClick(() =>
+              onStepIndexChange(currentStepIndex - 1)
+            )
           })}
         {!isLastStep &&
           Button.create(buttons[WizardButtons.NEXT], {

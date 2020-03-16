@@ -10,6 +10,8 @@ const actions = {
 }
 
 const buttons = {
+  [Wizard.Buttons.CANCEL]: <Button>Cancel</Button>,
+  [Wizard.Buttons.SAVE]: <Button>Save</Button>,
   [Wizard.Buttons.NEXT]: <Button>Next</Button>,
   [Wizard.Buttons.BACK]: <Button>Return</Button>,
   [Wizard.Buttons.FINISH]: <Button onClick={actions.onFinish}>Complete</Button>
