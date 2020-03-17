@@ -21,13 +21,27 @@
   @apply mt-8 text-sm;
 }
 
-.orion.form .field.floatingLabel .dropdown > .text,
-.orion.form .field.floatingLabel input {
+.orion.form .field.floatingLabel label:not(:empty) + .dropdown > .text,
+.orion.form .field.floatingLabel label:not(:empty) + .input > input,
+.orion.form
+  .field.floatingLabel
+  label:not(:empty)
+  + .datepicker-input-trigger
+  input {
   @apply pt-16;
 }
 
-.orion.form .field.floatingLabel .dropdown .default.text,
-.orion.form .field.floatingLabel input::placeholder {
+.orion.form .field.floatingLabel label:not(:empty) + .dropdown .default.text,
+.orion.form
+  .field.floatingLabel
+  label:not(:empty)
+  + .datepicker-input-trigger
+  input::placeholder,
+.orion.form
+  .field.floatingLabel
+  label:not(:empty)
+  + .input
+  > input::placeholder {
   @apply transition-default;
   transition-property: color;
   color: transparent;
