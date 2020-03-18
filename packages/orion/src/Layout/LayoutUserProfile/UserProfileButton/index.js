@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import Button from '../../../Button'
 import Tooltip from '../../../Tooltip'
@@ -10,6 +11,10 @@ const UserProfileButton = ({ tooltip, ...props }) => {
   ) : (
     button
   )
+}
+
+UserProfileButton.propTypes = {
+  tooltip: PropTypes.string
 }
 
 export default UserProfileButton

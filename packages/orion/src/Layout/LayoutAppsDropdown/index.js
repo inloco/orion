@@ -65,6 +65,7 @@ LayoutAppsDropdown.propTypes = {
       })
     })
   ),
+  tooltip: PropTypes.string,
   onChange: PropTypes.func
 }
 
