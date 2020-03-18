@@ -68,7 +68,8 @@ export const basic = () => (
               <img src={appImage} alt="organization icon" />
             </Layout.UserProfile.Icon>
             {boolean('Button', true, 'UserProfile.HeaderItem') && (
-              <Layout.UserProfile.Button>
+              <Layout.UserProfile.Button
+                tooltip={text('Button tooltip', 'Back to Home', 'UserProfile')}>
                 <Icon name="home" />
               </Layout.UserProfile.Button>
             )}
