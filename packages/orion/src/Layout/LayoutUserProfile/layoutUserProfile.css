@@ -34,6 +34,7 @@
  * Dropdown Menu
  */
 .orion.layout .layout-user-profile > .menu {
+  @apply overflow-visible;
   width: 320px !important;
 }
 
