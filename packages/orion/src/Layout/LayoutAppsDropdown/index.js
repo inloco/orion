@@ -4,15 +4,18 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { Image, Dropdown } from '@inloco/semantic-ui-react'
 
+import Tooltip from '../../Tooltip'
+
 const LayoutAppsDropdown = ({
   className,
   options,
+  tooltip,
   onChange,
   ...otherProps
 }) => {
   const [selectedOptions, otherOptions] = _.partition(options, 'selected')
 
-  return (
+  const dropdown = (
     <Dropdown
       className={cx('layout-apps-dropdown', className)}
       icon="apps"
@@ -43,6 +46,12 @@ const LayoutAppsDropdown = ({
         })}
       </Dropdown.Menu>
     </Dropdown>
+  )
+
+  return tooltip ? (
+    <Tooltip trigger={dropdown} position="bottom center" content={tooltip} />
+  ) : (
+    dropdown
   )
 }
 

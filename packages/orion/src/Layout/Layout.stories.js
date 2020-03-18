@@ -50,6 +50,7 @@ export const basic = () => (
           ],
           'AppsDropdown'
         )}
+        tooltip={text('Tooltip', 'Switch Product', 'AppsDropdown')}
         onChange={action('onChange')}
       />
       <Layout.Topbar.Divider />
