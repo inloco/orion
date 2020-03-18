@@ -5,3 +5,11 @@
 .orion.popup.tooltip:before {
   @apply bg-gray-800;
 }
+
+.orion.popup.tooltip.top {
+  @apply mb-12;
+}
+
+.orion.popup.tooltip.bottom {
+  @apply mt-12;
+}
