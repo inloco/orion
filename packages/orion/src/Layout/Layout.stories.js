@@ -59,7 +59,8 @@ export const basic = () => (
         label={text('Label', 'In Loco', 'UserProfile')}
         email={text('Email', 'mark.weiser@inloco.com.br', 'UserProfile')}
         logoutUrl={text('Logout URL', '#', 'UserProfile')}
-        logoutText={text('Logout Text', 'Logout', 'UserProfile')}>
+        logoutText={text('Logout Text', 'Logout', 'UserProfile')}
+        imageUrl={text('Image URL', appImage, 'UserProfile')}>
         {boolean('Enabled', true, 'UserProfile.EditLink') && (
           <Layout.UserProfile.EditLink
             href={text('href', '#', 'UserProfile.EditLink')}>
