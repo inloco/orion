@@ -19,8 +19,6 @@ const LayoutUserProfile = ({
   label,
   logoutUrl,
   logoutText,
-  profileUrl,
-  profileText,
   onLogout,
   ...otherProps
 }) => {
