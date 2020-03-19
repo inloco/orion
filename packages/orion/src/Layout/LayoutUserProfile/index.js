@@ -5,6 +5,7 @@ import React from 'react'
 
 import Icon from '../../Icon'
 import Dropdown from '../../Dropdown'
+import UserProfileEditLink from './UserProfileEditLink'
 import UserProfileHeaderItem from './UserProfileHeaderItem'
 import UserProfileIcon from './UserProfileIcon'
 import UserProfileButton from './UserProfileButton'
@@ -18,13 +19,19 @@ const LayoutUserProfile = ({
   label,
   logoutUrl,
   logoutText,
+  profileUrl,
+  profileText,
   onLogout,
   ...otherProps
 }) => {
-  const [headerChildren, otherChildren] = _.partition(
+  const [headerChildren, notHeaderChildren] = _.partition(
     React.Children.toArray(children),
     { type: UserProfileHeaderItem }
   )
+
+  const [editLinkChildren, otherChildren] = _.partition(notHeaderChildren, {
+    type: UserProfileEditLink
+  })
 
   return (
     <Dropdown
@@ -43,6 +50,7 @@ const LayoutUserProfile = ({
         <Dropdown.Header>
           <div className="layout-user-profile-header-name">{name}</div>
           <div className="layout-user-profile-header-email">{email}</div>
+          {editLinkChildren}
           {!_.isEmpty(headerChildren) && (
             <>
               <Dropdown.Divider />
@@ -85,6 +93,7 @@ LayoutUserProfile.propTypes = {
   onLogout: PropTypes.func
 }
 
+LayoutUserProfile.EditLink = UserProfileEditLink
 LayoutUserProfile.HeaderItem = UserProfileHeaderItem
 LayoutUserProfile.Icon = UserProfileIcon
 LayoutUserProfile.Button = UserProfileButton
