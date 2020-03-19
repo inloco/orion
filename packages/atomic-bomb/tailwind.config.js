@@ -287,9 +287,7 @@ module.exports = {
       auto: 'auto'
     },
     letterSpacing: {
-      normal: '0',
-      h2: '0.6px',
-      h1: '0.72px'
+      normal: '0'
     },
     lineHeight: {
       // 12/14, 14/20, 20/24, 24/28
