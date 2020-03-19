@@ -11,7 +11,7 @@ body {
 
 h1,
 h2 {
-  @apply font-display tracking-h1 text-lg text-gray-800 leading-24;
+  @apply font-display text-lg text-gray-800 leading-24;
 }
 
 a {
