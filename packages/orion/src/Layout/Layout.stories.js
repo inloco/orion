@@ -60,6 +60,12 @@ export const basic = () => (
         email={text('Email', 'mark.weiser@inloco.com.br', 'UserProfile')}
         logoutUrl={text('Logout URL', '#', 'UserProfile')}
         logoutText={text('Logout Text', 'Logout', 'UserProfile')}>
+        {boolean('Enabled', true, 'UserProfile.EditLink') && (
+          <Layout.UserProfile.EditLink
+            href={text('href', '#', 'UserProfile.EditLink')}>
+            {text('Text', 'My Profile', 'UserProfile.EditLink')}
+          </Layout.UserProfile.EditLink>
+        )}
         {boolean('Enabled', true, 'UserProfile.HeaderItem') && (
           <Layout.UserProfile.HeaderItem
             selected={boolean('Selected', true, 'UserProfile.HeaderItem')}

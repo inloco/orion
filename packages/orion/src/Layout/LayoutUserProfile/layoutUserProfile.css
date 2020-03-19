@@ -31,6 +31,27 @@
 }
 
 /**
+ * Edit Link
+ */
+.orion.layout .user-profile-edit-link {
+  @apply flex text-sm items-center m-auto text-wave-600;
+  margin-top: 6px;
+  width: fit-content;
+}
+
+.orion.layout .user-profile-edit-link:hover {
+  @apply text-wave-700;
+}
+
+.orion.layout .user-profile-edit-link:active {
+  @apply text-wave-800;
+}
+
+.orion.layout .user-profile-edit-link > .orion.icon {
+  @apply text-icon-sm mr-4;
+}
+
+/**
  * Dropdown Menu
  */
 .orion.layout .layout-user-profile > .menu {
@@ -55,7 +76,11 @@
 }
 
 .orion.layout .layout-user-profile .layout-user-profile-header-email {
-  @apply text-center pb-16;
+  @apply text-center;
+}
+
+.orion.layout .layout-user-profile .header .orion.divider {
+  @apply mt-16;
 }
 
 /**
