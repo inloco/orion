@@ -54,7 +54,7 @@
 }
 
 .CalendarMonth_caption > strong {
-  @apply font-display font-normal text-gray-800 text-lg tracking-h2;
+  @apply font-display font-normal text-gray-800 text-lg;
 }
 
 /** Calendar month grid **/

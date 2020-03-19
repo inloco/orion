@@ -8,7 +8,7 @@
 }
 
 .orion.card .header {
-  @apply font-display mb-24 tracking-h2 text-lg text-gray-800;
+  @apply font-display mb-24 text-lg text-gray-800;
 }
 
 .orion.card > .content {
