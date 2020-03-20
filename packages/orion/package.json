@@ -1,6 +1,6 @@
 {
   "name": "@inloco/orion",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "description": "Semantic-UI Toolkit - In Loco theme",
   "files": [
     "**/*.js",
@@ -29,7 +29,7 @@
   "license": "ISC",
   "homepage": "https://inloco.github.io/orion",
   "dependencies": {
-    "@inloco/atomic-bomb": "^1.0.31",
+    "@inloco/atomic-bomb": "^1.0.32",
     "@inloco/semantic-ui-react": "^0.88.2",
     "classnames": "^2.2.6",
     "keyboard-key": "^1.0.4",
