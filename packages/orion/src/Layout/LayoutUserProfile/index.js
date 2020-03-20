@@ -19,6 +19,7 @@ const LayoutUserProfile = ({
   label,
   logoutUrl,
   logoutText,
+  imageUrl,
   onLogout,
   ...otherProps
 }) => {
@@ -46,6 +47,13 @@ const LayoutUserProfile = ({
       {...otherProps}>
       <Dropdown.Menu>
         <Dropdown.Header>
+          <div className="layout-user-profile-image">
+            {imageUrl ? (
+              <img alt="user-profile" src={imageUrl} />
+            ) : (
+              <Icon name="person" />
+            )}
+          </div>
           <div className="layout-user-profile-header-name">{name}</div>
           <div className="layout-user-profile-header-email">{email}</div>
           {editLinkChildren}
@@ -88,6 +96,7 @@ LayoutUserProfile.propTypes = {
   label: PropTypes.string,
   logoutUrl: PropTypes.string,
   logoutText: PropTypes.string,
+  imageUrl: PropTypes.string,
   onLogout: PropTypes.func
 }
 

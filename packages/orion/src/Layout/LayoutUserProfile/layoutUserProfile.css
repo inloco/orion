@@ -31,6 +31,19 @@
 }
 
 /**
+ * User Image
+ */
+.orion.layout .layout-user-profile-image {
+  @apply flex items-center justify-center m-auto w-64 h-64 rounded-full overflow-hidden bg-gray-400;
+}
+
+.orion.layout .layout-user-profile-image > .orion.icon {
+  @apply text-gray-500;
+  font-size: 48px;
+  line-height: 32px;
+}
+
+/**
  * Edit Link
  */
 .orion.layout .user-profile-edit-link {
@@ -68,11 +81,11 @@
  * Dropdown Header
  */
 .orion.layout .layout-user-profile .header {
-  @apply cursor-auto;
+  @apply cursor-auto pt-16;
 }
 
 .orion.layout .layout-user-profile .layout-user-profile-header-name {
-  @apply text-center font-medium pt-16;
+  @apply text-center font-medium pt-8;
 }
 
 .orion.layout .layout-user-profile .layout-user-profile-header-email {
