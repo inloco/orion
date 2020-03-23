@@ -3,7 +3,7 @@
 }
 
 .orion.wizard .wizard-controls {
-  @apply flex mt-24;
+  @apply flex mt-40;
 }
 
 .orion.wizard .wizard-controls-right {
