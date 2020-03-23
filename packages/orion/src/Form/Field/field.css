@@ -55,7 +55,7 @@
 
 /* Outside label */
 .orion.form .field label {
-  @apply block mb-4;
+  @apply block mb-8;
 }
 
 /* Error */
