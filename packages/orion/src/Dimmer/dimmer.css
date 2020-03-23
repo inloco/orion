@@ -12,3 +12,14 @@
 .orion.dimmer.inverted {
   background-color: rgba(0, 0, 0, 0.66);
 }
+
+/*******************************
+             Scrolling
+*******************************/
+
+.dimmable.dimmed {
+  overflow: hidden;
+}
+.dimmable > .orion.dimmer {
+  position: fixed;
+}
