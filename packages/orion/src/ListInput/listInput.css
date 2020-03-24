@@ -1,0 +1,45 @@
+/* Applies styles in the outmost Input component */
+.orion.input.list-input {
+  @apply flex min-h-48 h-auto;
+  @apply items-center pl-16 py-4 outline-none flex-wrap;
+  @apply bg-white border border-solid border-gray-900-24 rounded;
+  width: 256px;
+}
+
+.orion.input.list-input.fluid {
+  @apply w-full;
+}
+
+/* Inside input */
+.orion.input.list-input > input {
+  @apply border-0 pl-0 flex-1 bg-transparent mr-16;
+  @apply h-32 my-2 static w-32 max-w-full;
+}
+
+.orion.input.list-input > input:hover {
+  @apply shadow-none;
+}
+
+.orion.input.list-input > input:active,
+.orion.input.list-input > input:focus {
+  @apply shadow-none;
+}
+
+/* Error */
+.orion.input.list-input.error {
+  @apply border-magenta-500;
+}
+
+.orion.input.list-input.error:hover {
+  @apply shadow-error-field-hover;
+}
+
+.orion.input.list-input.error:active,
+.orion.input.list-input.error:focus {
+  @apply shadow-error-field-active;
+}
+
+/* Value tags */
+.orion.label.list-input-tag {
+  @apply self-center mr-8 overflow-visible my-2;
+}
