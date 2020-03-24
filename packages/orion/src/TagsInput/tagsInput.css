@@ -1,0 +1,11 @@
+.orion.tags-input > .menu {
+  @apply invisible !important;
+}
+
+.orion.tags-input > .orion.label {
+  @apply ml-0 mr-8 !important;
+}
+
+.orion.tags-input > input {
+  @apply ml-0 !important;
+}
