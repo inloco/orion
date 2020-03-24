@@ -40,7 +40,6 @@
 .orion.layout .layout-user-profile-image > .orion.icon {
   @apply text-gray-500;
   font-size: 48px;
-  line-height: 32px;
 }
 
 /**
