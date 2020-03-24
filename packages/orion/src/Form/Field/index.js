@@ -8,6 +8,7 @@ import Input from '../../Input'
 import Dropdown from '../../Dropdown'
 import DatepickerInput from '../../DatepickerInput'
 import RangedDatepickerInput from '../../RangedDatepickerInput'
+import TagsInput from '../../TagsInput'
 
 import { Sizes, sizePropType } from '../../utils/sizes'
 
@@ -17,7 +18,8 @@ const FLOATING_LABEL_COMPONENTS = [
   Input,
   Dropdown,
   DatepickerInput,
-  RangedDatepickerInput
+  RangedDatepickerInput,
+  TagsInput
 ]
 
 const shouldHaveFloatingLabel = (field, size) =>
