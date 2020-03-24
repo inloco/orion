@@ -53,6 +53,18 @@
   @apply text-gray-800;
 }
 
+.orion.form .field.floatingLabel.filled label:not(:empty) + .list-input {
+  @apply pt-24;
+}
+
+.orion.form
+  .field.floatingLabel.filled
+  label:not(:empty)
+  + .list-input
+  > input {
+  @apply pt-0;
+}
+
 /* Outside label */
 .orion.form .field label {
   @apply block mb-8;
