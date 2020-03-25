@@ -115,7 +115,7 @@
   @apply text-center;
 }
 
-.orion.layout .layout-user-profile .header .orion.divider {
+.orion.layout .layout-user-profile .header .orion.divider.header-divider {
   @apply mt-16;
 }
 

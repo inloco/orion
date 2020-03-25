@@ -68,22 +68,22 @@ const LayoutUserProfile = ({
           <div className="layout-user-profile-header-name">{name}</div>
           <div className="layout-user-profile-header-email">{email}</div>
           {editLinkChildren}
+          <Dropdown.Divider className="header-divider" />
           {!_.isEmpty(headerChildren) && (
             <>
-              <Dropdown.Divider />
               {headerChildren}
+              <Dropdown.Divider />
             </>
           )}
         </Dropdown.Header>
         <div className="layout-user-profile-children-container">
           {!_.isEmpty(otherChildren) && (
             <>
-              <Dropdown.Divider />
               {otherChildren}
+              <Dropdown.Divider />
             </>
           )}
         </div>
-        <Dropdown.Divider />
         <form
           className="layout-user-profile-logout"
           method="post"
