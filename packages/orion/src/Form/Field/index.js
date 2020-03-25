@@ -8,6 +8,7 @@ import Input from '../../Input'
 import Dropdown from '../../Dropdown'
 import DatepickerInput from '../../DatepickerInput'
 import RangedDatepickerInput from '../../RangedDatepickerInput'
+import TagsInput from '../../TagsInput'
 
 import { Sizes, sizePropType } from '../../utils/sizes'
 
@@ -17,20 +18,23 @@ const FLOATING_LABEL_COMPONENTS = [
   Input,
   Dropdown,
   DatepickerInput,
-  RangedDatepickerInput
+  RangedDatepickerInput,
+  TagsInput
 ]
+
+const isValueEmpty = value => !_.isNumber(value) && _.isEmpty(value)
 
 const shouldHaveFloatingLabel = (field, size) =>
   FLOATING_LABEL_COMPONENTS.includes(field) && size === Sizes.DEFAULT
 
 const isFilled = (value, children) => {
-  let filled = !_.isNil(value)
+  let filled = !isValueEmpty(value)
 
   if (!_.isNil(children)) {
     React.Children.forEach(children, child => {
       if (shouldHaveFloatingLabel(child.type, child.props.size)) {
         const { value, defaultValue } = child.props
-        filled = !_.isNil(value || defaultValue)
+        filled = !isValueEmpty(value || defaultValue)
       }
     })
   }
@@ -50,7 +54,7 @@ const Field = ({ className, children, message, onChange, ...otherProps }) => {
   let warning = otherProps.warning
 
   const handleChange = (e, data) => {
-    setControlFilled(!!data.value)
+    setControlFilled(!isValueEmpty(data.value))
     if (onChange) onChange(e, data)
   }
 
@@ -66,7 +70,7 @@ const Field = ({ className, children, message, onChange, ...otherProps }) => {
         warning = child.props.warning
         return React.cloneElement(child, {
           onChange: (e, data) => {
-            setControlFilled(!!data.value)
+            setControlFilled(!isValueEmpty(data.value))
             if (child.props.onChange) child.props.onChange(e, data)
           }
         })

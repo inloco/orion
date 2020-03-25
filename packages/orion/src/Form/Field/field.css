@@ -24,6 +24,11 @@
 .orion.form .field.floatingLabel label:not(:empty) + .dropdown > .text,
 .orion.form .field.floatingLabel label:not(:empty) + .input > input,
 .orion.form
+  .field.floatingLabel:not(.filled)
+  label:not(:empty)
+  + .tags-input
+  > input,
+.orion.form
   .field.floatingLabel
   label:not(:empty)
   + .datepicker-input-trigger
@@ -51,6 +56,10 @@
 .orion.form .field.floatingLabel:focus-within input::placeholder,
 .orion.form .field.floatingLabel.filled input::placeholder {
   @apply text-gray-800;
+}
+
+.orion.form .field.floatingLabel.filled label:not(:empty) + .dropdown.multiple {
+  @apply pt-24;
 }
 
 /* Outside label */
