@@ -25,7 +25,7 @@ const FLOATING_LABEL_COMPONENTS = [
 const isValueEmpty = value => !_.isNumber(value) && _.isEmpty(value)
 
 const shouldHaveFloatingLabel = (field, size) =>
-  FLOATING_LABEL_COMPONENTS.includes(field) && size === Sizes.DEFAULT
+  FLOATING_LABEL_COMPONENTS.includes(field) && size !== Sizes.SMALL
 
 const isFilled = (value, children) => {
   let filled = !isValueEmpty(value)
