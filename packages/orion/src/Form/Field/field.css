@@ -58,7 +58,7 @@
   @apply text-gray-800;
 }
 
-.orion.form .field.floatingLabel.filled label:not(:empty) + .tags-input {
+.orion.form .field.floatingLabel.filled label:not(:empty) + .dropdown.multiple {
   @apply pt-24;
 }
 
