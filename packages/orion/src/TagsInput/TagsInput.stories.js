@@ -2,8 +2,7 @@ import React from 'react'
 import { text, withKnobs, boolean } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 
-import { TagsInput } from '..'
-import Form from '../Form'
+import { Form, TagsInput } from '..'
 import { Sizes } from '../utils/sizes'
 
 export default {
