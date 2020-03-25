@@ -39,6 +39,7 @@ const TagsInput = ({ className, defaultValue, onChange, ...otherProps }) => {
       multiple
       search
       selection
+      icon={null}
       options={options}
       value={values}
       searchQuery={search}
