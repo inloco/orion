@@ -2,11 +2,16 @@
  * Dropdown trigger
  */
 .orion.layout .layout-user-profile {
-  @apply rounded px-8 py-4 whitespace-no-wrap;
+  @apply rounded px-8 py-4 whitespace-no-wrap flex-no-wrap;
 }
 
 .orion.layout .layout-user-profile-trigger {
-  @apply flex flex-col;
+  @apply flex flex-row items-center;
+  min-height: 34px;
+}
+
+.orion.layout .layout-user-profile-trigger-texts {
+  @apply flex flex-col justify-center ml-8;
 }
 
 .orion.layout .layout-user-profile:hover {
@@ -34,12 +39,31 @@
  * User Image
  */
 .orion.layout .layout-user-profile-image {
-  @apply flex items-center justify-center m-auto w-64 h-64 rounded-full overflow-hidden bg-gray-400;
+  @apply flex items-center justify-center rounded-full overflow-hidden bg-gray-400;
 }
 
 .orion.layout .layout-user-profile-image > .orion.icon {
   @apply text-gray-500;
+}
+
+.orion.layout .header .layout-user-profile-image {
+  @apply m-auto w-64 h-64;
+}
+
+.orion.layout .header .layout-user-profile-image > .orion.icon {
   font-size: 48px;
+}
+
+.orion.layout .layout-user-profile-trigger .layout-user-profile-image {
+  @apply w-32 h-32;
+}
+
+.orion.layout
+  .layout-user-profile-trigger
+  .layout-user-profile-image
+  > .orion.icon {
+  font-size: 24px;
+  line-height: 16px;
 }
 
 /**

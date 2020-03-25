@@ -25,7 +25,9 @@ const LayoutUserProfile = ({
 }) => {
   const [headerChildren, notHeaderChildren] = _.partition(
     React.Children.toArray(children),
-    { type: UserProfileHeaderItem }
+    {
+      type: UserProfileHeaderItem
+    }
   )
 
   const [editLinkChildren, otherChildren] = _.partition(notHeaderChildren, {
@@ -37,8 +39,17 @@ const LayoutUserProfile = ({
       className={cx('layout-user-profile', className)}
       trigger={
         <div className="layout-user-profile-trigger">
-          <div className="layout-user-profile-name">{name}</div>
-          {label && <label>{label}</label>}
+          <div className="layout-user-profile-image">
+            {imageUrl ? (
+              <img alt="user-profile" src={imageUrl} />
+            ) : (
+              <Icon name="person" />
+            )}
+          </div>
+          <div className="layout-user-profile-trigger-texts">
+            {name}
+            {label && <label>{label}</label>}
+          </div>
         </div>
       }
       compact
