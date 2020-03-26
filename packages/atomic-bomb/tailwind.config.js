@@ -440,7 +440,7 @@ module.exports = {
     borderWidth: ['responsive'],
     boxShadow: ['responsive', 'hover', 'focus'],
     cursor: ['responsive'],
-    display: ['responsive'],
+    display: ['responsive', 'group-hover'],
     fill: ['responsive'],
     flex: ['responsive'],
     flexDirection: ['responsive'],
