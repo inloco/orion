@@ -25,7 +25,9 @@ const LayoutUserProfile = ({
 }) => {
   const [headerChildren, notHeaderChildren] = _.partition(
     React.Children.toArray(children),
-    { type: UserProfileHeaderItem }
+    {
+      type: UserProfileHeaderItem
+    }
   )
 
   const [editLinkChildren, otherChildren] = _.partition(notHeaderChildren, {
@@ -37,8 +39,17 @@ const LayoutUserProfile = ({
       className={cx('layout-user-profile', className)}
       trigger={
         <div className="layout-user-profile-trigger">
-          <div className="layout-user-profile-name">{name}</div>
-          {label && <label>{label}</label>}
+          <div className="layout-user-profile-image">
+            {imageUrl ? (
+              <img alt="user-profile" src={imageUrl} />
+            ) : (
+              <Icon name="person" />
+            )}
+          </div>
+          <div className="layout-user-profile-trigger-texts">
+            {name}
+            {label && <label>{label}</label>}
+          </div>
         </div>
       }
       compact
@@ -57,22 +68,22 @@ const LayoutUserProfile = ({
           <div className="layout-user-profile-header-name">{name}</div>
           <div className="layout-user-profile-header-email">{email}</div>
           {editLinkChildren}
+          <Dropdown.Divider className="header-divider" />
           {!_.isEmpty(headerChildren) && (
             <>
-              <Dropdown.Divider />
               {headerChildren}
+              <Dropdown.Divider />
             </>
           )}
         </Dropdown.Header>
         <div className="layout-user-profile-children-container">
           {!_.isEmpty(otherChildren) && (
             <>
-              <Dropdown.Divider />
               {otherChildren}
+              <Dropdown.Divider />
             </>
           )}
         </div>
-        <Dropdown.Divider />
         <form
           className="layout-user-profile-logout"
           method="post"
