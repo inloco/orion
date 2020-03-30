@@ -1,5 +1,7 @@
 .orion.table {
   @apply table-fixed text-left w-full;
+  border-collapse: separate;
+  border-spacing: 0 8px;
 }
 
 /** Header **/
@@ -60,7 +62,7 @@
 .orion.table tbody > tr > td > .inner-cell {
   @apply bg-white;
   @apply border-t-1 border-b-1 border-gray-900-8;
-  @apply px-12 mt-8;
+  @apply px-12;
   height: 54px;
 }
 
