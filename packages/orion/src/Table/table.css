@@ -22,7 +22,7 @@
 }
 
 .orion.table th:last-child {
-  @apply pr-24;
+  @apply pr-16;
 }
 
 .orion.table tr:first-child th:first-child {
@@ -108,4 +108,9 @@
 
 .orion.table.sortable th.sorted.descending > .inner-cell::after {
   transform: rotate(180deg);
+}
+
+/** Selectable **/
+.orion.table.selectable tbody > tr:hover {
+  @apply shadow-200;
 }

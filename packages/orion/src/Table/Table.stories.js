@@ -1,11 +1,20 @@
 import _ from 'lodash'
 import React from 'react'
-import { number, object, radios, withKnobs } from '@storybook/addon-knobs'
+import {
+  number,
+  object,
+  radios,
+  boolean,
+  withKnobs
+} from '@storybook/addon-knobs'
 
 import { Table } from '../'
 
 const DEFAULT_HEADERS = ['Name', 'Project']
-const DEFAULT_DATA = [['Maíra', 'Insights'], ['Gileno', 'Accounts']]
+const DEFAULT_DATA = [
+  ['Maíra', 'Insights'],
+  ['Gileno', 'Accounts']
+]
 
 export default {
   title: 'Table',
@@ -15,8 +24,9 @@ export default {
 export const basic = () => {
   const headers = object('Headers', DEFAULT_HEADERS)
   const data = object('Data', DEFAULT_DATA)
+  const selectable = boolean('Selectable', false)
   return (
-    <Table>
+    <Table selectable={selectable}>
       <Table.Header>
         <Table.Row>
           {_.map(headers, (title, index) => (
