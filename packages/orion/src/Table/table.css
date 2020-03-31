@@ -53,7 +53,7 @@
 }
 
 .orion.table tbody > tr > td:last-child > .inner-cell {
-  @apply border-r-1 pr-24;
+  @apply border-r-1 pr-16;
   border-radius: 0 4px 4px 0;
 }
 
