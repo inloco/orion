@@ -11,7 +11,13 @@ const ADD_VALUE_KEY_CODES = [
   keyboardKey.Comma
 ]
 
-const TagsInput = ({ className, defaultValue, onChange, ...otherProps }) => {
+const TagsInput = ({
+  className,
+  defaultValue,
+  onChange,
+  onBlur,
+  ...otherProps
+}) => {
   const [values, setValues] = useState(defaultValue || [])
   const [search, setSearch] = useState('')
   const [options, setOptions] = useState(
@@ -57,7 +63,10 @@ const TagsInput = ({ className, defaultValue, onChange, ...otherProps }) => {
 
         if (keyCode === keyboardKey.Tab) event.preventDefault()
       }}
-      onBlur={() => setSearch('')}
+      onBlur={(event, data) => {
+        setSearch('')
+        onBlur && onBlur(event, data)
+      }}
       {...otherProps}
     />
   )
@@ -66,7 +75,8 @@ const TagsInput = ({ className, defaultValue, onChange, ...otherProps }) => {
 TagsInput.propTypes = {
   className: PropTypes.string,
   defaultValue: PropTypes.array,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
+  onBlur: PropTypes.func
 }
 
 export default TagsInput
