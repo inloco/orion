@@ -128,7 +128,7 @@
 }
 
 .orion.dropdown.multiple.keep-selected > .menu > .item::after {
-  @apply absolute text-icon-md text-wave-500;
+  @apply absolute text-icon-md text-wave-500 leading-20;
   top: calc(50% - 10px);
   right: 16px;
 }
