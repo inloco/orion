@@ -8,7 +8,7 @@ import { Dropdown } from '@inloco/semantic-ui-react'
 const ADD_VALUE_KEY_CODES = [
   keyboardKey.Enter,
   keyboardKey.Tab,
-  keyboardKey.Comma
+  keyboardKey.Comma,
 ]
 
 const TagsInput = ({
@@ -16,26 +16,27 @@ const TagsInput = ({
   defaultValue,
   onChange,
   onBlur,
+  onSearchChange,
   ...otherProps
 }) => {
   const [values, setValues] = useState(defaultValue || [])
   const [search, setSearch] = useState('')
   const [options, setOptions] = useState(
-    _.map(defaultValue, value => ({ value, text: value }))
+    _.map(defaultValue, (value) => ({ value, text: value }))
   )
 
-  const handleChangeValues = func => {
-    setValues(values => {
+  const handleChangeValues = (func) => {
+    setValues((values) => {
       const changed = func(values)
 
-      setOptions(_.map(changed, value => ({ value, text: value })))
+      setOptions(_.map(changed, (value) => ({ value, text: value })))
       onChange && onChange({}, { value: changed })
       return changed
     })
   }
 
   const addCurrentValue = () => {
-    handleChangeValues(values => _.concat(values, search))
+    handleChangeValues((values) => _.concat(values, search))
     setSearch('')
   }
 
@@ -50,10 +51,13 @@ const TagsInput = ({
       value={values}
       searchQuery={search}
       onChange={(e, { value }) => handleChangeValues(() => value)}
-      onSearchChange={(e, { searchQuery }) =>
+      onSearchChange={(e, data) => {
+        const { searchQuery } = data
         _.trim(searchQuery) !== ',' && setSearch(searchQuery)
-      }
-      onKeyDown={event => {
+
+        onSearchChange && onSearchChange(e, data)
+      }}
+      onKeyDown={(event) => {
         const { keyCode } = event
         const searchIsEmpty = _.size(_.trim(search)) === 0
 
@@ -76,7 +80,8 @@ TagsInput.propTypes = {
   className: PropTypes.string,
   defaultValue: PropTypes.array,
   onChange: PropTypes.func,
-  onBlur: PropTypes.func
+  onSearchChange: PropTypes.func,
+  onBlur: PropTypes.func,
 }
 
 export default TagsInput
