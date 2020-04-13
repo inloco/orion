@@ -16,6 +16,7 @@ const TagsInput = ({
   defaultValue,
   onChange,
   onBlur,
+  onSearchChange,
   ...otherProps
 }) => {
   const [values, setValues] = useState(defaultValue || [])
@@ -50,9 +51,12 @@ const TagsInput = ({
       value={values}
       searchQuery={search}
       onChange={(e, { value }) => handleChangeValues(() => value)}
-      onSearchChange={(e, { searchQuery }) =>
+      onSearchChange={(e, data) => {
+        const { searchQuery } = data
         _.trim(searchQuery) !== ',' && setSearch(searchQuery)
-      }
+
+        onSearchChange && onSearchChange(e, data)
+      }}
       onKeyDown={event => {
         const { keyCode } = event
         const searchIsEmpty = _.size(_.trim(search)) === 0
@@ -76,6 +80,7 @@ TagsInput.propTypes = {
   className: PropTypes.string,
   defaultValue: PropTypes.array,
   onChange: PropTypes.func,
+  onSearchChange: PropTypes.func,
   onBlur: PropTypes.func
 }
 

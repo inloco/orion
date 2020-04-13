@@ -33,6 +33,7 @@ export const insideForm = () => {
           fluid={fluid}
           size={Sizes.DEFAULT}
           onChange={action('onChange')}
+          onSearchChange={action('onSearchChange')}
         />
       </Form.Field>
       <Form.Field>
@@ -45,8 +46,8 @@ export const insideForm = () => {
           fluid={fluid}
           size={Sizes.DEFAULT}
           onChange={action('onChange')}
-          placeholder="Type s
-          omething"
+          onSearchChange={action('onSearchChange')}
+          placeholder="Type something"
         />
       </Form.Field>
     </Form>
