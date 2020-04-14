@@ -17,6 +17,7 @@ const TagsInput = ({
   onChange,
   onBlur,
   onSearchChange,
+  selectOnBlur,
   ...otherProps
 }) => {
   const [values, setValues] = useState(defaultValue || [])
@@ -68,7 +69,12 @@ const TagsInput = ({
         if (keyCode === keyboardKey.Tab) event.preventDefault()
       }}
       onBlur={(event, data) => {
-        setSearch('')
+        if (selectOnBlur) {
+          addCurrentValue()
+        } else {
+          setSearch('')
+        }
+
         onBlur && onBlur(event, data)
       }}
       {...otherProps}
@@ -81,7 +87,8 @@ TagsInput.propTypes = {
   defaultValue: PropTypes.array,
   onChange: PropTypes.func,
   onSearchChange: PropTypes.func,
-  onBlur: PropTypes.func
+  onBlur: PropTypes.func,
+  selectOnBlur: PropTypes.bool
 }
 
 export default TagsInput
