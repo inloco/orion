@@ -69,7 +69,7 @@ const TagsInput = ({
         if (keyCode === keyboardKey.Tab) event.preventDefault()
       }}
       onBlur={(event, data) => {
-        if (selectOnBlur) {
+        if (search && selectOnBlur) {
           addCurrentValue()
         } else {
           setSearch('')
