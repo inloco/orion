@@ -3,16 +3,25 @@
 *******************************/
 
 .orion.status-tag {
-  @apply text-sm h-24;
+  @apply flex text-sm h-24;
   @apply rounded-full bg-transparent;
+  width: fit-content;
 }
 
 .orion.status-tag.small {
-  @apply h-16 !important;
+  height: 20px;
 }
 
 .orion.status-tag.bordered {
   @apply border;
+}
+
+/*--------------
+     Icon
+---------------*/
+
+.orion.status-tag .icon {
+  @apply text-icon-sm leading-20;
 }
 
 /*--------------
@@ -31,6 +40,10 @@
   @apply border-gray-700;
 }
 
+.orion.status-tag.inactive .icon {
+  @apply text-gray-500;
+}
+
 /*--------------
      Waiting
 ---------------*/
@@ -45,6 +58,10 @@
 
 .orion.status-tag.neutral.bordered {
   @apply border-space-600;
+}
+
+.orion.status-tag.neutral .icon {
+  @apply text-space-500;
 }
 
 /*--------------
@@ -63,6 +80,10 @@
   @apply border-yellow-500;
 }
 
+.orion.status-tag.warning .icon {
+  @apply text-yellow-500;
+}
+
 /*--------------
      Error
 ---------------*/
@@ -79,6 +100,10 @@
   @apply border-magenta-500;
 }
 
+.orion.status-tag.error .icon {
+  @apply text-magenta-500;
+}
+
 /*--------------
      Running
 ---------------*/
@@ -93,4 +118,8 @@
 
 .orion.status-tag.success.bordered {
   @apply border-green-500;
+}
+
+.orion.status-tag.success .icon {
+  @apply text-green-500;
 }
