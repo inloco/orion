@@ -21,6 +21,7 @@ export const basic = () => (
 export const insideForm = () => {
   const error = boolean('error', false)
   const fluid = boolean('fluid', true)
+  const selectOnBlur = boolean('selectOnBlur', false)
 
   return (
     <Form>
@@ -34,6 +35,7 @@ export const insideForm = () => {
           size={Sizes.DEFAULT}
           onChange={action('onChange')}
           onSearchChange={action('onSearchChange')}
+          selectOnBlur={selectOnBlur}
         />
       </Form.Field>
       <Form.Field>
@@ -48,6 +50,7 @@ export const insideForm = () => {
           onChange={action('onChange')}
           onSearchChange={action('onSearchChange')}
           placeholder="Type something"
+          selectOnBlur={selectOnBlur}
         />
       </Form.Field>
     </Form>
