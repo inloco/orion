@@ -11,9 +11,9 @@ it('should render initial values when defaultValue is given', () => {
   MOCK_VALUES.forEach(value => expect(queryByText(value)).toBeTruthy())
 })
 
-it('should trigger the onChange callback when tha value is changed', () => {
+it('should trigger the onChange callback when the value is changed', () => {
   const mockOnChange = jest.fn()
-  const { getByRole } = render(
+  const { getByRole, getByText } = render(
     <TagsInput onChange={mockOnChange} placeholder="placeholder" />
   )
 
@@ -31,16 +31,39 @@ it('should trigger the onChange callback when tha value is changed', () => {
   fireEvent.change(input, { target: { value: 'Gray' } })
   fireEvent.keyDown(input, { keyCode: keyboardKey.Comma })
 
-  expect(mockOnChange).toHaveBeenCalledWith(
-    {},
-    { value: ['Black', 'White', 'Gray'] }
+  // types 'Red' and do not press enter
+  fireEvent.change(input, { target: { value: 'Red' } })
+
+  expect(mockOnChange).toHaveBeenCalledWith(expect.anything(), {
+    value: ['Black', 'White', 'Gray', 'Red']
+  })
+
+  // removes 'Gray' by clicking in the remove icon in tag
+  fireEvent.click(getByText('Gray').children[0])
+
+  expect(mockOnChange).toHaveBeenLastCalledWith(expect.anything(), {
+    value: ['Black', 'White', 'Red']
+  })
+})
+
+it('should trigger the onChange callback when multiple values are pasted', () => {
+  const mockOnChange = jest.fn()
+  const { getByRole, getByText } = render(
+    <TagsInput onChange={mockOnChange} placeholder="placeholder" />
   )
 
-  // removes 'Gray'
-  fireEvent.keyDown(input, { keyCode: keyboardKey.Backspace })
+  const input = getByRole('combobox').childNodes[0]
 
-  expect(mockOnChange).toHaveBeenLastCalledWith(
-    {},
-    { value: ['Black', 'White'] }
-  )
+  // pastes comma separated values
+  fireEvent.change(input, {
+    target: { value: 'Red, Pink ,Yellow, Gray,,,,Black' }
+  })
+
+  const expected = ['Red', 'Pink', 'Yellow', 'Gray', 'Black']
+
+  expect(mockOnChange).toHaveBeenCalledWith(expect.anything(), {
+    value: expected
+  })
+
+  expected.forEach(value => expect(getByText(value)).toHaveClass('orion label'))
 })

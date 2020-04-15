@@ -26,7 +26,7 @@ const TagsInput = ({
     _.map(defaultValue, value => ({ value, text: value }))
   )
 
-  const handleChangeValues = func => {
+  const handleAddTagValue = func => {
     setValues(values => {
       const changed = func(values)
 
@@ -37,13 +37,17 @@ const TagsInput = ({
   }
 
   const addCurrentValue = () => {
-    handleChangeValues(values => _.concat(values, search))
+    handleAddTagValue(values => _.concat(values, search))
     setSearch('')
   }
 
   return (
     <Dropdown
-      className={cx('tags-input', className)}
+      className={cx(
+        'tags-input',
+        { draft: _.isEmpty(values) && search },
+        className
+      )}
       multiple
       search
       selection
@@ -51,12 +55,28 @@ const TagsInput = ({
       options={options}
       value={values}
       searchQuery={search}
-      onChange={(e, { value }) => handleChangeValues(() => value)}
-      onSearchChange={(e, data) => {
-        const { searchQuery } = data
-        _.trim(searchQuery) !== ',' && setSearch(searchQuery)
+      onChange={(e, { value: newValue }) => {
+        // This will be used to delete tag values
+        setOptions(_.map(newValue, value => ({ value, text: value })))
+        setValues(newValue)
 
-        onSearchChange && onSearchChange(e, data)
+        onChange && onChange({}, { value: _.concat(newValue, search || []) })
+      }}
+      onSearchChange={(event, data) => {
+        const { searchQuery } = data
+
+        const commaSplit = _.compact(_.map(_.split(searchQuery, ','), _.trim))
+
+        if (_.size(commaSplit) > 1) {
+          handleAddTagValue(values => _.concat(values, commaSplit))
+          setSearch('')
+        } else if (_.trim(searchQuery) !== ',') {
+          setSearch(searchQuery)
+          onChange &&
+            onChange(event, { value: _.concat(values, searchQuery || []) })
+        }
+
+        onSearchChange && onSearchChange(event, data)
       }}
       onKeyDown={event => {
         const { keyCode } = event
@@ -71,8 +91,6 @@ const TagsInput = ({
       onBlur={(event, data) => {
         if (search && selectOnBlur) {
           addCurrentValue()
-        } else {
-          setSearch('')
         }
 
         onBlur && onBlur(event, data)
