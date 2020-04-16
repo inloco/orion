@@ -46,12 +46,12 @@
   .field.floatingLabel
   label:not(:empty)
   + .datepicker-input-trigger
-  input::placeholder,
+  input:not(:focus)::placeholder,
 .orion.form
   .field.floatingLabel
   label:not(:empty)
   + .input
-  > input::placeholder {
+  > input:not(:focus)::placeholder {
   @apply transition-default;
   transition-property: color;
   color: transparent;
