@@ -97,9 +97,7 @@ const TagsInput = ({
           addCurrentValue()
         }
 
-        if (keyCode === keyboardKey.Tab && _.includes(addValueKeys, 'tab')) {
-          event.preventDefault()
-        }
+        shouldPreventDefault(keyCode, addValueKeys) && event.preventDefault()
       }}
       onBlur={(event, data) => {
         if (search && selectOnBlur) {
@@ -112,6 +110,11 @@ const TagsInput = ({
     />
   )
 }
+
+const shouldPreventDefault = (keyCode, addValueKeys) =>
+  (keyCode === keyboardKey.Tab && _.includes(addValueKeys, KeyboardKeys.TAB)) ||
+  (keyCode === keyboardKey.Enter &&
+    _.includes(addValueKeys, KeyboardKeys.ENTER))
 
 TagsInput.propTypes = {
   className: PropTypes.string,
