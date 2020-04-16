@@ -5,11 +5,11 @@ import PropTypes from 'prop-types'
 import keyboardKey from 'keyboard-key'
 import { Dropdown } from '@inloco/semantic-ui-react'
 
-const ADD_VALUE_KEY_CODES = [
-  keyboardKey.Enter,
-  keyboardKey.Tab,
-  keyboardKey.Comma
-]
+const AddValueKeyCodes = {
+  enter: keyboardKey.Enter,
+  tab: keyboardKey.Tab,
+  comma: keyboardKey.Comma
+}
 
 const TagsInput = ({
   className,
@@ -18,12 +18,17 @@ const TagsInput = ({
   onBlur,
   onSearchChange,
   selectOnBlur,
+  addValueKeys,
   ...otherProps
 }) => {
   const [values, setValues] = useState(defaultValue || [])
   const [search, setSearch] = useState('')
   const [options, setOptions] = useState(
     _.map(defaultValue, value => ({ value, text: value }))
+  )
+  const addValuesKeyboardKeys = _.map(
+    addValueKeys,
+    key => AddValueKeyCodes[key]
   )
 
   const handleAddTagValue = func => {
@@ -82,11 +87,13 @@ const TagsInput = ({
         const { keyCode } = event
         const searchIsEmpty = _.size(_.trim(search)) === 0
 
-        if (_.includes(ADD_VALUE_KEY_CODES, keyCode) && !searchIsEmpty) {
+        if (_.includes(addValuesKeyboardKeys, keyCode) && !searchIsEmpty) {
           addCurrentValue()
         }
 
-        if (keyCode === keyboardKey.Tab) event.preventDefault()
+        if (keyCode === keyboardKey.Tab && _.includes(addValueKeys, 'tab')) {
+          event.preventDefault()
+        }
       }}
       onBlur={(event, data) => {
         if (search && selectOnBlur) {
@@ -106,7 +113,12 @@ TagsInput.propTypes = {
   onChange: PropTypes.func,
   onSearchChange: PropTypes.func,
   onBlur: PropTypes.func,
-  selectOnBlur: PropTypes.bool
+  selectOnBlur: PropTypes.bool,
+  addValueKeys: PropTypes.arrayOf(PropTypes.oneOf(_.keys(AddValueKeyCodes)))
+}
+
+TagsInput.defaultProps = {
+  addValueKeys: ['comma']
 }
 
 export default TagsInput

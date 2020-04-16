@@ -14,7 +14,11 @@ it('should render initial values when defaultValue is given', () => {
 it('should trigger the onChange callback when the value is changed', () => {
   const mockOnChange = jest.fn()
   const { getByRole, getByText } = render(
-    <TagsInput onChange={mockOnChange} placeholder="placeholder" />
+    <TagsInput
+      onChange={mockOnChange}
+      placeholder="placeholder"
+      addValueKeys={['enter', 'comma', 'tab']}
+    />
   )
 
   const input = getByRole('combobox').childNodes[0]
