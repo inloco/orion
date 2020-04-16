@@ -5,10 +5,16 @@ import PropTypes from 'prop-types'
 import keyboardKey from 'keyboard-key'
 import { Dropdown } from '@inloco/semantic-ui-react'
 
+const KeyboardKeys = {
+  ENTER: 'enter',
+  TAB: 'tab',
+  COMMA: 'comma'
+}
+
 const AddValueKeyCodes = {
-  enter: keyboardKey.Enter,
-  tab: keyboardKey.Tab,
-  comma: keyboardKey.Comma
+  [KeyboardKeys.ENTER]: keyboardKey.Enter,
+  [KeyboardKeys.TAB]: keyboardKey.Tab,
+  [KeyboardKeys.COMMA]: keyboardKey.Comma
 }
 
 const TagsInput = ({
@@ -114,11 +120,13 @@ TagsInput.propTypes = {
   onSearchChange: PropTypes.func,
   onBlur: PropTypes.func,
   selectOnBlur: PropTypes.bool,
-  addValueKeys: PropTypes.arrayOf(PropTypes.oneOf(_.keys(AddValueKeyCodes)))
+  addValueKeys: PropTypes.arrayOf(PropTypes.oneOf(_.values(KeyboardKeys)))
 }
 
 TagsInput.defaultProps = {
   addValueKeys: ['comma']
 }
+
+TagsInput.KeyboardKeys = KeyboardKeys
 
 export default TagsInput

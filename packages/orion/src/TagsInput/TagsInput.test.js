@@ -17,7 +17,11 @@ it('should trigger the onChange callback when the value is changed', () => {
     <TagsInput
       onChange={mockOnChange}
       placeholder="placeholder"
-      addValueKeys={['enter', 'comma', 'tab']}
+      addValueKeys={[
+        TagsInput.KeyboardKeys.ENTER,
+        TagsInput.KeyboardKeys.TAB,
+        TagsInput.KeyboardKeys.COMMA
+      ]}
     />
   )
 
