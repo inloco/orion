@@ -5,11 +5,17 @@ import PropTypes from 'prop-types'
 import keyboardKey from 'keyboard-key'
 import { Dropdown } from '@inloco/semantic-ui-react'
 
-const ADD_VALUE_KEY_CODES = [
-  keyboardKey.Enter,
-  keyboardKey.Tab,
-  keyboardKey.Comma
-]
+const KeyboardKeys = {
+  ENTER: 'enter',
+  TAB: 'tab',
+  COMMA: 'comma'
+}
+
+const AddValueKeyCodes = {
+  [KeyboardKeys.ENTER]: keyboardKey.Enter,
+  [KeyboardKeys.TAB]: keyboardKey.Tab,
+  [KeyboardKeys.COMMA]: keyboardKey.Comma
+}
 
 const TagsInput = ({
   className,
@@ -18,12 +24,17 @@ const TagsInput = ({
   onBlur,
   onSearchChange,
   selectOnBlur,
+  addValueKeys,
   ...otherProps
 }) => {
   const [values, setValues] = useState(defaultValue || [])
   const [search, setSearch] = useState('')
   const [options, setOptions] = useState(
     _.map(defaultValue, value => ({ value, text: value }))
+  )
+  const addValuesKeyboardKeys = _.map(
+    addValueKeys,
+    key => AddValueKeyCodes[key]
   )
 
   const handleAddTagValue = func => {
@@ -82,11 +93,11 @@ const TagsInput = ({
         const { keyCode } = event
         const searchIsEmpty = _.size(_.trim(search)) === 0
 
-        if (_.includes(ADD_VALUE_KEY_CODES, keyCode) && !searchIsEmpty) {
+        if (_.includes(addValuesKeyboardKeys, keyCode) && !searchIsEmpty) {
           addCurrentValue()
         }
 
-        if (keyCode === keyboardKey.Tab) event.preventDefault()
+        shouldPreventDefault(keyCode, addValueKeys) && event.preventDefault()
       }}
       onBlur={(event, data) => {
         if (search && selectOnBlur) {
@@ -100,13 +111,25 @@ const TagsInput = ({
   )
 }
 
+const shouldPreventDefault = (keyCode, addValueKeys) =>
+  (keyCode === keyboardKey.Tab && _.includes(addValueKeys, KeyboardKeys.TAB)) ||
+  (keyCode === keyboardKey.Enter &&
+    _.includes(addValueKeys, KeyboardKeys.ENTER))
+
 TagsInput.propTypes = {
   className: PropTypes.string,
   defaultValue: PropTypes.array,
   onChange: PropTypes.func,
   onSearchChange: PropTypes.func,
   onBlur: PropTypes.func,
-  selectOnBlur: PropTypes.bool
+  selectOnBlur: PropTypes.bool,
+  addValueKeys: PropTypes.arrayOf(PropTypes.oneOf(_.values(KeyboardKeys)))
 }
+
+TagsInput.defaultProps = {
+  addValueKeys: ['comma']
+}
+
+TagsInput.KeyboardKeys = KeyboardKeys
 
 export default TagsInput
