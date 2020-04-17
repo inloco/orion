@@ -42,6 +42,10 @@
   @apply flex items-center justify-center rounded-full overflow-hidden bg-gray-400;
 }
 
+.orion.layout .layout-user-profile-image > img {
+  @apply object-cover h-full w-full;
+}
+
 .orion.layout .layout-user-profile-image > .orion.icon {
   @apply text-gray-500;
 }
@@ -174,6 +178,10 @@
   @apply rounded-full w-40 h-40 mr-8 bg-gray-400 flex items-center justify-center overflow-hidden;
   grid-column: icon-start / icon-end;
   grid-row: span 2;
+}
+
+.orion.layout .user-profile-icon > img {
+  @apply h-full w-full object-cover;
 }
 
 /**
