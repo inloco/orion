@@ -83,6 +83,10 @@
   @apply absolute bg-transparent outline-none;
 }
 
+.orion.search.dropdown .menu {
+  max-height: 250px;
+}
+
 .orion.dropdown.search.active input:focus + .text {
   @apply text-gray-800;
 }
@@ -159,7 +163,7 @@
 }
 
 .orion.dropdown.search.multiple > input {
-  @apply h-32 my-2 static w-32 max-w-full;
+  @apply h-32 my-2 static w-32  w-full;
 }
 
 .orion.dropdown.search.multiple.small > input {
