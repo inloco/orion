@@ -9,6 +9,6 @@
 }
 
 .orion-notification-center__toast.Toastify__toast {
-  @apply shadow-none p-0 m-0 mb-8 min-h-0 font-default;
+  @apply shadow-none p-0 m-0 mb-8 min-h-0 font-default overflow-visible;
   color: inherit;
 }
