@@ -95,8 +95,12 @@
  * Multiple
  */
 
+.orion.dropdown.multiple {
+  @apply h-auto py-4;
+}
+
 .orion.dropdown.multiple .orion.label {
-  @apply mr-16;
+  @apply mr-16 my-2;
   margin-left: -8px;
 }
 
@@ -153,14 +157,6 @@
 /**
  * Search + Multiple
  */
-
-.orion.dropdown.search.multiple {
-  @apply h-auto py-4;
-}
-
-.orion.dropdown.search.multiple > .orion.label {
-  @apply my-2;
-}
 
 .orion.dropdown.search.multiple > input {
   @apply h-32 my-2 static w-32 max-w-full;
