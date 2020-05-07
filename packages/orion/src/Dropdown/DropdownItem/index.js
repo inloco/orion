@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { Dropdown as SemanticDropdown, Image } from '@inloco/semantic-ui-react'
 
+import Checkbox from '../../Checkbox'
 import { createShorthandFactory } from '../../utils/factories'
 
 const DropdownItem = ({
@@ -13,6 +14,8 @@ const DropdownItem = ({
   text,
   ...otherProps
 }) => {
+  const { active } = otherProps
+
   if (!children) {
     children = (
       <div className="flex items-center">
@@ -21,6 +24,9 @@ const DropdownItem = ({
             {Image.create(image, { autoGenerateKey: false })}
           </div>
         )}
+
+        <Checkbox checked={active} />
+
         <div className="flex-1 min-w-0">
           <div className="text">{_.isNil(content) ? text : content}</div>
           {!_.isNil(description) && (
@@ -30,6 +36,7 @@ const DropdownItem = ({
       </div>
     )
   }
+
   return (
     <SemanticDropdown.Item {...otherProps}>{children}</SemanticDropdown.Item>
   )
