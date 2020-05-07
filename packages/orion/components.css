@@ -22,6 +22,7 @@
 @import './src/Menu/menu.css';
 @import './src/Message/message.css';
 @import './src/Modal/modal.css';
+@import './src/MultiSelectFilter/MultiSelectFilter.css';
 @import './src/NotificationCenter/notificationCenter.css';
 @import './src/Pagination/pagination.css';
 @import './src/Placeholder/placeholder.css';
