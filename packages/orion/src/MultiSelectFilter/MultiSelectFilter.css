@@ -1,0 +1,18 @@
+.orion-multiSelectFilter .orion.dropdown > .menu {
+  left: -25px;
+  right: -25px;
+  width: auto;
+}
+
+.orion-multiSelectFilter .orion.dropdown > .menu > .item,
+.orion-multiSelectFilter .orion.dropdown > .menu > .message {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.orion-multiSelectFilter
+  .orion.dropdown.multiple.keep-selected
+  > .menu
+  > .item::after {
+  right: 25px;
+}
