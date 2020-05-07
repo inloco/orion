@@ -12,9 +12,10 @@ const DropdownItem = ({
   description,
   image,
   text,
-  active,
   ...otherProps
 }) => {
+  const { active } = otherProps
+
   if (!children) {
     children = (
       <div className="flex items-center">
@@ -37,9 +38,7 @@ const DropdownItem = ({
   }
 
   return (
-    <SemanticDropdown.Item active={active} {...otherProps}>
-      {children}
-    </SemanticDropdown.Item>
+    <SemanticDropdown.Item {...otherProps}>{children}</SemanticDropdown.Item>
   )
 }
 
@@ -48,8 +47,7 @@ DropdownItem.propTypes = {
   content: PropTypes.node,
   description: PropTypes.node,
   image: PropTypes.oneOfType([PropTypes.node, PropTypes.object]),
-  text: PropTypes.node,
-  active: PropTypes.bool
+  text: PropTypes.node
 }
 
 // Overriding original factory. See src/utils/factories.js for more details.
