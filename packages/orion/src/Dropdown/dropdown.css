@@ -131,20 +131,6 @@
   @apply text-gray-800;
 }
 
-/**
- * Multiple + Keep selected
- */
-
-.orion.dropdown.multiple.keep-selected > .menu > .item.active {
-  @apply font-normal .relative;
-}
-
-.orion.dropdown.multiple.keep-selected > .menu > .item::after {
-  @apply absolute text-icon-md text-wave-500 leading-20;
-  top: calc(50% - 10px);
-  right: 16px;
-}
-
 .orion.dropdown.multiple.keep-selected.disabled > .menu {
   @apply hidden;
 }
