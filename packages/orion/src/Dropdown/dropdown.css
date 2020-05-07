@@ -145,11 +145,6 @@
   right: 16px;
 }
 
-.orion.dropdown.multiple.keep-selected > .menu > .item.active::after {
-  content: 'check';
-  font-family: 'Material Icons';
-}
-
 .orion.dropdown.multiple.keep-selected.disabled > .menu {
   @apply hidden;
 }
