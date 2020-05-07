@@ -27,3 +27,11 @@
   @apply mr-8;
   max-width: 32px;
 }
+
+.orion.dropdown .menu > .item .checkbox {
+  @apply mr-16 hidden;
+}
+
+.orion.dropdown.multiple.keep-selected > .menu > .item .checkbox {
+  @apply block;
+}
