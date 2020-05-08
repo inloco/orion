@@ -14,11 +14,10 @@ import {
   getAnchorClassName,
   BadgeDistance,
   BadgePosition,
-  useBadgePosition
+  useBadgePosition,
+  DEFAULT_PADDING,
+  DEFAULT_RADIUS
 } from './utils'
-
-const DEFAULT_PADDING = 0
-const DEFAULT_RADIUS = 4
 
 function parseSteps(steps) {
   return steps.map(

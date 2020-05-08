@@ -1,7 +1,8 @@
 import { useState, useEffect, useCallback } from 'react'
 import _ from 'lodash'
 
-const DEFAULT_PADDING = 0
+export const DEFAULT_PADDING = 0
+export const DEFAULT_RADIUS = 4
 
 export const BadgeDistance = {
   sm: 1,
