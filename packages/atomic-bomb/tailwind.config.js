@@ -192,9 +192,9 @@ module.exports = {
     },
     boxShadow: {
       100: '0 0 0 1px rgba(61, 62, 63, .16)',
-      200: '0 4px 6px 0px rgba(61, 62, 63, .16)',
-      300: '0 8px 10px 0px rgba(61, 62, 63, .16)',
-      400: '0 16px 24px 0px rgba(61, 62, 63, .16)',
+      200: '0 4px 6px -1px rgba(61, 62, 63, .16)',
+      300: '0 8px 10px -4px rgba(61, 62, 63, .16)',
+      400: '0 16px 24px -6px rgba(61, 62, 63, .16)',
       500: '0 24px 32px 0px rgba(61, 62, 63, .16)',
       default: '0 4px 16px -1px rgba(61, 62, 63, .16)',
       'field-hover': 'inset 0 0px 0px 1px rgba(61, 62, 63, .16)',
