@@ -88,6 +88,18 @@ export const withHover = () => (
   </Filter>
 )
 
+const ControlledFilter = () => {
+  const [value, setValue] = React.useState(['aqui'])
+  return (
+    <Filter trigger={<h1>{value}</h1>} {...actions} onApply={setValue}>
+      {filterProps => (
+        <FilterStoryInput {...filterProps} placeholder="Type your name" />
+      )}
+    </Filter>
+  )
+}
+export const withTrigger = () => <ControlledFilter />
+
 const FilterStoryInput = ({ onChange, value, ...otherProps }) => (
   <Input
     autoFocus

@@ -25,6 +25,7 @@ const Filter = ({
   onOpen,
   selectedText,
   text,
+  trigger,
   value: propValue,
   tooltipProps,
   ...otherProps
@@ -85,19 +86,23 @@ const Filter = ({
     active: open,
     selected: isSelected
   })
-  const trigger = (
+
+  const defaultTooltipTrigger = (
+    <Button className={triggerClasses} size={Sizes.SMALL}>
+      {isSelected ? selectedText(value) : text}
+      {isSelected && <FilterClearIcon onClick={handleClearIconClick} />}
+    </Button>
+  )
+
+  const tooltipTrigger = trigger || defaultTooltipTrigger
+
+  const tooltip = (
     <Tooltip
       disabled={_.isEmpty(_.get(tooltipProps, 'content'))}
       {...tooltipProps}
-      trigger={
-        <Button
-          className={triggerClasses}
-          onClick={handleTriggerClick}
-          size={Sizes.SMALL}>
-          {isSelected ? selectedText(value) : text}
-          {isSelected && <FilterClearIcon onClick={handleClearIconClick} />}
-        </Button>
-      }
+      trigger={React.cloneElement(tooltipTrigger, {
+        onClick: handleTriggerClick
+      })}
     />
   )
 
@@ -105,7 +110,7 @@ const Filter = ({
     <Popup
       className={cx(className, 'orion filter')}
       basic
-      trigger={trigger}
+      trigger={tooltip}
       open={open}
       {...otherProps}>
       <ClickOutside
@@ -159,9 +164,10 @@ Filter.propTypes = {
   onClear: PropTypes.func,
   onOpen: PropTypes.func,
   selectedText: PropTypes.func,
-  text: PropTypes.string.isRequired,
+  text: PropTypes.string,
   value: PropTypes.any,
-  tooltipProps: PropTypes.object
+  tooltipProps: PropTypes.object,
+  trigger: PropTypes.node
 }
 
 Filter.defaultProps = {
