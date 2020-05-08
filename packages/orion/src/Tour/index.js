@@ -1,0 +1,260 @@
+import React, { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
+import cx from 'classnames'
+import Reactour from 'reactour'
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
+
+import { Button } from '..'
+
+import Anchor from './Anchor'
+import Badge from './Badge'
+import Portal from './Portal'
+import TourModal from './TourModal'
+import {
+  getAnchorClassName,
+  BadgeDistance,
+  BadgePosition,
+  useBadgePosition
+} from './utils'
+
+const DEFAULT_PADDING = 0
+const DEFAULT_RADIUS = 4
+
+function parseSteps(steps) {
+  return steps.map(
+    (
+      {
+        selector,
+        anchor,
+        title,
+        content,
+        padding,
+        badgePosition,
+        badgeDistance,
+        position,
+        radius,
+        actionBefore,
+        actionAfter
+      },
+      i
+    ) => {
+      const parsedContent = (
+        <>
+          {title && <h1 className="orion-tour-title">{title}</h1>}
+          {content}
+        </>
+      )
+      if (anchor) {
+        return {
+          selector: `.${getAnchorClassName(i)}`,
+          content: parsedContent,
+          anchor,
+          position,
+          actionBefore,
+          actionAfter
+        }
+      }
+
+      return {
+        selector,
+        content: parsedContent,
+        padding,
+        badgePosition,
+        badgeDistance,
+        position: position || 'right',
+        radius,
+        actionBefore,
+        actionAfter
+      }
+    }
+  )
+}
+
+function Tour({
+  className,
+  steps,
+  welcomeModal,
+  dismissButtonContent,
+  nextButtonContent,
+  prevButtonContent,
+  finishButtonContent,
+  onFinish,
+  onDismiss
+}) {
+  const [tourSteps, setTourSteps] = useState(() => parseSteps(steps))
+  const [currentStep, setCurrentStep] = useState(0)
+  const [openTour, setOpenTour] = useState(!welcomeModal)
+  const [openModal, setOpenModal] = useState(!!welcomeModal)
+  const badgePosition = useBadgePosition(tourSteps, currentStep)
+
+  useEffect(() => {
+    disableBodyScroll()
+    return () => enableBodyScroll()
+  }, [])
+
+  useEffect(() => {
+    setTourSteps(parseSteps(steps))
+  }, [steps, setTourSteps])
+
+  function nextStep() {
+    const actionBefore = tourSteps[currentStep + 1]?.actionBefore
+    const actionAfter = tourSteps[currentStep]?.actionAfter
+    actionBefore && actionBefore()
+    actionAfter && actionAfter()
+
+    currentStep + 1 < steps.length && setCurrentStep(step => step + 1)
+  }
+
+  function previousStep() {
+    const actionBefore = tourSteps[currentStep - 1]?.actionBefore
+    const actionAfter = tourSteps[currentStep]?.actionAfter
+    actionBefore && actionBefore()
+    actionAfter && actionAfter()
+
+    currentStep > 0 && setCurrentStep(step => step - 1)
+  }
+
+  return (
+    <>
+      <TourModal
+        open={openModal}
+        onAction={() => {
+          setOpenModal(false)
+          setOpenTour(true)
+        }}
+        {...welcomeModal}
+      />
+      <Reactour
+        className={className}
+        rounded={tourSteps[currentStep]?.radius || DEFAULT_RADIUS}
+        maskSpace={tourSteps[currentStep]?.padding || DEFAULT_PADDING}
+        isOpen={openTour}
+        steps={tourSteps}
+        closeWithMask={false}
+        CustomHelper={TourHelper}
+        onBeforeClose={() => enableBodyScroll()}
+        onRequestClose={() => {
+          setOpenTour(false)
+          onDismiss && onDismiss()
+        }}
+        goToStep={currentStep}
+        getCurrentStep={setCurrentStep}
+        nextStep={nextStep}
+        prevStep={previousStep}
+        maskClassName={cx('orion-tour-mask', {
+          clear: tourSteps[currentStep]?.anchor
+        })}
+        highlightedMaskClassName="orion-tour-highlight-mask"
+        disableInteraction>
+        <Portal>
+          <Badge position={badgePosition} />
+          {tourSteps.map(({ anchor }, i) =>
+            anchor ? (
+              <Anchor
+                key={i}
+                className={getAnchorClassName(i)}
+                position={anchor}
+              />
+            ) : null
+          )}
+        </Portal>
+        <div className="orion-tour-controls">
+          <ul className="space-x-8">
+            {steps.map((_step, i) => (
+              <li
+                key={i}
+                className={cx('orion-tour-dot', { current: currentStep === i })}
+              />
+            ))}
+          </ul>
+          <div className="orion-tour-buttons space-x-16">
+            <Button
+              subtle
+              onClick={() => {
+                setOpenTour(false)
+                onDismiss && onDismiss()
+              }}
+              content={dismissButtonContent}
+            />
+            {currentStep > 0 && (
+              <Button
+                subtle
+                onClick={previousStep}
+                content={prevButtonContent}
+              />
+            )}
+            {currentStep + 1 >= steps.length ? (
+              <Button
+                subtle
+                primary
+                onClick={() => {
+                  setOpenTour(false)
+                  onFinish && onFinish()
+                }}
+                content={finishButtonContent}
+              />
+            ) : (
+              <Button
+                subtle
+                primary
+                onClick={nextStep}
+                content={nextButtonContent}
+              />
+            )}
+          </div>
+        </div>
+      </Reactour>
+    </>
+  )
+}
+
+function TourHelper({ content, children }) {
+  return (
+    <main className="orion-tour-helper">
+      {content}
+      {children}
+    </main>
+  )
+}
+
+Tour.propTypes = {
+  className: PropTypes.string,
+  steps: PropTypes.arrayOf(
+    PropTypes.shape({
+      selector: PropTypes.string,
+      anchor: PropTypes.shape({
+        top: PropTypes.number.isRequired,
+        left: PropTypes.number.isRequired
+      }),
+      title: PropTypes.string,
+      content: PropTypes.oneOfType([PropTypes.node, PropTypes.element]),
+      padding: PropTypes.number,
+      badgePosition: PropTypes.oneOf(Object.values(BadgePosition)),
+      badgeDistance: PropTypes.oneOfType([
+        PropTypes.oneOf(Object.keys(BadgeDistance)),
+        PropTypes.number
+      ]),
+      position: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
+      radius: PropTypes.number,
+      actionBefore: PropTypes.func,
+      actionAfter: PropTypes.func
+    })
+  ).isRequired,
+  welcomeModal: PropTypes.shape({
+    content: PropTypes.node,
+    buttonContent: PropTypes.string
+  }),
+  dismissButtonContent: PropTypes.string.isRequired,
+  nextButtonContent: PropTypes.string.isRequired,
+  prevButtonContent: PropTypes.string.isRequired,
+  finishButtonContent: PropTypes.string.isRequired,
+  onFinish: PropTypes.func,
+  onDismiss: PropTypes.func
+}
+
+TourHelper.propTypes = {
+  children: PropTypes.node,
+  content: PropTypes.node
+}
+
+export default Tour
