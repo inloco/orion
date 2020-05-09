@@ -28,7 +28,7 @@ const Wizard = ({
 
   useEffect(() => {
     autoScrollOnStepChange && scrollToTop()
-  }, [currentStepState])
+  }, [autoScrollOnStepChange, currentStepState])
 
   return (
     <div className={cx('orion wizard', className)}>
