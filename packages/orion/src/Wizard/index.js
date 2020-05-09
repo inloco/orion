@@ -1,10 +1,11 @@
 import cx from 'classnames'
 import _ from 'lodash'
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import StepsNav from '../StepsNav'
 import WizardControls, { WizardButtons } from './WizardControls'
+import { scrollToTop } from '../utils/scroll'
 
 const Wizard = ({
   children,
@@ -12,7 +13,8 @@ const Wizard = ({
   currentStepIndex: currentStepProp,
   onStepIndexChange,
   steps,
-  buttons
+  buttons,
+  autoScrollOnStepChange
 }) => {
   const [currentStepState, setCurrentStepState] = useState(currentStepProp || 0)
   const currentStepIndex = _.isNil(currentStepProp)
@@ -23,6 +25,10 @@ const Wizard = ({
     setCurrentStepState(newStep)
     onStepIndexChange(newStep)
   }
+
+  useEffect(() => {
+    autoScrollOnStepChange && scrollToTop()
+  }, [currentStepState])
 
   return (
     <div className={cx('orion wizard', className)}>
@@ -47,7 +53,8 @@ Wizard.propTypes = {
   currentStepIndex: PropTypes.number,
   onStepIndexChange: PropTypes.func,
   steps: PropTypes.arrayOf(PropTypes.string).isRequired,
-  buttons: PropTypes.object
+  buttons: PropTypes.object,
+  autoScrollOnStepChange: PropTypes.bool
 }
 
 Wizard.defaultProps = {
@@ -56,7 +63,8 @@ Wizard.defaultProps = {
     [WizardButtons.NEXT]: 'Next',
     [WizardButtons.FINISH]: 'Finish'
   },
-  onStepIndexChange: () => {}
+  onStepIndexChange: () => {},
+  autoScrollOnStepChange: false
 }
 
 Wizard.Buttons = WizardButtons

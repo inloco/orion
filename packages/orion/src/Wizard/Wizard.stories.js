@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { array, withKnobs } from '@storybook/addon-knobs'
+import { array, boolean, withKnobs } from '@storybook/addon-knobs'
 
 import { Button, Wizard } from '../'
 
@@ -28,9 +28,28 @@ export const basic = () => {
     <Wizard
       steps={array('Steps', ['Step 1', 'Step 2', 'Step 3'])}
       buttons={buttons}
-      {...actions}>
+      {...actions}
+      autoScrollOnStepChange={boolean('Auto-scroll', false)}>
       <div>
         Step 1 Content
+        <div className="mb-24">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo veniam
+          at, maxime adipisci sunt non voluptatum architecto quisquam sapiente
+          eligendi natus nisi totam, incidunt, asperiores minus alias
+          accusantium! Quis, aliquid.
+        </div>
+        <div className="mb-24">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo veniam
+          at, maxime adipisci sunt non voluptatum architecto quisquam sapiente
+          eligendi natus nisi totam, incidunt, asperiores minus alias
+          accusantium! Quis, aliquid.
+        </div>
+        <div className="mb-24">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo veniam
+          at, maxime adipisci sunt non voluptatum architecto quisquam sapiente
+          eligendi natus nisi totam, incidunt, asperiores minus alias
+          accusantium! Quis, aliquid.
+        </div>
         <div>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo veniam
           at, maxime adipisci sunt non voluptatum architecto quisquam sapiente
@@ -40,6 +59,24 @@ export const basic = () => {
       </div>
       <div>
         Step 2 Content
+        <div className="mb-24">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo veniam
+          at, maxime adipisci sunt non voluptatum architecto quisquam sapiente
+          eligendi natus nisi totam, incidunt, asperiores minus alias
+          accusantium! Quis, aliquid.
+        </div>
+        <div className="mb-24">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo veniam
+          at, maxime adipisci sunt non voluptatum architecto quisquam sapiente
+          eligendi natus nisi totam, incidunt, asperiores minus alias
+          accusantium! Quis, aliquid.
+        </div>
+        <div className="mb-24">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo veniam
+          at, maxime adipisci sunt non voluptatum architecto quisquam sapiente
+          eligendi natus nisi totam, incidunt, asperiores minus alias
+          accusantium! Quis, aliquid.
+        </div>
         <div>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia quidem
           quae ex deserunt commodi dolor vel rerum optio quos sunt quibusdam
