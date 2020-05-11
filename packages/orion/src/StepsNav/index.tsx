@@ -1,9 +1,14 @@
 import React, { FunctionComponent } from 'react'
 import cx from 'classnames'
 
+import { StepsNavProps, StepObject } from './StepsNavProps.d'
 import Icon from '../Icon'
 
-const StepsNav: FunctionComponent<StepNavProps> = ({
+function isStepObject(step: any): step is StepObject {
+  return (step as StepObject).text !== undefined
+}
+
+const StepsNav: FunctionComponent<StepsNavProps> = ({
   steps,
   currentStep,
   className
@@ -48,21 +53,6 @@ const StepsNav: FunctionComponent<StepNavProps> = ({
       })}
     </div>
   )
-}
-
-function isStepObject(step: any): step is StepObject {
-  return (step as StepObject).text !== undefined
-}
-
-type StepObject = {
-  text: string
-  description?: string
-}
-
-type StepNavProps = {
-  steps: Array<string | StepObject>
-  currentStep: number
-  className?: string
 }
 
 export default StepsNav
