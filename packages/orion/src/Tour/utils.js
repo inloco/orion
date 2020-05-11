@@ -1,8 +1,10 @@
+import React from 'react'
 import { useState, useEffect, useCallback } from 'react'
 import _ from 'lodash'
 
 export const DEFAULT_PADDING = 0
 export const DEFAULT_RADIUS = 4
+const DEFAULT_POSITION = 'right'
 
 export const BadgeDistance = {
   sm: 1,
@@ -18,6 +20,56 @@ export const BadgePosition = {
 }
 
 export const getAnchorClassName = key => `react-tour-step-${key}`
+
+export function parseSteps(steps) {
+  return steps.map(
+    (
+      {
+        selector,
+        anchor,
+        title,
+        content,
+        padding,
+        badgePosition,
+        badgeDistance,
+        position,
+        radius,
+        actionBefore,
+        actionAfter
+      },
+      i
+    ) => {
+      const parsedContent = (
+        <>
+          {title && <h1 className="orion-tour-title">{title}</h1>}
+          {content}
+        </>
+      )
+      if (anchor) {
+        return {
+          selector: `.${getAnchorClassName(i)}`,
+          content: parsedContent,
+          anchor,
+          position,
+          actionBefore,
+          actionAfter
+        }
+      }
+
+      return {
+        selector,
+        content: parsedContent,
+        padding,
+        badgePosition,
+        badgeDistance,
+        position: position || DEFAULT_POSITION,
+        radius,
+        actionBefore,
+        actionAfter
+      }
+    }
+  )
+}
 
 function calculateBadgePosition(node, padding, position, distance) {
   if (!node) return null

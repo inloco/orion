@@ -12,62 +12,13 @@ import TourHelper from './TourHelper'
 import TourModal from './TourModal'
 import {
   getAnchorClassName,
+  parseSteps,
   BadgeDistance,
   BadgePosition,
   useBadgePosition,
   DEFAULT_PADDING,
   DEFAULT_RADIUS
 } from './utils'
-
-function parseSteps(steps) {
-  return steps.map(
-    (
-      {
-        selector,
-        anchor,
-        title,
-        content,
-        padding,
-        badgePosition,
-        badgeDistance,
-        position,
-        radius,
-        actionBefore,
-        actionAfter
-      },
-      i
-    ) => {
-      const parsedContent = (
-        <>
-          {title && <h1 className="orion-tour-title">{title}</h1>}
-          {content}
-        </>
-      )
-      if (anchor) {
-        return {
-          selector: `.${getAnchorClassName(i)}`,
-          content: parsedContent,
-          anchor,
-          position,
-          actionBefore,
-          actionAfter
-        }
-      }
-
-      return {
-        selector,
-        content: parsedContent,
-        padding,
-        badgePosition,
-        badgeDistance,
-        position: position || 'right',
-        radius,
-        actionBefore,
-        actionAfter
-      }
-    }
-  )
-}
 
 function Tour({
   className,
