@@ -46,6 +46,10 @@
   @apply mt-4 text-center;
 }
 
+.orion.steps-nav .steps-nav-step-description {
+  @apply text-sm text-center;
+}
+
 /*--------------
      Active
 ---------------*/

@@ -1,5 +1,5 @@
 import React from 'react'
-import { array, number, withKnobs } from '@storybook/addon-knobs'
+import { object, number, withKnobs } from '@storybook/addon-knobs'
 
 import { StepsNav } from '../'
 
@@ -10,11 +10,11 @@ export default {
 
 export const defaultStory = () => (
   <StepsNav
-    steps={array('Steps', [
-      'The Initial Step',
-      'A Long Step',
-      'The Longeeeest Step',
-      'Final Step'
+    steps={object('Steps', [
+      { text: 'The Initial Step' },
+      'This can be just a string too',
+      { text: 'The Longeeeest Step', description: 'An optional description' },
+      { text: 'Final Step' }
     ])}
     currentStep={number('Current Step', 1)}
   />
