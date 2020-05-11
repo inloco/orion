@@ -3,21 +3,6 @@ import cx from 'classnames'
 
 import Icon from '../Icon'
 
-type StepObject = {
-  text: string
-  description?: string
-}
-
-type StepNavProps = {
-  steps: Array<string | StepObject>
-  currentStep: number
-  className?: string
-}
-
-function isStepObject(step: any): step is StepObject {
-  return (step as StepObject).text !== undefined
-}
-
 const StepsNav: FunctionComponent<StepNavProps> = ({
   steps,
   currentStep,
@@ -63,6 +48,21 @@ const StepsNav: FunctionComponent<StepNavProps> = ({
       })}
     </div>
   )
+}
+
+function isStepObject(step: any): step is StepObject {
+  return (step as StepObject).text !== undefined
+}
+
+type StepObject = {
+  text: string
+  description?: string
+}
+
+type StepNavProps = {
+  steps: Array<string | StepObject>
+  currentStep: number
+  className?: string
 }
 
 export default StepsNav
