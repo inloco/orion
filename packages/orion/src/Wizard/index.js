@@ -14,7 +14,7 @@ const Wizard = ({
   onStepIndexChange,
   steps,
   buttons,
-  autoScrollOnStepChange
+  scrollToTopOnStepChange
 }) => {
   const [currentStepState, setCurrentStepState] = useState(currentStepProp || 0)
   const currentStepIndex = _.isNil(currentStepProp)
@@ -27,8 +27,8 @@ const Wizard = ({
   }
 
   useEffect(() => {
-    autoScrollOnStepChange && scrollToTop()
-  }, [autoScrollOnStepChange, currentStepState])
+    scrollToTopOnStepChange && scrollToTop()
+  }, [scrollToTopOnStepChange, currentStepState])
 
   return (
     <div className={cx('orion wizard', className)}>
@@ -54,7 +54,7 @@ Wizard.propTypes = {
   onStepIndexChange: PropTypes.func,
   steps: PropTypes.arrayOf(PropTypes.string).isRequired,
   buttons: PropTypes.object,
-  autoScrollOnStepChange: PropTypes.bool
+  scrollToTopOnStepChange: PropTypes.bool
 }
 
 Wizard.defaultProps = {
@@ -64,7 +64,7 @@ Wizard.defaultProps = {
     [WizardButtons.FINISH]: 'Finish'
   },
   onStepIndexChange: () => {},
-  autoScrollOnStepChange: true
+  scrollToTopOnStepChange: true
 }
 
 Wizard.Buttons = WizardButtons

@@ -29,7 +29,7 @@ export const basic = () => {
       steps={array('Steps', ['Step 1', 'Step 2', 'Step 3'])}
       buttons={buttons}
       {...actions}
-      autoScrollOnStepChange={boolean('Auto-scroll', true)}>
+      scrollToTopOnStepChange={boolean('ScrollToTopOnStepChange', true)}>
       <div>
         Step 1 Content
         <div className="mb-24">
