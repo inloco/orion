@@ -89,20 +89,20 @@ export const Basic = () => {
             }
           },
           {
-            selector: '.story-dropdown .menu',
-            content: 'There are actions being executed before and after me',
-            title: 'Fourth step',
-            actionBefore: () => setDropdownOpen(true),
-            actionAfter: () => setDropdownOpen(false),
-            badgeDistance: 'sm'
-          },
-          {
             selector: '.story-card-4',
             content:
               'I am positioning my badge on top left with a small badgeDistance',
             badgePosition: 'top left',
             badgeDistance: 'sm',
-            title: 'Fifth step'
+            title: 'Fourth step'
+          },
+          {
+            selector: '.story-dropdown .menu',
+            content: 'There are actions being executed before and after me',
+            title: 'Fifth step',
+            actionBefore: () => setDropdownOpen(true),
+            actionAfter: () => setDropdownOpen(false),
+            badgeDistance: 'sm'
           }
         ]}
       />

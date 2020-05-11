@@ -42,22 +42,25 @@ function Tour({
     return () => enableBodyScroll()
   }, [])
 
-  function handleNextStep() {
-    const actionBefore = tourSteps[currentStep + 1]?.actionBefore
-    const actionAfter = tourSteps[currentStep]?.actionAfter
+  function handleStepActions(stepIndex, nextStepIndex) {
+    const actionBefore = tourSteps[nextStepIndex]?.actionBefore
+    const actionAfter = tourSteps[stepIndex]?.actionAfter
     actionAfter && actionAfter()
     actionBefore && actionBefore()
+  }
 
-    currentStep + 1 < steps.length && setCurrentStep(step => step + 1)
+  function handleNextStep() {
+    if (currentStep + 1 < steps.length) {
+      handleStepActions(currentStep, currentStep + 1)
+      setCurrentStep(step => step + 1)
+    }
   }
 
   function handlePreviousStep() {
-    const actionBefore = tourSteps[currentStep - 1]?.actionBefore
-    const actionAfter = tourSteps[currentStep]?.actionAfter
-    actionAfter && actionAfter()
-    actionBefore && actionBefore()
-
-    currentStep > 0 && setCurrentStep(step => step - 1)
+    if (currentStep > 0) {
+      handleStepActions(currentStep, currentStep - 1)
+      setCurrentStep(step => step - 1)
+    }
   }
 
   return (
@@ -81,6 +84,7 @@ function Tour({
         onBeforeClose={() => enableBodyScroll()}
         onRequestClose={() => {
           setOpenTour(false)
+          handleStepActions(currentStep)
           onDismiss && onDismiss()
         }}
         goToStep={currentStep}
@@ -120,6 +124,7 @@ function Tour({
               subtle
               onClick={() => {
                 setOpenTour(false)
+                handleStepActions(currentStep)
                 onDismiss && onDismiss()
               }}
               content={dismissButtonContent}
@@ -137,6 +142,7 @@ function Tour({
                 primary
                 onClick={() => {
                   setOpenTour(false)
+                  handleStepActions(currentStep)
                   onFinish && onFinish()
                 }}
                 content={finishButtonContent}
