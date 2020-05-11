@@ -9,6 +9,7 @@ import { Button } from '..'
 import Anchor from './Anchor'
 import Badge from './Badge'
 import Portal from './Portal'
+import TourHelper from './TourHelper'
 import TourModal from './TourModal'
 import {
   getAnchorClassName,
@@ -207,15 +208,6 @@ function Tour({
   )
 }
 
-function TourHelper({ content, children }) {
-  return (
-    <main className="orion-tour-helper">
-      {content}
-      {children}
-    </main>
-  )
-}
-
 Tour.propTypes = {
   className: PropTypes.string,
   steps: PropTypes.arrayOf(
@@ -249,11 +241,6 @@ Tour.propTypes = {
   finishButtonContent: PropTypes.string.isRequired,
   onFinish: PropTypes.func,
   onDismiss: PropTypes.func
-}
-
-TourHelper.propTypes = {
-  children: PropTypes.node,
-  content: PropTypes.node
 }
 
 export default Tour
