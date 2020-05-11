@@ -3,12 +3,12 @@ import cx from 'classnames'
 
 import Icon from '../Icon'
 
-interface Step {
+type Step = {
   text: string
   description?: string
 }
 
-interface StepNavProps {
+type StepNavProps = {
   steps: Array<string | Step>
   currentStep: number
   className?: string
