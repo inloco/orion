@@ -50,10 +50,10 @@ export const Basic = () => {
       <Tour
         onFinish={action('onFinish')}
         onDismiss={action('onDismiss')}
-        dismissButtonContent="Dismiss"
-        nextButtonContent="Next"
-        prevButtonContent="Previous"
-        finishButtonContent="Finish"
+        dismissButtonTitle="Dismiss"
+        nextButtonTitle="Next"
+        prevButtonTitle="Previous"
+        finishButtonTitle="Finish"
         welcomeModal={{
           content: (
             <div className="text-center">
@@ -61,7 +61,7 @@ export const Basic = () => {
               This is custom content
             </div>
           ),
-          buttonContent: 'Start'
+          buttonTitle: 'Start'
         }}
         steps={[
           {

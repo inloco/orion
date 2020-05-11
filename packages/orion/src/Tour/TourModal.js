@@ -3,12 +3,12 @@ import PropTypes from 'prop-types'
 
 import { Button, Modal } from '..'
 
-function TourModal({ content, buttonContent, open, onContinue }) {
+function TourModal({ content, buttonTitle, open, onContinue }) {
   return (
     <Modal className="orion-tour-modal" open={open}>
       <Modal.Content>{content}</Modal.Content>
       <Modal.Actions>
-        <Button primary onClick={onContinue} content={buttonContent} />
+        <Button primary onClick={onContinue} content={buttonTitle} />
       </Modal.Actions>
     </Modal>
   )
@@ -16,7 +16,7 @@ function TourModal({ content, buttonContent, open, onContinue }) {
 
 TourModal.propTypes = {
   content: PropTypes.node,
-  buttonContent: PropTypes.string,
+  buttonTitle: PropTypes.string,
   open: PropTypes.bool,
   onContinue: PropTypes.func
 }

@@ -24,10 +24,10 @@ function Tour({
   className,
   steps,
   welcomeModal,
-  dismissButtonContent,
-  nextButtonContent,
-  prevButtonContent,
-  finishButtonContent,
+  dismissButtonTitle,
+  nextButtonTitle,
+  prevButtonTitle,
+  finishButtonTitle,
   onFinish,
   onDismiss
 }) {
@@ -127,13 +127,13 @@ function Tour({
                 handleStepActions(currentStep)
                 onDismiss && onDismiss()
               }}
-              content={dismissButtonContent}
+              content={dismissButtonTitle}
             />
             {currentStep > 0 && (
               <Button
                 subtle
                 onClick={handlePreviousStep}
-                content={prevButtonContent}
+                content={prevButtonTitle}
               />
             )}
             {currentStep + 1 >= steps.length ? (
@@ -145,14 +145,14 @@ function Tour({
                   handleStepActions(currentStep)
                   onFinish && onFinish()
                 }}
-                content={finishButtonContent}
+                content={finishButtonTitle}
               />
             ) : (
               <Button
                 subtle
                 primary
                 onClick={handleNextStep}
-                content={nextButtonContent}
+                content={nextButtonTitle}
               />
             )}
           </div>
@@ -187,12 +187,12 @@ Tour.propTypes = {
   ).isRequired,
   welcomeModal: PropTypes.shape({
     content: PropTypes.node,
-    buttonContent: PropTypes.string
+    buttonTitle: PropTypes.string
   }),
-  dismissButtonContent: PropTypes.string.isRequired,
-  nextButtonContent: PropTypes.string.isRequired,
-  prevButtonContent: PropTypes.string.isRequired,
-  finishButtonContent: PropTypes.string.isRequired,
+  dismissButtonTitle: PropTypes.string.isRequired,
+  nextButtonTitle: PropTypes.string.isRequired,
+  prevButtonTitle: PropTypes.string.isRequired,
+  finishButtonTitle: PropTypes.string.isRequired,
   onFinish: PropTypes.func,
   onDismiss: PropTypes.func
 }
