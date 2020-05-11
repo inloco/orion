@@ -3,19 +3,19 @@ import cx from 'classnames'
 
 import Icon from '../Icon'
 
-type Step = {
+type StepObject = {
   text: string
   description?: string
 }
 
 type StepNavProps = {
-  steps: Array<string | Step>
+  steps: Array<string | StepObject>
   currentStep: number
   className?: string
 }
 
-function isStep(step: any): step is Step {
-  return (step as Step).text !== undefined
+function isStepObject(step: any): step is StepObject {
+  return (step as StepObject).text !== undefined
 }
 
 const StepsNav: FunctionComponent<StepNavProps> = ({
@@ -30,8 +30,8 @@ const StepsNav: FunctionComponent<StepNavProps> = ({
         const done = index < currentStep
         const last = index === steps.length - 1
 
-        const text = isStep(step) ? step.text : step
-        const description = isStep(step) ? step.description : null
+        const text = isStepObject(step) ? step.text : step
+        const description = isStepObject(step) ? step.description : null
 
         return (
           <React.Fragment key={index}>
