@@ -4,11 +4,10 @@ import cx from 'classnames'
 import Reactour from 'reactour'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
 
-import { Button } from '..'
+import { Button, Portal } from '..'
 
 import Anchor from './Anchor'
 import Badge from './Badge'
-import Portal from './Portal'
 import TourHelper from './TourHelper'
 import TourModal from './TourModal'
 import {
@@ -146,17 +145,19 @@ function Tour({
         })}
         highlightedMaskClassName="orion-tour-highlight-mask"
         disableInteraction>
-        <Portal>
-          <Badge position={badgePosition} />
-          {tourSteps.map(({ anchor }, i) =>
-            anchor ? (
-              <Anchor
-                key={i}
-                className={getAnchorClassName(i)}
-                position={anchor}
-              />
-            ) : null
-          )}
+        <Portal open>
+          <div className="orion-tour-portal">
+            <Badge position={badgePosition} />
+            {tourSteps.map(({ anchor }, i) =>
+              anchor ? (
+                <Anchor
+                  key={i}
+                  className={getAnchorClassName(i)}
+                  position={anchor}
+                />
+              ) : null
+            )}
+          </div>
         </Portal>
         <div className="orion-tour-controls">
           <ul className="space-x-8">
