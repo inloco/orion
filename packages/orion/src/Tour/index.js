@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Reactour from 'reactour'
@@ -31,20 +31,16 @@ function Tour({
   onFinish,
   onDismiss
 }) {
-  const [tourSteps, setTourSteps] = useState(() => parseSteps(steps))
   const [currentStep, setCurrentStep] = useState(0)
   const [openTour, setOpenTour] = useState(!welcomeModal)
   const [openModal, setOpenModal] = useState(!!welcomeModal)
+  const tourSteps = useMemo(() => parseSteps(steps), [steps])
   const badgePosition = useBadgePosition(tourSteps, currentStep)
 
   useEffect(() => {
     disableBodyScroll()
     return () => enableBodyScroll()
   }, [])
-
-  useEffect(() => {
-    setTourSteps(parseSteps(steps))
-  }, [steps, setTourSteps])
 
   function handleNextStep() {
     const actionBefore = tourSteps[currentStep + 1]?.actionBefore
