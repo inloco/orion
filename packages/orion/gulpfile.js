@@ -11,7 +11,13 @@ const clean = () => {
 
 const buildJS = () => {
   return gulp
-    .src(['src/**/*.js', '!src/**/*.stories.js'])
+    .src([
+      'src/**/*.js',
+      'src/**/*.ts',
+      'src/**/*.tsx',
+      '!src/**/*.stories.js',
+      '!src/**/*.stories.tsx'
+    ])
     .pipe(babel())
     .pipe(gulp.dest('dist'))
 }
