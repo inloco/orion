@@ -23,8 +23,7 @@
 }
 
 .orion-tour-dot {
-  @apply w-4 h-4 rounded-full bg-gray-400;
-  display: inline-block;
+  @apply inline-block w-4 h-4 rounded-full bg-gray-400;
 }
 
 .orion-tour-dot.current {
