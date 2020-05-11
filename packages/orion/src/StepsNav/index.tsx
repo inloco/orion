@@ -1,4 +1,4 @@
-import React, { SFC } from 'react'
+import React, { FunctionComponent } from 'react'
 import cx from 'classnames'
 
 import Icon from '../Icon'
@@ -18,7 +18,11 @@ function isStep(step: any): step is Step {
   return (step as Step).text !== undefined
 }
 
-const StepsNav: SFC<StepNavProps> = ({ steps, currentStep, className }) => {
+const StepsNav: FunctionComponent<StepNavProps> = ({
+  steps,
+  currentStep,
+  className
+}) => {
   return (
     <div className={cx('orion steps-nav', className)}>
       {steps.map((step, index) => {
