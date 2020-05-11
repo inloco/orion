@@ -8,7 +8,7 @@
 }
 
 /* Floated label */
-.orion.form .field.floatingLabel label {
+.orion.form .field.floatingLabel > label {
   @apply absolute border-l-1 top-0 block .cursor-text ml-16 pb-0 text-gray-800 text-base transition-default z-10;
   @apply pointer-events-none;
   transition-property: margin-top, font-size;
