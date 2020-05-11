@@ -95,20 +95,20 @@ function Tour({
     setTourSteps(parseSteps(steps))
   }, [steps, setTourSteps])
 
-  function nextStep() {
+  function handleNextStep() {
     const actionBefore = tourSteps[currentStep + 1]?.actionBefore
     const actionAfter = tourSteps[currentStep]?.actionAfter
-    actionBefore && actionBefore()
     actionAfter && actionAfter()
+    actionBefore && actionBefore()
 
     currentStep + 1 < steps.length && setCurrentStep(step => step + 1)
   }
 
-  function previousStep() {
+  function handlePreviousStep() {
     const actionBefore = tourSteps[currentStep - 1]?.actionBefore
     const actionAfter = tourSteps[currentStep]?.actionAfter
-    actionBefore && actionBefore()
     actionAfter && actionAfter()
+    actionBefore && actionBefore()
 
     currentStep > 0 && setCurrentStep(step => step - 1)
   }
@@ -138,8 +138,8 @@ function Tour({
         }}
         goToStep={currentStep}
         getCurrentStep={setCurrentStep}
-        nextStep={nextStep}
-        prevStep={previousStep}
+        nextStep={handleNextStep}
+        prevStep={handlePreviousStep}
         maskClassName={cx('orion-tour-mask', {
           clear: tourSteps[currentStep]?.anchor
         })}
@@ -178,7 +178,7 @@ function Tour({
             {currentStep > 0 && (
               <Button
                 subtle
-                onClick={previousStep}
+                onClick={handlePreviousStep}
                 content={prevButtonContent}
               />
             )}
@@ -196,7 +196,7 @@ function Tour({
               <Button
                 subtle
                 primary
-                onClick={nextStep}
+                onClick={handleNextStep}
                 content={nextButtonContent}
               />
             )}
