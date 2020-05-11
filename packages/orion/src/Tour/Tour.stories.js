@@ -67,7 +67,7 @@ export const Basic = () => {
           {
             selector: '.story-card-1',
             content: <i>This content is custom</i>,
-            title: 'Fist step'
+            title: 'First step'
           },
           {
             selector: '.story-card-3',
@@ -91,7 +91,7 @@ export const Basic = () => {
           {
             selector: '.story-dropdown .menu',
             content: 'There are actions being executed before and after me',
-            title: 'Fouth step',
+            title: 'Fourth step',
             actionBefore: () => setDropdownOpen(true),
             actionAfter: () => setDropdownOpen(false),
             badgeDistance: 'sm'
