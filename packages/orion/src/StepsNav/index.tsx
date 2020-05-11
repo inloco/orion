@@ -1,10 +1,24 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { SFC } from 'react'
 import cx from 'classnames'
 
 import Icon from '../Icon'
 
-const StepsNav = ({ steps, currentStep, className }) => {
+interface Step {
+  text: string
+  description?: string
+}
+
+interface StepNavProps {
+  steps: Array<string | Step>
+  currentStep: number
+  className?: string
+}
+
+function isStep(step: any): step is Step {
+  return (step as Step).text !== undefined
+}
+
+const StepsNav: SFC<StepNavProps> = ({ steps, currentStep, className }) => {
   return (
     <div className={cx('orion steps-nav', className)}>
       {steps.map((step, index) => {
@@ -12,7 +26,8 @@ const StepsNav = ({ steps, currentStep, className }) => {
         const done = index < currentStep
         const last = index === steps.length - 1
 
-        const text = step.text || step
+        const text = isStep(step) ? step.text : step
+        const description = isStep(step) ? step.description : null
 
         return (
           <React.Fragment key={index}>
@@ -21,7 +36,12 @@ const StepsNav = ({ steps, currentStep, className }) => {
                 <div className="steps-nav-separator steps-nav-index-separator" />
                 <div className="steps-nav-step-index">
                   {done ? (
-                    <Icon name="done" color="space-600" />
+                    <Icon
+                      name="done"
+                      color="space-600"
+                      as={null}
+                      className=""
+                    />
                   ) : (
                     <div>{index + 1}</div>
                   )}
@@ -29,10 +49,8 @@ const StepsNav = ({ steps, currentStep, className }) => {
                 <div className="steps-nav-separator steps-nav-index-separator" />
               </div>
               <div className="steps-nav-step-name">{text}</div>
-              {step.description && (
-                <div className="steps-nav-step-description">
-                  {step.description}
-                </div>
+              {description && (
+                <div className="steps-nav-step-description">{description}</div>
               )}
             </div>
             {!last && <div className="steps-nav-separator"></div>}
@@ -41,20 +59,6 @@ const StepsNav = ({ steps, currentStep, className }) => {
       })}
     </div>
   )
-}
-
-StepsNav.propTypes = {
-  steps: PropTypes.arrayOf(
-    PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.shape({
-        text: PropTypes.string.isRequired,
-        description: PropTypes.string
-      })
-    ])
-  ).isRequired,
-  currentStep: PropTypes.number.isRequired,
-  className: PropTypes.string
 }
 
 export default StepsNav
