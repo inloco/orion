@@ -64,7 +64,7 @@ Wizard.defaultProps = {
     [WizardButtons.FINISH]: 'Finish'
   },
   onStepIndexChange: () => {},
-  autoScrollOnStepChange: false
+  autoScrollOnStepChange: true
 }
 
 Wizard.Buttons = WizardButtons
