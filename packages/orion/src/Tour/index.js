@@ -117,7 +117,7 @@ function Tour({
     <>
       <TourModal
         open={openModal}
-        onAction={() => {
+        onContinue={() => {
           setOpenModal(false)
           setOpenTour(true)
         }}
