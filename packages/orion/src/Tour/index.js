@@ -74,6 +74,19 @@ function Tour({
         }}
         {...welcomeModal}
       />
+      <Portal open={openTour}>
+        <div className="orion-tour-anchors">
+          {tourSteps.map(({ anchor }, i) =>
+            anchor ? (
+              <Anchor
+                key={i}
+                className={getAnchorClassName(i)}
+                position={anchor}
+              />
+            ) : null
+          )}
+        </div>
+      </Portal>
       <Reactour
         className={className}
         rounded={tourSteps[currentStep]?.radius || DEFAULT_RADIUS}
@@ -98,18 +111,7 @@ function Tour({
         highlightedMaskClassName="orion-tour-highlight-mask"
         disableInteraction>
         <Portal open>
-          <div className="orion-tour-portal">
-            <Badge position={badgePosition} />
-            {tourSteps.map(({ anchor }, i) =>
-              anchor ? (
-                <Anchor
-                  key={i}
-                  className={getAnchorClassName(i)}
-                  position={anchor}
-                />
-              ) : null
-            )}
-          </div>
+          <Badge position={badgePosition} />
         </Portal>
         <div className="orion-tour-controls">
           <ul className="space-x-8">

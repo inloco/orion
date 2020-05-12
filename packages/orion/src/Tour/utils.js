@@ -19,7 +19,7 @@ export const BadgePosition = {
   BOTTOM_RIGHT: 'bottom right'
 }
 
-export const getAnchorClassName = key => `react-tour-step-${key}`
+export const getAnchorClassName = key => `orion-tour-step-${key}`
 
 export function parseSteps(steps) {
   return steps.map(
