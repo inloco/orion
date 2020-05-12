@@ -132,7 +132,7 @@ export function useBadgePosition(steps, currentStep) {
   useEffect(() => {
     updateBadgePosition()
     return () => setbadgePosition(null)
-  }, [currentStep, updateBadgePosition])
+  }, [updateBadgePosition])
 
   useEffect(() => {
     const debouncedUpdateBadgePosition = _.debounce(updateBadgePosition, 100)
