@@ -1,16 +1,27 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { FunctionComponent } from 'react'
 import cx from 'classnames'
 
+import { StepsNavProps, StepObject } from './StepsNavProps.d'
 import Icon from '../Icon'
 
-const StepsNav = ({ steps, currentStep, className }) => {
+function isStepObject(step: any): step is StepObject {
+  return (step as StepObject).text !== undefined
+}
+
+const StepsNav: FunctionComponent<StepsNavProps> = ({
+  steps,
+  currentStep,
+  className
+}) => {
   return (
     <div className={cx('orion steps-nav', className)}>
-      {steps.map((name, index) => {
+      {steps.map((step, index) => {
         const active = index === currentStep
         const done = index < currentStep
         const last = index === steps.length - 1
+
+        const text = isStepObject(step) ? step.text : step
+        const description = isStepObject(step) ? step.description : null
 
         return (
           <React.Fragment key={index}>
@@ -19,14 +30,22 @@ const StepsNav = ({ steps, currentStep, className }) => {
                 <div className="steps-nav-separator steps-nav-index-separator" />
                 <div className="steps-nav-step-index">
                   {done ? (
-                    <Icon name="done" color="space-600" />
+                    <Icon
+                      name="done"
+                      color="space-600"
+                      as={null}
+                      className=""
+                    />
                   ) : (
                     <div>{index + 1}</div>
                   )}
                 </div>
                 <div className="steps-nav-separator steps-nav-index-separator" />
               </div>
-              {<div className="steps-nav-step-name">{name}</div>}
+              <div className="steps-nav-step-name">{text}</div>
+              {description && (
+                <div className="steps-nav-step-description">{description}</div>
+              )}
             </div>
             {!last && <div className="steps-nav-separator"></div>}
           </React.Fragment>
@@ -34,12 +53,6 @@ const StepsNav = ({ steps, currentStep, className }) => {
       })}
     </div>
   )
-}
-
-StepsNav.propTypes = {
-  steps: PropTypes.array.isRequired,
-  currentStep: PropTypes.number.isRequired,
-  className: PropTypes.string
 }
 
 export default StepsNav
