@@ -340,6 +340,7 @@ module.exports = {
       '12': '12'
     },
     padding: theme => theme('spacing'),
+    space: theme => theme('spacing'),
     stroke: {
       current: 'currentColor'
     },
@@ -451,6 +452,7 @@ module.exports = {
     position: ['responsive'],
     resize: ['responsive'],
     stroke: ['responsive'],
+    space: ['responsive'],
     tableLayout: ['responsive'],
     textAlign: ['responsive'],
     textColor: ['responsive', 'hover', 'focus', 'active'],

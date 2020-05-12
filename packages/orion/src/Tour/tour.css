@@ -1,0 +1,73 @@
+/** Background dimmer **/
+.orion-tour-mask:not(.clear) {
+  color: rgb(0 0 0);
+  opacity: 0.32;
+}
+
+.orion-tour-mask.clear {
+  @apply opacity-0;
+}
+
+/** Step helper **/
+.orion-tour-helper {
+  @apply px-24 pt-24 pb-16 mx-12 my-4 bg-white rounded border border-gray-900-8 shadow-400;
+  width: 362px;
+}
+
+.orion-tour-helper ul {
+  @apply inline-flex flex-wrap items-center;
+}
+
+.orion-tour-title {
+  @apply mb-16;
+}
+
+.orion-tour-dot {
+  @apply inline-block w-4 h-4 rounded-full bg-gray-400;
+}
+
+.orion-tour-dot.current {
+  @apply w-8 h-8 bg-wave-500;
+}
+
+.orion-tour-controls {
+  @apply mt-40 flex justify-between;
+}
+
+.orion-tour-buttons {
+  @apply inline-block;
+  min-width: max-content;
+}
+
+/** Floating badge **/
+.orion-tour-badge {
+  @apply w-8 h-8 bg-wave-500 rounded-full block fixed;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 8px rgba(164, 218, 235, 0.5);
+  z-index: 999999;
+  animation-name: hotspot;
+  animation-duration: 1.2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes hotspot {
+  0% {
+    box-shadow: 0 0 0 4px rgba(164, 218, 235, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(164, 218, 235, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 4px rgba(164, 218, 235, 0.5);
+  }
+}
+
+/** Welcome modal **/
+.orion-tour-modal {
+  @apply shadow-300;
+}
+
+.orion.orion-tour-modal > .actions {
+  @apply text-center;
+}
