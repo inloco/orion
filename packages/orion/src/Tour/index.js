@@ -31,7 +31,7 @@ function Tour({
   onFinish,
   onDismiss
 }) {
-  const [currentStep, setCurrentStep] = useState(0)
+  const [currentStep, setCurrentStep] = useState(welcomeModal ? null : 0)
   const [openTour, setOpenTour] = useState(!welcomeModal)
   const [openModal, setOpenModal] = useState(!!welcomeModal)
   const tourSteps = useMemo(() => parseSteps(steps), [steps])
@@ -70,6 +70,7 @@ function Tour({
         onContinue={() => {
           setOpenModal(false)
           setOpenTour(true)
+          setCurrentStep(0)
         }}
         {...welcomeModal}
       />
