@@ -1,0 +1,35 @@
+.orion.image {
+  height: auto;
+}
+
+.orion.image.mini {
+  width: 35px;
+}
+
+.orion.image.tiny {
+  width: 80px;
+}
+
+.orion.image.small {
+  width: 150px;
+}
+
+.orion.image.medium {
+  width: 300px;
+}
+
+.orion.image.large {
+  width: 450px;
+}
+
+.orion.image.big {
+  width: 600px;
+}
+
+.orion.image.huge {
+  width: 800px;
+}
+
+.orion.image.massive {
+  width: 960px;
+}
