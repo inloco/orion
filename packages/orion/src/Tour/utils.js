@@ -112,13 +112,10 @@ function calculateBadgePosition(node, padding, position, distance) {
 export function useBadgePosition(steps, currentStep) {
   const [badgePosition, setbadgePosition] = useState(null)
 
-  console.log({ badgePosition })
-
   const updateBadgePosition = useCallback(() => {
     const selector = steps[currentStep]?.selector
 
     const element = document.querySelector(selector)
-    console.log({ element })
     if (!element) return null
 
     const { padding, badgePosition, badgeDistance, anchor } = steps[currentStep]
@@ -133,7 +130,6 @@ export function useBadgePosition(steps, currentStep) {
   }, [steps, currentStep])
 
   useEffect(() => {
-    console.log('Effect')
     updateBadgePosition()
     return () => setbadgePosition(null)
   }, [updateBadgePosition])
