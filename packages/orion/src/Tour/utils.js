@@ -19,7 +19,7 @@ export const BadgePosition = {
   BOTTOM_RIGHT: 'bottom right'
 }
 
-export const getAnchorClassName = key => `react-tour-step-${key}`
+export const getAnchorClassName = key => `orion-tour-step-${key}`
 
 export function parseSteps(steps) {
   return steps.map(
@@ -112,10 +112,13 @@ function calculateBadgePosition(node, padding, position, distance) {
 export function useBadgePosition(steps, currentStep) {
   const [badgePosition, setbadgePosition] = useState(null)
 
+  console.log({ badgePosition })
+
   const updateBadgePosition = useCallback(() => {
     const selector = steps[currentStep]?.selector
 
     const element = document.querySelector(selector)
+    console.log({ element })
     if (!element) return null
 
     const { padding, badgePosition, badgeDistance, anchor } = steps[currentStep]
@@ -130,6 +133,7 @@ export function useBadgePosition(steps, currentStep) {
   }, [steps, currentStep])
 
   useEffect(() => {
+    console.log('Effect')
     updateBadgePosition()
     return () => setbadgePosition(null)
   }, [updateBadgePosition])
