@@ -5,7 +5,7 @@ import {
   ImageProps as SemanticImageProps
 } from '@inloco/semantic-ui-react'
 
-import { Dimmer } from '..'
+import { Dimmer, Icon } from '..'
 
 import { ImageProps } from './ImageProps'
 
@@ -24,13 +24,22 @@ const Image: FunctionComponent<ImageProps & SemanticImageProps> = ({
         className={cx(className, { hidden: !zoomed }, 'opacity-0')}
       />
 
-      <SemanticImage
-        className={cx(className, { zoomed })}
-        onClick={() => {
-          if (allowZoom) setZoomed(prev => !prev)
-        }}
-        {...otherProps}
-      />
+      <div className="inline-block relative">
+        <SemanticImage
+          className={cx(className, { zoomed })}
+          onClick={() => {
+            if (allowZoom) setZoomed(prev => !prev)
+          }}
+          {...otherProps}
+        />
+
+        {allowZoom && !zoomed && (
+          <Icon className="absolute bottom-0 right-0" name="zoom_in" />
+        )}
+        {allowZoom && zoomed && (
+          <Icon className="absolute bottom-0 right-0" name="close" />
+        )}
+      </div>
 
       {<Dimmer active={zoomed} />}
     </>
