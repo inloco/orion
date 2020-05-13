@@ -1,6 +1,6 @@
 /** Background dimmer **/
 .orion-tour-mask:not(.clear) {
-  color: rgb(0 0 0);
+  color: #000;
   opacity: 0.32;
 }
 
