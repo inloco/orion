@@ -2,34 +2,44 @@
   height: auto;
 }
 
-.orion.image.mini {
+.orion.image.zoomed {
+  width: 50vw;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.orion.image.mini:not(.zoomed) {
   width: 35px;
 }
 
-.orion.image.tiny {
+.orion.image.tiny:not(.zoomed) {
   width: 80px;
 }
 
-.orion.image.small {
+.orion.image.small:not(.zoomed) {
   width: 150px;
 }
 
-.orion.image.medium {
+.orion.image.medium:not(.zoomed) {
   width: 300px;
 }
 
-.orion.image.large {
+.orion.image.large:not(.zoomed) {
   width: 450px;
 }
 
-.orion.image.big {
+.orion.image.big:not(.zoomed) {
   width: 600px;
 }
 
-.orion.image.huge {
+.orion.image.huge:not(.zoomed) {
   width: 800px;
 }
 
-.orion.image.massive {
+.orion.image.massive:not(.zoomed) {
   width: 960px;
 }
