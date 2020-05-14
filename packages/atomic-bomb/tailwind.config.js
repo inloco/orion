@@ -351,7 +351,7 @@ module.exports = {
       green: _.pick(theme('colors.green'), ['500', '700', '800']),
       magenta: _.pick(theme('colors.magenta'), ['500', '600']),
       yellow: _.pick(theme('colors.yellow'), ['500', '600', '700']),
-      space: _.pick(theme('colors.space'), ['500', '600', '900']),
+      space: _.pick(theme('colors.space'), ['500', '600', '700', '900']),
       purple: theme('colors.purple')
     }),
     width: theme => ({

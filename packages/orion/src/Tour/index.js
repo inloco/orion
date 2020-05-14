@@ -176,6 +176,7 @@ Tour.propTypes = {
       }),
       title: PropTypes.string,
       content: PropTypes.oneOfType([PropTypes.node, PropTypes.element]),
+      titleTag: PropTypes.string,
       padding: PropTypes.number,
       badgePosition: PropTypes.oneOf(Object.values(BadgePosition)),
       badgeDistance: PropTypes.oneOfType([

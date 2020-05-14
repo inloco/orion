@@ -18,8 +18,12 @@
   @apply inline-flex flex-wrap items-center;
 }
 
-.orion-tour-title {
-  @apply mb-16;
+.orion-tour-helper > header {
+  @apply flex mb-16;
+}
+
+.orion-tour-helper > header > .orion.status-tag {
+  @apply inline-flex ml-4;
 }
 
 .orion-tour-dot {
