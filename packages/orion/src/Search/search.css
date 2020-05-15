@@ -25,7 +25,7 @@
 }
 
 .orion.search.active .results {
-  @apply block rounded;
+  @apply block rounded z-50;
 }
 
 .orion.search.active .results > .message.empty {
