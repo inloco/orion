@@ -83,6 +83,7 @@ export const Basic = () => {
           {
             content: 'This step has no selector, only an anchored position',
             title: 'Third step',
+            titleTag: 'Premium',
             anchor: {
               top: 120,
               left: 100

@@ -49,11 +49,11 @@
 ---------------*/
 
 .orion.status-tag.neutral {
-  @apply text-space-600;
+  @apply text-space-700;
 }
 
 .orion.status-tag.neutral.filled {
-  @apply bg-space-50;
+  @apply bg-space-100;
 }
 
 .orion.status-tag.neutral.bordered {

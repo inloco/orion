@@ -2,6 +2,8 @@ import React from 'react'
 import { useState, useEffect, useCallback } from 'react'
 import _ from 'lodash'
 
+import { StatusTag } from '..'
+
 export const DEFAULT_PADDING = 0
 export const DEFAULT_RADIUS = 4
 const DEFAULT_POSITION = 'right'
@@ -28,6 +30,7 @@ export function parseSteps(steps) {
         selector,
         anchor,
         title,
+        titleTag,
         content,
         padding,
         badgePosition,
@@ -41,7 +44,19 @@ export function parseSteps(steps) {
     ) => {
       const parsedContent = (
         <>
-          {title && <h1 className="orion-tour-title">{title}</h1>}
+          {title && (
+            <header>
+              <h1 className="orion-tour-title">{title}</h1>
+              {titleTag && (
+                <StatusTag
+                  filled
+                  type={StatusTag.Types.NEUTRAL}
+                  bordered={false}>
+                  {titleTag}
+                </StatusTag>
+              )}
+            </header>
+          )}
           {content}
         </>
       )
