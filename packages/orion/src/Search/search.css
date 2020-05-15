@@ -43,3 +43,7 @@
 .orion.search .results > .result:hover {
   @apply bg-gray-900-4;
 }
+
+.orion.search .result > .content > .description {
+  @apply text-sm text-gray-800;
+}
