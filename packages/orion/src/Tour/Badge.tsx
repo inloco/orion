@@ -1,7 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { ReactElement } from 'react'
 
-function Badge({ position }) {
+import { BadgeProps } from './Tour.d'
+
+function Badge({ position }: BadgeProps): ReactElement | null {
   if (!position) return null
 
   const { top, left } = position
@@ -15,13 +16,6 @@ function Badge({ position }) {
       }}
     />
   )
-}
-
-Badge.propTypes = {
-  position: PropTypes.shape({
-    top: PropTypes.number.isRequired,
-    left: PropTypes.number.isRequired
-  })
 }
 
 export default Badge

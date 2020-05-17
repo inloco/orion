@@ -1,10 +1,11 @@
-import React, { useState, useEffect, useMemo } from 'react'
+import React, { useState, useEffect, useMemo, ReactElement } from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Reactour from 'reactour'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
 
 import { Button, Portal } from '..'
+import { TourProps } from './Tour.d'
 
 import Anchor from './Anchor'
 import Badge from './Badge'
@@ -13,8 +14,6 @@ import TourModal from './TourModal'
 import {
   getAnchorClassName,
   parseSteps,
-  BadgeDistance,
-  BadgePosition,
   useBadgePosition,
   DEFAULT_PADDING,
   DEFAULT_RADIUS
@@ -30,7 +29,7 @@ function Tour({
   finishButtonTitle,
   onFinish,
   onDismiss
-}) {
+}: TourProps): ReactElement {
   const [currentStep, setCurrentStep] = useState(welcomeModal ? null : 0)
   const [openTour, setOpenTour] = useState(!welcomeModal)
   const [openModal, setOpenModal] = useState(!!welcomeModal)
@@ -163,42 +162,6 @@ function Tour({
       </Reactour>
     </>
   )
-}
-
-Tour.propTypes = {
-  className: PropTypes.string,
-  steps: PropTypes.arrayOf(
-    PropTypes.shape({
-      selector: PropTypes.string,
-      anchor: PropTypes.shape({
-        top: PropTypes.number.isRequired,
-        left: PropTypes.number.isRequired
-      }),
-      title: PropTypes.string,
-      content: PropTypes.oneOfType([PropTypes.node, PropTypes.element]),
-      titleTag: PropTypes.string,
-      padding: PropTypes.number,
-      badgePosition: PropTypes.oneOf(Object.values(BadgePosition)),
-      badgeDistance: PropTypes.oneOfType([
-        PropTypes.oneOf(Object.keys(BadgeDistance)),
-        PropTypes.number
-      ]),
-      position: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
-      radius: PropTypes.number,
-      actionBefore: PropTypes.func,
-      actionAfter: PropTypes.func
-    })
-  ).isRequired,
-  welcomeModal: PropTypes.shape({
-    content: PropTypes.node,
-    buttonTitle: PropTypes.string
-  }),
-  dismissButtonTitle: PropTypes.string.isRequired,
-  nextButtonTitle: PropTypes.string.isRequired,
-  prevButtonTitle: PropTypes.string.isRequired,
-  finishButtonTitle: PropTypes.string.isRequired,
-  onFinish: PropTypes.func,
-  onDismiss: PropTypes.func
 }
 
 export default Tour

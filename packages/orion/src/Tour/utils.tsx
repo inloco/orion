@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect, useCallback } from 'react'
 import _ from 'lodash'
 
+import { StepProps, AnchoredStepProps, SelectorStepProps } from './Tour.d'
 import { StatusTag } from '..'
 
 export const DEFAULT_PADDING = 0
@@ -21,9 +22,12 @@ export const BadgePosition = {
   BOTTOM_RIGHT: 'bottom right'
 }
 
-export const getAnchorClassName = key => `orion-tour-step-${key}`
+export const getAnchorClassName = (key: string | number): string =>
+  `orion-tour-step-${key}`
 
-export function parseSteps(steps) {
+export function parseSteps(
+  steps: Array<StepProps>
+): Array<AnchoredStepProps | SelectorStepProps> {
   return steps.map(
     (
       {

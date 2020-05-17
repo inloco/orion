@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import PropTypes from 'prop-types'
 
 import { Button, Modal } from '..'
+import { ModalProps } from './Tour.d'
 
-function TourModal({ content, buttonTitle, open, onContinue }) {
+function TourModal({
+  content,
+  buttonTitle,
+  open,
+  onContinue
+}: ModalProps): ReactElement {
   return (
     <Modal className="orion-tour-modal" open={open}>
       <Modal.Content>{content}</Modal.Content>

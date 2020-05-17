@@ -31,6 +31,8 @@
   "dependencies": {
     "@inloco/atomic-bomb": "^1.1.1",
     "@inloco/semantic-ui-react": "^0.88.2",
+    "@types/body-scroll-lock": "^2.6.1",
+    "@types/reactour": "^1.17.0",
     "body-scroll-lock": "^3.0.2",
     "classnames": "^2.2.6",
     "keyboard-key": "^1.0.4",
