@@ -34,20 +34,15 @@ export const basic = () => (
           'Options',
           [
             {
-              text: 'Engage',
-              value: 'engage',
+              text: 'Incognia',
+              value: 'incognia',
               image: { as: () => <img alt="app" src={incognia} /> },
               selected: true
             },
             {
-              text: 'Integrations',
-              value: 'integrations',
+              text: 'My apps',
+              value: 'myapps',
               image: { as: () => <img alt="app" src={myapps} /> }
-            },
-            {
-              text: 'Places',
-              value: 'places',
-              image: { as: () => <img alt="app" src={incognia} /> }
             }
           ],
           'AppsDropdown'
