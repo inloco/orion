@@ -36,18 +36,18 @@ export const basic = () => (
             {
               text: 'Engage',
               value: 'engage',
-              image: { as: () => <img src={incognia} /> },
+              image: { as: () => <img alt="app" src={incognia} /> },
               selected: true
             },
             {
               text: 'Integrations',
               value: 'integrations',
-              image: { as: () => <img src={myapps} /> }
+              image: { as: () => <img alt="app" src={myapps} /> }
             },
             {
               text: 'Places',
               value: 'places',
-              image: { as: () => <img src={incognia} /> }
+              image: { as: () => <img alt="app" src={incognia} /> }
             }
           ],
           'AppsDropdown'
