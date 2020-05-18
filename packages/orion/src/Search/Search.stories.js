@@ -6,7 +6,11 @@ import { sizeKnob } from '../utils/stories'
 
 const developerOptions = [
   { title: 'Francisco Gileno', value: 1 },
-  { title: 'Rafael Nunes', value: 2 },
+  {
+    title: 'Rafael Nunes',
+    description: 'This item has a description',
+    value: 2
+  },
   { title: 'Maira Bello', value: 3 }
 ]
 
