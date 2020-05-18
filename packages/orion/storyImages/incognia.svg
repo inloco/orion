@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <linearGradient x1="41.745%" y1="83.433125%" x2="61.135625%" y2="4.901875%" id="incogniaLinearGradient-1">
+            <stop stop-color="#47304D" offset="19.2%"></stop>
+            <stop stop-color="#93279F" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="38.5152174%" y1="96.3348129%" x2="65.4930435%" y2="-1.5249225%" id="incogniaLinearGradient-2">
+            <stop stop-color="#47304D" offset="19.2%"></stop>
+            <stop stop-color="#93279F" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="31.3524063%" y1="124.311096%" x2="75.9846466%" y2="-39.5179237%" id="incogniaLinearGradient-3">
+            <stop stop-color="#47304D" offset="19.2%"></stop>
+            <stop stop-color="#93279F" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="V3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Inloco---Product-switcher" transform="translate(-1164.000000, -145.000000)" fill-rule="nonzero">
+            <g id="products-dropdown" transform="translate(1128.000000, 60.000000)">
+                <g id="Group-10">
+                    <g id="prodcut" transform="translate(32.000000, 81.000000)">
+                        <g id="integrations">
+                            <g id="incognia-logo-32" transform="translate(4.000000, 4.000000)">
+                                <g id="Group">
+                                    <path d="M12,0 C5.4,0 0,5.4 0,12 C0,18.6 5.4,24 12,24 C18.6,24 24,18.6 24,12 C24,5.4 18.6,0 12,0 M12,22.425 C6.225,22.425 1.575,17.775 1.575,12 C1.575,6.225 6.225,1.575 12,1.575 C17.775,1.575 22.425,6.225 22.425,12 C22.425,17.775 17.775,22.425 12,22.425" id="Shape" fill="url(#incogniaLinearGradient-1)"></path>
+                                    <path d="M12,3.375 C7.275,3.375 3.375,7.275 3.375,12 C3.375,14.775 4.65,17.175 6.675,18.825 C6.9,18.375 7.2,17.925 7.5,17.55 C5.925,16.275 4.875,14.25 4.875,12.075 C4.875,8.175 8.025,4.95 12,4.95 C15.975,4.95 19.125,8.1 19.125,12.075 C19.125,14.25 18.15,16.275 16.5,17.55 C16.8,17.925 17.1,18.375 17.325,18.825 C19.35,17.25 20.625,14.775 20.625,12.075 C20.625,7.275 16.725,3.375 12,3.375" id="Path" fill="url(#incogniaLinearGradient-2)"></path>
+                                    <path d="M12,6.75 C9.15,6.75 6.75,9.075 6.75,12 C6.75,13.725 7.575,15.225 8.85,16.2 C9.375,15.825 9.9,15.6 10.5,15.375 C9.225,14.775 8.25,13.5 8.25,12 C8.25,9.975 9.9,8.325 11.925,8.325 C13.95,8.325 15.6,9.975 15.6,12 C15.6,13.5 14.7,14.775 13.425,15.375 C14.025,15.525 14.55,15.825 15.075,16.2 C16.35,15.225 17.175,13.725 17.175,12 C17.25,9.15 14.85,6.75 12,6.75" id="Path" fill="url(#incogniaLinearGradient-3)"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
