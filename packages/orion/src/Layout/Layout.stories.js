@@ -4,6 +4,8 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { text, boolean, object, withKnobs } from '@storybook/addon-knobs'
 
+import incognia from '../../storyImages/incognia.svg'
+import myapps from '../../storyImages/myapps.svg'
 import appImage from '../../storyImages/app.png'
 import { Icon, Layout, Menu } from '../'
 
@@ -32,20 +34,15 @@ export const basic = () => (
           'Options',
           [
             {
-              text: 'Engage',
-              value: 'engage',
-              image: { src: appImage },
+              text: 'Incognia',
+              value: 'incognia',
+              image: { as: () => <img alt="app" src={incognia} /> },
               selected: true
             },
             {
-              text: 'Integrations',
-              value: 'integrations',
-              image: { src: appImage }
-            },
-            {
-              text: 'Places',
-              value: 'places',
-              image: { src: appImage }
+              text: 'My apps',
+              value: 'myapps',
+              image: { as: () => <img alt="app" src={myapps} /> }
             }
           ],
           'AppsDropdown'
