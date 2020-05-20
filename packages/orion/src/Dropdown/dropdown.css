@@ -43,7 +43,7 @@
 }
 
 .orion.dropdown > .menu {
-  @apply absolute bg-white border border-gray-900-16 hidden mt-8 shadow-200 left-0 overflow-y-auto w-full z-20;
+  @apply absolute bg-white border border-gray-900-8 hidden mt-8 shadow-200 left-0 overflow-y-auto w-full z-20;
   top: 100%;
 }
 
@@ -222,4 +222,12 @@
 .orion.dropdown.warning.selection:active,
 .orion.dropdown.warning.selection:focus {
   @apply shadow-warning-field-active;
+}
+
+/**
+ * Divider
+ */
+
+.orion.dropdown .menu > .divider {
+  @apply border-t border-gray-900-16;
 }
