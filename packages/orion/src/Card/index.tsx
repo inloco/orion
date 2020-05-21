@@ -1,9 +1,8 @@
 import cx from 'classnames'
 import React from 'react'
-import PropTypes from 'prop-types'
 import { Checkbox, Card as SemanticCard } from '@inloco/semantic-ui-react'
 
-const Card = ({
+const Card: CardComponent<CardProps> = ({
   children,
   className,
   disabled,
@@ -30,14 +29,22 @@ const Card = ({
   )
 }
 
-Card.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string,
-  disabled: PropTypes.bool,
-  readOnly: PropTypes.bool,
-  selectable: PropTypes.bool,
-  selected: PropTypes.bool,
-  withCheckbox: PropTypes.bool
+type CardProps = {
+  children?: React.ReactNode
+  className?: string
+  disabled?: boolean
+  readOnly?: boolean
+  selectable?: boolean
+  selected?: boolean
+  withCheckbox?: boolean
+}
+
+interface CardComponent<T> extends React.FC<T> {
+  Content?: React.StatelessComponent
+  Description?: React.StatelessComponent
+  Group?: React.StatelessComponent
+  Header?: React.StatelessComponent
+  Meta?: React.StatelessComponent
 }
 
 Card.Content = SemanticCard.Content
