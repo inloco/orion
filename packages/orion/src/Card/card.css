@@ -12,13 +12,15 @@
 }
 
 .orion.card > .content {
-  @apply flex-grow p-24;
+  @apply flex-grow p-24 text-gray-900;
 }
 
 .orion.card > .extra {
   @apply flex flex-grow-0 flex-shrink-0 items-center justify-end px-24 py-8;
   @apply border-t-1 border-gray-900-16;
 }
+
+/* Selectable and selected */
 
 .orion.card.selectable {
   @apply shadow-200 cursor-pointer transition-default;
@@ -44,4 +46,22 @@
 
 .orion.card.selectable .checkbox {
   @apply absolute left-0 top-0 m-8;
+}
+
+/* Disabled */
+.orion.card.disabled,
+.orion.card.selectable.disabled,
+.orion.card.selectable.disabled:hover,
+.orion.card.selectable.selected.disabled,
+.orion.card.selectable.selected.disabled:hover {
+  @apply border-gray-900-16 bg-gray-900-8 opacity-64 shadow-none;
+}
+
+/* Read Only */
+.orion.card.read-only,
+.orion.card.selectable.read-only,
+.orion.card.selectable.read-only:hover,
+.orion.card.selectable.selected.read-only,
+.orion.card.selectable.selected.read-only:hover {
+  @apply border-dashed border-gray-900-16 bg-transparent opacity-64 shadow-none;
 }
