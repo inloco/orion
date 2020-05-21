@@ -13,8 +13,13 @@ export const basic = () => {
   const header = text('Header', 'Header Title')
   const mainContent = text('Main content', 'Card content here')
   const extra = text('Footer', '')
+  const disabled = boolean('Disabled', false)
+  const readOnly = boolean('Read Only', false)
   return (
-    <Card fluid={boolean('Fluid', false)}>
+    <Card
+      fluid={boolean('Fluid', false)}
+      disabled={disabled}
+      readOnly={readOnly}>
       <Card.Content>
         <Card.Header>{header}</Card.Header>
         {mainContent}
@@ -36,9 +41,13 @@ export const basic = () => {
 export const selectable = () => {
   const title = text('Title', 'Integrate SDK')
   const selected = boolean(`Selected`, false)
+  const disabled = boolean('Disabled', false)
+  const readOnly = boolean('Read Only', false)
   return (
     <Card
       fluid={boolean('Fluid', false)}
+      disabled={disabled}
+      readOnly={readOnly}
       selectable
       selected={selected}
       withCheckbox={boolean('With Checkbox', false)}>
