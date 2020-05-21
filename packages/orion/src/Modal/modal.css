@@ -3,7 +3,7 @@
 *******************************/
 
 .orion.modal {
-  @apply absolute hidden z-50 text-left bg-white border-0 rounded flex shadow-200 select-text;
+  @apply absolute hidden z-50 text-left bg-white border-0 rounded flex shadow-200 select-text mb-24;
   min-width: 384px;
   left: 50%;
   top: 24px;
@@ -13,6 +13,10 @@
 /*--------------
      Dimmer
 ---------------*/
+
+.scrolling.dimmable.dimmed > .orion.modals.dimmer {
+  @apply overflow-auto;
+}
 
 .orion.modals.dimmer {
   @apply z-50;
