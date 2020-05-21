@@ -54,7 +54,7 @@
 .orion.card.selectable.disabled:hover,
 .orion.card.selectable.selected.disabled,
 .orion.card.selectable.selected.disabled:hover {
-  @apply border-gray-900-16 bg-gray-900-8 opacity-64 shadow-none;
+  @apply border-gray-900-16 bg-gray-900-8 cursor-default opacity-64 shadow-none;
 }
 
 /* Read Only */
@@ -63,5 +63,5 @@
 .orion.card.selectable.read-only:hover,
 .orion.card.selectable.selected.read-only,
 .orion.card.selectable.selected.read-only:hover {
-  @apply border-dashed border-gray-900-16 bg-transparent opacity-64 shadow-none;
+  @apply bg-transparent border-dashed border-gray-900-16 cursor-default opacity-64 shadow-none;
 }
