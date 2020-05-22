@@ -13,10 +13,22 @@ const Types = {
   SUCCESS: 'success'
 }
 
-const StatusTag = ({ className, type, size, filled, bordered, children }) => {
+const StatusTag = ({
+  className,
+  type,
+  size,
+  filled,
+  bordered,
+  children,
+  ...otherProps
+}) => {
   const classes = cx('status-tag', className, type, size, { filled, bordered })
 
-  return <Label className={classes}>{children}</Label>
+  return (
+    <Label className={classes} {...otherProps}>
+      {children}
+    </Label>
+  )
 }
 
 StatusTag.Types = Types
