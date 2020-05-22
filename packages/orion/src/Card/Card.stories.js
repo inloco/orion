@@ -1,8 +1,7 @@
 import React from 'react'
 import { boolean, text, withKnobs } from '@storybook/addon-knobs/react'
-import cx from 'classnames'
 
-import { Button, Card, Icon } from '../'
+import { Button, Card } from '../'
 
 export default {
   title: 'Card',
@@ -12,13 +11,39 @@ export default {
 export const basic = () => {
   const header = text('Header', 'Header Title')
   const mainContent = text('Main content', 'Card content here')
+  const center = boolean('Center', false)
+  const disabled = boolean('Disabled', false)
+  const readOnly = boolean('Read Only', false)
+  const icon = text('Icon', 'home')
+  return (
+    <Card
+      center={center}
+      fluid={boolean('Fluid', false)}
+      disabled={disabled}
+      icon={icon}
+      readOnly={readOnly}>
+      <Card.Content>
+        <Card.Header>{header}</Card.Header>
+        {mainContent}
+      </Card.Content>
+    </Card>
+  )
+}
+
+export const withFooter = () => {
+  const center = boolean('Center', false)
+  const header = text('Header', 'Header Title')
+  const icon = text('Icon', 'map')
+  const mainContent = text('Main content', 'Card content here')
   const extra = text('Footer', '')
   const disabled = boolean('Disabled', false)
   const readOnly = boolean('Read Only', false)
   return (
     <Card
+      center={center}
       fluid={boolean('Fluid', false)}
       disabled={disabled}
+      icon={icon}
       readOnly={readOnly}>
       <Card.Content>
         <Card.Header>{header}</Card.Header>
@@ -39,25 +64,23 @@ export const basic = () => {
 }
 
 export const selectable = () => {
-  const title = text('Title', 'Integrate SDK')
-  const selected = boolean(`Selected`, false)
+  const center = boolean('Center', false)
   const disabled = boolean('Disabled', false)
+  const icon = text('Icon', 'code')
   const readOnly = boolean('Read Only', false)
+  const selected = boolean(`Selected`, false)
+  const title = text('Title', 'Integrate SDK')
   return (
     <Card
-      fluid={boolean('Fluid', false)}
+      center={center}
       disabled={disabled}
+      fluid={boolean('Fluid', false)}
+      icon={icon}
       readOnly={readOnly}
       selectable
       selected={selected}
       withCheckbox={boolean('With Checkbox', false)}>
-      <Card.Content className="flex flex-col items-center">
-        <Icon
-          name="code"
-          className={cx('text-gray-700', { 'text-wave-500': selected })}
-        />
-        <div className="mt-8">{title}</div>
-      </Card.Content>
+      <Card.Content>{title}</Card.Content>
     </Card>
   )
 }

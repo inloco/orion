@@ -1,3 +1,6 @@
+/***
+**** Basic Rules
+***/
 .orion.card {
   @apply relative bg-white border-1 border-gray-900-8 inline-block rounded;
   @apply inline-flex flex-col;
@@ -8,19 +11,57 @@
 }
 
 .orion.card .header {
-  @apply font-display mb-24 text-lg text-gray-800;
+  @apply mb-8 font-medium;
 }
 
 .orion.card > .content {
-  @apply flex-grow p-24 text-gray-900;
+  @apply flex-grow p-16 text-gray-900;
 }
 
 .orion.card > .extra {
-  @apply flex flex-grow-0 flex-shrink-0 items-center justify-end px-24 py-8;
-  @apply border-t-1 border-gray-900-16;
+  @apply flex flex-grow-0 flex-shrink-0 items-center justify-end px-16 py-8;
+  @apply border-t-1 border-gray-900-16 w-full;
 }
 
-/* Selectable and selected */
+/***
+**** Alignment
+***/
+.orion.card.center {
+  @apply items-center;
+}
+
+.orion.card.center > .content,
+.orion.card.center.has-icon .header {
+  @apply text-center;
+}
+
+/* Alignment with icon */
+.orion.card.center.has-icon > .content {
+  @apply pt-8;
+}
+
+.orion.card:not(.center).has-icon > .content:not(.extra) {
+  margin-left: 28px;
+}
+
+/***
+**** Card Icon
+***/
+.orion.card > .card-icon {
+  @apply m-16 mb-0;
+}
+
+.orion.card:not(.center) > .card-icon {
+  @apply absolute top-0 left-0;
+}
+
+.orion.card.selectable.selected:not(.disabled):not(.read-only) > .card-icon {
+  @apply text-wave-500;
+}
+
+/***
+**** Selectable
+***/
 
 .orion.card.selectable {
   @apply shadow-200 cursor-pointer transition-default;
@@ -48,7 +89,9 @@
   @apply absolute left-0 top-0 m-8;
 }
 
-/* Disabled */
+/***
+**** Disabled
+***/
 .orion.card.disabled,
 .orion.card.selectable.disabled,
 .orion.card.selectable.disabled:hover,
@@ -57,7 +100,9 @@
   @apply border-gray-900-16 bg-gray-900-8 cursor-default opacity-64 shadow-none;
 }
 
-/* Read Only */
+/***
+**** Read Only
+***/
 .orion.card.read-only,
 .orion.card.selectable.read-only,
 .orion.card.selectable.read-only:hover,
