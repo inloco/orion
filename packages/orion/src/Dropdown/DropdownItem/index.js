@@ -19,13 +19,13 @@ const DropdownItem = ({
   if (!children) {
     children = (
       <div className="flex items-center">
+        <Checkbox checked={active} />
+
         {image && (
           <div className="flex-shrink-0">
             {Image.create(image, { autoGenerateKey: false })}
           </div>
         )}
-
-        <Checkbox checked={active} />
 
         <div className="flex-1 min-w-0">
           <div className="text">{_.isNil(content) ? text : content}</div>
