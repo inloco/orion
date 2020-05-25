@@ -24,8 +24,7 @@
 }
 
 .orion.dropdown .menu > .item .image {
-  @apply mr-8;
-  max-width: 32px;
+  @apply mr-8 rounded-full border border-gray-900-8 w-24 h-24;
 }
 
 .orion.dropdown .menu > .item .checkbox {

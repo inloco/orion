@@ -141,6 +141,7 @@ export const withImages = () => {
     <Dropdown
       placeholder="Select Developer"
       selection
+      multiple="keep"
       options={object('Options', optionsWithImages)}
       {...actions}
     />
