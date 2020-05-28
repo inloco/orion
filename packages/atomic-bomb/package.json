@@ -1,6 +1,6 @@
 {
   "name": "@inloco/atomic-bomb",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "files": [
     "index.js",
     "dist",
