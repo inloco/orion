@@ -52,7 +52,9 @@ Wizard.propTypes = {
   className: PropTypes.string,
   currentStepIndex: PropTypes.number,
   onStepIndexChange: PropTypes.func,
-  steps: PropTypes.arrayOf(PropTypes.string).isRequired,
+  steps: PropTypes.arrayOf(
+    PropTypes.oneOfType([PropTypes.string, PropTypes.object])
+  ).isRequired,
   buttons: PropTypes.object,
   scrollToTopOnStepChange: PropTypes.bool
 }
