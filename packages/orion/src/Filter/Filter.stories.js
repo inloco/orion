@@ -23,6 +23,7 @@ export const withInput = () => (
   <Filter
     text={text('Label', 'Open')}
     extraFooterContent={text('Extra footer content', '')}
+    prefix={text('Prefix', '')}
     {...actions}>
     {filterProps => (
       <FilterStoryInput {...filterProps} placeholder="Type your name" />
@@ -37,6 +38,7 @@ export const withDropdown = () => {
   ])
   return (
     <Filter
+      prefix={text('Prefix', '')}
       text={text('Label', 'Open')}
       selectedText={value => value.map(index => options[index].text).join(', ')}
       {...actions}>
@@ -76,6 +78,7 @@ export const multiple = () => (
 
 export const withHover = () => (
   <Filter
+    prefix={text('Prefix', '')}
     text={text('Label', 'Filter')}
     tooltipProps={{
       position: text('Tooltip position', 'right center'),
