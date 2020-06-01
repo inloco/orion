@@ -34,3 +34,11 @@
 .orion-pagination-actions .orion.button + .orion.button {
   @apply ml-4;
 }
+
+.orion-pagination-size-small {
+  @apply min-h-32;
+}
+
+.orion-pagination-size-small .orion-pagination-actions .orion.button {
+  @apply w-32 h-32;
+}

@@ -3,28 +3,31 @@ import cx from 'classnames'
 import PropTypes from 'prop-types'
 import { Placeholder } from '@inloco/semantic-ui-react'
 
+import { Sizes, sizePropType } from '../utils/sizes'
 import Button from '../Button'
 
 const ACTIVE_PAGE_MIN = 1
 
 const Pagination = ({
   activePage,
+  alignButtonsLeft,
   className,
   disabled,
   i18n,
+  loading,
   onPageChange,
   onPrevPage,
   onNextPage,
   pageSize,
-  alignButtonsLeft,
   totalItems,
-  loading,
+  size,
   ...otherProps
 }) => {
   if (!loading && pageSize < 1) return null
 
   const orionPaginationClasses = cx('orion-pagination', className, {
-    'orion-pagination-align-buttons-left': alignButtonsLeft
+    'orion-pagination-align-buttons-left': alignButtonsLeft,
+    'orion-pagination-size-small': size === Sizes.SMALL
   })
 
   if (loading) {
@@ -99,28 +102,30 @@ const Pagination = ({
 
 Pagination.propTypes = {
   activePage: PropTypes.number,
+  alignButtonsLeft: PropTypes.bool,
+  className: PropTypes.string,
   disabled: PropTypes.bool,
+  loading: PropTypes.bool,
+  i18n: PropTypes.shape({
+    of: PropTypes.string,
+    results: PropTypes.string
+  }),
   onPageChange: PropTypes.func,
   onPrevPage: PropTypes.func,
   onNextPage: PropTypes.func,
   pageSize: PropTypes.number,
-  alignButtonsLeft: PropTypes.bool,
   totalItems: PropTypes.number.isRequired,
-  loading: PropTypes.bool,
-  className: PropTypes.string,
-  i18n: PropTypes.shape({
-    of: PropTypes.string,
-    results: PropTypes.string
-  })
+  size: sizePropType
 }
 
 Pagination.defaultProps = {
   activePage: 1,
-  pageSize: 10,
   i18n: {
     of: 'of',
     results: 'results'
-  }
+  },
+  pageSize: 10,
+  size: Sizes.DEFAULT
 }
 
 export default Pagination
