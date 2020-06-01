@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { Modal } from '@inloco/semantic-ui-react'
 
 import { Button } from '..'
