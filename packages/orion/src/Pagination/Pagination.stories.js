@@ -2,7 +2,9 @@ import React from 'react'
 import { boolean, object, number, withKnobs } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 
+import { Sizes } from '../utils/sizes'
 import { Pagination } from '../'
+import { sizeKnob } from '../utils/stories'
 
 const actions = {
   onPageChange: action('onPageChange'),
@@ -28,6 +30,7 @@ export const basic = () => (
       results: 'results'
     })}
     loading={boolean('loading', false)}
+    size={sizeKnob(Sizes.DEFAULT)}
     {...actions}
   />
 )
@@ -43,6 +46,7 @@ export const disabled = () => (
       of: 'of',
       results: 'results'
     })}
+    size={sizeKnob(Sizes.DEFAULT)}
     {...actions}
   />
 )
@@ -58,6 +62,7 @@ export const alignButtonsLeft = () => (
       of: 'of',
       results: 'results'
     })}
+    size={sizeKnob(Sizes.DEFAULT)}
     {...actions}
   />
 )
