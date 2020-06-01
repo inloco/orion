@@ -18,6 +18,7 @@
 /** Zoomed in image modal **/
 .orion-zoom-image-modal {
   @apply bg-transparent;
+  min-width: unset !important;
 }
 
 .orion-zoom-image-modal > .image-wrapper {
