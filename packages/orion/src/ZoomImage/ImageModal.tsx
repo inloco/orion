@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import { Modal } from '@inloco/semantic-ui-react'
 
 import { Button } from '..'
 
-function ImageModal({ src, alt, onClose }: ImageModalProps) {
+const ImageModal: FunctionComponent<ImageModalProps> = ({
+  src,
+  alt,
+  onClose
+}) => {
   return (
     <Modal open className="orion-zoom-image-modal">
       <Button subtle secondary icon="close" onClick={onClose} />

@@ -1,10 +1,14 @@
-import React, { useState } from 'react'
+import React, { FunctionComponent, useState } from 'react'
 import cx from 'classnames'
 
 import { Button } from '..'
 import ImageModal from './ImageModal'
 
-function ZoomImage({ src, alt, className }: ZoomImageProps) {
+const ZoomImage: FunctionComponent<ZoomImageProps> = ({
+  src,
+  alt,
+  className
+}) => {
   const [zoom, setZoom] = useState(false)
 
   return (
