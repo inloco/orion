@@ -1,0 +1,36 @@
+/** Zoomed out image **/
+.orion-zoom-image {
+  @apply relative border border-gray-900-16 bg-gray-900-16 rounded overflow-hidden w-238;
+}
+
+.orion-zoom-image > img {
+  @apply h-full w-full object-cover;
+}
+
+.orion-zoom-image.zoom > img {
+  @apply invisible;
+}
+
+.orion-zoom-image > .orion.icon.secondary.button {
+  @apply absolute right-0 bottom-0 bg-gray-900-8 m-8;
+}
+
+/** Zoomed in image modal **/
+.orion-zoom-image-modal {
+  @apply bg-transparent;
+  min-width: unset !important;
+}
+
+.orion-zoom-image-modal > .image-wrapper {
+  @apply border-gray-900-16 rounded overflow-hidden;
+  border-width: 1px !important;
+}
+
+.orion-zoom-image-modal img {
+  max-width: 75vw;
+}
+
+.orion-zoom-image-modal > .orion.icon.secondary.button {
+  @apply absolute m-0 top-0 right-0 bg-gray-900-8;
+  transform: translate(50%, -50%);
+}
