@@ -7,14 +7,20 @@ import ImageModal from './ImageModal'
 const ZoomImage: FunctionComponent<ZoomImageProps> = ({
   src,
   alt,
-  className
+  className,
+  modalClassName
 }) => {
   const [zoom, setZoom] = useState(false)
 
   return (
     <div className={cx('orion-zoom-image', className, { zoom })}>
       {zoom && (
-        <ImageModal src={src} alt={alt} onClose={() => setZoom(false)} />
+        <ImageModal
+          className={modalClassName}
+          src={src}
+          alt={alt}
+          onClose={() => setZoom(false)}
+        />
       )}
       <img src={src} alt={alt} />
       <Button subtle secondary icon="zoom_in" onClick={() => setZoom(true)} />
@@ -26,6 +32,7 @@ type ZoomImageProps = {
   src: string
   alt: string
   className?: string
+  modalClassName?: string
 }
 
 export default ZoomImage
