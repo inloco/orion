@@ -23,7 +23,13 @@ const ZoomImage: FunctionComponent<ZoomImageProps> = ({
         />
       )}
       <img src={src} alt={alt} />
-      <Button subtle secondary icon="zoom_in" onClick={() => setZoom(true)} />
+      <Button
+        subtle
+        secondary
+        icon="zoom_in"
+        onClick={() => setZoom(true)}
+        type="button"
+      />
     </div>
   )
 }
