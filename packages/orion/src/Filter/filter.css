@@ -53,3 +53,8 @@
 .orion.popup.filter .filter-footer-content {
   @apply leading-14 font-display mr-8 text-sm text-gray-800;
 }
+
+/** Prefix **/
+.filter-trigger-prefix {
+  @apply inline-block mr-4 text-space-700;
+}

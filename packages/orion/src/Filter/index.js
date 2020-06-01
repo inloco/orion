@@ -23,6 +23,7 @@ const Filter = ({
   onClear,
   onClose,
   onOpen,
+  prefix,
   selectedText,
   text,
   trigger,
@@ -89,6 +90,9 @@ const Filter = ({
 
   const defaultTooltipTrigger = (
     <Button className={triggerClasses} size={Sizes.SMALL}>
+      {prefix && value && (
+        <span className="filter-trigger-prefix">{prefix}</span>
+      )}
       {isSelected ? selectedText(value) : text}
       {isSelected && <FilterClearIcon onClick={handleClearIconClick} />}
     </Button>
@@ -163,6 +167,7 @@ Filter.propTypes = {
   onChange: PropTypes.func,
   onClear: PropTypes.func,
   onOpen: PropTypes.func,
+  prefix: PropTypes.string,
   selectedText: PropTypes.func,
   text: PropTypes.string,
   value: PropTypes.any,
