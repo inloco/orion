@@ -2,7 +2,7 @@ import React from 'react'
 import { text, withKnobs, boolean } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 
-import { Form, TagsInput } from '..'
+import { Form, Button, TagsInput } from '..'
 import { Sizes } from '../utils/sizes'
 
 export default {
@@ -61,13 +61,16 @@ export const Controlled = () => {
   const [value, setValue] = React.useState(['tag1', 'tag2'])
 
   return (
-    <TagsInput
-      placeholder={text('Placeholder', 'Type here')}
-      error={boolean('error', false)}
-      fluid={boolean('fluid', false)}
-      selectOnBlur={boolean('selectOnBlur', true)}
-      value={value}
-      onChange={(_, { value }) => setValue(value)}
-    />
+    <div className="flex items-center space-x-8">
+      <TagsInput
+        placeholder={text('Placeholder', 'Type here')}
+        error={boolean('error', false)}
+        fluid={boolean('fluid', false)}
+        selectOnBlur={boolean('selectOnBlur', true)}
+        value={value || []}
+        onChange={(_, { value }) => setValue(value)}
+      />
+      <Button onClick={() => setValue(null)}>Clear All</Button>
+    </div>
   )
 }
