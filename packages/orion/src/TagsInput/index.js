@@ -39,17 +39,13 @@ const TagsInput = ({
     key => AddValueKeyCodes[key]
   )
 
-  const handleAddTagValue = func => {
-    setStateValues(values => {
-      const changed = func(values)
-
-      onChange && onChange({}, { value: changed })
-      return changed
-    })
+  const handleAddTagValue = values => {
+    setStateValues(values)
+    onChange && onChange({}, { value: values })
   }
 
   const addCurrentValue = () => {
-    handleAddTagValue(values => _.concat(values, search))
+    handleAddTagValue(_.concat(values, search))
     setSearch('')
   }
 
@@ -79,7 +75,7 @@ const TagsInput = ({
         const commaSplit = _.compact(_.map(_.split(searchQuery, ','), _.trim))
 
         if (_.size(commaSplit) > 1) {
-          handleAddTagValue(values => _.concat(values, commaSplit))
+          handleAddTagValue(_.concat(values, commaSplit))
           setSearch('')
         } else if (_.trim(searchQuery) !== ',') {
           setSearch(searchQuery)
