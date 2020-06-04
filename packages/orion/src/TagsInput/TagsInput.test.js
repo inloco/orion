@@ -11,46 +11,53 @@ it('should render initial values when defaultValue is given', () => {
   MOCK_VALUES.forEach(value => expect(queryByText(value)).toBeTruthy())
 })
 
-it('should trigger the onChange callback when the value is changed', () => {
-  const mockOnChange = jest.fn()
-  const { getByRole, getByText } = render(
-    <TagsInput
-      onChange={mockOnChange}
-      placeholder="placeholder"
-      addValueKeys={[
-        TagsInput.KeyboardKeys.ENTER,
-        TagsInput.KeyboardKeys.TAB,
-        TagsInput.KeyboardKeys.COMMA
-      ]}
-    />
-  )
+it('should render initial values when value is given', () => {
+  const { queryByText } = render(<TagsInput value={MOCK_VALUES} />)
+  MOCK_VALUES.forEach(value => expect(queryByText(value)).toBeTruthy())
+})
 
-  const input = getByRole('combobox').childNodes[0]
+describe('when selectOnBlur is not passed', () => {
+  it('should trigger the onChange without the search value', () => {
+    const mockOnChange = jest.fn()
+    const { getByRole, getByText } = render(
+      <TagsInput
+        onChange={mockOnChange}
+        placeholder="placeholder"
+        addValueKeys={[
+          TagsInput.KeyboardKeys.ENTER,
+          TagsInput.KeyboardKeys.TAB,
+          TagsInput.KeyboardKeys.COMMA
+        ]}
+      />
+    )
 
-  // adds 'Black'
-  fireEvent.change(input, { target: { value: 'Black' } })
-  fireEvent.keyDown(input, { keyCode: keyboardKey.Enter })
+    const input = getByRole('combobox').childNodes[0]
 
-  // adds 'White'
-  fireEvent.change(input, { target: { value: 'White' } })
-  fireEvent.keyDown(input, { keyCode: keyboardKey.Tab })
+    // adds 'Black'
+    fireEvent.change(input, { target: { value: 'Black' } })
+    fireEvent.keyDown(input, { keyCode: keyboardKey.Enter })
 
-  // adds 'Gray'
-  fireEvent.change(input, { target: { value: 'Gray' } })
-  fireEvent.keyDown(input, { keyCode: keyboardKey.Comma })
+    // adds 'White'
+    fireEvent.change(input, { target: { value: 'White' } })
+    fireEvent.keyDown(input, { keyCode: keyboardKey.Tab })
 
-  // types 'Red' and do not press enter
-  fireEvent.change(input, { target: { value: 'Red' } })
+    // adds 'Gray'
+    fireEvent.change(input, { target: { value: 'Gray' } })
+    fireEvent.keyDown(input, { keyCode: keyboardKey.Comma })
 
-  expect(mockOnChange).toHaveBeenCalledWith(expect.anything(), {
-    value: ['Black', 'White', 'Gray', 'Red']
-  })
+    // types 'Red' and do not press enter
+    fireEvent.change(input, { target: { value: 'Red' } })
 
-  // removes 'Gray' by clicking in the remove icon in tag
-  fireEvent.click(getByText('Gray').children[0])
+    expect(mockOnChange).toHaveBeenCalledWith(expect.anything(), {
+      value: ['Black', 'White', 'Gray']
+    })
 
-  expect(mockOnChange).toHaveBeenLastCalledWith(expect.anything(), {
-    value: ['Black', 'White', 'Red']
+    // removes 'Gray' by clicking in the remove icon in tag
+    fireEvent.click(getByText('Gray').children[0])
+
+    expect(mockOnChange).toHaveBeenLastCalledWith(expect.anything(), {
+      value: ['Black', 'White']
+    })
   })
 })
 
