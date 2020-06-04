@@ -56,3 +56,18 @@ export const insideForm = () => {
     </Form>
   )
 }
+
+export const Controlled = () => {
+  const [value, setValue] = React.useState(['tag1', 'tag2'])
+
+  return (
+    <TagsInput
+      placeholder={text('Placeholder', 'Type here')}
+      error={boolean('error', false)}
+      fluid={boolean('fluid', false)}
+      selectOnBlur={boolean('selectOnBlur', true)}
+      value={value}
+      onChange={(_, { value }) => setValue(value)}
+    />
+  )
+}

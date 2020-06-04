@@ -20,6 +20,7 @@ const AddValueKeyCodes = {
 const TagsInput = ({
   className,
   defaultValue,
+  value,
   onChange,
   onBlur,
   onSearchChange,
@@ -27,21 +28,21 @@ const TagsInput = ({
   addValueKeys,
   ...otherProps
 }) => {
-  const [values, setValues] = useState(defaultValue || [])
+  const [stateValues, setStateValues] = useState(value || defaultValue || [])
   const [search, setSearch] = useState('')
-  const [options, setOptions] = useState(
-    _.map(defaultValue, value => ({ value, text: value }))
-  )
+
+  const values = _.isUndefined(value) ? stateValues : value
+
+  const options = _.map(values, value => ({ value, text: value }))
   const addValuesKeyboardKeys = _.map(
     addValueKeys,
     key => AddValueKeyCodes[key]
   )
 
   const handleAddTagValue = func => {
-    setValues(values => {
+    setStateValues(values => {
       const changed = func(values)
 
-      setOptions(_.map(changed, value => ({ value, text: value })))
       onChange && onChange({}, { value: changed })
       return changed
     })
@@ -68,10 +69,9 @@ const TagsInput = ({
       searchQuery={search}
       onChange={(e, { value: newValue }) => {
         // This will be used to delete tag values
-        setOptions(_.map(newValue, value => ({ value, text: value })))
-        setValues(newValue)
+        setStateValues(newValue)
 
-        onChange && onChange({}, { value: _.concat(newValue, search || []) })
+        onChange && onChange(e, { value: newValue })
       }}
       onSearchChange={(event, data) => {
         const { searchQuery } = data
@@ -83,8 +83,6 @@ const TagsInput = ({
           setSearch('')
         } else if (_.trim(searchQuery) !== ',') {
           setSearch(searchQuery)
-          onChange &&
-            onChange(event, { value: _.concat(values, searchQuery || []) })
         }
 
         onSearchChange && onSearchChange(event, data)
@@ -119,6 +117,7 @@ const shouldPreventDefault = (keyCode, addValueKeys) =>
 TagsInput.propTypes = {
   className: PropTypes.string,
   defaultValue: PropTypes.array,
+  value: PropTypes.array,
   onChange: PropTypes.func,
   onSearchChange: PropTypes.func,
   onBlur: PropTypes.func,
@@ -127,7 +126,8 @@ TagsInput.propTypes = {
 }
 
 TagsInput.defaultProps = {
-  addValueKeys: ['comma']
+  addValueKeys: [KeyboardKeys.COMMA],
+  selectOnBlur: true
 }
 
 TagsInput.KeyboardKeys = KeyboardKeys
