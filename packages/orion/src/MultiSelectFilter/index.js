@@ -9,6 +9,7 @@ import { buildSelectedTextFromArray } from '../utils/filters'
 const MultiSelectFilter = ({
   bar,
   className,
+  children,
   dropdownProps,
   onApply,
   options,
@@ -45,20 +46,23 @@ const MultiSelectFilter = ({
       })}
       {...otherProps}>
       {({ onChange, value }) => (
-        <Dropdown
-          fluid
-          selection
-          multiple="keep"
-          search
-          inlineMenu
-          icon="search"
-          options={_.map(options, option => _.omit(option, 'tooltipText'))}
-          placeholder={placeholder}
-          searchInput={{ autoFocus: true }}
-          {...dropdownProps}
-          onChange={(_, { value }) => onChange(toNullIfEmpty(value))}
-          value={value || []}
-        />
+        <>
+          {children}
+          <Dropdown
+            fluid
+            selection
+            multiple="keep"
+            search
+            inlineMenu
+            icon="search"
+            options={_.map(options, option => _.omit(option, 'tooltipText'))}
+            placeholder={placeholder}
+            searchInput={{ autoFocus: true }}
+            {...dropdownProps}
+            onChange={(_, { value }) => onChange(toNullIfEmpty(value))}
+            value={value || []}
+          />
+        </>
       )}
     </ElementType>
   )
@@ -67,6 +71,7 @@ const MultiSelectFilter = ({
 MultiSelectFilter.propTypes = {
   bar: PropTypes.bool,
   className: PropTypes.string,
+  children: PropTypes.node,
   dropdownProps: PropTypes.object,
   onApply: PropTypes.func,
   options: PropTypes.array,
