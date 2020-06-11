@@ -49,12 +49,14 @@
 
 .orion.table tbody > tr > td:first-child > .inner-cell {
   @apply border-l-1 pl-24;
-  border-radius: 4px 0 0 4px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
 }
 
 .orion.table tbody > tr > td:last-child > .inner-cell {
   @apply border-r-1 pr-16;
-  border-radius: 0 4px 4px 0;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 
 .orion.table tbody > tr > td > .inner-cell {
@@ -70,6 +72,28 @@
 
 .orion.table tbody .inner-cell.highlight > .inner-cell-wrapper {
   @apply bg-gray-900-4;
+}
+
+/** Footer **/
+
+.orion.table tfoot > tr > td {
+  @apply p-0;
+}
+
+.orion.table tfoot > tr > td > .inner-cell {
+  @apply bg-gray-900-8 mt-8 p-8;
+}
+
+.orion.table tfoot > tr > td:first-child > .inner-cell {
+  @apply pl-24;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.orion.table tfoot > tr > td:last-child > .inner-cell {
+  @apply pr-16;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 
 /** Sortable **/
