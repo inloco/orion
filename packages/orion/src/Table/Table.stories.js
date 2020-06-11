@@ -43,6 +43,13 @@ export const basic = () => {
           </Table.Row>
         ))}
       </Table.Body>
+      <Table.Footer>
+        <Table.Row>
+          <Table.Cell colSpan="2" className="text-center">
+            Footer
+          </Table.Cell>
+        </Table.Row>
+      </Table.Footer>
     </Table>
   )
 }
