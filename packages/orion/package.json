@@ -1,6 +1,6 @@
 {
   "name": "@inloco/orion",
-  "version": "1.27.0",
+  "version": "1.28.0",
   "description": "Semantic-UI Toolkit - In Loco theme",
   "files": [
     "**/*.js",
