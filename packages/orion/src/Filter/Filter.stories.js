@@ -4,7 +4,7 @@ import { object, text, withKnobs } from '@storybook/addon-knobs'
 import PropTypes from 'prop-types'
 import _ from 'lodash'
 
-import { Dropdown, Filter, Input } from '../'
+import { Button, Dropdown, Filter, Input } from '../'
 
 const actions = {
   onChange: action('onChange'),
@@ -102,6 +102,26 @@ const ControlledFilter = () => {
   )
 }
 export const withTrigger = () => <ControlledFilter />
+
+export const customApply = () => {
+  const value = text('Value to apply', 'value')
+  return (
+    <Filter
+      text={text('Label', 'Filter')}
+      applyButton={null}
+      clearButton={null}
+      {...actions}>
+      {({ handleApply }) => (
+        <Button
+          content="Click me to apply"
+          onClick={event => {
+            handleApply(event, value)
+          }}
+        />
+      )}
+    </Filter>
+  )
+}
 
 const FilterStoryInput = ({ onChange, value, ...otherProps }) => (
   <Input
