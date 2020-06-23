@@ -126,31 +126,35 @@ const Filter = ({
         <div className="filter-content">
           {children({ onChange: handleChange, value: localValue, handleApply })}
         </div>
-        <div className="filter-buttons">
-          <div className={cx({ invisible: _.isEmpty(localValue) })}>
-            {Button.create(clearButton, {
-              autoGenerateKey: false,
-              defaultProps: {
-                subtle: true,
-                type: 'button',
-                onClick: handleClear
-              }
-            })}
+        {(clearButton || applyButton || extraFooterContent) && (
+          <div className="filter-buttons">
+            <div className={cx({ invisible: _.isEmpty(localValue) })}>
+              {Button.create(clearButton, {
+                autoGenerateKey: false,
+                defaultProps: {
+                  subtle: true,
+                  type: 'button',
+                  onClick: handleClear
+                }
+              })}
+            </div>
+            <div className="flex items-baseline">
+              {extraFooterContent && (
+                <div className="filter-footer-content">
+                  {extraFooterContent}
+                </div>
+              )}
+              {Button.create(applyButton, {
+                autoGenerateKey: false,
+                defaultProps: {
+                  primary: true,
+                  subtle: true,
+                  type: 'submit'
+                }
+              })}
+            </div>
           </div>
-          <div className="flex items-baseline">
-            {extraFooterContent && (
-              <div className="filter-footer-content">{extraFooterContent}</div>
-            )}
-            {Button.create(applyButton, {
-              autoGenerateKey: false,
-              defaultProps: {
-                primary: true,
-                subtle: true,
-                type: 'submit'
-              }
-            })}
-          </div>
-        </div>
+        )}
       </ClickOutside>
     </Popup>
   )
