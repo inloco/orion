@@ -40,9 +40,10 @@ const Filter = ({
 
   const isSelected = !_.isEmpty(value)
 
-  const handleApply = event => {
-    setValue(localValue)
-    onApply && onApply(localValue)
+  const handleApply = (event, value) => {
+    const newValue = value || localValue
+    setValue(newValue)
+    onApply && onApply(newValue)
 
     setOpen(false)
     onClose && onClose()
@@ -123,7 +124,7 @@ const Filter = ({
         onKeyDown={handleKeyDown}
         onSubmit={handleApply}>
         <div className="filter-content">
-          {children({ onChange: handleChange, value: localValue })}
+          {children({ onChange: handleChange, value: localValue, handleApply })}
         </div>
         <div className="filter-buttons">
           <div className={cx({ invisible: _.isEmpty(localValue) })}>
