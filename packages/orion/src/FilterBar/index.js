@@ -23,11 +23,16 @@ const FilterBar = ({
   const [localValue, setLocalValue] = useState(value)
 
   const pendingFilters = {}
+
+  const isFilterType = child => child?.type === FilterBarFilter
+
   React.Children.forEach(children, child => {
-    const name = child.props.name
-    const local = _.get(localValue, name, null)
-    const final = _.get(value, name, null)
-    pendingFilters[name] = !_.isEqual(local, final)
+    if (isFilterType(child)) {
+      const name = child.props.name
+      const local = _.get(localValue, name, null)
+      const final = _.get(value, name, null)
+      pendingFilters[name] = !_.isEqual(local, final)
+    }
   })
   const hasPendingFilters = _.some(pendingFilters)
 
@@ -50,12 +55,15 @@ const FilterBar = ({
   return (
     <div className={cx(className, 'orion filter-bar')} {...otherProps}>
       {React.Children.map(children, child => {
-        const { name } = child.props
-        return React.cloneElement(child, {
-          onApply: handleFilterChange(name),
-          pending: pendingFilters[name],
-          value: _.get(localValue, name) || null
-        })
+        if (isFilterType(child)) {
+          const { name } = child.props
+          return React.cloneElement(child, {
+            onApply: handleFilterChange(name),
+            pending: pendingFilters[name],
+            value: _.get(localValue, name) || null
+          })
+        }
+        return child
       })}
       {hasPendingFilters &&
         Button.create(applyButton, {
