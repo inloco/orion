@@ -36,10 +36,14 @@ export const differentFilterBarChildren = () => (
         {filterProps => <FilterStoryInput {...filterProps} />}
       </FilterBar.Filter>
     )}
-    <FilterBar.Filter text="Filter 3" name="filter3">
-      {filterProps => <FilterStoryInput {...filterProps} />}
-    </FilterBar.Filter>
+    <FilterBarFilter text="Filter 2" name="filter2" />
   </FilterBar>
+)
+
+const FilterBarFilter = props => (
+  <FilterBar.Filter {...props}>
+    {filterProps => <FilterStoryInput {...filterProps} />}
+  </FilterBar.Filter>
 )
 
 const FilterStoryInput = ({ onChange, value, ...otherProps }) => (
