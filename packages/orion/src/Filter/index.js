@@ -40,9 +40,10 @@ const Filter = ({
 
   const isSelected = !_.isEmpty(value)
 
-  const handleApply = event => {
-    setValue(localValue)
-    onApply && onApply(localValue)
+  const handleApply = (event, value) => {
+    const newValue = value || localValue
+    setValue(newValue)
+    onApply && onApply(newValue)
 
     setOpen(false)
     onClose && onClose()
@@ -123,33 +124,37 @@ const Filter = ({
         onKeyDown={handleKeyDown}
         onSubmit={handleApply}>
         <div className="filter-content">
-          {children({ onChange: handleChange, value: localValue })}
+          {children({ onChange: handleChange, value: localValue, handleApply })}
         </div>
-        <div className="filter-buttons">
-          <div className={cx({ invisible: _.isEmpty(localValue) })}>
-            {Button.create(clearButton, {
-              autoGenerateKey: false,
-              defaultProps: {
-                subtle: true,
-                type: 'button',
-                onClick: handleClear
-              }
-            })}
+        {(clearButton || applyButton || extraFooterContent) && (
+          <div className="filter-buttons">
+            <div className={cx({ invisible: _.isEmpty(localValue) })}>
+              {Button.create(clearButton, {
+                autoGenerateKey: false,
+                defaultProps: {
+                  subtle: true,
+                  type: 'button',
+                  onClick: handleClear
+                }
+              })}
+            </div>
+            <div className="flex items-baseline">
+              {extraFooterContent && (
+                <div className="filter-footer-content">
+                  {extraFooterContent}
+                </div>
+              )}
+              {Button.create(applyButton, {
+                autoGenerateKey: false,
+                defaultProps: {
+                  primary: true,
+                  subtle: true,
+                  type: 'submit'
+                }
+              })}
+            </div>
           </div>
-          <div className="flex items-baseline">
-            {extraFooterContent && (
-              <div className="filter-footer-content">{extraFooterContent}</div>
-            )}
-            {Button.create(applyButton, {
-              autoGenerateKey: false,
-              defaultProps: {
-                primary: true,
-                subtle: true,
-                type: 'submit'
-              }
-            })}
-          </div>
-        </div>
+        )}
       </ClickOutside>
     </Popup>
   )
