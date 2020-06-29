@@ -268,7 +268,9 @@ module.exports = {
       // 12/14, 14/20, 20/24, 24/28
       '14': '14px',
       '20': '20px',
-      '24': '24px'
+      '24': '24px',
+      // TODO: refactor line heights to use 14/20, 12/18, 18/24
+      '18': '18px'
     },
     listStyleType: {
       none: 'none',
