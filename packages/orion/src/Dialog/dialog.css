@@ -3,7 +3,7 @@
 *******************************/
 
 .orion.modal.dialog {
-  @apply text-center;
+  @apply text-center w-384;
 }
 
 /*******************************
