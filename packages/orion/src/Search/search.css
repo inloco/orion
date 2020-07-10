@@ -47,3 +47,37 @@
 .orion.search .result > .content > .description {
   @apply text-sm text-gray-800;
 }
+
+/**
+ * Error
+ */
+
+.orion.search.error > .orion.input > input {
+  @apply border-magenta-500;
+}
+
+.orion.search.error > .orion.input > input:hover {
+  @apply shadow-error-field-hover;
+}
+
+.orion.search.error > .orion.input > input:active,
+.orion.search.error > .orion.input > input:focus {
+  @apply shadow-error-field-active;
+}
+
+/**
+ * Warning
+ */
+
+.orion.search.warning > .orion.input > input {
+  @apply border-yellow-500;
+}
+
+.orion.search.warning > .orion.input > input:hover {
+  @apply shadow-warning-field-hover;
+}
+
+.orion.search.warning > .orion.input > input:active,
+.orion.search.warning > .orion.input > input:focus {
+  @apply shadow-warning-field-active;
+}
