@@ -7,14 +7,14 @@ import cx from 'classnames'
 
 const LOADING_ICON = 'loading'
 
-const Search = ({
+const Search: SearchComponent<SearchProps> = ({
   className,
   loading,
   icon,
   error,
   warning,
   ...otherProps
-}: SearchProps) => {
+}) => {
   const classes = cx({ error, warning }, className)
 
   return (
@@ -26,7 +26,7 @@ const Search = ({
   )
 }
 
-interface SearchProps extends SemanticSearchProps {
+type OrionSearchProps = {
   className?: string
   loading?: boolean
   icon?: string
@@ -34,7 +34,9 @@ interface SearchProps extends SemanticSearchProps {
   warning?: boolean
 }
 
-interface Search<T> extends React.FC<T> {
+type SearchProps = SemanticSearchProps & OrionSearchProps
+
+interface SearchComponent<T> extends React.FC<T> {
   Category?: React.StatelessComponent
   Result?: React.StatelessComponent
   Results?: React.StatelessComponent
