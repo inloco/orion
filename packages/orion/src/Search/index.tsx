@@ -34,4 +34,14 @@ interface SearchProps extends SemanticSearchProps {
   warning?: boolean
 }
 
+interface Search<T> extends React.FC<T> {
+  Category?: React.StatelessComponent
+  Result?: React.StatelessComponent
+  Results?: React.StatelessComponent
+}
+
+Search.Category = SemanticSearch.Category
+Search.Result = SemanticSearch.Result
+Search.Results = SemanticSearch.Results
+
 export default Search
