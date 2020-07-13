@@ -129,21 +129,11 @@
   @apply flex items-center cursor-auto relative  p-16;
 }
 
-.orion.layout .layout-user-profile .header-item.selected {
-  @apply pl-32;
-}
-
-.orion.layout .layout-user-profile .header-item.selected:before {
-  @apply absolute w-8 h-8 rounded-full bg-wave-500;
-  content: ' ';
-  left: 16px;
-}
-
 /**
  * Dropdown Items 
  */
 .orion.layout .layout-user-profile .item {
-  @apply flex bg-gray-100 relative flex ml-0 py-16 pr-16 pl-32;
+  @apply flex bg-gray-100 relative flex ml-0 p-16;
 }
 
 .orion.layout .layout-user-profile .item:hover {

@@ -10,7 +10,6 @@ const UserProfileHeaderItem = ({
   children,
   title,
   label,
-  selected,
   ...otherProps
 }) => {
   const [iconChildren, otherChildren] = _.partition(
@@ -19,11 +18,7 @@ const UserProfileHeaderItem = ({
   )
 
   return (
-    <div
-      className={cx('header-item', {
-        selected
-      })}
-      {...otherProps}>
+    <div className="header-item" {...otherProps}>
       <div className="header-item-content">
         {iconChildren}
         <div className="header-item-title">{title}</div>
@@ -38,8 +33,7 @@ UserProfileHeaderItem.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
   title: PropTypes.string.isRequired,
-  label: PropTypes.string,
-  selected: PropTypes.bool
+  label: PropTypes.string
 }
 
 export default UserProfileHeaderItem
