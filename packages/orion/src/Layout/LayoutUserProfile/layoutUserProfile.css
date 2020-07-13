@@ -73,9 +73,8 @@
  * Edit Link
  */
 .orion.layout .user-profile-edit-link {
-  @apply flex text-sm items-center m-auto text-wave-600;
+  @apply inline-flex text-sm items-center m-auto text-wave-600;
   margin-top: 6px;
-  width: fit-content;
 }
 
 .orion.layout .user-profile-edit-link:hover {
@@ -102,7 +101,7 @@
  * Dropdown Header
  */
 .orion.layout .layout-user-profile .header {
-  @apply cursor-auto pt-16;
+  @apply flex flex-col cursor-auto pt-16;
 }
 
 .orion.layout .layout-user-profile .layout-user-profile-header-name {
