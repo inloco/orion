@@ -66,7 +66,6 @@ export const basic = () => (
         )}
         {boolean('Enabled', true, 'UserProfile.HeaderItem') && (
           <Layout.UserProfile.HeaderItem
-            selected={boolean('Selected', true, 'UserProfile.HeaderItem')}
             title={text('Title', 'In Loco', 'UserProfile.HeaderItem')}
             label={text('Label', 'admin', 'UserProfile.HeaderItem')}>
             <Layout.UserProfile.Icon>
