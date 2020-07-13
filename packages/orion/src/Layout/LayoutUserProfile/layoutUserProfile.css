@@ -98,11 +98,6 @@
   width: 320px !important;
 }
 
-.orion.layout .layout-user-profile-children-container {
-  @apply overflow-y-auto;
-  max-height: 433px; /* Six times 72px plus 1px divider */
-}
-
 /**
  * Dropdown Header
  */
