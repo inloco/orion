@@ -73,9 +73,8 @@
  * Edit Link
  */
 .orion.layout .user-profile-edit-link {
-  @apply flex text-sm items-center m-auto text-wave-600;
+  @apply inline-flex text-sm items-center m-auto text-wave-600;
   margin-top: 6px;
-  width: fit-content;
 }
 
 .orion.layout .user-profile-edit-link:hover {
@@ -98,16 +97,11 @@
   width: 320px !important;
 }
 
-.orion.layout .layout-user-profile-children-container {
-  @apply overflow-y-auto;
-  max-height: 433px; /* Six times 72px plus 1px divider */
-}
-
 /**
  * Dropdown Header
  */
 .orion.layout .layout-user-profile .header {
-  @apply cursor-auto pt-16;
+  @apply flex flex-col cursor-auto pt-16;
 }
 
 .orion.layout .layout-user-profile .layout-user-profile-header-name {
@@ -129,21 +123,11 @@
   @apply flex items-center cursor-auto relative  p-16;
 }
 
-.orion.layout .layout-user-profile .header-item.selected {
-  @apply pl-32;
-}
-
-.orion.layout .layout-user-profile .header-item.selected:before {
-  @apply absolute w-8 h-8 rounded-full bg-wave-500;
-  content: ' ';
-  left: 16px;
-}
-
 /**
  * Dropdown Items 
  */
 .orion.layout .layout-user-profile .item {
-  @apply flex bg-gray-100 relative flex ml-0 py-16 pr-16 pl-32;
+  @apply flex bg-gray-100 relative flex ml-0 p-16;
 }
 
 .orion.layout .layout-user-profile .item:hover {
