@@ -20,7 +20,8 @@ const UserProfileButton = ({ tooltip, tooltipOpen, ...props }) => {
 }
 
 UserProfileButton.propTypes = {
-  tooltip: PropTypes.string
+  tooltip: PropTypes.string,
+  tooltipOpen: PropTypes.bool
 }
 
 export default UserProfileButton
