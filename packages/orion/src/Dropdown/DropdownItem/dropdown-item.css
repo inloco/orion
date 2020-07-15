@@ -7,10 +7,6 @@
   @apply block px-16 py-8;
 }
 
-.orion.dropdown .menu > .item.active {
-  @apply font-medium;
-}
-
 .orion.dropdown .menu > .item:hover {
   @apply bg-gray-900-8;
 }
