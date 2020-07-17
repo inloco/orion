@@ -29,7 +29,7 @@ a:active {
 ::placeholder,
 input::placeholder,
 textarea::placeholder {
-  @apply text-gray-800 opacity-100;
+  @apply text-gray-700 opacity-100;
 }
 
 label {
