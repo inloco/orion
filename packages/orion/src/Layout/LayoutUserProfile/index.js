@@ -47,7 +47,7 @@ const LayoutUserProfile = ({
             )}
           </div>
           <div className="layout-user-profile-trigger-texts">
-            {name}
+            <div>{name}</div>
             {label && <label>{label}</label>}
           </div>
         </div>

@@ -12,6 +12,11 @@
 
 .orion.layout .layout-user-profile-trigger-texts {
   @apply flex flex-col justify-center ml-8;
+  max-width: 108px;
+}
+
+.orion.layout .layout-user-profile-trigger-texts > * {
+  @apply truncate;
 }
 
 .orion.layout .layout-user-profile:hover {
