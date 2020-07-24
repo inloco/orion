@@ -178,7 +178,8 @@ module.exports = {
       green: _.pick(theme('colors.green'), ['500']),
       yellow: _.pick(theme('colors.yellow'), ['500']),
       magenta: _.pick(theme('colors.magenta'), ['500']),
-      white: theme('colors').white
+      white: theme('colors').white,
+      transparent: theme('colors').transparent
     }),
     borderRadius: {
       none: '0',
