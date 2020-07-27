@@ -8,3 +8,8 @@
   @apply shadow-none p-0 m-0 mb-8 min-h-0 font-default overflow-visible;
   color: inherit;
 }
+
+.orion-notification-center-message {
+  /* Already existing 16px + 20px (width of the close icon) + 16px of margin from icon */
+  padding-right: 52px !important;
+}
