@@ -60,6 +60,7 @@ const buildNotification = ({ options, type, inline = false }) => (
   toast(
     ({ closeToast }) => (
       <Message
+        className="orion-notification-center-message"
         content={content}
         header={header}
         {...messageType}
