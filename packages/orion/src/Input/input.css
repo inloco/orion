@@ -3,7 +3,7 @@
   width: 256px;
 }
 .orion.input > input {
-  @apply h-full pl-16 flex justify-center outline-none w-full;
+  @apply h-full px-16 flex justify-center outline-none w-full;
   @apply bg-white border border-solid border-gray-900-24 rounded;
 }
 
