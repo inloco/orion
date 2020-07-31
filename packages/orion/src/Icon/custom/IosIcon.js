@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-const IosIcon = ({ className }) => (
-  <svg className={className} viewBox="0 0 24 24">
+const IosIcon = ({ className, ...otherProps }) => (
+  <svg className={className} viewBox="0 0 24 24" {...otherProps}>
     <g data-name="Layer 2">
       <g data-name="Layer 1">
         <g data-name="Layer 1-2">
