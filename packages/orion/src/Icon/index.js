@@ -15,7 +15,7 @@ const Icon = ({ as: AsElementType, className, color, name, ...otherProps }) => {
     [`fill-${color}`]: isCustomIcon && color
   })
   return (
-    <ElementType className={classes} {...otherProps}>
+    <ElementType className={classes} name={name} role="img" {...otherProps}>
       {name}
     </ElementType>
   )
