@@ -15,7 +15,12 @@ const Icon = ({ as: AsElementType, className, color, name, ...otherProps }) => {
     [`fill-${color}`]: isCustomIcon && color
   })
   return (
-    <ElementType className={classes} name={name} role="img" {...otherProps}>
+    <ElementType
+      className={classes}
+      name={name}
+      role="img"
+      aria-label={name}
+      {...otherProps}>
       {name}
     </ElementType>
   )
