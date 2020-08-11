@@ -15,15 +15,15 @@ h2 {
 }
 
 a {
-  @apply text-wave-600;
+  @apply text-wave-500;
 }
 
 a:hover {
-  @apply text-wave-700;
+  @apply text-wave-600;
 }
 
 a:active {
-  @apply text-wave-800;
+  @apply text-wave-700;
 }
 
 ::placeholder,
