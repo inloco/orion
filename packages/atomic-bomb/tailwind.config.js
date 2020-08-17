@@ -143,7 +143,10 @@ module.exports = {
       green: _.pick(theme('colors.green'), ['50', '500', '600', '700', '800']),
       yellow: _.pick(theme('colors.yellow'), ['50', '500', '600', '700']),
       magenta: _.pick(theme('colors.magenta'), ['50', '500', '600', '700']),
-      chart: theme('colors.chart')
+      chart: {
+        ...theme('colors.chart'),
+        'purple-80': Color(theme('colors').chart['purple']).alpha(0.8).string()
+      }
     }),
 
     backgroundPosition: {
