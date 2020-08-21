@@ -15,7 +15,7 @@ h2 {
 }
 
 a {
-  @apply text-wave-500;
+  @apply text-wave-500 font-medium;
 }
 
 a:hover {
