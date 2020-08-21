@@ -113,13 +113,14 @@ const Filter = ({
 
   return (
     <Popup
-      className={cx(className, 'orion filter')}
+      className={cx(className, 'orion filter p-0')}
       basic
       trigger={tooltip}
       open={open}
       {...otherProps}>
       <ClickOutside
         as="form"
+        className="p-16"
         onClickOutside={handleApply}
         onKeyDown={handleKeyDown}
         onSubmit={handleApply}>
