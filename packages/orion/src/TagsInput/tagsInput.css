@@ -9,3 +9,7 @@
 .orion.tags-input > input {
   @apply ml-0 !important;
 }
+
+.orion.tags-input:focus-within {
+  @apply shadow-field-active !important;
+}
