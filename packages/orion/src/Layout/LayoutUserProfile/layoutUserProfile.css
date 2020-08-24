@@ -78,16 +78,20 @@
  * Edit Link
  */
 .orion.layout .user-profile-edit-link {
-  @apply inline-flex text-sm items-center m-auto text-wave-600;
+  @apply inline-flex text-sm items-center m-auto;
   margin-top: 6px;
 }
 
-.orion.layout .user-profile-edit-link:hover {
-  @apply text-wave-700;
+.orion.layout .user-profile-edit-link:not(a) {
+  @apply text-wave-500 font-medium;
 }
 
-.orion.layout .user-profile-edit-link:active {
-  @apply text-wave-800;
+.orion.layout .user-profile-edit-link:not(a):hover {
+  @apply text-wave-600;
+}
+
+.orion.layout .user-profile-edit-link:not(a):active {
+  @apply text-wave-700;
 }
 
 .orion.layout .user-profile-edit-link > .orion.icon {
