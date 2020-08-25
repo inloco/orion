@@ -5,16 +5,12 @@
 }
 
 .orion.menu .item {
-  @apply cursor-pointer flex items-center ml-24 outline-none text-base text-gray-800;
+  @apply cursor-pointer flex items-center ml-24 outline-none text-base font-normal text-gray-800;
 }
 
 .orion.menu .item:hover,
 .orion.menu .item:focus {
   @apply text-gray-700;
-}
-
-.orion.menu .item:active {
-  @apply text-gray-900;
 }
 
 .orion.menu .item:first-child {
