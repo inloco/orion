@@ -100,7 +100,7 @@
 }
 
 .orion.dropdown.multiple .orion.label {
-  @apply mr-16 my-2;
+  @apply mr-16 my-2 font-normal;
   margin-left: -8px;
 }
 
