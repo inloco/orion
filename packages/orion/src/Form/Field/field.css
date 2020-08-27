@@ -79,6 +79,7 @@
 
 /* Error */
 .orion.form .field.error input,
+.orion.form .field.error textarea,
 .orion.form .field.error .dropdown {
   @apply border-magenta-500;
 }
