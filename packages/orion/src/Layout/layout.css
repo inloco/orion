@@ -96,7 +96,7 @@
  * Apps Dropdown Item
  */
 .orion.layout .layout-apps-dropdown > .menu > .item {
-  @apply flex items-center py-16 px-32;
+  @apply flex items-center py-16 px-32 font-normal text-gray-900;
 }
 
 .orion.layout .layout-apps-dropdown > .menu > .item:hover {
