@@ -57,7 +57,7 @@
     "@storybook/react": "^5.2.1",
     "@storybook/storybook-deployer": "^2.8.1",
     "@testing-library/jest-dom": "^5.0.0",
-    "@testing-library/react": "^10.0.1",
+    "@testing-library/react": "^11.0.2",
     "@types/classnames": "^2.2.10",
     "@types/eslint": "^7.2.0",
     "@types/jest": "^26.0.3",
