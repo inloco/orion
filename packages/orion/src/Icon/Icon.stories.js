@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
+import cx from 'classnames'
 import { text, withKnobs } from '@storybook/addon-knobs'
 
 import { Card, Icon } from '../'
@@ -14,12 +15,17 @@ export const basic = () => (
 )
 
 export const customIcons = () => {
-  const IconCard = ({ name }) => (
-    <Card className="flex flex-col items-center m-8 ml-0 p-4 w-48">
-      <Icon name={name} />
-      <div className="text-sm">{name}</div>
-    </Card>
-  )
+  const IconCard = ({ name, inverted }) => {
+    const classNames = cx('flex flex-col items-center m-8 ml-0 p-4 w-48', {
+      'bg-gray-800': inverted
+    })
+    return (
+      <Card className={classNames}>
+        <Icon name={name} />
+        <div className="text-sm">{name}</div>
+      </Card>
+    )
+  }
   IconCard.propTypes = {
     name: PropTypes.string
   }
@@ -37,6 +43,7 @@ export const customIcons = () => {
         <IconCard name="ios" />
         <IconCard name="react" />
         <IconCard name="loading" />
+        <IconCard name="loading" inverted />
       </div>
     </React.Fragment>
   )
