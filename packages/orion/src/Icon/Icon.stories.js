@@ -27,7 +27,8 @@ export const customIcons = () => {
     )
   }
   IconCard.propTypes = {
-    name: PropTypes.string
+    name: PropTypes.string,
+    inverted: PropTypes.bool
   }
 
   return (
