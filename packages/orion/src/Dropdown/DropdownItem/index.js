@@ -18,7 +18,7 @@ const DropdownItem = ({
 
   if (!children) {
     children = (
-      <div className="flex items-center">
+      <div className="flex items-center pointer-events-none">
         <Checkbox checked={active} />
 
         {image && (
