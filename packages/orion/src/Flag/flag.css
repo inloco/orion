@@ -18,10 +18,6 @@ i.flag:not(.icon):before {
 
 /* Flag Sprite Based On http://www.famfamfam.com/lab/icons/flags/ */
 
-/*******************************
-         Theme Overrides
-*******************************/
-
 i.flag.ad:before,
 i.flag.andorra:before {
   background-position: 0px 0px;
