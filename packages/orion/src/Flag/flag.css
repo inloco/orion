@@ -1,6 +1,5 @@
 i.flag:not(.icon) {
-  @apply inline-block align-baseline mr-8;
-  width: 16px;
+  @apply inline-block align-baseline mr-8 w-16;
   height: 11px;
   line-height: 11px;
   text-decoration: inherit;
@@ -9,10 +8,9 @@ i.flag:not(.icon) {
 
 /* Sprite */
 i.flag:not(.icon):before {
-  @apply inline-block;
+  @apply inline-block w-16;
   content: '';
   background: url('./assets/images/flags.png') no-repeat -108px -1976px;
-  width: 16px;
   height: 11px;
 }
 
