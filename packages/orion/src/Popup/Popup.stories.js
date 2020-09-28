@@ -66,6 +66,4 @@ export const pointingPositions = () => {
   )
 }
 
-pointingPositions.story = {
-  name: 'Pointing - Positions'
-}
+pointingPositions.storyName = 'Pointing - Positions'

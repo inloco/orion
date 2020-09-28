@@ -107,9 +107,8 @@ export const multipleSelectionKeepingSelected = () => {
   )
 }
 
-multipleSelectionKeepingSelected.story = {
-  name: 'Multiple Selection, Keeping Selected'
-}
+multipleSelectionKeepingSelected.storyName =
+  'Multiple Selection, Keeping Selected'
 
 export const detailedItems = () => (
   <div style={{ width: '400px' }}>

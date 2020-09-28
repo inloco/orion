@@ -23,9 +23,7 @@ export const defaultStory = () => {
   )
 }
 
-defaultStory.story = {
-  name: 'default'
-}
+defaultStory.storyName = 'default'
 
 export const labeled = () => {
   return (
