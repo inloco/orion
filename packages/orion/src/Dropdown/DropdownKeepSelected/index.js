@@ -14,8 +14,8 @@ const isDoubleValue = value => _.startsWith(value, DOUBLE_PREFIX)
 const getOriginalValue = doubleValue => doubleValue.split(DOUBLE_PREFIX)[1]
 
 /**
- * Selected options are removed automatically by Semantic UI's Dropdown
- * before being rendered. This is not configurable.
+ * Selected options are removed automatically from the menu by Semantic UI's
+ * Dropdown before being rendered. This is not configurable.
  *
  * We need selected options to keep showing up in the list, where they
  * can be seen and unselected by the user. This component is a work-around
