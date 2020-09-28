@@ -18,11 +18,11 @@ export default {
 export const subcomponents = () => (
   <Form>
     <Form.Field message={text('Message', '')}>
-      <label htmlFor="fullName">{text('Input label', 'Full Name')}</label>
+      <label htmlFor="fullName">{text('Label', 'Full Name', 'Input')}</label>
       <Input
         fluid={boolean('Fluid', false)}
         id="fullName"
-        placeholder={text('Input placeholder', 'Enter your full name')}
+        placeholder={text('Placeholder', 'Enter your full name', 'Input')}
         size={sizeKnob()}
         warning={boolean('Warning', false)}
         error={boolean('Error', false)}
@@ -30,26 +30,29 @@ export const subcomponents = () => (
       />
     </Form.Field>
     <Form.Field message={text('Message', '')}>
-      <label htmlFor="buddy">{text('Dropdown label', 'Buddy')}</label>
+      <label htmlFor="buddy">{text('Label', 'Buddy', 'Dropdown')}</label>
       <Dropdown
         selection
         id="buddy"
         fluid={boolean('Fluid', false)}
-        placeholder={text('Dropdown placeholder', 'Choose your buddy')}
-        options={object('Dropdown options', developerOptions)}
+        search={boolean('Search', false, 'Dropdown')}
+        placeholder={text('Placeholder', 'Choose your buddy', 'Dropdown')}
+        options={object('Options', developerOptions, 'Dropdown')}
         warning={boolean('Warning', false)}
         error={boolean('Error', false)}
         size={sizeKnob()}
       />
     </Form.Field>
     <Form.Field message={text('Message', '')}>
-      <label htmlFor="date">{text('DatepickerInput label', 'Date')}</label>
+      <label htmlFor="date">{text('Label', 'Date', 'Datepicker')}</label>
       <DatepickerInput
         id="date"
         fluid={boolean('Fluid', false)}
         message={text('Message', '')}
-        placeholder={text('Date picker placeholder', 'Choose a date')}
+        placeholder={text('Placeholder', 'Choose a date', 'Datepicker')}
         warning={boolean('Warning', false)}
+        error={boolean('Error', false)}
+        size={sizeKnob()}
       />
     </Form.Field>
     <Form.Field message={text('Message', '')}>
