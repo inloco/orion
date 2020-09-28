@@ -22,6 +22,7 @@
 }
 
 .orion.form .field.floatingLabel label:not(:empty) + .dropdown > .text,
+.orion.form .field.floatingLabel label:not(:empty) + .dropdown > .search,
 .orion.form .field.floatingLabel label:not(:empty) + .input > input,
 .orion.form
   .field.floatingLabel:not(.filled)
