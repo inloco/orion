@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { array, boolean, withKnobs } from '@storybook/addon-knobs'
+import { array, boolean } from '@storybook/addon-knobs'
 
 import { Button, Wizard } from '../'
 
@@ -19,7 +19,6 @@ const buttons = {
 
 export default {
   title: 'Wizard',
-  decorators: [withKnobs],
   excludeStories: ['actions']
 }
 

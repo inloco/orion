@@ -1,13 +1,12 @@
 import React from 'react'
-import { withKnobs, text, boolean } from '@storybook/addon-knobs'
+import { text, boolean } from '@storybook/addon-knobs'
 
 import { sizeKnob } from '../utils/stories'
 import { Sizes } from '../utils/sizes'
 import { StatusTag, Icon } from '..'
 
 export default {
-  title: 'StatusTag',
-  decorators: [withKnobs]
+  title: 'StatusTag'
 }
 
 export const inactive = () => {

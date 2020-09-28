@@ -1,13 +1,12 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import cx from 'classnames'
-import { text, withKnobs } from '@storybook/addon-knobs'
+import { text } from '@storybook/addon-knobs'
 
 import { Card, Icon } from '../'
 
 export default {
-  title: 'Icon',
-  decorators: [withKnobs]
+  title: 'Icon'
 }
 
 export const basic = () => (

@@ -1,11 +1,9 @@
 import React from 'react'
-import { withKnobs } from '@storybook/addon-knobs/react'
 
 import { Divider } from '../'
 
 export default {
-  title: 'Divider',
-  decorators: [withKnobs]
+  title: 'Divider'
 }
 
 export const horizontal = () => {

@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { boolean, text, number, withKnobs } from '@storybook/addon-knobs'
+import { boolean, text, number } from '@storybook/addon-knobs'
 
 import { Form, RangedDatepickerInput } from '../'
 import { sizeKnob } from '../utils/stories'
@@ -10,8 +10,7 @@ const actions = {
 }
 
 export default {
-  title: 'RangedDatepickerInput',
-  decorators: [withKnobs]
+  title: 'RangedDatepickerInput'
 }
 
 export const basic = () => (

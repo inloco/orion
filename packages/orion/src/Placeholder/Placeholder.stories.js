@@ -1,11 +1,10 @@
 import React from 'react'
-import { withKnobs, radios, boolean } from '@storybook/addon-knobs'
+import { radios, boolean } from '@storybook/addon-knobs'
 
 import { Placeholder } from '../'
 
 export default {
-  title: 'Placeholder',
-  decorators: [withKnobs]
+  title: 'Placeholder'
 }
 
 const sizeKnob = (defaultValue = 'full', groupId) =>

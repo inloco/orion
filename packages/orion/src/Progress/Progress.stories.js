@@ -1,12 +1,11 @@
 import React from 'react'
-import { number, text, withKnobs } from '@storybook/addon-knobs'
+import { number, text } from '@storybook/addon-knobs'
 
 import { Progress } from '../'
 import { sizeKnob } from '../utils/stories'
 
 export default {
-  title: 'Progress',
-  decorators: [withKnobs]
+  title: 'Progress'
 }
 
 export const basic = () => (

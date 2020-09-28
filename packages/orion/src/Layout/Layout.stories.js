@@ -2,7 +2,7 @@ import _ from 'lodash'
 import { loremIpsum } from 'lorem-ipsum'
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { text, boolean, object, withKnobs } from '@storybook/addon-knobs'
+import { text, boolean, object } from '@storybook/addon-knobs'
 
 import incognia from '../../storyImages/incognia.svg'
 import myapps from '../../storyImages/myapps.svg'
@@ -10,8 +10,7 @@ import appImage from '../../storyImages/app.png'
 import { Icon, Layout, Menu } from '../'
 
 export default {
-  title: 'Layout',
-  decorators: [withKnobs]
+  title: 'Layout'
 }
 
 export const basic = () => (

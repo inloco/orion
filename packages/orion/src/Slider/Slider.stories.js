@@ -1,12 +1,11 @@
 import React from 'react'
-import { withKnobs, number } from '@storybook/addon-knobs'
+import { number } from '@storybook/addon-knobs'
 
 import { Slider } from '..'
 import './Slider.stories.css'
 
 export default {
-  title: 'Slider',
-  decorators: [withKnobs]
+  title: 'Slider'
 }
 
 export const basic = () => {

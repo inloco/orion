@@ -1,11 +1,10 @@
 import React from 'react'
-import { boolean, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, text } from '@storybook/addon-knobs'
 
 import TextArea from './'
 
 export default {
-  title: 'TextArea',
-  decorators: [withKnobs]
+  title: 'TextArea'
 }
 
 export const defaultStory = () => {

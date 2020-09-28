@@ -1,12 +1,11 @@
 import React from 'react'
-import { boolean, withKnobs } from '@storybook/addon-knobs'
+import { boolean } from '@storybook/addon-knobs'
 
 import { Loading } from '../'
 import { sizeKnob } from '../utils/stories'
 
 export default {
-  title: 'Loading',
-  decorators: [withKnobs]
+  title: 'Loading'
 }
 
 export const defaultStory = () => (

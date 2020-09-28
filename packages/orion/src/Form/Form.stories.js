@@ -1,5 +1,5 @@
 import React from 'react'
-import { boolean, object, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, object, text } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 
 import { Button, Checkbox, DatepickerInput, Input, Dropdown, Form } from '../'
@@ -12,8 +12,7 @@ const developerOptions = [
 ]
 
 export default {
-  title: 'Form',
-  decorators: [withKnobs]
+  title: 'Form'
 }
 
 export const subcomponents = () => (

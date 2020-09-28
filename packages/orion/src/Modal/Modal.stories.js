@@ -1,11 +1,10 @@
 import React from 'react'
-import { text, withKnobs } from '@storybook/addon-knobs'
+import { text } from '@storybook/addon-knobs'
 
 import { Button, Modal } from '../'
 
 export default {
-  title: 'Modal',
-  decorators: [withKnobs]
+  title: 'Modal'
 }
 
 export const standard = () => {

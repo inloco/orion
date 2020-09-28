@@ -1,13 +1,12 @@
 import React from 'react'
-import { text, withKnobs } from '@storybook/addon-knobs'
+import { text } from '@storybook/addon-knobs'
 
 import { sizeKnob } from '../utils/stories'
 
 import { CopyIcon } from '..'
 
 export default {
-  title: 'CopyIcon',
-  decorators: [withKnobs]
+  title: 'CopyIcon'
 }
 
 export const basic = () => (

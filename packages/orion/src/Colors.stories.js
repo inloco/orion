@@ -2,13 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import _ from 'lodash'
-import { boolean, color, withKnobs } from '@storybook/addon-knobs/react'
+import { boolean, color } from '@storybook/addon-knobs/react'
 
 import { Colors } from '.'
 
 export default {
-  title: 'Colors',
-  decorators: [withKnobs]
+  title: 'Colors'
 }
 
 ColorCard.propTypes = {

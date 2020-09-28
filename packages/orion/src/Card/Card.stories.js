@@ -1,11 +1,10 @@
 import React from 'react'
-import { boolean, text, withKnobs } from '@storybook/addon-knobs/react'
+import { boolean, text } from '@storybook/addon-knobs/react'
 
 import { Button, Card } from '../'
 
 export default {
-  title: 'Card',
-  decorators: [withKnobs]
+  title: 'Card'
 }
 
 export const basic = () => {

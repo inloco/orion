@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { object, text, withKnobs } from '@storybook/addon-knobs'
+import { object, text } from '@storybook/addon-knobs'
 import PropTypes from 'prop-types'
 import _ from 'lodash'
 
@@ -15,8 +15,7 @@ const actions = {
 }
 
 export default {
-  title: 'Filter',
-  decorators: [withKnobs]
+  title: 'Filter'
 }
 
 export const withInput = () => (

@@ -1,11 +1,10 @@
 import React from 'react'
-import { radios, text, withKnobs } from '@storybook/addon-knobs'
+import { radios, text } from '@storybook/addon-knobs'
 
 import { Button, Tooltip } from '../'
 
 export default {
-  title: 'Tooltip',
-  decorators: [withKnobs]
+  title: 'Tooltip'
 }
 
 export const basic = () => (

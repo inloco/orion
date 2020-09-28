@@ -1,5 +1,5 @@
 import React from 'react'
-import { boolean, object, number, withKnobs } from '@storybook/addon-knobs'
+import { boolean, object, number } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 
 import { Sizes } from '../utils/sizes'
@@ -14,7 +14,6 @@ const actions = {
 
 export default {
   title: 'Pagination',
-  decorators: [withKnobs],
   excludeStories: ['actions']
 }
 
