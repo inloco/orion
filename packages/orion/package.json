@@ -3,7 +3,8 @@
   "version": "1.35.0",
   "description": "Semantic-UI Toolkit - In Loco theme",
   "files": [
-    "**/*.js",
+    "dist/**/*.js",
+    "dist/assets/*",
     "dist/orion.css",
     "dist/orion.min.css"
   ],
