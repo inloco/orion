@@ -47,7 +47,8 @@ DropdownItem.propTypes = {
   content: PropTypes.node,
   description: PropTypes.node,
   image: PropTypes.oneOfType([PropTypes.node, PropTypes.object]),
-  text: PropTypes.node
+  text: PropTypes.node,
+  flag: PropTypes.string
 }
 
 // Overriding original factory. See src/utils/factories.js for more details.
