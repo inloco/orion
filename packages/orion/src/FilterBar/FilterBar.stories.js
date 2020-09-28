@@ -1,6 +1,5 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { withKnobs } from '@storybook/addon-knobs'
 import PropTypes from 'prop-types'
 
 import { FilterBar, Input, Icon } from '../'
@@ -10,8 +9,7 @@ const actions = {
 }
 
 export default {
-  title: 'FilterBar',
-  decorators: [withKnobs]
+  title: 'FilterBar'
 }
 
 export const basic = () => (

@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { object, text, withKnobs } from '@storybook/addon-knobs'
+import { object, text } from '@storybook/addon-knobs'
 
 import MultiSelectFilter from './'
 import { Menu } from '..'
@@ -11,8 +11,7 @@ const actions = {
 }
 
 export default {
-  title: 'MultiSelectFilter',
-  decorators: [withKnobs]
+  title: 'MultiSelectFilter'
 }
 
 export const basic = () => {

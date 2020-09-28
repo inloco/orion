@@ -1,5 +1,4 @@
 import React from 'react'
-import { withKnobs } from '@storybook/addon-knobs'
 
 import Button from '../Button'
 import NotificationCenter from '.'
@@ -18,7 +17,7 @@ const NotificationCenterDecorator = storyFn => (
 
 export default {
   title: 'NotificationCenter',
-  decorators: [withKnobs, NotificationCenterDecorator]
+  decorators: [NotificationCenterDecorator]
 }
 
 export const basic = () => (

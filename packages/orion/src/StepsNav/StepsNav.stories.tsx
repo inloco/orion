@@ -1,11 +1,10 @@
 import React from 'react'
-import { object, number, withKnobs } from '@storybook/addon-knobs'
+import { object, number } from '@storybook/addon-knobs'
 
 import { StepsNav } from '../'
 
 export default {
-  title: 'StepsNav',
-  decorators: [withKnobs]
+  title: 'StepsNav'
 }
 
 export const defaultStory = () => (
@@ -20,6 +19,4 @@ export const defaultStory = () => (
   />
 )
 
-defaultStory.story = {
-  name: 'Default'
-}
+defaultStory.storyName = 'Default'

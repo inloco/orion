@@ -1,13 +1,12 @@
 import React from 'react'
-import { text, withKnobs, boolean } from '@storybook/addon-knobs'
+import { text, boolean } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 
 import { Form, Button, TagsInput } from '..'
 import { Sizes } from '../utils/sizes'
 
 export default {
-  title: 'TagsInput',
-  decorators: [withKnobs]
+  title: 'TagsInput'
 }
 
 export const basic = () => (

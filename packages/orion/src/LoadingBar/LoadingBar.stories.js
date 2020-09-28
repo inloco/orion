@@ -1,11 +1,10 @@
 import React from 'react'
-import { text, withKnobs } from '@storybook/addon-knobs'
+import { text } from '@storybook/addon-knobs'
 
 import { LoadingBar } from '../'
 
 export default {
-  title: 'LoadingBar',
-  decorators: [withKnobs]
+  title: 'LoadingBar'
 }
 
 export const defaultStory = () => (
@@ -14,6 +13,4 @@ export const defaultStory = () => (
   </div>
 )
 
-defaultStory.story = {
-  name: 'Default'
-}
+defaultStory.storyName = 'Default'

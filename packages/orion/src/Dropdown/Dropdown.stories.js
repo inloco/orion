@@ -1,7 +1,7 @@
 import _ from 'lodash'
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { boolean, object, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, object, text } from '@storybook/addon-knobs'
 
 import appImage from '../../storyImages/app.png'
 
@@ -21,8 +21,7 @@ const developerOptions = [
 ]
 
 export default {
-  title: 'Dropdown',
-  decorators: [withKnobs]
+  title: 'Dropdown'
 }
 
 export const basic = () => {
@@ -107,9 +106,8 @@ export const multipleSelectionKeepingSelected = () => {
   )
 }
 
-multipleSelectionKeepingSelected.story = {
-  name: 'Multiple Selection, Keeping Selected'
-}
+multipleSelectionKeepingSelected.storyName =
+  'Multiple Selection, Keeping Selected'
 
 export const detailedItems = () => (
   <div style={{ width: '400px' }}>

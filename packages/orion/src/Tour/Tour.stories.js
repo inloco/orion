@@ -1,12 +1,10 @@
 import React, { useState } from 'react'
 import { action } from '@storybook/addon-actions'
-import { withKnobs } from '@storybook/addon-knobs'
 
 import { Card, Dropdown, Tour } from '../'
 
 export default {
-  title: 'Tour',
-  decorators: [withKnobs]
+  title: 'Tour'
 }
 
 export const Basic = () => {

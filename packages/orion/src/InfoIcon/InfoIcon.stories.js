@@ -1,11 +1,10 @@
 import React from 'react'
-import { text, withKnobs, boolean, radios } from '@storybook/addon-knobs'
+import { text, boolean, radios } from '@storybook/addon-knobs'
 
 import { InfoIcon } from '../'
 
 export default {
-  title: 'InfoIcon',
-  decorators: [withKnobs]
+  title: 'InfoIcon'
 }
 
 export const basic = () => (

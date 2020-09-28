@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { boolean, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, text } from '@storybook/addon-knobs'
 
 import { DatepickerInput } from '../'
 import { sizeKnob } from '../utils/stories'
@@ -10,8 +10,7 @@ const actions = {
 }
 
 export default {
-  title: 'DatepickerInput',
-  decorators: [withKnobs]
+  title: 'DatepickerInput'
 }
 
 export const basic = () => (

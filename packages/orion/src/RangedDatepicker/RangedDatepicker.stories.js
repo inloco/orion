@@ -1,7 +1,7 @@
 import moment from 'moment'
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { number, withKnobs, text } from '@storybook/addon-knobs'
+import { number, text } from '@storybook/addon-knobs'
 
 import { RangedDatepicker } from '../'
 
@@ -10,8 +10,7 @@ const actions = {
 }
 
 export default {
-  title: 'RangedDatepicker',
-  decorators: [withKnobs]
+  title: 'RangedDatepicker'
 }
 
 export const basic = () => {

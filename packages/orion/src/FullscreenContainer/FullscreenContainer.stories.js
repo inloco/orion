@@ -1,11 +1,10 @@
 import React from 'react'
-import { text, withKnobs } from '@storybook/addon-knobs'
+import { text } from '@storybook/addon-knobs'
 
 import { FullscreenContainer, Button } from '../'
 
 export default {
-  title: 'FullscreenContainer',
-  decorators: [withKnobs]
+  title: 'FullscreenContainer'
 }
 
 export const defaultStory = () => {
@@ -18,6 +17,4 @@ export const defaultStory = () => {
   )
 }
 
-defaultStory.story = {
-  name: 'Default'
-}
+defaultStory.storyName = 'Default'

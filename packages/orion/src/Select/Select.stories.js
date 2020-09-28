@@ -1,5 +1,5 @@
 import React from 'react'
-import { boolean, object, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, object, text } from '@storybook/addon-knobs'
 
 import Select from './'
 import { Sizes } from '../utils/sizes'
@@ -12,8 +12,7 @@ const developerOptions = [
 ]
 
 export default {
-  title: 'Select',
-  decorators: [withKnobs]
+  title: 'Select'
 }
 
 export const selection = () => {

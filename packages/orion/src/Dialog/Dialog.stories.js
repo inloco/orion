@@ -1,11 +1,10 @@
 import React from 'react'
-import { text, boolean, withKnobs } from '@storybook/addon-knobs'
+import { text, boolean } from '@storybook/addon-knobs'
 
 import { Button, Dialog } from '../'
 
 export default {
-  title: 'Dialog',
-  decorators: [withKnobs]
+  title: 'Dialog'
 }
 
 export const standard = () => {

@@ -1,12 +1,11 @@
 import React from 'react'
-import { boolean, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, text } from '@storybook/addon-knobs'
 
 import Input from './'
 import { sizeKnob } from '../utils/stories'
 
 export default {
-  title: 'Input',
-  decorators: [withKnobs]
+  title: 'Input'
 }
 
 export const defaultStory = () => {
@@ -23,9 +22,7 @@ export const defaultStory = () => {
   )
 }
 
-defaultStory.story = {
-  name: 'default'
-}
+defaultStory.storyName = 'default'
 
 export const labeled = () => {
   return (

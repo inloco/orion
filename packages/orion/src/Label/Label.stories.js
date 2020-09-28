@@ -1,13 +1,12 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { text, withKnobs } from '@storybook/addon-knobs'
+import { text } from '@storybook/addon-knobs'
 
 import Label from './'
 import { sizeKnob } from '../utils/stories'
 
 export default {
-  title: 'Label',
-  decorators: [withKnobs]
+  title: 'Label'
 }
 
 export const basic = () => (

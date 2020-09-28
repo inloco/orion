@@ -1,12 +1,6 @@
 import _ from 'lodash'
 import React from 'react'
-import {
-  number,
-  object,
-  radios,
-  boolean,
-  withKnobs
-} from '@storybook/addon-knobs'
+import { number, object, radios, boolean } from '@storybook/addon-knobs'
 
 import { Table } from '../'
 
@@ -17,8 +11,7 @@ const DEFAULT_DATA = [
 ]
 
 export default {
-  title: 'Table',
-  decorators: [withKnobs]
+  title: 'Table'
 }
 
 export const basic = () => {

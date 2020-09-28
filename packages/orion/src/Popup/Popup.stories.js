@@ -1,5 +1,5 @@
 import React from 'react'
-import { text, optionsKnob, radios, withKnobs } from '@storybook/addon-knobs'
+import { text, optionsKnob, radios } from '@storybook/addon-knobs'
 
 import { Button, Popup } from '../'
 import { sizeKnob } from '../utils/stories'
@@ -15,8 +15,7 @@ const onKnob = () =>
   )
 
 export default {
-  title: 'Popup',
-  decorators: [withKnobs]
+  title: 'Popup'
 }
 
 export const basic = () => (
@@ -66,6 +65,4 @@ export const pointingPositions = () => {
   )
 }
 
-pointingPositions.story = {
-  name: 'Pointing - Positions'
-}
+pointingPositions.storyName = 'Pointing - Positions'

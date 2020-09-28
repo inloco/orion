@@ -1,12 +1,11 @@
 import React from 'react'
-import { text, withKnobs } from '@storybook/addon-knobs'
+import { text } from '@storybook/addon-knobs'
 
 import screenshot from './images/screenshot.png'
 import { ZoomImage } from '..'
 
 export default {
-  title: 'ZoomImage',
-  decorators: [withKnobs]
+  title: 'ZoomImage'
 }
 
 export const basic = () => (

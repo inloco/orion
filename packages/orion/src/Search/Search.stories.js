@@ -1,5 +1,5 @@
 import React from 'react'
-import { boolean, object, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, object, text } from '@storybook/addon-knobs'
 
 import { Search } from '../'
 import { sizeKnob } from '../utils/stories'
@@ -15,8 +15,7 @@ const developerOptions = [
 ]
 
 export default {
-  title: 'Search',
-  decorators: [withKnobs]
+  title: 'Search'
 }
 
 export const basic = () => {
