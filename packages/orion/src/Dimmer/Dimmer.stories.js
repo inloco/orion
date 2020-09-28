@@ -1,5 +1,5 @@
 import React from 'react'
-import { boolean } from '@storybook/addon-knobs/react'
+import { boolean } from '@storybook/addon-knobs'
 
 import { Button, Dimmer } from '../'
 

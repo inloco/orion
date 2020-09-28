@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { boolean, text } from '@storybook/addon-knobs/react'
+import { boolean, text } from '@storybook/addon-knobs'
 
 import Button from './'
 import { sizeKnob } from '../utils/stories'

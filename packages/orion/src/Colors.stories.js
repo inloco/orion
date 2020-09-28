@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import _ from 'lodash'
-import { boolean, color } from '@storybook/addon-knobs/react'
+import { boolean, color } from '@storybook/addon-knobs'
 
 import { Colors } from '.'
 
