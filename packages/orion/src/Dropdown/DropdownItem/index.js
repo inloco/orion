@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { Dropdown as SemanticDropdown, Image } from '@inloco/semantic-ui-react'
 
-import Checkbox from '../../Checkbox'
+import { Checkbox, Flag } from '../..'
 import { createShorthandFactory } from '../../utils/factories'
 
 const DropdownItem = ({
@@ -12,6 +12,7 @@ const DropdownItem = ({
   description,
   image,
   text,
+  flag,
   ...otherProps
 }) => {
   const { active } = otherProps
@@ -20,13 +21,12 @@ const DropdownItem = ({
     children = (
       <div className="flex items-center pointer-events-none">
         <Checkbox checked={active} />
-
+        {flag && <Flag name={flag} />}
         {image && (
           <div className="flex-shrink-0">
             {Image.create(image, { autoGenerateKey: false })}
           </div>
         )}
-
         <div className="flex-1 min-w-0">
           <div className="text">{_.isNil(content) ? text : content}</div>
           {!_.isNil(description) && (
@@ -47,7 +47,8 @@ DropdownItem.propTypes = {
   content: PropTypes.node,
   description: PropTypes.node,
   image: PropTypes.oneOfType([PropTypes.node, PropTypes.object]),
-  text: PropTypes.node
+  text: PropTypes.node,
+  flag: PropTypes.string
 }
 
 // Overriding original factory. See src/utils/factories.js for more details.
