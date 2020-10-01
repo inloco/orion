@@ -19,8 +19,8 @@ const DropdownItem = ({
 
   if (!children) {
     children = (
-      <div className="flex items-center pointer-events-none">
-        <Checkbox checked={active} />
+      <div className="flex items-center">
+        <Checkbox checked={active} className="pointer-events-none" />
         {flag && <Flag name={flag} />}
         {image && (
           <div className="flex-shrink-0">
