@@ -1,8 +1,8 @@
 import React from 'react'
 import { text, boolean } from '@storybook/addon-knobs'
 
-import { sizeKnob } from '../utils/stories'
-import { Sizes } from '../utils/sizes'
+import { threeSizesKnob } from '../utils/stories'
+import { ThreeSizes } from '../utils/sizes'
 import { StatusTag, Icon } from '..'
 
 export default {
@@ -10,7 +10,7 @@ export default {
 }
 
 export const inactive = () => {
-  const size = sizeKnob(Sizes.SMALL)
+  const size = threeSizesKnob(ThreeSizes.SMALL)
   const bordered = boolean('Bordered', true)
   const filled = boolean('Filled', false)
   const icon = text('Icon', 'remove_circle')
@@ -28,7 +28,7 @@ export const inactive = () => {
 }
 
 export const neutral = () => {
-  const size = sizeKnob(Sizes.SMALL)
+  const size = threeSizesKnob(ThreeSizes.SMALL)
   const bordered = boolean('Bordered', true)
   const filled = boolean('Filled', false)
   const icon = text('Icon', 'info')
@@ -46,7 +46,7 @@ export const neutral = () => {
 }
 
 export const warning = () => {
-  const size = sizeKnob(Sizes.SMALL)
+  const size = threeSizesKnob(ThreeSizes.SMALL)
   const bordered = boolean('Bordered', true)
   const filled = boolean('Filled', false)
   const icon = text('Icon', 'warning')
@@ -64,7 +64,7 @@ export const warning = () => {
 }
 
 export const error = () => {
-  const size = sizeKnob(Sizes.SMALL)
+  const size = threeSizesKnob(ThreeSizes.SMALL)
   const bordered = boolean('Bordered', true)
   const filled = boolean('Filled', false)
   const icon = text('Icon', 'error')
@@ -82,7 +82,7 @@ export const error = () => {
 }
 
 export const success = () => {
-  const size = sizeKnob(Sizes.SMALL)
+  const size = threeSizesKnob(ThreeSizes.SMALL)
   const bordered = boolean('Bordered', true)
   const filled = boolean('Filled', false)
   const icon = text('Icon', 'check_circle')

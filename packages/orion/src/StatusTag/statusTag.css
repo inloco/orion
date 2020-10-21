@@ -12,6 +12,10 @@
   height: 20px;
 }
 
+.orion.status-tag.large {
+  @apply h-32 px-16 py-8;
+}
+
 .orion.status-tag.bordered {
   @apply border;
 }
