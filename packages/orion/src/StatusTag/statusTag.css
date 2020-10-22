@@ -13,7 +13,7 @@
 }
 
 .orion.status-tag.large {
-  @apply h-32 px-16 py-8;
+  @apply h-32 px-16 py-8 text-base;
 }
 
 .orion.status-tag.bordered {
