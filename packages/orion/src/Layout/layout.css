@@ -20,6 +20,7 @@
   @apply fixed top-0 left-0 z-40;
   @apply flex-shrink-0 items-center h-64 bg-white;
   @apply border-b-1 border-gray-900-16;
+  padding-left: calc(100vw - 100%);
 }
 
 .orion.layout .layout-topbar.dimmed {
@@ -44,6 +45,7 @@
  */
 .orion.layout .layout-main {
   @apply flex-1 py-24 mt-64;
+  padding-left: calc(100vw - 100%);
 }
 
 /**
