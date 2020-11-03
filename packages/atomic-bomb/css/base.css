@@ -6,7 +6,7 @@
 }
 
 body {
-  @apply font-default text-gray-900 leading-20 text-base;
+  @apply font-default text-gray-900 leading-20 text-base overflow-y-scroll;
 }
 
 h1,
