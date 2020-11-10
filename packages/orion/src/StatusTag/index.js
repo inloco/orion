@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { Label } from '@inloco/semantic-ui-react'
 
-import { Sizes, sizePropType } from '../utils/sizes'
+import { Sizes, threeSizesPropType } from '../utils/sizes'
 
 const Types = {
   INACTIVE: 'inactive',
@@ -42,7 +42,7 @@ StatusTag.defaultProps = {
 StatusTag.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
-  size: sizePropType,
+  size: threeSizesPropType,
   type: PropTypes.oneOf(Object.values(Types)),
   bordered: PropTypes.bool,
   filled: PropTypes.bool
