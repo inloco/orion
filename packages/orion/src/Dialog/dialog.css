@@ -20,7 +20,7 @@
 
 .orion.modal.dialog > .header::before {
   @apply font-icons mb-8 text-icon-md text-space-600;
-  content: 'info';
+  content: 'info_outline';
 }
 
 /*--------------
