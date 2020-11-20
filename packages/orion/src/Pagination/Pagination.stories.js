@@ -21,10 +21,11 @@ export const basic = () => (
   <Pagination
     activePage={number('activePage', 1)}
     disabled={boolean('disabled', false)}
-    totalItems={number('totalItems', 232)}
+    totalItems={number('totalItems', 29382)}
     pageSize={number('pageSize', 15)}
     alignButtonsLeft={boolean('alignButtonsLeft', false)}
     i18n={object('i18n', {
+      language: 'en',
       of: 'of',
       results: 'results'
     })}

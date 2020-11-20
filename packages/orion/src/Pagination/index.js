@@ -63,7 +63,9 @@ const Pagination = ({
               {firstPageItem}-{lastPageItem}
             </span>
             <span className="orion-pagination-text">{i18n.of}</span>
-            <span className="orion-pagination-value">{totalItems}</span>
+            <span className="orion-pagination-value">
+              {totalItems.toLocaleString(i18n.language)}
+            </span>
           </>
         )}
         <span className="orion-pagination-text">{i18n.results}</span>
@@ -107,6 +109,7 @@ Pagination.propTypes = {
   disabled: PropTypes.bool,
   loading: PropTypes.bool,
   i18n: PropTypes.shape({
+    language: PropTypes.string,
     of: PropTypes.string,
     results: PropTypes.string
   }),
@@ -121,6 +124,7 @@ Pagination.propTypes = {
 Pagination.defaultProps = {
   activePage: 1,
   i18n: {
+    language: 'en',
     of: 'of',
     results: 'results'
   },
