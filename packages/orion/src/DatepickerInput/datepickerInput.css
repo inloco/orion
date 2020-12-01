@@ -3,7 +3,7 @@
 }
 
 .datepicker-input-trigger {
-  width: fit-content;
+  @apply inline-block w-auto;
 }
 
 .datepicker-input-trigger.fluid {

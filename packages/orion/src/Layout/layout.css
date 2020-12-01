@@ -77,7 +77,6 @@
 .orion.layout .layout-apps-dropdown > .menu {
   @apply bg-gray-100 left-0;
   min-width: 206px;
-  width: fit-content;
   transform: translateX(calc(-50% + 20px));
 }
 
