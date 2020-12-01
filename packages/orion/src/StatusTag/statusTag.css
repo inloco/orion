@@ -3,9 +3,8 @@
 *******************************/
 
 .orion.status-tag {
-  @apply flex text-sm h-24;
+  @apply inline-flex text-sm h-24 w-auto;
   @apply rounded-full bg-transparent;
-  width: fit-content;
 }
 
 .orion.status-tag.small {
