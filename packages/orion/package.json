@@ -14,9 +14,9 @@
     "watch": "gulp watch",
     "test": "jest",
     "test:watch": "jest --watch",
-    "build:storybook": "yarn build && build-storybook -o .out -s public",
+    "build:storybook": "yarn build && build-storybook -o .out",
     "start": "yarn build && yarn watch",
-    "storybook": "start-storybook -p 9001 -s public",
+    "storybook": "start-storybook -p 9001",
     "deploy:storybook": "yarn build:storybook && storybook-to-ghpages",
     "prepublishOnly": "yarn build",
     "postpublish": "yarn deploy:storybook",
@@ -106,5 +106,6 @@
   },
   "storybook-deployer": {
     "commitMessage": "Deploy Storybook to GitHub Pages [ci skip]"
-  }
+  },
+  "gitHead": "739862130b4375112c703f30943ec87e694283e0"
 }
