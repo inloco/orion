@@ -19,7 +19,8 @@
   @apply mt-4 leading-14 text-gray-800 text-sm;
 }
 
-.orion.dropdown .menu > .item .image {
+.orion.dropdown .menu > .item .image,
+.orion.dropdown .label-text > .image {
   @apply mr-8 rounded-full border border-gray-900-8 w-24 h-24;
 }
 

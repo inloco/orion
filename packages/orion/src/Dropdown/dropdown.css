@@ -227,3 +227,11 @@
 .orion.dropdown .menu > .divider {
   @apply border-t border-gray-900-16;
 }
+
+/**
+ * Label text
+ */
+
+.orion.dropdown .label-text {
+  @apply flex items-center;
+}
