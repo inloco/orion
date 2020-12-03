@@ -35,13 +35,13 @@
 
 .orion.popup.top:before {
   @apply top-auto right-auto;
-  bottom: -6px;
+  bottom: 6px;
   box-shadow: 1px 1px 0 0 rgba(61, 62, 63, 0.08);
 }
 
 .orion.popup.bottom:before {
   @apply bottom-auto right-auto;
-  top: -6px;
+  top: 6px;
   box-shadow: -1px -1px 0 0 rgba(61, 62, 63, 0.08);
 }
 
@@ -64,19 +64,19 @@
 .orion.popup.left.center:before,
 .orion.popup.right.center:before {
   @apply bottom-auto;
-  margin-top: -6px;
+  margin-top: 6px;
   top: 50%;
 }
 
 .orion.popup.left.center:before {
-  @apply left-auto;
-  right: -6px;
+  @apply left-auto top-auto;
+  right: 3px;
   box-shadow: 1px -1px 0 0 rgba(61, 62, 63, 0.08);
 }
 
 .orion.popup.right.center:before {
-  @apply right-auto;
-  left: -6px;
+  @apply right-auto top-auto;
+  left: 3px;
   box-shadow: -1px 1px 0 0 rgba(61, 62, 63, 0.08);
 }
 
