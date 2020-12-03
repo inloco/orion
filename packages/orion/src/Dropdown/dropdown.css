@@ -131,6 +131,10 @@
   @apply hidden;
 }
 
+.orion.dropdown.multiple.search > .label ~ .text {
+  @apply hidden;
+}
+
 /**
  * Search + Multiple
  */
