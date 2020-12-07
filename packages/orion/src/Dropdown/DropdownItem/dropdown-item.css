@@ -15,6 +15,10 @@
   @apply bg-gray-100;
 }
 
+.orion.dropdown .menu > .item.disabled {
+  @apply cursor-default opacity-32;
+}
+
 .orion.dropdown .menu > .item .description {
   @apply mt-4 leading-14 text-gray-800 text-sm;
 }
