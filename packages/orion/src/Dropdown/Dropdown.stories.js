@@ -16,8 +16,8 @@ const actions = {
 
 const developerOptions = [
   { text: 'Francisco Gileno', value: 1 },
-  { text: 'Rafael Nunes', value: 2 },
-  { text: 'Maíra Bello', value: 3 }
+  { text: 'Rafael Nunes', value: 2, disabled: true },
+  { text: 'Maíra Bello', value: 3, disabled: true }
 ]
 
 export default {
