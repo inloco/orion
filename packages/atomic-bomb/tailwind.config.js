@@ -129,18 +129,20 @@ module.exports = {
         '500-16': Color(theme('colors').wave['500']).alpha(0.16).string(),
         '500-40': Color(theme('colors').wave['500']) // Disabled button
           .alpha(0.4)
-          .string(),
+          .string()
+      },
+      space: {
+        ..._.pick(theme('colors.space'), [
+          '50',
+          '100',
+          '200',
+          '300',
+          '500',
+          '600',
+          '800'
+        ]),
         '700-48': Color(theme('colors').space['700']).alpha(0.48).string()
       },
-      space: _.pick(theme('colors.space'), [
-        '50',
-        '100',
-        '200',
-        '300',
-        '500',
-        '600',
-        '800'
-      ]),
       green: _.pick(theme('colors.green'), ['50', '500', '600', '700', '800']),
       yellow: _.pick(theme('colors.yellow'), ['50', '500', '600', '700']),
       magenta: _.pick(theme('colors.magenta'), ['50', '500', '600', '700']),
