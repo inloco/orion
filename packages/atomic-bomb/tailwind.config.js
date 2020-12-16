@@ -79,18 +79,18 @@ module.exports = {
       }
     },
     spacing: {
-      '0': '0',
-      '2': '2px',
-      '4': '4px',
-      '8': '8px',
-      '12': '12px',
-      '16': '16px',
-      '24': '24px',
-      '32': '32px',
-      '40': '40px',
-      '48': '48px',
-      '64': '64px',
-      '96': '96px'
+      0: '0',
+      2: '2px',
+      4: '4px',
+      8: '8px',
+      12: '12px',
+      16: '16px',
+      24: '24px',
+      32: '32px',
+      40: '40px',
+      48: '48px',
+      64: '64px',
+      96: '96px'
     },
 
     backgroundColor: theme => ({
@@ -129,7 +129,8 @@ module.exports = {
         '500-16': Color(theme('colors').wave['500']).alpha(0.16).string(),
         '500-40': Color(theme('colors').wave['500']) // Disabled button
           .alpha(0.4)
-          .string()
+          .string(),
+        '700-48': Color(theme('colors').space['700']).alpha(0.48).string()
       },
       space: _.pick(theme('colors.space'), [
         '50',
@@ -167,8 +168,8 @@ module.exports = {
     },
     borderColor: theme => ({
       gray: {
-        '400': Color(theme('colors').gray['400']).string(),
-        '700': Color(theme('colors').gray['700']).string(),
+        400: Color(theme('colors').gray['400']).string(),
+        700: Color(theme('colors').gray['700']).string(),
         '900-8': Color(theme('colors').gray['900']).alpha(0.08).string(),
         '900-16': Color(theme('colors').gray['900']).alpha(0.16).string(),
         '900-24': Color(theme('colors').gray['900']).alpha(0.24).string()
@@ -192,9 +193,9 @@ module.exports = {
     },
     borderWidth: {
       default: '1px',
-      '2': '2px',
-      '1': '1px',
-      '0': '0'
+      2: '2px',
+      1: '1px',
+      0: '0'
     },
     boxShadow: {
       100: '0 0 0 1px rgba(61, 62, 63, .16)',
@@ -226,17 +227,17 @@ module.exports = {
       ...theme('textColor')
     }),
     flex: {
-      '1': '1 1 0%',
+      1: '1 1 0%',
       auto: '1 1 auto',
       initial: '0 1 auto',
       none: 'none'
     },
     flexGrow: {
-      '0': '0',
+      0: '0',
       default: '1'
     },
     flexShrink: {
-      '0': '0',
+      0: '0',
       default: '1'
     },
     fontFamily: {
@@ -264,7 +265,7 @@ module.exports = {
       screen: '100vh'
     }),
     inset: {
-      '0': '0',
+      0: '0',
       auto: 'auto'
     },
     letterSpacing: {
@@ -272,12 +273,12 @@ module.exports = {
     },
     lineHeight: {
       // 12/14, 14/20, 20/24, 24/28
-      '14': '14px',
-      '20': '20px',
-      '24': '24px',
+      14: '14px',
+      20: '20px',
+      24: '24px',
       // TODO: refactor line heights to use 14/20, 12/18, 18/24
-      '18': '18px',
-      '26': '26px'
+      18: '18px',
+      26: '26px'
     },
     listStyleType: {
       none: 'none',
@@ -293,18 +294,18 @@ module.exports = {
       screen: '100vh'
     },
     maxWidth: theme => ({
-      '384': '384px',
+      384: '384px',
       full: '100%'
     }),
     minHeight: theme => ({
-      '0': '0',
+      0: '0',
       ...theme('spacing'),
       full: '100%',
       screen: '100vh'
     }),
     minWidth: theme => ({
-      '0': '0',
-      '238': '238px',
+      0: '0',
+      238: '238px',
       ...theme('spacing'),
       full: '100%'
     }),
@@ -320,33 +321,33 @@ module.exports = {
       top: 'top'
     },
     opacity: {
-      '0': '0',
-      '8': '0.08',
-      '16': '0.16',
-      '24': '0.24',
-      '32': '0.32',
-      '40': '0.40',
-      '48': '0.48',
-      '64': '0.64',
-      '80': '0.80',
-      '100': '1'
+      0: '0',
+      8: '0.08',
+      16: '0.16',
+      24: '0.24',
+      32: '0.32',
+      40: '0.40',
+      48: '0.48',
+      64: '0.64',
+      80: '0.80',
+      100: '1'
     },
     order: {
       first: '-9999',
       last: '9999',
       none: '0',
-      '1': '1',
-      '2': '2',
-      '3': '3',
-      '4': '4',
-      '5': '5',
-      '6': '6',
-      '7': '7',
-      '8': '8',
-      '9': '9',
-      '10': '10',
-      '11': '11',
-      '12': '12'
+      1: '1',
+      2: '2',
+      3: '3',
+      4: '4',
+      5: '5',
+      6: '6',
+      7: '7',
+      8: '8',
+      9: '9',
+      10: '10',
+      11: '11',
+      12: '12'
     },
     padding: theme => theme('spacing'),
     space: theme => theme('spacing'),
@@ -366,8 +367,8 @@ module.exports = {
     width: theme => ({
       auto: 'auto',
       ...theme('spacing'),
-      '238': '238px',
-      '384': '384px',
+      238: '238px',
+      384: '384px',
       '1/2': '50%',
       '1/3': '33.33333%',
       '2/3': '66.66667%',
@@ -400,12 +401,12 @@ module.exports = {
     }),
     zIndex: {
       auto: 'auto',
-      '0': '0',
-      '10': '10',
-      '20': '20',
-      '30': '30',
-      '40': '40',
-      '50': '50'
+      0: '0',
+      10: '10',
+      20: '20',
+      30: '30',
+      40: '40',
+      50: '50'
     }
   },
   variants: {
