@@ -3,11 +3,10 @@
 }
 
 .orion.popup:before {
-  @apply absolute bg-white;
+  @apply absolute bg-white transform rotate-45;
 
   content: '';
   height: 12px;
-  transform: rotate(45deg);
   width: 12px;
 }
 
@@ -63,19 +62,19 @@
 
 .orion.popup.left.center:before,
 .orion.popup.right.center:before {
-  @apply bottom-auto;
+  @apply bottom-auto -translate-y-full;
   margin-top: 6px;
   top: 50%;
 }
 
 .orion.popup.left.center:before {
-  @apply left-auto top-auto;
+  @apply left-auto;
   right: 3px;
   box-shadow: 1px -1px 0 0 rgba(61, 62, 63, 0.08);
 }
 
 .orion.popup.right.center:before {
-  @apply right-auto top-auto;
+  @apply right-auto;
   left: 3px;
   box-shadow: -1px 1px 0 0 rgba(61, 62, 63, 0.08);
 }
