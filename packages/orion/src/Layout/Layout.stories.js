@@ -9,9 +9,11 @@ import myapps from '../../storyImages/myapps.svg'
 import appImage from '../../storyImages/app.png'
 import { Icon, Layout, Menu } from '../'
 
-export default {
+const storyMetadata = {
   title: 'Layout'
 }
+
+export default storyMetadata
 
 export const basic = () => (
   <Layout className="absolute left-0 top-0 w-full">

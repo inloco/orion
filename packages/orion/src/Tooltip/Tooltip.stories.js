@@ -3,9 +3,11 @@ import { radios, text } from '@storybook/addon-knobs'
 
 import { Button, Tooltip } from '../'
 
-export default {
+const storyMetadata = {
   title: 'Tooltip'
 }
+
+export default storyMetadata
 
 export const basic = () => (
   <Tooltip

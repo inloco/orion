@@ -20,9 +20,11 @@ const developerOptions = [
   { text: 'Maíra Bello', value: 3, disabled: true }
 ]
 
-export default {
+const storyMetadata = {
   title: 'Dropdown'
 }
+
+export default storyMetadata
 
 export const basic = () => {
   const menuOptions = [

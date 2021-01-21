@@ -75,7 +75,7 @@
     "cssnano": "^4.1.10",
     "del": "^6.0.0",
     "eslint": "7.x",
-    "eslint-config-react-app": "^5.0.2",
+    "eslint-config-react-app": "^6.0.0",
     "eslint-plugin-flowtype": "5.x",
     "eslint-plugin-import": "2.x",
     "eslint-plugin-jsx-a11y": "6.x",

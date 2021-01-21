@@ -5,9 +5,11 @@ import { text } from '@storybook/addon-knobs'
 import Label from './'
 import { sizeKnob } from '../utils/stories'
 
-export default {
+const storyMetadata = {
   title: 'Label'
 }
+
+export default storyMetadata
 
 export const basic = () => (
   <Label

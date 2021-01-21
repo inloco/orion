@@ -5,9 +5,11 @@ import { object } from '@storybook/addon-knobs'
 import { Menu } from '../'
 import { sizeKnob } from '../utils/stories'
 
-export default {
+const storyMetadata = {
   title: 'Menu'
 }
+
+export default storyMetadata
 
 export const basic = () => {
   return (

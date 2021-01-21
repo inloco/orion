@@ -3,9 +3,11 @@ import { boolean, text } from '@storybook/addon-knobs'
 
 import { Checkbox } from '../'
 
-export default {
+const storyMetadata = {
   title: 'Checkbox'
 }
+
+export default storyMetadata
 
 export const regular = () => (
   <React.Fragment>

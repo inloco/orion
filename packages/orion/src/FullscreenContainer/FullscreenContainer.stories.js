@@ -3,9 +3,11 @@ import { text } from '@storybook/addon-knobs'
 
 import { FullscreenContainer, Button } from '../'
 
-export default {
+const storyMetadata = {
   title: 'FullscreenContainer'
 }
+
+export default storyMetadata
 
 export const defaultStory = () => {
   return (

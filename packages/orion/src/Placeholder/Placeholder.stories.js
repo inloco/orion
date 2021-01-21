@@ -3,9 +3,11 @@ import { radios, boolean } from '@storybook/addon-knobs'
 
 import { Placeholder } from '../'
 
-export default {
+const storyMetadata = {
   title: 'Placeholder'
 }
+
+export default storyMetadata
 
 const sizeKnob = (defaultValue = 'full', groupId) =>
   radios(

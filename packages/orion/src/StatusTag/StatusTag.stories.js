@@ -5,9 +5,11 @@ import { threeSizesKnob } from '../utils/stories'
 import { ThreeSizes } from '../utils/sizes'
 import { StatusTag, Icon } from '..'
 
-export default {
+const storyMetadata = {
   title: 'StatusTag'
 }
+
+export default storyMetadata
 
 export const inactive = () => {
   const size = threeSizesKnob(ThreeSizes.SMALL)

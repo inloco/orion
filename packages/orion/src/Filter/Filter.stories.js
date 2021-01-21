@@ -14,9 +14,11 @@ const actions = {
   onClose: action('onClose')
 }
 
-export default {
+const storyMetadata = {
   title: 'Filter'
 }
+
+export default storyMetadata
 
 export const withInput = () => (
   <Filter

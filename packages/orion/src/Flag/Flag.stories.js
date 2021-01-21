@@ -3,9 +3,11 @@ import { text } from '@storybook/addon-knobs'
 
 import { Flag } from '../'
 
-export default {
+const storyMetadata = {
   title: 'Flag'
 }
+
+export default storyMetadata
 
 export const basic = () => <Flag name={text('Name', 'br')} />
 

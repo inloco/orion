@@ -1,4 +1,4 @@
-export default {
+const animationData = {
   v: '5.5.1',
   fr: 24,
   ip: 0,
@@ -1386,3 +1386,5 @@ export default {
   ],
   markers: []
 }
+
+export default animationData

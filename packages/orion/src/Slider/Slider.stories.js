@@ -4,9 +4,11 @@ import { number } from '@storybook/addon-knobs'
 import { Slider } from '..'
 import './Slider.stories.css'
 
-export default {
+const storyMetadata = {
   title: 'Slider'
 }
+
+export default storyMetadata
 
 export const basic = () => {
   return <Slider />

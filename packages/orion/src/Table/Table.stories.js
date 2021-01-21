@@ -10,9 +10,11 @@ const DEFAULT_DATA = [
   ['Gileno', 'Accounts']
 ]
 
-export default {
+const storyMetadata = {
   title: 'Table'
 }
+
+export default storyMetadata
 
 export const basic = () => {
   const headers = object('Headers', DEFAULT_HEADERS)

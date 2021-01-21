@@ -9,10 +9,12 @@ const actions = {
   onClick: action('onClick')
 }
 
-export default {
+const storyMetadata = {
   title: 'Button',
   excludeStories: ['actions']
 }
+
+export default storyMetadata
 
 export const primary = () => {
   const disabled = boolean('Disabled')

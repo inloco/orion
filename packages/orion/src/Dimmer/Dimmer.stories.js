@@ -3,9 +3,11 @@ import { boolean } from '@storybook/addon-knobs'
 
 import { Button, Dimmer } from '../'
 
-export default {
+const storyMetadata = {
   title: 'Dimmer'
 }
+
+export default storyMetadata
 
 export const basic = () => {
   return (

@@ -3,9 +3,11 @@ import { boolean, text } from '@storybook/addon-knobs'
 
 import { Toggle } from '../'
 
-export default {
+const storyMetadata = {
   title: 'Toggle'
 }
+
+export default storyMetadata
 
 export const regular = () => (
   <React.Fragment>

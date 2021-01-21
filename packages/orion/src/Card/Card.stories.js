@@ -3,9 +3,11 @@ import { boolean, text } from '@storybook/addon-knobs'
 
 import { Button, Card } from '../'
 
-export default {
+const storyMetadata = {
   title: 'Card'
 }
+
+export default storyMetadata
 
 export const basic = () => {
   const header = text('Header', 'Header Title')

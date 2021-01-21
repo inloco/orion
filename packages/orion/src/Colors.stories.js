@@ -6,9 +6,11 @@ import { boolean, color } from '@storybook/addon-knobs'
 
 import { Colors } from '.'
 
-export default {
+const storyMetadata = {
   title: 'Colors'
 }
+
+export default storyMetadata
 
 ColorCard.propTypes = {
   className: PropTypes.string,

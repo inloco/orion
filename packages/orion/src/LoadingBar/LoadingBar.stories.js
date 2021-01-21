@@ -3,9 +3,11 @@ import { text } from '@storybook/addon-knobs'
 
 import { LoadingBar } from '../'
 
-export default {
+const storyMetadata = {
   title: 'LoadingBar'
 }
+
+export default storyMetadata
 
 export const defaultStory = () => (
   <div className="h-screen">

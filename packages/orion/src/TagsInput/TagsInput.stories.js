@@ -5,9 +5,11 @@ import { action } from '@storybook/addon-actions'
 import { Form, Button, TagsInput } from '..'
 import { Sizes } from '../utils/sizes'
 
-export default {
+const storyMetadata = {
   title: 'TagsInput'
 }
+
+export default storyMetadata
 
 export const basic = () => (
   <TagsInput

@@ -15,10 +15,12 @@ const NotificationCenterDecorator = storyFn => (
   </>
 )
 
-export default {
+const storyMetadata = {
   title: 'NotificationCenter',
   decorators: [NotificationCenterDecorator]
 }
+
+export default storyMetadata
 
 export const basic = () => (
   <>

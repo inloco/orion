@@ -4,9 +4,11 @@ import { number, text } from '@storybook/addon-knobs'
 import { Progress } from '../'
 import { sizeKnob } from '../utils/stories'
 
-export default {
+const storyMetadata = {
   title: 'Progress'
 }
+
+export default storyMetadata
 
 export const basic = () => (
   <Progress
