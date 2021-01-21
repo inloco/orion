@@ -9,9 +9,11 @@ const actions = {
   onDatesChange: action('onDatesChange')
 }
 
-export default {
+const storyMetadata = {
   title: 'RangedDatepicker'
 }
+
+export default storyMetadata
 
 export const basic = () => {
   const startDate = text('Start Date') || null

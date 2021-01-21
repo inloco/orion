@@ -5,9 +5,11 @@ import { sizeKnob } from '../utils/stories'
 
 import { CopyIcon } from '..'
 
-export default {
+const storyMetadata = {
   title: 'CopyIcon'
 }
+
+export default storyMetadata
 
 export const basic = () => (
   <CopyIcon

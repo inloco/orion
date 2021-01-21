@@ -3,9 +3,11 @@ import { text, boolean, radios } from '@storybook/addon-knobs'
 
 import { InfoIcon } from '../'
 
-export default {
+const storyMetadata = {
   title: 'InfoIcon'
 }
+
+export default storyMetadata
 
 export const basic = () => (
   <div className="mt-24">

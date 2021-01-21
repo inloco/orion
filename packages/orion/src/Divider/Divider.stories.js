@@ -2,9 +2,11 @@ import React from 'react'
 
 import { Divider } from '../'
 
-export default {
+const storyMetadata = {
   title: 'Divider'
 }
+
+export default storyMetadata
 
 export const horizontal = () => {
   return (

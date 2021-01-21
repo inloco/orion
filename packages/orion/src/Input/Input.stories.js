@@ -4,9 +4,11 @@ import { boolean, text } from '@storybook/addon-knobs'
 import Input from './'
 import { sizeKnob } from '../utils/stories'
 
-export default {
+const storyMetadata = {
   title: 'Input'
 }
+
+export default storyMetadata
 
 export const defaultStory = () => {
   return (

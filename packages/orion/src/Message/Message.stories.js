@@ -4,9 +4,11 @@ import { action } from '@storybook/addon-actions'
 
 import Message from './'
 
-export default {
+const storyMetadata = {
   title: 'Message'
 }
+
+export default storyMetadata
 
 export const basic = () => (
   <Message

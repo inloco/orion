@@ -3,9 +3,11 @@ import { action } from '@storybook/addon-actions'
 
 import { Card, Dropdown, Tour } from '../'
 
-export default {
+const storyMetadata = {
   title: 'Tour'
 }
+
+export default storyMetadata
 
 export const Basic = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false)

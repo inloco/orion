@@ -3,9 +3,11 @@ import { boolean, text } from '@storybook/addon-knobs'
 
 import { Radio } from '../'
 
-export default {
+const storyMetadata = {
   title: 'Radio'
 }
+
+export default storyMetadata
 
 export const regular = () => (
   <React.Fragment>

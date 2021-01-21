@@ -17,10 +17,12 @@ const buttons = {
   [Wizard.Buttons.FINISH]: <Button onClick={actions.onFinish}>Complete</Button>
 }
 
-export default {
+const storyMetadata = {
   title: 'Wizard',
   excludeStories: ['actions']
 }
+
+export default storyMetadata
 
 export const basic = () => {
   return (

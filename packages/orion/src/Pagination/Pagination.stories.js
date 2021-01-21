@@ -12,10 +12,12 @@ const actions = {
   onNextPage: action('onNextPage')
 }
 
-export default {
+const storyMetadata = {
   title: 'Pagination',
   excludeStories: ['actions']
 }
+
+export default storyMetadata
 
 export const basic = () => (
   <Pagination

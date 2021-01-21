@@ -3,9 +3,11 @@ import { text } from '@storybook/addon-knobs'
 
 import { Button, Modal } from '../'
 
-export default {
+const storyMetadata = {
   title: 'Modal'
 }
+
+export default storyMetadata
 
 export const standard = () => {
   return (

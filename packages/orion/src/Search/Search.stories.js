@@ -14,9 +14,11 @@ const developerOptions = [
   { title: 'Maira Bello', value: 3 }
 ]
 
-export default {
+const storyMetadata = {
   title: 'Search'
 }
+
+export default storyMetadata
 
 export const basic = () => {
   return (

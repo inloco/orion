@@ -11,9 +11,11 @@ const developerOptions = [
   { text: 'Maira Bello', value: 3 }
 ]
 
-export default {
+const storyMetadata = {
   title: 'Form'
 }
+
+export default storyMetadata
 
 export const subcomponents = () => (
   <Form>

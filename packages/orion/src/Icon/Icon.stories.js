@@ -5,9 +5,11 @@ import { text } from '@storybook/addon-knobs'
 
 import { Card, Icon } from '../'
 
-export default {
+const storyMetadata = {
   title: 'Icon'
 }
+
+export default storyMetadata
 
 export const basic = () => (
   <Icon color={text('Color')} name={text('icon', 'cloud')} />

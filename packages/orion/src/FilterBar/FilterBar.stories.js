@@ -8,9 +8,11 @@ const actions = {
   onChange: action('onChange')
 }
 
-export default {
+const storyMetadata = {
   title: 'FilterBar'
 }
+
+export default storyMetadata
 
 export const basic = () => (
   <FilterBar {...actions}>

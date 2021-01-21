@@ -9,9 +9,11 @@ const actions = {
   onChange: action('onChange')
 }
 
-export default {
+const storyMetadata = {
   title: 'DatepickerInput'
 }
+
+export default storyMetadata
 
 export const basic = () => (
   <DatepickerInput

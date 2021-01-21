@@ -14,9 +14,11 @@ const onKnob = () =>
     }
   )
 
-export default {
+const storyMetadata = {
   title: 'Popup'
 }
+
+export default storyMetadata
 
 export const basic = () => (
   <Popup

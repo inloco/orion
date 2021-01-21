@@ -10,9 +10,11 @@ const actions = {
   onClear: action('onClear')
 }
 
-export default {
+const storyMetadata = {
   title: 'MultiSelectFilter'
 }
+
+export default storyMetadata
 
 export const basic = () => {
   const options = object('Options', [

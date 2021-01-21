@@ -8,9 +8,11 @@ const actions = {
   onDateChange: action('onDateChange')
 }
 
-export default {
+const storyMetadata = {
   title: 'Datepicker'
 }
+
+export default storyMetadata
 
 export const basic = () => (
   <Datepicker numberOfMonths={number('Number of months', 1)} {...actions} />
