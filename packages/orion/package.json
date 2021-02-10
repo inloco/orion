@@ -41,7 +41,7 @@
     "react-copy-to-clipboard": "^5.0.2",
     "react-dates": "^20.2.5",
     "react-lottie": "^1.2.3",
-    "react-toastify": "^7.0.3",
+    "react-toastify": "^6.0.5",
     "reactour": "^1.17.0",
     "styled-components": "^5.1.0"
   },
