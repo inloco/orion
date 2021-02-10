@@ -5,13 +5,16 @@ import React from 'react'
 import TopbarDivider from './TopbarDivider'
 import LayoutCenter from '../LayoutCenter'
 import Logo from '../../Logo'
+import { Alert, useAlert } from '../LayoutAlert'
 
 const LayoutTopbar = ({ className, children, logo, dimmed, ...otherProps }) => {
   const classes = cx('layout-topbar', { dimmed }, className)
+  const alert = useAlert()
   return (
     <LayoutCenter className={classes} {...otherProps}>
       {logo || <Logo className="mb-4" />}
       {children}
+      {alert && <Alert alert={alert} />}
     </LayoutCenter>
   )
 }
