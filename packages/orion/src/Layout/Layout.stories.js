@@ -15,6 +15,10 @@ const storyMetadata = {
 
 export default storyMetadata
 
+const paragraphs = _.times(10, () =>
+  loremIpsum({ count: 1, units: 'paragraph' })
+)
+
 export const basic = () => (
   <Layout className="absolute left-0 top-0 w-full">
     <Layout.Topbar dimmed={boolean('Dimmed', false, 'Topbar')}>
@@ -97,8 +101,11 @@ export const basic = () => (
       </Layout.UserProfile>
     </Layout.Topbar>
     <Layout.Main>
-      {_.times(10, index => (
-        <p key={index}>{loremIpsum({ count: 1, units: 'paragraph' })}</p>
+      {boolean('Enabled', true, 'Alert') && (
+        <Layout.Alert message={text('Message', 'This is an Alert', 'Alert')} />
+      )}
+      {_.map(paragraphs, (paragraph, index) => (
+        <p key={index}>{paragraph}</p>
       ))}
     </Layout.Main>
   </Layout>

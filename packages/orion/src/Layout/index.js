@@ -1,31 +1,32 @@
-import cx from 'classnames'
-import PropTypes from 'prop-types'
 import React from 'react'
 
+import Layout from './Layout'
+import LayoutAlert, { AlertContextProvider } from './LayoutAlert'
 import LayoutAppsDropdown from './LayoutAppsDropdown'
 import LayoutCenter from './LayoutCenter'
 import LayoutMain from './LayoutMain'
 import LayoutTopbar from './LayoutTopbar'
 import LayoutUserProfile from './LayoutUserProfile'
 
-const Layout = ({ className, children, ...otherProps }) => {
-  const classes = cx('orion layout', className)
+const Dimensions = {
+  topbarHeight: 64,
+  alertHeight: 40
+}
+
+const LayoutIndex = props => {
   return (
-    <div className={classes} {...otherProps}>
-      {children}
-    </div>
+    <AlertContextProvider>
+      <Layout {...props} />
+    </AlertContextProvider>
   )
 }
 
-Layout.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node
-}
+LayoutIndex.Alert = LayoutAlert
+LayoutIndex.AppsDropdown = LayoutAppsDropdown
+LayoutIndex.Center = LayoutCenter
+LayoutIndex.Main = LayoutMain
+LayoutIndex.Topbar = LayoutTopbar
+LayoutIndex.UserProfile = LayoutUserProfile
+LayoutIndex.Dimensions = Dimensions
 
-Layout.AppsDropdown = LayoutAppsDropdown
-Layout.Center = LayoutCenter
-Layout.Main = LayoutMain
-Layout.Topbar = LayoutTopbar
-Layout.UserProfile = LayoutUserProfile
-
-export default Layout
+export default LayoutIndex
