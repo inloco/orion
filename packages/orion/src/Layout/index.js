@@ -8,6 +8,11 @@ import LayoutMain from './LayoutMain'
 import LayoutTopbar from './LayoutTopbar'
 import LayoutUserProfile from './LayoutUserProfile'
 
+const Dimensions = {
+  topbarHeight: 64,
+  alertHeight: 40
+}
+
 const LayoutIndex = props => {
   return (
     <AlertContextProvider>
@@ -22,5 +27,6 @@ LayoutIndex.Center = LayoutCenter
 LayoutIndex.Main = LayoutMain
 LayoutIndex.Topbar = LayoutTopbar
 LayoutIndex.UserProfile = LayoutUserProfile
+LayoutIndex.Dimensions = Dimensions
 
 export default LayoutIndex
