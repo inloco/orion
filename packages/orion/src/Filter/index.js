@@ -49,7 +49,7 @@ const Filter = ({
     onClose && onClose()
 
     // Prevent form submission.
-    event.preventDefault()
+    event?.preventDefault()
   }
 
   const handleClear = () => {
