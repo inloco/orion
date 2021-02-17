@@ -10,8 +10,8 @@ const ReactDatesDatepicker = ({ as: ElementType, ...otherProps }) => (
     hideKeyboardShortcutsPanel
     horizontalMonthPadding={15}
     daySize={40}
-    navPrev={<Button icon="keyboard_arrow_left" />}
-    navNext={<Button icon="keyboard_arrow_right" />}
+    navPrev={<Button subtle icon="keyboard_arrow_left" />}
+    navNext={<Button subtle icon="keyboard_arrow_right" />}
     {...otherProps}
   />
 )
