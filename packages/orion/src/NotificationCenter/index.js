@@ -37,7 +37,7 @@ NotificationCenter.defaultProps = {
 
 export default NotificationCenter
 
-const NotitificationTypes = {
+const NotificationTypes = {
   ERROR: 'error',
   SUCCESS: 'success',
   WARNING: 'warning'
@@ -72,22 +72,22 @@ const buildNotification = ({ options, type, inline = false }) => (
 }
 
 NotificationCenter.error = buildNotification({
-  type: NotitificationTypes.ERROR
+  type: NotificationTypes.ERROR
 })
 
 NotificationCenter.success = buildNotification({
   options: {
     autoClose: 5000
   },
-  type: NotitificationTypes.SUCCESS
+  type: NotificationTypes.SUCCESS
 })
 
 NotificationCenter.warning = buildNotification({
-  type: NotitificationTypes.WARNING
+  type: NotificationTypes.WARNING
 })
 
 NotificationCenter.inlineError = buildNotification({
-  type: NotitificationTypes.ERROR,
+  type: NotificationTypes.ERROR,
   inline: true
 })
 
@@ -95,11 +95,11 @@ NotificationCenter.inlineSuccess = buildNotification({
   options: {
     autoClose: 5000
   },
-  type: NotitificationTypes.SUCCESS,
+  type: NotificationTypes.SUCCESS,
   inline: true
 })
 
 NotificationCenter.inlineWarning = buildNotification({
-  type: NotitificationTypes.WARNING,
+  type: NotificationTypes.WARNING,
   inline: true
 })
