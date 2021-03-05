@@ -19,6 +19,8 @@ const TableCell = ({
   content,
   highlight,
   horizontalAlign,
+  as,
+  href,
   ...otherProps
 }) => {
   const classes = cx('orion inner-cell', className, { highlight })
@@ -26,13 +28,18 @@ const TableCell = ({
     [ALIGN_TO_JUSTIFY_CONTENT[horizontalAlign]]: !!horizontalAlign
   })
   const childContent = content || children
+
+  // Infer anchor links;
+  // If the href prop were passed to SemanticTable.Cell,
+  // the td would be inferred to an anchor
+  const ElementType = href ? 'a' : as
   return (
     <SemanticTable.Cell
       title={_.isString(childContent) ? childContent : null}
       {...otherProps}>
-      <div className={classes}>
+      <ElementType className={classes}>
         <div className={wrapperClasses}>{childContent}</div>
-      </div>
+      </ElementType>
     </SemanticTable.Cell>
   )
 }
@@ -42,7 +49,13 @@ TableCell.propTypes = {
   className: PropTypes.string,
   content: PropTypes.node,
   highlight: PropTypes.bool,
-  horizontalAlign: PropTypes.oneOf(_.values(HorizontalAlignValues))
+  horizontalAlign: PropTypes.oneOf(_.values(HorizontalAlignValues)),
+  as: PropTypes.elementType,
+  href: PropTypes.string
+}
+
+TableCell.defaultProps = {
+  as: 'div'
 }
 
 // Overriding original factory. See src/utils/factories.js for more details.
