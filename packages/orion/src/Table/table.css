@@ -45,6 +45,7 @@
 
 .orion.table tbody > .table-row {
   @apply table-row;
+  vertical-align: inherit;
 }
 
 .orion.table tbody > .table-row > td {
