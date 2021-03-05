@@ -65,8 +65,8 @@
 }
 
 .orion.table tbody > .table-row > td > .inner-cell {
-  @apply bg-white;
-  @apply border-t-1 border-b-1 border-gray-900-8;
+  @apply bg-white text-gray-900 font-normal;
+  @apply block border-t-1 border-b-1 border-gray-900-8;
   @apply px-12 mt-8;
   height: 54px;
 }
