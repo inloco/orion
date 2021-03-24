@@ -40,29 +40,29 @@ module.exports = {
         600: Colors.MAGENTA_600,
         700: Colors.MAGENTA_700
       },
-      space: {
-        50: Colors.SPACE_50,
-        100: Colors.SPACE_100,
-        200: Colors.SPACE_200,
-        300: Colors.SPACE_300,
-        400: Colors.SPACE_400,
-        500: Colors.SPACE_500,
-        600: Colors.SPACE_600,
-        700: Colors.SPACE_700,
-        800: Colors.SPACE_800,
-        900: Colors.SPACE_900
+      purple: {
+        50: Colors.PURPLE_50,
+        100: Colors.PURPLE_100,
+        200: Colors.PURPLE_200,
+        300: Colors.PURPLE_300,
+        400: Colors.PURPLE_400,
+        500: Colors.PURPLE_500,
+        600: Colors.PURPLE_600,
+        700: Colors.PURPLE_700,
+        800: Colors.PURPLE_800,
+        900: Colors.PURPLE_900
       },
-      wave: {
-        50: Colors.WAVE_50,
-        100: Colors.WAVE_100,
-        200: Colors.WAVE_200,
-        300: Colors.WAVE_300,
-        400: Colors.WAVE_400,
-        500: Colors.WAVE_500,
-        600: Colors.WAVE_600,
-        700: Colors.WAVE_700,
-        800: Colors.WAVE_800,
-        900: Colors.WAVE_900
+      robinblue: {
+        50: Colors.ROBINBLUE_50,
+        100: Colors.ROBINBLUE_100,
+        200: Colors.ROBINBLUE_200,
+        300: Colors.ROBINBLUE_300,
+        400: Colors.ROBINBLUE_400,
+        500: Colors.ROBINBLUE_500,
+        600: Colors.ROBINBLUE_600,
+        700: Colors.ROBINBLUE_700,
+        800: Colors.ROBINBLUE_800,
+        900: Colors.ROBINBLUE_900
       },
       yellow: {
         50: Colors.YELLOW_50,
@@ -73,7 +73,6 @@ module.exports = {
       chart: {
         purple: Colors.CHART_PURPLE,
         magenta: Colors.CHART_MAGENTA,
-        orange: Colors.CHART_ORANGE,
         yellow: Colors.CHART_YELLOW,
         green: Colors.CHART_GREEN
       }
@@ -115,8 +114,8 @@ module.exports = {
         '900-24': Color(theme('colors').gray['900']).alpha(0.24).string(),
         '900-32': Color(theme('colors').gray['900']).alpha(0.32).string()
       },
-      wave: {
-        ..._.pick(theme('colors.wave'), [
+      robinblue: {
+        ..._.pick(theme('colors.robinblue'), [
           '50',
           '200',
           '300',
@@ -125,14 +124,14 @@ module.exports = {
           '700',
           '800'
         ]),
-        '500-8': Color(theme('colors').wave['500']).alpha(0.08).string(),
-        '500-16': Color(theme('colors').wave['500']).alpha(0.16).string(),
-        '500-40': Color(theme('colors').wave['500']) // Disabled button
+        '500-8': Color(theme('colors').robinblue['500']).alpha(0.08).string(),
+        '500-16': Color(theme('colors').robinblue['500']).alpha(0.16).string(),
+        '500-40': Color(theme('colors').robinblue['500']) // Disabled button
           .alpha(0.4)
           .string()
       },
-      space: {
-        ..._.pick(theme('colors.space'), [
+      purple: {
+        ..._.pick(theme('colors.purple'), [
           '50',
           '100',
           '200',
@@ -141,7 +140,7 @@ module.exports = {
           '600',
           '800'
         ]),
-        '700-48': Color(theme('colors').space['700']).alpha(0.48).string()
+        '700-48': Color(theme('colors').purple['700']).alpha(0.48).string()
       },
       green: _.pick(theme('colors.green'), ['50', '500', '600', '700', '800']),
       yellow: _.pick(theme('colors.yellow'), ['50', '500', '600', '700']),
@@ -176,11 +175,16 @@ module.exports = {
         '900-16': Color(theme('colors').gray['900']).alpha(0.16).string(),
         '900-24': Color(theme('colors').gray['900']).alpha(0.24).string()
       },
-      space: {
-        ..._.pick(theme('colors.space'), ['600']),
-        '900-8': Color(theme('colors').space['900']).alpha(0.08).string()
+      purple: {
+        ..._.pick(theme('colors.purple'), ['600']),
+        '900-8': Color(theme('colors').purple['900']).alpha(0.08).string()
       },
-      wave: _.pick(theme('colors.wave'), ['200', '500', '600', '700']),
+      robinblue: _.pick(theme('colors.robinblue'), [
+        '200',
+        '500',
+        '600',
+        '700'
+      ]),
       green: _.pick(theme('colors.green'), ['500']),
       yellow: _.pick(theme('colors.yellow'), ['500']),
       magenta: _.pick(theme('colors.magenta'), ['500']),
@@ -359,11 +363,16 @@ module.exports = {
     textColor: theme => ({
       white: theme('colors.white'),
       gray: _.pick(theme('colors.gray'), ['500', '600', '700', '800', '900']),
-      wave: _.pick(theme('colors.wave'), ['500', '600', '700', '800']),
+      robinblue: _.pick(theme('colors.robinblue'), [
+        '500',
+        '600',
+        '700',
+        '800'
+      ]),
       green: _.pick(theme('colors.green'), ['500', '700', '800']),
       magenta: _.pick(theme('colors.magenta'), ['500', '600']),
       yellow: _.pick(theme('colors.yellow'), ['500', '600', '700']),
-      space: _.pick(theme('colors.space'), ['500', '600', '700', '900']),
+      purple: _.pick(theme('colors.purple'), ['500', '600', '700', '900']),
       purple: theme('colors.purple')
     }),
     width: theme => ({
