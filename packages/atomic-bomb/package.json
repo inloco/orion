@@ -1,6 +1,6 @@
 {
   "name": "@incognia/atomic-bomb",
-  "version": "2.0.0-beta.3",
+  "version": "2.0.0-beta.4",
   "files": [
     "index.js",
     "dist",
@@ -8,8 +8,8 @@
     "tailwind.config.js"
   ],
   "main": "./index.js",
-  "description": "In Loco Atomic CSS",
-  "author": "In Loco Team",
+  "description": "Incognia Atomic CSS",
+  "author": "Incognia Team",
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^9.5.1",
@@ -23,5 +23,6 @@
   },
   "dependencies": {
     "color": "^3.1.2"
-  }
+  },
+  "gitHead": "eb46743f9372724a7cbf8577d0048f3713028243"
 }

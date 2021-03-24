@@ -4,7 +4,7 @@
 ![npm](https://img.shields.io/npm/v/@incognia/atomic-bomb?color=green&label=%40incognia%2Fatomic-bomb)
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=inloco/orion)](https://dependabot.com)
 
-In Loco's monorepo for [Orion](https://github.com/inloco/orion/tree/master/packages/orion) and [Atomic Bomb](https://github.com/inloco/orion/tree/master/packages/atomic-bomb).
+Incognia's monorepo for [Orion](https://github.com/inloco/orion/tree/master/packages/orion) and [Atomic Bomb](https://github.com/inloco/orion/tree/master/packages/atomic-bomb).
 
 Please refer to their own README files for more info.
 

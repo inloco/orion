@@ -58,7 +58,7 @@ export const basic = () => (
       <Layout.Topbar.Divider />
       <Layout.UserProfile
         name={text('Name', 'Mark Weiser', 'UserProfile')}
-        label={text('Label', 'In Loco', 'UserProfile')}
+        label={text('Label', 'Incognia', 'UserProfile')}
         email={text('Email', 'mark.weiser@inloco.com.br', 'UserProfile')}
         logoutUrl={text('Logout URL', '#', 'UserProfile')}
         logoutText={text('Logout Text', 'Logout', 'UserProfile')}
@@ -71,7 +71,7 @@ export const basic = () => (
         )}
         {boolean('Enabled', true, 'UserProfile.HeaderItem') && (
           <Layout.UserProfile.HeaderItem
-            title={text('Title', 'In Loco', 'UserProfile.HeaderItem')}
+            title={text('Title', 'Incognia', 'UserProfile.HeaderItem')}
             label={text('Label', 'admin', 'UserProfile.HeaderItem')}>
             <Layout.UserProfile.Icon>
               <img src={appImage} alt="organization icon" />

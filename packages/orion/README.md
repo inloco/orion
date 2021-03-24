@@ -1,6 +1,6 @@
 # Orion
 
-In Loco's component library, based on React Semantic UI.
+Incognia's component library, based on React Semantic UI.
 
 You can see and interact with the components [here](https://inloco.github.io/orion).
 

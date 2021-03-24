@@ -1,4 +1,4 @@
-# Atomic Bomb - In Loco Atomic CSS
+# Atomic Bomb - Incognia Atomic CSS
 
 ## Installing
 
