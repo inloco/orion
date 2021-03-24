@@ -1,4 +1,4 @@
-export { default as Colors } from '@inloco/atomic-bomb'
+export { default as Colors } from '@incognia/atomic-bomb'
 
 export {
   Dimmer,

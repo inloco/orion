@@ -1,12 +1,12 @@
 @import '../../node_modules/react-toastify/dist/ReactToastify.css';
 
 @import '../../node_modules/tailwindcss/base.css';
-@import '../../node_modules/@inloco/atomic-bomb/css/base.css';
+@import '../../node_modules/@incognia/atomic-bomb/css/base.css';
 @import './base.css';
 
 @import '../../node_modules/tailwindcss/components.css';
-@import '../../node_modules/@inloco/atomic-bomb/css/components.css';
+@import '../../node_modules/@incognia/atomic-bomb/css/components.css';
 @import './components.css';
 
 @import '../../node_modules/tailwindcss/utilities.css';
-@import '../../node_modules/@inloco/atomic-bomb/css/utilities.css';
+@import '../../node_modules/@incognia/atomic-bomb/css/utilities.css';
