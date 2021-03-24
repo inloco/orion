@@ -23,7 +23,7 @@ Progress.propTypes = {
 }
 
 Progress.defaultProps = {
-  color: 'wave-500',
+  color: 'robinblue-500',
   size: Sizes.DEFAULT
 }
 

@@ -18,7 +18,7 @@
 }
 
 .orion.menu .item.active {
-  @apply font-medium text-space-900;
+  @apply font-medium text-purple-900;
 }
 
 .orion.menu .item.right {
@@ -49,9 +49,9 @@
 }
 
 .orion.menu .item.active > .icon {
-  @apply text-space-600;
+  @apply text-purple-600;
 }
 
 .orion.menu .item.active > svg.icon {
-  @apply fill-space-600;
+  @apply fill-purple-600;
 }

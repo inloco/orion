@@ -18,26 +18,26 @@
 }
 
 .orion.button.filter-trigger.selected {
-  @apply bg-space-100 border-none text-space-900;
+  @apply bg-purple-100 border-none text-purple-900;
   @apply pr-8;
 }
 
 .orion.button.filter-trigger.selected:hover,
 .orion.button.filter-trigger.selected:focus {
-  @apply bg-space-200;
+  @apply bg-purple-200;
 }
 
 /** Trigger button's icon **/
 
 .orion.button.filter-trigger .icon {
-  @apply ml-4 rounded-full text-space-600 text-icon-sm;
+  @apply ml-4 rounded-full text-purple-600 text-icon-sm;
   @apply h-16 w-16;
   @apply transition-default;
   transition-property: background-color, color;
 }
 
 .orion.button.filter-trigger .icon:hover {
-  @apply bg-space-100 text-space-900;
+  @apply bg-purple-100 text-purple-900;
 }
 
 /** Popup content **/
@@ -56,5 +56,5 @@
 
 /** Prefix **/
 .filter-trigger-prefix {
-  @apply inline-block mr-4 text-space-700;
+  @apply inline-block mr-4 text-purple-700;
 }

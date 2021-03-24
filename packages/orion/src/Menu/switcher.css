@@ -29,5 +29,5 @@
 }
 
 .orion.menu.switcher .item.active {
-  @apply bg-space-100 font-normal;
+  @apply bg-purple-100 font-normal;
 }

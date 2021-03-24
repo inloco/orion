@@ -16,7 +16,7 @@ LoadingBar.propTypes = {
 }
 
 LoadingBar.defaultProps = {
-  color: 'wave-500'
+  color: 'robinblue-500'
 }
 
 export default LoadingBar

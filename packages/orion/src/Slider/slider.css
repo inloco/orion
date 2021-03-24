@@ -1,11 +1,11 @@
-/** 
+/**
 *** Input wrapper wrapper
 **/
 .orion-slider-wrapper {
   @apply inline-flex flex-col relative w-384;
 }
 
-/** 
+/**
 *** Input wrapper input
 **/
 input[type='range'].orion-slider {
@@ -28,8 +28,8 @@ input[type='range'].orion-slider::-moz-focus-outer {
   @apply border-0;
 }
 
-/** 
-*** Thumb 
+/**
+*** Thumb
 **/
 input[type='range'].orion-slider::-webkit-slider-thumb {
   @apply bg-white appearance-none w-16 h-16 border border-solid border-gray-900-24 cursor-pointer rounded-full;
@@ -577,7 +577,7 @@ input[type='range'].orion-slider:focus::-moz-range-thumb {
 *** Track
 **/
 input[type='range'].orion-slider::-webkit-slider-runnable-track {
-  @apply w-full h-4 cursor-pointer bg-wave-500;
+  @apply w-full h-4 cursor-pointer bg-robinblue-500;
 }
 
 input[type='range'].orion-slider::-moz-range-track {
@@ -586,7 +586,7 @@ input[type='range'].orion-slider::-moz-range-track {
 
 /* progress */
 input[type='range'].orion-slider::-moz-range-progress {
-  @apply bg-wave-500 h-4 cursor-pointer;
+  @apply bg-robinblue-500 h-4 cursor-pointer;
 }
 
 input[type='range'].orion-slider::-webkit-slider-thumb {

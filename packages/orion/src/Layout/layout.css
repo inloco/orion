@@ -24,7 +24,7 @@
 }
 
 .orion.layout .layout-topbar.dimmed {
-  @apply bg-gray-100 border-space-900-8;
+  @apply bg-gray-100 border-purple-900-8;
 }
 
 .orion.layout .layout-topbar > .layout-center-content {
@@ -93,7 +93,7 @@
 }
 
 .orion.layout .layout-apps-dropdown > .menu > .header:before {
-  @apply absolute rounded-full w-8 h-8 bg-wave-500;
+  @apply absolute rounded-full w-8 h-8 bg-robinblue-500;
   content: ' ';
   left: 16px;
 }

@@ -12,7 +12,7 @@ export default storyMetadata
 
 export const basic = () => (
   <Progress
-    color={text('Color', 'wave-500')}
+    color={text('Color', 'robinblue-500')}
     percent={number('Percent', 50)}
     size={sizeKnob()}
   />

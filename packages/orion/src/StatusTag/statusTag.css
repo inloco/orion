@@ -52,19 +52,19 @@
 ---------------*/
 
 .orion.status-tag.neutral {
-  @apply text-space-700;
+  @apply text-purple-700;
 }
 
 .orion.status-tag.neutral.filled {
-  @apply bg-space-100;
+  @apply bg-purple-100;
 }
 
 .orion.status-tag.neutral.bordered {
-  @apply border-space-600;
+  @apply border-purple-600;
 }
 
 .orion.status-tag.neutral .icon {
-  @apply text-space-500;
+  @apply text-purple-500;
 }
 
 /*--------------

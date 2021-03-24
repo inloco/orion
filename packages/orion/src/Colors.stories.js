@@ -40,7 +40,7 @@ export const basic = () => {
   const backgroundColor = color('Background color', 'transparent')
   const colorText = boolean('Apply colors to text', false)
   return (
-    <div className="space-y-8" style={{ backgroundColor }}>
+    <div className="purple-y-8" style={{ backgroundColor }}>
       {_.values(groups).map(group => (
         <div className="flex flex-wrap">
           {group.map(color => (

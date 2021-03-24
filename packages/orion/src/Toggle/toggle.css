@@ -43,16 +43,16 @@
 /** Selected Toggle Bar **/
 
 .orion.checkbox.toggle input[type='checkbox']:checked ~ label:before {
-  @apply bg-wave-500;
+  @apply bg-robinblue-500;
 }
 
 .orion.checkbox.toggle input[type='checkbox']:checked ~ label:hover:before {
-  @apply bg-wave-600;
+  @apply bg-robinblue-600;
 }
 
 .orion.checkbox.toggle input[type='checkbox']:checked ~ label:active:before,
 .orion.checkbox.toggle input[type='checkbox']:checked:focus ~ label:before {
-  @apply bg-wave-700;
+  @apply bg-robinblue-700;
 }
 
 /** Selected Toggle Circle **/

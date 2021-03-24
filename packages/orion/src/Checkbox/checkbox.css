@@ -38,19 +38,19 @@
 
 .orion.checkbox input[type='checkbox']:checked ~ label:before,
 .orion.checkbox input[type='checkbox']:indeterminate ~ label:before {
-  @apply bg-wave-500;
+  @apply bg-robinblue-500;
 }
 
 .orion.checkbox input[type='checkbox']:checked ~ label:hover:before,
 .orion.checkbox input[type='checkbox']:indeterminate ~ label:hover:before {
-  @apply bg-wave-600;
+  @apply bg-robinblue-600;
 }
 
 .orion.checkbox input[type='checkbox']:checked ~ label:active:before,
 .orion.checkbox input[type='checkbox']:indeterminate ~ label:active:before,
 .orion.checkbox input[type='checkbox']:checked:focus ~ label:before,
 .orion.checkbox input[type='checkbox']:indeterminate:focus ~ label:before {
-  @apply bg-wave-700;
+  @apply bg-robinblue-700;
 }
 
 .orion.checkbox input[type='checkbox']:checked ~ label:after,

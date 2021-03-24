@@ -14,7 +14,7 @@ export const Basic = () => {
 
   return (
     <>
-      <div className="flex flex-col items-center space-y-16 p-8">
+      <div className="flex flex-col items-center purple-y-16 p-8">
         <Dropdown
           selection
           open={dropdownOpen}
@@ -57,7 +57,7 @@ export const Basic = () => {
         welcomeModal={{
           content: (
             <div className="text-center">
-              <h3 className="text-space-600 font-medium">Welcome!</h3>
+              <h3 className="text-purple-600 font-medium">Welcome!</h3>
               This is custom content
             </div>
           ),

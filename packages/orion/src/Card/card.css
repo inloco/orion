@@ -56,7 +56,7 @@
 }
 
 .orion.card.selectable.selected:not(.disabled):not(.read-only) > .card-icon {
-  @apply text-wave-500;
+  @apply text-robinblue-500;
 }
 
 /***
@@ -75,14 +75,14 @@
 }
 
 .orion.card.selectable.selected {
-  @apply bg-wave-500-8 shadow-none;
+  @apply bg-robinblue-500-8 shadow-none;
 }
 .orion.card.selectable.selected:hover,
 .orion.card.selectable.selected:focus {
   @apply border-gray-900-16 shadow-200;
 }
 .orion.card.selectable.selected:active {
-  @apply bg-wave-500-16 shadow-none;
+  @apply bg-robinblue-500-16 shadow-none;
 }
 
 .orion.card.selectable .checkbox {

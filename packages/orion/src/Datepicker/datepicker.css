@@ -103,16 +103,16 @@
 }
 
 .CalendarDay__selected {
-  @apply bg-wave-500 border-wave-500 text-white;
+  @apply bg-robinblue-500 border-robinblue-500 text-white;
 }
 
 .CalendarDay.CalendarDay__selected:hover,
 .CalendarDay.CalendarDay__selected:focus {
-  @apply bg-wave-600;
+  @apply bg-robinblue-600;
 }
 
 .CalendarDay.CalendarDay__selected:active {
-  @apply bg-wave-700;
+  @apply bg-robinblue-700;
 }
 
 .CalendarDay__blocked_calendar,
