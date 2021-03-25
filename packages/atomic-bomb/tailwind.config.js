@@ -74,7 +74,8 @@ module.exports = {
         purple: Colors.CHART_PURPLE,
         magenta: Colors.CHART_MAGENTA,
         yellow: Colors.CHART_YELLOW,
-        green: Colors.CHART_GREEN
+        green: Colors.CHART_GREEN,
+        robinblue: Colors.CHART_ROBINBLUE
       }
     },
     spacing: {

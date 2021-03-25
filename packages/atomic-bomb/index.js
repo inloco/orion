@@ -55,6 +55,7 @@ const Colors = {
 
 Colors.CHART_MAGENTA = Colors.MAGENTA_500
 Colors.CHART_YELLOW = Colors.YELLOW_500
+Colors.CHART_ROBINBLUE = Colors.ROBINBLUE_500
 Colors.CHART_GREEN = Colors.GREEN_500
 
 module.exports = Colors
