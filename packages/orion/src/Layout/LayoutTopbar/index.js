@@ -9,12 +9,13 @@ import { Alert, useAlert } from '../LayoutAlert'
 
 const LayoutTopbar = ({ className, children, logo, dimmed, ...otherProps }) => {
   const classes = cx('layout-topbar', { dimmed }, className)
-  const alert = useAlert()
+  const alertProps = useAlert()
+
   return (
     <LayoutCenter className={classes} {...otherProps}>
       {logo || <Logo className="mb-4" />}
       {children}
-      {alert && <Alert alert={alert} />}
+      {!!alertProps && <Alert {...alertProps} />}
     </LayoutCenter>
   )
 }

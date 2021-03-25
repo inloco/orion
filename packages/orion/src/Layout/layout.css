@@ -120,12 +120,31 @@
   @apply mx-0;
 }
 
+/**
+ * Alert
+ */
 .orion.layout .layout-alert {
-  @apply fixed left-0 flex justify-center bg-yellow-50 leading-20 w-screen;
+  @apply fixed left-0 flex justify-center leading-20 w-screen;
   top: 64px;
   padding: 10px 0;
 }
 
 .orion.layout .layout-alert > .icon {
-  @apply text-yellow-500 mr-4;
+  @apply mr-4;
+}
+
+.orion.layout .layout-alert.warning {
+  @apply bg-yellow-50;
+}
+
+.orion.layout .layout-alert.info {
+  @apply bg-gray-900-8;
+}
+
+.orion.layout .layout-alert.warning > .icon {
+  @apply text-yellow-500;
+}
+
+.orion.layout .layout-alert.info > .icon {
+  @apply text-gray-700;
 }
