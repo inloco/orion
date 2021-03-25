@@ -18,7 +18,7 @@
 }
 
 .orion.button.filter-trigger.selected {
-  @apply bg-purple-100 border-none text-purple-900;
+  @apply bg-purple-100 border-none text-purple-800;
   @apply pr-8;
 }
 
@@ -37,7 +37,7 @@
 }
 
 .orion.button.filter-trigger .icon:hover {
-  @apply bg-purple-100 text-purple-900;
+  @apply bg-purple-100 text-purple-800;
 }
 
 /** Popup content **/
