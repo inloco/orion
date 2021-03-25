@@ -1,6 +1,6 @@
 {
   "name": "@incognia/orion",
-  "version": "2.0.0-beta.4",
+  "version": "2.0.0-beta.5",
   "description": "Semantic-UI Toolkit - Incognia theme",
   "files": [
     "dist/**/*.js",
@@ -30,7 +30,7 @@
   "license": "ISC",
   "homepage": "https://inloco.github.io/orion",
   "dependencies": {
-    "@incognia/atomic-bomb": "^2.0.0-beta.4",
+    "@incognia/atomic-bomb": "^2.0.0-beta.5",
     "@inloco/semantic-ui-react": "^2.0.1-orion",
     "body-scroll-lock": "^3.0.2",
     "classnames": "^2.2.6",
