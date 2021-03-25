@@ -8,20 +8,15 @@ enum Type {
   INFO = 'info'
 }
 
+const TypeToIconName: Record<Type, string> = {
+  [Type.WARNING]: 'warning',
+  [Type.INFO]: 'info_outline'
+}
+
 const Alert: React.FC<AlertProps> = ({ content, type = Type.WARNING }) => {
-  let iconName
-  switch (type) {
-    case Type.INFO:
-      iconName = 'info_outline'
-      break
-    case Type.WARNING:
-    default:
-      iconName = 'warning'
-      break
-  }
   return (
     <div className={cx('layout-alert', type)}>
-      <Icon name={iconName} />
+      <Icon name={TypeToIconName[type]} />
       {content}
     </div>
   )
