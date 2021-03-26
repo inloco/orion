@@ -62,7 +62,7 @@ export const Controlled = () => {
   const [value, setValue] = React.useState(['tag1', 'tag2'])
 
   return (
-    <div className="flex items-center purple-x-8">
+    <div className="flex items-center space-x-8">
       <TagsInput
         placeholder={text('Placeholder', 'Type here')}
         error={boolean('error', false)}

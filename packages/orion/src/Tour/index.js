@@ -114,7 +114,7 @@ function Tour({
           <Badge position={badgePosition} />
         </Portal>
         <div className="orion-tour-controls">
-          <ul className="purple-x-8">
+          <ul className="space-x-8">
             {steps.map((_step, i) => (
               <li
                 key={i}
@@ -122,7 +122,7 @@ function Tour({
               />
             ))}
           </ul>
-          <div className="orion-tour-buttons purple-x-16">
+          <div className="orion-tour-buttons space-x-16">
             <Button
               subtle
               onClick={() => {

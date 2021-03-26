@@ -14,7 +14,7 @@ export const Basic = () => {
 
   return (
     <>
-      <div className="flex flex-col items-center purple-y-16 p-8">
+      <div className="flex flex-col items-center space-y-16 p-8">
         <Dropdown
           selection
           open={dropdownOpen}
