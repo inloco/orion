@@ -59,7 +59,7 @@ export const basic = () => (
       <Layout.UserProfile
         name={text('Name', 'Mark Weiser', 'UserProfile')}
         label={text('Label', 'Incognia', 'UserProfile')}
-        email={text('Email', 'mark.weiser@inloco.com.br', 'UserProfile')}
+        email={text('Email', 'mark.weiser@incognia.com', 'UserProfile')}
         logoutUrl={text('Logout URL', '#', 'UserProfile')}
         logoutText={text('Logout Text', 'Logout', 'UserProfile')}
         imageUrl={text('Image URL', appImage, 'UserProfile')}>
