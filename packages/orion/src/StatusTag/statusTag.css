@@ -112,7 +112,7 @@
 ---------------*/
 
 .orion.status-tag.success {
-  @apply text-green-700;
+  @apply text-green-800;
 }
 
 .orion.status-tag.success.filled {
