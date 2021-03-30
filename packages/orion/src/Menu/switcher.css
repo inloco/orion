@@ -29,5 +29,15 @@
 }
 
 .orion.menu.switcher .item.active {
-  @apply bg-purple-100 font-normal;
+  @apply bg-purple-600 font-normal text-white;
+}
+
+/** Active switcher item with icon **/
+
+.orion.menu.switcher .item:active > svg.icon {
+  @apply fill-white;
+}
+
+.orion.menu.switcher .item.active > .icon {
+  @apply text-white;
 }
