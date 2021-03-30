@@ -3,7 +3,7 @@
 }
 
 .orion.fullscreen-container .fullscreen-container-title {
-  @apply font-display text-lg mb-24 text-gray-800;
+  @apply font-display font-medium text-lg mb-24 text-gray-800;
 }
 
 .orion.fullscreen-container .fullscreen-container-content {
