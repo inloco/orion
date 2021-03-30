@@ -2,7 +2,7 @@ import _ from 'lodash'
 import { loremIpsum } from 'lorem-ipsum'
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { text, boolean, object } from '@storybook/addon-knobs'
+import { text, boolean, object, radios } from '@storybook/addon-knobs'
 
 import incognia from '../../storyImages/incognia.svg'
 import myapps from '../../storyImages/myapps.svg'
@@ -102,7 +102,18 @@ export const basic = () => (
     </Layout.Topbar>
     <Layout.Main>
       {boolean('Enabled', true, 'Alert') && (
-        <Layout.Alert message={text('Message', 'This is an Alert', 'Alert')} />
+        <Layout.Alert
+          content={text('Message', 'This is an Alert', 'Alert')}
+          type={radios(
+            'Type',
+            {
+              Warning: 'warning',
+              Info: 'info'
+            },
+            'warning',
+            'Alert'
+          )}
+        />
       )}
       {_.map(paragraphs, (paragraph, index) => (
         <p key={index}>{paragraph}</p>

@@ -1,41 +1,39 @@
 import React, { createContext, useContext, useState, useEffect } from 'react'
 
-import Alert from './Alert'
+import Alert, { AlertProps } from './Alert'
 
 const AlertContext: React.Context<ContextValue> = createContext(
   {} as ContextValue
 )
 
 const AlertContextProvider: React.FC = props => {
-  const [message, setMessage] = useState<string | null>(null)
+  const [alertProps, setAlertProps] = useState<AlertProps | null>(null)
 
-  return <AlertContext.Provider value={{ message, setMessage }} {...props} />
+  return (
+    <AlertContext.Provider value={{ alertProps, setAlertProps }} {...props} />
+  )
 }
 
-const LayoutAlert: React.FC<LayoutAlertProps> = ({ message }) => {
-  const { setMessage } = useContext(AlertContext)
+const LayoutAlert: React.FC<AlertProps> = props => {
+  const { setAlertProps } = useContext(AlertContext)
 
   useEffect(() => {
-    setMessage(message)
+    setAlertProps(props)
 
-    return () => setMessage(null)
-  }, [message])
+    return () => setAlertProps(null)
+  }, [props])
   return null
 }
 
-function useAlert(): string | null {
-  const { message } = useContext(AlertContext)
+function useAlert(): AlertProps | null {
+  const context = useContext(AlertContext)
 
-  return message
+  return context?.alertProps
 }
 
 interface ContextValue {
-  message: string | null
-  setMessage: React.Dispatch<React.SetStateAction<string | null>>
-}
-
-interface LayoutAlertProps {
-  message: string
+  alertProps: AlertProps | null
+  setAlertProps: React.Dispatch<React.SetStateAction<AlertProps | null>>
 }
 
 export default LayoutAlert

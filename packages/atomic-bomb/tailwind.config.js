@@ -261,6 +261,7 @@ module.exports = {
       'icon-md': '20px'
     },
     fontWeight: {
+      thin: '200',
       normal: '400',
       medium: '500'
     },
