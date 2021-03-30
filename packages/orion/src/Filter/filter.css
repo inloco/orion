@@ -30,7 +30,7 @@
 /** Trigger button's icon **/
 
 .orion.button.filter-trigger .icon {
-  @apply ml-4 rounded-full text-purple-600 text-icon-sm;
+  @apply ml-4 rounded-full text-purple-800 text-icon-sm;
   @apply h-16 w-16;
   @apply transition-default;
   transition-property: background-color, color;
