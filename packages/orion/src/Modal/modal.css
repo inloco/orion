@@ -48,7 +48,7 @@
 ---------------*/
 
 .orion.modal > .header {
-  @apply block bg-transparent px-24 pt-24 font-display text-lg text-gray-800;
+  @apply block bg-transparent px-24 pt-24 font-display font-medium text-lg text-gray-800;
 }
 
 /*--------------

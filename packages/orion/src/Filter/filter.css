@@ -51,7 +51,7 @@
 }
 
 .orion.popup.filter .filter-footer-content {
-  @apply leading-14 font-display mr-8 text-sm text-gray-800;
+  @apply leading-14 font-display font-medium mr-8 text-sm text-gray-800;
 }
 
 /** Prefix **/
