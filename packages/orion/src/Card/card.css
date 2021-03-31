@@ -55,8 +55,8 @@
   @apply absolute top-0 left-0;
 }
 
-.orion.card.selectable.selected:not(.disabled):not(.read-only) > .card-icon {
-  @apply text-robinblue-500;
+.orion.card.selectable:not(.disabled):not(.read-only) > .card-icon {
+  @apply text-purple-800;
 }
 
 /***
@@ -75,18 +75,22 @@
 }
 
 .orion.card.selectable.selected {
-  @apply bg-robinblue-500-8 shadow-none;
+  @apply bg-purple-100 shadow-none;
 }
 .orion.card.selectable.selected:hover,
 .orion.card.selectable.selected:focus {
   @apply border-gray-900-16 shadow-200;
 }
 .orion.card.selectable.selected:active {
-  @apply bg-robinblue-500-16 shadow-none;
+  @apply bg-purple-200 shadow-none;
 }
 
 .orion.card.selectable .checkbox {
   @apply absolute left-0 top-0 m-8;
+}
+
+.orion.card.selectable > .content {
+  @apply text-purple-800;
 }
 
 /***
