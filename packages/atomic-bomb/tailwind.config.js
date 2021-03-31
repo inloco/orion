@@ -194,8 +194,8 @@ module.exports = {
     }),
     borderRadius: {
       none: '0',
-      small: '2px',
-      default: '4px',
+      small: '4px',
+      default: '8px',
       full: '9999px'
     },
     borderWidth: {
