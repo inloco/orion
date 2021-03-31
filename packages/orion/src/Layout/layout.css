@@ -138,7 +138,7 @@
 }
 
 .orion.layout .layout-alert.info {
-  @apply bg-gray-900-8;
+  @apply bg-gray-200;
 }
 
 .orion.layout .layout-alert.warning > .icon {
