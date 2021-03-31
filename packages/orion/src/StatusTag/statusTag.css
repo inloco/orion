@@ -32,7 +32,7 @@
 ---------------*/
 
 .orion.status-tag.inactive {
-  @apply text-gray-700;
+  @apply text-gray-900;
 }
 
 .orion.status-tag.inactive.filled {
@@ -44,7 +44,7 @@
 }
 
 .orion.status-tag.inactive .icon {
-  @apply text-gray-500;
+  @apply text-gray-700;
 }
 
 /*--------------
