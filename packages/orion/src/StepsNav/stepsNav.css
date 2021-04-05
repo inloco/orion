@@ -55,9 +55,9 @@
 ---------------*/
 
 .orion.steps-nav .steps-nav-step.active .steps-nav-step-index {
-  @apply bg-space-100;
+  @apply bg-purple-600 text-white;
 }
 
 .orion.steps-nav .steps-nav-step.active .steps-nav-step-name {
-  @apply font-medium text-space-900;
+  @apply font-medium text-purple-800;
 }

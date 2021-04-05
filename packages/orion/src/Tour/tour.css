@@ -31,7 +31,7 @@
 }
 
 .orion-tour-dot.current {
-  @apply w-8 h-8 bg-wave-500;
+  @apply w-8 h-8 bg-robinblue-500;
 }
 
 .orion-tour-controls {
@@ -45,7 +45,7 @@
 
 /** Floating badge **/
 .orion-tour-badge {
-  @apply w-8 h-8 bg-wave-500 rounded-full block fixed;
+  @apply w-8 h-8 bg-robinblue-500 rounded-full block fixed;
   transform: translate(-50%, -50%);
   box-shadow: 0 0 0 8px rgba(164, 218, 235, 0.5);
   z-index: 999999;

@@ -40,7 +40,7 @@
 }
 
 .orion.status-tag.inactive.bordered {
-  @apply border-gray-700;
+  @apply border-gray-400;
 }
 
 .orion.status-tag.inactive .icon {
@@ -52,19 +52,19 @@
 ---------------*/
 
 .orion.status-tag.neutral {
-  @apply text-space-700;
+  @apply text-gray-900;
 }
 
 .orion.status-tag.neutral.filled {
-  @apply bg-space-100;
+  @apply bg-gray-200;
 }
 
 .orion.status-tag.neutral.bordered {
-  @apply border-space-600;
+  @apply border-gray-700;
 }
 
 .orion.status-tag.neutral .icon {
-  @apply text-space-500;
+  @apply text-gray-700;
 }
 
 /*--------------
@@ -112,7 +112,7 @@
 ---------------*/
 
 .orion.status-tag.success {
-  @apply text-green-700;
+  @apply text-green-800;
 }
 
 .orion.status-tag.success.filled {

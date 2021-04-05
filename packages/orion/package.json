@@ -1,7 +1,7 @@
 {
-  "name": "@inloco/orion",
-  "version": "1.42.2",
-  "description": "Semantic-UI Toolkit - In Loco theme",
+  "name": "@incognia/orion",
+  "version": "2.0.0-beta.10",
+  "description": "Semantic-UI Toolkit - Incognia theme",
   "files": [
     "dist/**/*.js",
     "dist/assets/*",
@@ -26,11 +26,11 @@
     "type": "git",
     "url": "git+ssh://git@github.com:inloco/orion.git"
   },
-  "author": "In Loco Team",
+  "author": "Incognia Team",
   "license": "ISC",
   "homepage": "https://inloco.github.io/orion",
   "dependencies": {
-    "@inloco/atomic-bomb": "^1.4.1",
+    "@incognia/atomic-bomb": "^2.0.0-beta.9",
     "@inloco/semantic-ui-react": "^2.0.1-orion",
     "body-scroll-lock": "^3.0.2",
     "classnames": "^2.2.6",
@@ -109,5 +109,5 @@
   "storybook-deployer": {
     "commitMessage": "Deploy Storybook to GitHub Pages [ci skip]"
   },
-  "gitHead": "739862130b4375112c703f30943ec87e694283e0"
+  "gitHead": "eb46743f9372724a7cbf8577d0048f3713028243"
 }

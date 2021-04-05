@@ -4,5 +4,5 @@
 }
 
 .CalendarDay__selected_span {
-  @apply border-wave-200 bg-wave-500-8 text-gray-800;
+  @apply border-robinblue-200 bg-robinblue-500-8 text-gray-800;
 }

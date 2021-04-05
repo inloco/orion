@@ -55,7 +55,7 @@
 /* Primary */
 
 .orion.button.primary {
-  @apply bg-wave-500 text-white;
+  @apply bg-robinblue-500 text-white;
 }
 
 .orion.button.primary svg.icon {
@@ -64,11 +64,11 @@
 
 .orion.button.primary:hover,
 .orion.button.primary:focus {
-  @apply bg-wave-600;
+  @apply bg-robinblue-600;
 }
 
 .orion.button.primary:active {
-  @apply bg-wave-700;
+  @apply bg-robinblue-700;
 }
 
 /* Secondary */
@@ -95,29 +95,29 @@
 /* Subtle Primary */
 
 .orion.button.subtle.primary {
-  @apply text-wave-500;
+  @apply text-robinblue-500;
 }
 
 .orion.button.subtle.primary svg.icon {
-  @apply fill-wave-500;
+  @apply fill-robinblue-500;
 }
 
 .orion.button.subtle.primary:hover,
 .orion.button.subtle.primary:focus {
-  @apply bg-transparent text-wave-600;
+  @apply bg-transparent text-robinblue-600;
 }
 
 .orion.button.subtle.primary:hover svg.icon,
 .orion.button.subtle.primary:focus svg.icon {
-  @apply fill-wave-600;
+  @apply fill-robinblue-600;
 }
 
 .orion.button.subtle.primary:active {
-  @apply bg-transparent text-wave-700;
+  @apply bg-transparent text-robinblue-700;
 }
 
 .orion.button.subtle.primary:active svg.icon {
-  @apply fill-wave-700;
+  @apply fill-robinblue-700;
 }
 
 /* Subtle Secondary */
@@ -168,20 +168,20 @@
 /* Ghost */
 
 .orion.button.ghost {
-  @apply bg-transparent text-wave-500 border border-wave-500;
+  @apply bg-transparent text-robinblue-500 border border-robinblue-500;
 }
 
 .orion.button.ghost svg.icon {
-  @apply fill-wave-500;
+  @apply fill-robinblue-500;
 }
 
 .orion.button.ghost:hover,
 .orion.button.ghost:focus {
-  @apply bg-wave-500-8;
+  @apply bg-robinblue-500-8;
 }
 
 .orion.button.ghost:active {
-  @apply bg-wave-500-16;
+  @apply bg-robinblue-500-16;
 }
 
 /* Multiple */

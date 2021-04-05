@@ -3,32 +3,32 @@
 }
 
 .orion.checkbox.radio input[type='checkbox']:checked ~ label:before {
-  @apply bg-white border-wave-500;
+  @apply bg-white border-robinblue-500;
 }
 
 .orion.checkbox.radio input[type='checkbox']:checked ~ label:hover:before {
-  @apply border-wave-600;
+  @apply border-robinblue-600;
 }
 
 .orion.checkbox.radio input[type='checkbox']:checked ~ label:active:before,
 .orion.checkbox.radio input[type='checkbox']:checked:focus ~ label:before {
-  @apply border-wave-700;
+  @apply border-robinblue-700;
 }
 
 .orion.checkbox.radio input[type='checkbox']:checked ~ label:after {
-  @apply bg-wave-500 h-8 rounded-full w-8;
+  @apply bg-robinblue-500 h-8 rounded-full w-8;
   content: '';
   left: 4px;
   top: 4px;
 }
 
 .orion.checkbox.radio input[type='checkbox']:checked ~ label:hover:after {
-  @apply bg-wave-600;
+  @apply bg-robinblue-600;
 }
 
 .orion.checkbox.radio input[type='checkbox']:checked ~ label:active:after,
 .orion.checkbox.radio input[type='checkbox']:checked:focus ~ label:after {
-  @apply bg-wave-700;
+  @apply bg-robinblue-700;
 }
 
 /**

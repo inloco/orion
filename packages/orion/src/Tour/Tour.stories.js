@@ -57,7 +57,7 @@ export const Basic = () => {
         welcomeModal={{
           content: (
             <div className="text-center">
-              <h3 className="text-space-600 font-medium">Welcome!</h3>
+              <h3 className="text-purple-600 font-medium">Welcome!</h3>
               This is custom content
             </div>
           ),

@@ -83,15 +83,15 @@
 }
 
 .orion.layout .user-profile-edit-link:not(a) {
-  @apply text-wave-500 font-medium;
+  @apply text-robinblue-500 font-medium;
 }
 
 .orion.layout .user-profile-edit-link:not(a):hover {
-  @apply text-wave-600;
+  @apply text-robinblue-600;
 }
 
 .orion.layout .user-profile-edit-link:not(a):active {
-  @apply text-wave-700;
+  @apply text-robinblue-700;
 }
 
 .orion.layout .user-profile-edit-link > .orion.icon {
@@ -133,7 +133,7 @@
 }
 
 /**
- * Dropdown Items 
+ * Dropdown Items
  */
 .orion.layout .layout-user-profile .item {
   @apply flex bg-gray-100 relative flex ml-0 p-16;
@@ -178,7 +178,7 @@
 }
 
 /**
- * Dropdown Logout option 
+ * Dropdown Logout option
  */
 .orion.layout .layout-user-profile-logout {
   @apply flex justify-center w-full p-8 cursor-auto;

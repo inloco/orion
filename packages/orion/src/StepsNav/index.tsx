@@ -32,7 +32,7 @@ const StepsNav: FunctionComponent<StepsNavProps> = ({
                   {done ? (
                     <Icon
                       name="done"
-                      color="space-600"
+                      color="purple-600"
                       as={null}
                       className=""
                     />

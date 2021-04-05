@@ -15,15 +15,15 @@ h2 {
 }
 
 a {
-  @apply text-wave-500 font-medium;
+  @apply text-robinblue-500 font-medium;
 }
 
 a:hover {
-  @apply text-wave-600;
+  @apply text-robinblue-600;
 }
 
 a:active {
-  @apply text-wave-700;
+  @apply text-robinblue-700;
 }
 
 ::placeholder,

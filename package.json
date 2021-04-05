@@ -29,11 +29,11 @@
     "@types/react-dom": "17.0.0"
   },
   "scripts": {
-    "atomic-bomb:build": "yarn workspace @inloco/atomic-bomb build",
-    "orion:watch": "yarn workspace @inloco/orion start",
-    "orion:storybook": "yarn workspace @inloco/orion storybook",
-    "orion:deploy:storybook": "yarn workspace @inloco/orion deploy:storybook",
-    "orion:lint": "yarn workspace @inloco/orion lint",
+    "atomic-bomb:build": "yarn workspace @incognia/atomic-bomb build",
+    "orion:watch": "yarn workspace @incognia/orion start",
+    "orion:storybook": "yarn workspace @incognia/orion storybook",
+    "orion:deploy:storybook": "yarn workspace @incognia/orion deploy:storybook",
+    "orion:lint": "yarn workspace @incognia/orion lint",
     "release": "lerna publish"
   }
 }

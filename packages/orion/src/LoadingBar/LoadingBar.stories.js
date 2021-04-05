@@ -11,7 +11,7 @@ export default storyMetadata
 
 export const defaultStory = () => (
   <div className="h-screen">
-    <LoadingBar color={text('Color', 'wave-500')} />
+    <LoadingBar color={text('Color', 'robinblue-500')} />
   </div>
 )
 

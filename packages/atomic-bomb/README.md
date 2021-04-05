@@ -1,11 +1,11 @@
-# Atomic Bomb - In Loco Atomic CSS
+# Atomic Bomb - Incognia Atomic CSS
 
 ## Installing
 
 ```sh
-  npm install --save @inloco/atomic-bomb
+  npm install --save @incognia/atomic-bomb
   #or
-  yarn add @inloco/atomic-bomb
+  yarn add @incognia/atomic-bomb
 ```
 
 We highly recommend this VS Code plugin. It auto-completes `atomic-bomb` css rules.
