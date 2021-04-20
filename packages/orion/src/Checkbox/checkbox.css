@@ -23,7 +23,7 @@
 
 .orion.checkbox input[type='checkbox'] ~ label:before {
   @apply absolute top-0 left-0 h-16 w-16;
-  @apply border border-gray-900-24 bg-white rounded;
+  @apply border border-gray-900-24 bg-white rounded-small;
   content: '';
 }
 
