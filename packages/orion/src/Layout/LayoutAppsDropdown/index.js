@@ -37,7 +37,7 @@ const LayoutAppsDropdown = ({
                 <Image {...image} />
               </div>
             )}
-            <div>{text}</div>
+            <div className="layout-apps-dropdown-text">{text}</div>
           </Dropdown.Header>
         ))}
         <Dropdown.Divider />
@@ -49,7 +49,7 @@ const LayoutAppsDropdown = ({
                   <Image {...image} />
                 </div>
               )}
-              <div>{text}</div>
+              <div className="layout-apps-dropdown-text">{text}</div>
             </Dropdown.Item>
           )
         })}

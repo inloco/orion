@@ -39,14 +39,14 @@ export const basic = () => (
           'Options',
           [
             {
-              text: 'Incognia',
-              value: 'incognia',
+              text: 'Risk assessments',
+              value: 'riskAssessments',
               image: { as: () => <img alt="app" src={incognia} /> },
               selected: true
             },
             {
-              text: 'My apps',
-              value: 'myapps',
+              text: 'Integrations',
+              value: 'integrations',
               image: { as: () => <img alt="app" src={myapps} /> }
             }
           ],

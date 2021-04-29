@@ -80,7 +80,7 @@
  * Apps Dropdown Menu
  */
 .orion.layout .layout-apps-dropdown > .menu {
-  @apply bg-gray-100 left-0;
+  @apply bg-gray-100 left-0 w-auto;
   min-width: 206px;
   transform: translateX(calc(-50% + 20px));
 }
@@ -118,6 +118,13 @@
 
 .orion.layout .layout-apps-dropdown-image > .orion.image {
   @apply mx-0;
+}
+
+/**
+ * Apps Dropdown Text
+ */
+.orion.layout .layout-apps-dropdown-text {
+  @apply whitespace-no-wrap;
 }
 
 /**
