@@ -1,6 +1,6 @@
 {
   "name": "@incognia/orion",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Semantic-UI Toolkit - Incognia theme",
   "files": [
     "dist/**/*.js",
