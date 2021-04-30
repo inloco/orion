@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Reactour from 'reactour'
@@ -36,6 +36,15 @@ function Tour({
   const [openModal, setOpenModal] = useState(!!welcomeModal)
   const tourSteps = useMemo(() => parseSteps(steps), [steps])
   const badgePosition = useBadgePosition(tourSteps, currentStep)
+  const scrollTarget = React.useRef()
+
+  useEffect(() => {
+    if (!openTour) return
+
+    return () => {
+      enableBodyScroll(scrollTarget.current)
+    }
+  }, [openTour])
 
   function handleStepActions(stepIndex, nextStepIndex) {
     const actionBefore = tourSteps[nextStepIndex]?.actionBefore
@@ -90,8 +99,10 @@ function Tour({
         steps={tourSteps}
         closeWithMask={false}
         CustomHelper={TourHelper}
-        onAfterOpen={target => disableBodyScroll(target)}
-        onBeforeClose={target => enableBodyScroll(target)}
+        onAfterOpen={target => {
+          disableBodyScroll(target)
+          scrollTarget.current = target
+        }}
         onRequestClose={() => {
           setOpenTour(false)
           handleStepActions(currentStep)
