@@ -28,6 +28,7 @@ export function parseSteps(steps) {
     (
       {
         selector,
+        highlightedSelectors,
         anchor,
         title,
         titleTag,
@@ -73,6 +74,7 @@ export function parseSteps(steps) {
 
       return {
         selector,
+        highlightedSelectors,
         content: parsedContent,
         padding,
         badgePosition,
