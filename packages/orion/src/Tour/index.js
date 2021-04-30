@@ -166,6 +166,7 @@ Tour.propTypes = {
   steps: PropTypes.arrayOf(
     PropTypes.shape({
       selector: PropTypes.string,
+      highlightedSelectors: PropTypes.arrayOf(PropTypes.string),
       anchor: PropTypes.shape({
         top: PropTypes.number.isRequired,
         left: PropTypes.number.isRequired
