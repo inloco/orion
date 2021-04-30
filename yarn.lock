@@ -2424,10 +2424,10 @@
     prop-types "^15.6.1"
     react-lifecycles-compat "^3.0.4"
 
-"@rooks/use-mutation-observer@3.4.0":
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/@rooks/use-mutation-observer/-/use-mutation-observer-3.4.0.tgz#5e4c122401ae1f790a24c64763a2910d0199a909"
-  integrity sha512-q10+v3WbvSt5fj55VMikTPaUZ9Yl+IYDsymodWr2+cKx0PD97VBeWYjk3xHJPqJgejBHwnrwiNkJKGFY5iW+WQ==
+"@rooks/use-mutation-observer@4.9.2":
+  version "4.9.2"
+  resolved "https://registry.yarnpkg.com/@rooks/use-mutation-observer/-/use-mutation-observer-4.9.2.tgz#ab41e24e298f51c752fdcdfe991b117b316ac26c"
+  integrity sha512-K8SLLPTBP6dYaVQjI/3U5OhVsSaHj83Ksj1mYNB2ULYXnKlMfwtll+KXFU8snusv4QKyWbyQOP4uIoI2eDUggA==
 
 "@semantic-ui-react/event-stack@^3.1.0":
   version "3.1.0"
@@ -7722,10 +7722,12 @@ flush-write-stream@^1.0.0, flush-write-stream@^1.0.2:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
 
-focus-lock@^0.6.6:
-  version "0.6.6"
-  resolved "https://registry.yarnpkg.com/focus-lock/-/focus-lock-0.6.6.tgz#98119a755a38cfdbeda0280eaa77e307eee850c7"
-  integrity sha512-Dx69IXGCq1qsUExWuG+5wkiMqVM/zGx/reXSJSLogECwp3x6KeNQZ+NAetgxEFpnC41rD8U3+jRCW68+LNzdtw==
+focus-lock@^0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/focus-lock/-/focus-lock-0.8.1.tgz#bb36968abf77a2063fa173cb6c47b12ac8599d33"
+  integrity sha512-/LFZOIo82WDsyyv7h7oc0MJF9ACOvDRdx9rWPZ2pgMfNWu/z8hQDBtOchuB/0BVLmuFOZjV02YwUVzNsWx/EzA==
+  dependencies:
+    tslib "^1.9.3"
 
 focus-outline-manager@^1.0.2:
   version "1.0.2"
@@ -12903,13 +12905,13 @@ react-fast-compare@^3.0.1:
   resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-3.2.0.tgz#641a9da81b6a6320f270e89724fb45a0b39e43bb"
   integrity sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA==
 
-react-focus-lock@2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/react-focus-lock/-/react-focus-lock-2.2.1.tgz#1d12887416925dc53481914b7cedd39494a3b24a"
-  integrity sha512-47g0xYcCTZccdzKRGufepY8oZ3W1Qg+2hn6u9SHZ0zUB6uz/4K4xJe7yYFNZ1qT6m+2JDm82F6QgKeBTbjW4PQ==
+react-focus-lock@2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/react-focus-lock/-/react-focus-lock-2.5.0.tgz#12e3a3940e897c26e2c2a0408cd25ea3c99b3709"
+  integrity sha512-XLxj6uTXgz0US8TmqNU2jMfnXwZG0mH2r/afQqvPEaX6nyEll5LHVcEXk2XDUQ34RVeLPkO/xK5x6c/qiuSq/A==
   dependencies:
     "@babel/runtime" "^7.0.0"
-    focus-lock "^0.6.6"
+    focus-lock "^0.8.1"
     prop-types "^15.6.2"
     react-clientside-effect "^1.2.2"
     use-callback-ref "^1.2.1"
@@ -13137,17 +13139,17 @@ reactcss@^1.2.0:
     lodash "^4.0.1"
 
 reactour@^1.17.0:
-  version "1.17.0"
-  resolved "https://registry.yarnpkg.com/reactour/-/reactour-1.17.0.tgz#4dbad7151f7c134d70bbb1203920ea7f583d4f19"
-  integrity sha512-wBDB20x84wSF9IvGbtMKlKB7eeK9WcDrJln4ayDooPUUR56ZH4mnxM0NoN2TQU1lgo6WHOzwxRS3HKJ0rrk5Jw==
+  version "1.18.3"
+  resolved "https://registry.yarnpkg.com/reactour/-/reactour-1.18.3.tgz#e9b5d104d63b549f50110e17ba6547ff6264bc08"
+  integrity sha512-JeYP2cWeM6qQgy5mrTt/nUTsyvQRTy/vwG2TOnIpUWDztDM2MNbhAVAvIc88cz+IFdVmOIpsBnVdM3xDC2Ko/w==
   dependencies:
-    "@rooks/use-mutation-observer" "3.4.0"
+    "@rooks/use-mutation-observer" "4.9.2"
     classnames "2.2.6"
     focus-outline-manager "^1.0.2"
     lodash.debounce "4.0.8"
     lodash.pick "4.4.0"
     prop-types "15.7.2"
-    react-focus-lock "2.2.1"
+    react-focus-lock "2.5.0"
     scroll-smooth "1.1.0"
     scrollparent "2.0.1"
 
