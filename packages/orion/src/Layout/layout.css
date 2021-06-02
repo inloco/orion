@@ -1,5 +1,6 @@
 .orion.layout {
   @apply bg-gray-50 min-h-screen w-full;
+  min-width: 768px;
 }
 
 /**
@@ -9,24 +10,18 @@
   @apply flex justify-center;
 }
 
-.orion.layout .layout-center-content {
-  @apply layout-content;
-}
-
 /**
  * Topbar
  */
 .orion.layout .layout-topbar {
-  @apply fixed top-0 z-40;
-  @apply flex-shrink-0 items-center h-64 bg-white;
+  @apply fixed top-0 z-40 px-24;
+  @apply items-center h-64 bg-white flex justify-center;
+  @apply border-b-1 border-gray-900-16;
+  width: calc(100% - 238px);
 }
 
 .orion.layout .layout-topbar.dimmed {
   @apply bg-gray-100 border-purple-900-8;
-}
-
-.orion.layout .layout-topbar > .layout-center-content {
-  @apply flex items-center ml-24;
 }
 
 .orion.layout .layout-topbar .orion.menu {
@@ -69,6 +64,11 @@
  */
 .orion.layout .layout-content {
   @apply p-24 mt-64;
+}
+
+.orion.layout.with-alert .layout-content {
+  /* topbar + alert = 64px + 40px*/
+  margin-top: 104px;
 }
 
 /**
@@ -149,9 +149,10 @@
  * Alert
  */
 .orion.layout .layout-alert {
-  @apply fixed top-0 flex justify-center w-full;
+  @apply fixed top-0 flex justify-center border-b-1 border-gray-900-16;
   top: 64px;
   padding: 10px 0;
+  width: calc(100% - 238px);
 }
 
 .orion.layout .layout-alert > .icon {

@@ -22,7 +22,6 @@ const paragraphs = _.times(10, () =>
 export const basic = () => (
   <Layout className="flex w-full">
     <Layout.Sidebar>
-      <Layout.Sidebar.Divider />
       <Menu vertical>
         <Menu.Header>Risk Assessments</Menu.Header>
         <Menu.Item name="Onboarding" icon="account_circle" active />
@@ -37,9 +36,8 @@ export const basic = () => (
         <Menu.Item name="Installations" icon="smartphone" />
       </Menu>
     </Layout.Sidebar>
-
     <Layout.Main>
-      {/* <Layout.Topbar dimmed={boolean('Dimmed', false, 'Topbar')}>
+      <Layout.Topbar dimmed={boolean('Dimmed', false, 'Topbar')}>
         <h1 className="font-display font-medium text-lg text-gray-800 mr-auto">
           Onboarding
         </h1>
@@ -126,7 +124,7 @@ export const basic = () => (
             'Alert'
           )}
         />
-      )} */}
+      )}
       <Layout.Content>
         {_.map(paragraphs, (paragraph, index) => (
           <p key={index}>{paragraph}</p>
