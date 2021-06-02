@@ -5,6 +5,5 @@
 }
 
 .layout-content {
-  @apply mx-24 w-full;
-  max-width: 1024px;
+  @apply w-full;
 }

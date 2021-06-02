@@ -1,12 +1,12 @@
 .orion.layout {
-  @apply bg-gray-50 flex flex-col min-h-screen items-center relative;
+  @apply bg-gray-50 min-h-screen w-full;
 }
 
 /**
  * Center
  */
 .orion.layout .layout-center {
-  @apply flex justify-center w-full;
+  @apply flex justify-center;
 }
 
 .orion.layout .layout-center-content {
@@ -17,10 +17,8 @@
  * Topbar
  */
 .orion.layout .layout-topbar {
-  @apply fixed top-0 left-0 z-40;
+  @apply fixed top-0 z-40;
   @apply flex-shrink-0 items-center h-64 bg-white;
-  @apply border-b-1 border-gray-900-16;
-  padding-left: calc(100vw - 100%);
 }
 
 .orion.layout .layout-topbar.dimmed {
@@ -28,11 +26,11 @@
 }
 
 .orion.layout .layout-topbar > .layout-center-content {
-  @apply flex items-center;
+  @apply flex items-center ml-24;
 }
 
 .orion.layout .layout-topbar .orion.menu {
-  @apply flex-1 ml-40;
+  @apply flex-1;
 }
 
 .orion.layout .layout-topbar .topbar-divider {
@@ -41,16 +39,36 @@
 }
 
 /**
- * Main
+ * Sidebar
  */
-.orion.layout .layout-main {
-  @apply flex-1 py-24 mt-64;
-  padding-left: calc(100vw - 100%);
+.orion.layout .layout-sidebar {
+  @apply fixed top-0 left-0 z-40 h-full bg-white p-24 overflow-y-scroll;
+  @apply border-r-1 border-gray-900-16;
+  width: 238px;
 }
 
-.orion.layout.with-alert .layout-main {
-  /* topbar + alert = 64px + 40px*/
-  margin-top: 104px;
+.orion.layout .layout-sidebar .orion.menu {
+  @apply flex-1;
+}
+
+.orion.layout .layout-sidebar .sidebar-divider {
+  @apply border-b-1 border-gray-900-16 my-24;
+}
+
+/**
+ * Main
+ */
+
+.orion.layout .layout-main {
+  @apply flex flex-col w-full justify-start;
+  margin-left: 230px;
+}
+
+/**
+ * Content
+ */
+.orion.layout .layout-content {
+  @apply p-24 mt-64;
 }
 
 /**
@@ -131,7 +149,7 @@
  * Alert
  */
 .orion.layout .layout-alert {
-  @apply fixed left-0 flex justify-center leading-20 w-screen;
+  @apply fixed top-0 flex justify-center w-full;
   top: 64px;
   padding: 10px 0;
 }

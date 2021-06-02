@@ -63,9 +63,15 @@
 }
 
 .orion.menu.vertical .item {
-  @apply ml-0 mt-24;
+  @apply ml-0 mt-16;
 }
 
 .orion.menu .item:first-child {
   @apply mt-0;
+}
+
+/* Header */
+
+.orion.menu .header {
+  @apply font-medium text-sm mb-8 text-gray-800;
 }

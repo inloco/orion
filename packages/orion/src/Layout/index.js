@@ -6,7 +6,9 @@ import LayoutAppsDropdown from './LayoutAppsDropdown'
 import LayoutCenter from './LayoutCenter'
 import LayoutMain from './LayoutMain'
 import LayoutTopbar from './LayoutTopbar'
+import LayoutSidebar from './LayoutSidebar'
 import LayoutUserProfile from './LayoutUserProfile'
+import LayoutContent from './LayoutContent'
 
 const Dimensions = {
   topbarHeight: 64,
@@ -26,7 +28,9 @@ LayoutIndex.AppsDropdown = LayoutAppsDropdown
 LayoutIndex.Center = LayoutCenter
 LayoutIndex.Main = LayoutMain
 LayoutIndex.Topbar = LayoutTopbar
+LayoutIndex.Sidebar = LayoutSidebar
 LayoutIndex.UserProfile = LayoutUserProfile
+LayoutIndex.Content = LayoutContent
 LayoutIndex.Dimensions = Dimensions
 
 export default LayoutIndex
