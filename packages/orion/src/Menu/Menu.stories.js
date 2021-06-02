@@ -55,3 +55,18 @@ export const switcher = () => {
     />
   )
 }
+
+export const vertical = () => {
+  return (
+    <Menu
+      vertical
+      items={object('Items', [
+        { name: 'Onboarding', key: 0 },
+        { name: 'Insights', key: 1 },
+        { name: 'Automation', key: 2 }
+      ])}
+      defaultActiveIndex={0}
+      onItemClick={action('onItemClick')}
+    />
+  )
+}

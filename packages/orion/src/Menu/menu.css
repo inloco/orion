@@ -55,3 +55,17 @@
 .orion.menu .item.active > svg.icon {
   @apply fill-purple-600;
 }
+
+/** Vertical Menu **/
+
+.orion.menu.vertical {
+  @apply flex-col;
+}
+
+.orion.menu.vertical .item {
+  @apply ml-0 mt-24;
+}
+
+.orion.menu .item:first-child {
+  @apply mt-0;
+}
