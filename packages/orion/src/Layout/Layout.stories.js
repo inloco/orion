@@ -35,6 +35,14 @@ export const basic = () => (
         <Menu.Item name="Apps" icon="developer_mode" />
         <Menu.Item name="Installations" icon="smartphone" />
       </Menu>
+      <Layout.Sidebar.Divider />
+      <Menu vertical>
+        <Menu.Header>API</Menu.Header>
+        <Menu.Item name="Credentials" icon="vpn_key" />
+        <Menu.Item name="Usage" icon="data_usage" />
+        <Menu.Item name="API Reference" icon="code" />
+      </Menu>
+      <Layout.Sidebar.Divider />
     </Layout.Sidebar>
     <Layout.Main>
       <Layout.Topbar dimmed={boolean('Dimmed', false, 'Topbar')}>

@@ -49,11 +49,11 @@
 }
 
 .orion.menu .item.active > .icon {
-  @apply text-purple-600;
+  @apply text-purple-700;
 }
 
 .orion.menu .item.active > svg.icon {
-  @apply fill-purple-600;
+  @apply fill-purple-700;
 }
 
 /** Vertical Menu **/
@@ -66,8 +66,12 @@
   @apply ml-0 mt-16;
 }
 
-.orion.menu .item:first-child {
+.orion.menu.vertical .item:first-child {
   @apply mt-0;
+}
+
+.orion.menu.vertical .item > .icon {
+  @apply mr-8;
 }
 
 /* Header */

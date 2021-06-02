@@ -42,12 +42,31 @@
   width: 238px;
 }
 
-.orion.layout .layout-sidebar .orion.menu {
-  @apply flex-1;
+/**
+ * Sidebar Menu
+ */
+
+.orion.layout .layout-sidebar .orion.menu .item {
+  @apply px-12 py-8 rounded-small mt-4;
+  margin-left: -12px;
 }
+
+.orion.layout .layout-sidebar .orion.menu .item:hover,
+.orion.layout .layout-sidebar .orion.menu .item:focus {
+  @apply bg-purple-50;
+}
+
+.orion.layout .layout-sidebar .orion.menu .item.active {
+  @apply bg-purple-100;
+}
+
+/**
+ * Sidebar Divider
+ */
 
 .orion.layout .layout-sidebar .sidebar-divider {
   @apply border-b-1 border-gray-900-16 my-24;
+  margin-left: -24px;
 }
 
 /**
