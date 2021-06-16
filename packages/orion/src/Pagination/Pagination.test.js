@@ -70,6 +70,24 @@ describe('Happy path', () => {
     expect(queryByText(expectedResult)).toBeTruthy()
   })
 
+  describe('when the i18n prop is passed', () => {
+    it('should show the correct strings', () => {
+      const { getByText, queryByText } = render(
+        <Pagination
+          activePage={1}
+          pageSize={10}
+          totalItems={35}
+          i18n={{ of: 'of', value: 'many', results: 'results' }}
+        />
+      )
+      expect(getByText('1-10')).toBeInTheDocument()
+      expect(getByText('of')).toBeInTheDocument()
+      expect(getByText('many')).toBeInTheDocument()
+      expect(getByText('results')).toBeInTheDocument()
+      expect(queryByText('35')).not.toBeInTheDocument()
+    })
+  })
+
   describe('buttons', () => {
     it('should show previous button disabled if it is on first page', () => {
       const { queryByTestId } = render(

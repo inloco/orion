@@ -68,3 +68,22 @@ export const alignButtonsLeft = () => (
     {...actions}
   />
 )
+
+export const customValue = () => (
+  <Pagination
+    activePage={number('activePage', 1)}
+    disabled={boolean('disabled', false)}
+    totalItems={number('totalItems', 23)}
+    pageSize={number('pageSize', 10)}
+    alignButtonsLeft={boolean('alignButtonsLeft', false)}
+    i18n={object('i18n', {
+      language: 'en',
+      of: 'of',
+      value: 'many',
+      results: 'results'
+    })}
+    loading={boolean('loading', false)}
+    size={sizeKnob(Sizes.DEFAULT)}
+    {...actions}
+  />
+)

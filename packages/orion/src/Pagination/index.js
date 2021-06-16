@@ -64,7 +64,7 @@ const Pagination = ({
             </span>
             <span className="orion-pagination-text">{i18n.of}</span>
             <span className="orion-pagination-value">
-              {totalItems.toLocaleString(i18n.language)}
+              {i18n.value ?? totalItems.toLocaleString(i18n.language)}
             </span>
           </>
         )}
@@ -111,6 +111,7 @@ Pagination.propTypes = {
   i18n: PropTypes.shape({
     language: PropTypes.string,
     of: PropTypes.string,
+    value: PropTypes.string,
     results: PropTypes.string
   }),
   onPageChange: PropTypes.func,
