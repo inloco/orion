@@ -25,7 +25,7 @@
 @import './src/Modal/modal.css';
 @import './src/MultiSelectFilter/MultiSelectFilter.css';
 @import './src/NotificationCenter/notificationCenter.css';
-@import './src/Pagination/pagination.css';
+@import './src/PaginationControlled/pagination.css';
 @import './src/Placeholder/placeholder.css';
 @import './src/Popup/popup.css';
 @import './src/Progress/progress.css';
