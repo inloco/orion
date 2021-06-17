@@ -8,8 +8,9 @@ import Button from '../Button'
 
 const ACTIVE_PAGE_MIN = 1
 
-const PaginationControlled = ({
-  activePage,
+const PaginationEndless = ({
+  activePage: activePageProp,
+  activePageItemCount,
   pageSize,
   hasNextPage,
   alignButtonsLeft,
@@ -44,21 +45,25 @@ const PaginationControlled = ({
     'orion-pagination-content-disabled': disabled
   })
 
-  const showButtons = activePage !== 1 || hasNextPage
+  const activePage = Math.max(ACTIVE_PAGE_MIN, activePageProp)
+  const isFirstPage = activePage === ACTIVE_PAGE_MIN
+  const hasMultiplePages = !isFirstPage || hasNextPage
+  const firstPageItemIndex = pageSize * (activePage - 1) + 1
+  const lastPageItemIndex = pageSize * (activePage - 1) + activePageItemCount
 
   return (
     <div className={orionPaginationClasses} {...otherProps}>
       <div className={orionPaginationContent}>
-        <span className="orion-pagination-value">{i18n.value}</span>
-        {showButtons && (
-          <>
-            <span className="orion-pagination-text">{i18n.of}</span>
-            <span className="orion-pagination-value">{i18n.many}</span>
-          </>
-        )}
-        <span className="orion-pagination-text">{i18n.results}</span>
+        <span className="orion-pagination-value">
+          {hasMultiplePages
+            ? `${firstPageItemIndex}-${lastPageItemIndex}`
+            : `${activePageItemCount}`}
+        </span>
+        <span className="orion-pagination-text">
+          {hasMultiplePages ? i18n.label : i18n.singlePageLabel}
+        </span>
       </div>
-      {showButtons && (
+      {hasMultiplePages && (
         <div className="orion-pagination-actions">
           <Button
             disabled={disabled || activePage === ACTIVE_PAGE_MIN}
@@ -88,20 +93,18 @@ const PaginationControlled = ({
   )
 }
 
-PaginationControlled.propTypes = {
-  activePage: PropTypes.number,
-  pageSize: PropTypes.number,
-  hasNextPage: PropTypes.bool,
+PaginationEndless.propTypes = {
+  activePage: PropTypes.number.isRequired,
+  activePageItemCount: PropTypes.number.isRequired,
+  pageSize: PropTypes.number.isRequired,
+  hasNextPage: PropTypes.bool.isRequired,
   alignButtonsLeft: PropTypes.bool,
   className: PropTypes.string,
   disabled: PropTypes.bool,
   loading: PropTypes.bool,
   i18n: PropTypes.shape({
-    language: PropTypes.string,
-    value: PropTypes.string,
-    of: PropTypes.string,
-    many: PropTypes.string,
-    results: PropTypes.string
+    singlePageLabel: PropTypes.node.isRequired,
+    label: PropTypes.node.isRequired
   }),
   onPageChange: PropTypes.func,
   onPrevPage: PropTypes.func,
@@ -109,16 +112,11 @@ PaginationControlled.propTypes = {
   size: sizePropType
 }
 
-PaginationControlled.defaultProps = {
+PaginationEndless.defaultProps = {
   activePage: 1,
   pageSize: 10,
   hasNextPage: false,
-  i18n: {
-    language: 'en',
-    of: 'of',
-    results: 'results'
-  },
   size: Sizes.DEFAULT
 }
 
-export default PaginationControlled
+export default PaginationEndless

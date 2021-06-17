@@ -1,13 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { sizePropType } from '../utils/sizes'
-import PaginationContolled from '../PaginationControlled'
+import EndlessPagination from '../PaginationEndless'
 
 const ACTIVE_PAGE_MIN = 1
 
 const Pagination = ({
-  activePage,
+  activePage: activePageProp,
   i18n,
   loading,
   pageSize,
@@ -17,25 +16,33 @@ const Pagination = ({
   if (!loading && pageSize < 1) return null
 
   const activePageMax = Math.ceil(totalItems / pageSize)
-  const possibleActivePage = Math.max(
-    Math.min(activePage, activePageMax),
-    ACTIVE_PAGE_MIN
+  const activePage = Math.min(
+    Math.max(ACTIVE_PAGE_MIN, activePageProp),
+    activePageMax
   )
-  const firstPageItem = pageSize * (possibleActivePage - 1) + 1
-  const lastPageItem = Math.min(pageSize * possibleActivePage, totalItems)
+
+  const hasNextPage = activePage < activePageMax
+  const activePageItemCount = hasNextPage
+    ? pageSize
+    : totalItems - (activePage - 1) * pageSize
 
   return (
-    <PaginationContolled
+    <EndlessPagination
       activePage={activePage}
+      activePageItemCount={activePageItemCount}
       pageSize={pageSize}
-      hasNextPage={activePage < activePageMax}
+      hasNextPage={hasNextPage}
       i18n={{
-        ...i18n,
-        value:
-          totalItems <= pageSize
-            ? `${totalItems}`
-            : `${firstPageItem}-${lastPageItem}`,
-        many: totalItems.toLocaleString(i18n.language)
+        singlePageLabel: i18n.results,
+        label: (
+          <>
+            <span className="orion-pagination-text">{i18n.of}</span>
+            <span className="orion-pagination-value">
+              {totalItems.toLocaleString(i18n.language)}
+            </span>
+            <span className="orion-pagination-text">{i18n.results}</span>
+          </>
+        )
       }}
       loading={loading}
       {...otherProps}
