@@ -116,7 +116,11 @@ PaginationEndless.defaultProps = {
   activePage: 1,
   pageSize: 10,
   hasNextPage: false,
-  size: Sizes.DEFAULT
+  size: Sizes.DEFAULT,
+  i18n: {
+    singlePageLabel: '',
+    label: ''
+  }
 }
 
 export default PaginationEndless
