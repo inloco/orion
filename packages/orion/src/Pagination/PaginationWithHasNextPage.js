@@ -8,7 +8,7 @@ import Button from '../Button'
 
 const ACTIVE_PAGE_MIN = 1
 
-const PaginationEndless = ({
+const PaginationWithHasNextPage = ({
   activePage,
   activePageItemCount,
   pageSize,
@@ -60,9 +60,15 @@ const PaginationEndless = ({
             ? `${firstPageItemIndex}-${lastPageItemIndex}`
             : `${activePageItemCount}`}
         </span>
-        <span className="orion-pagination-text">
-          {hasMultiplePages ? i18n.label : i18n.singlePageLabel}
-        </span>
+        {hasMultiplePages ? (
+          <>
+            <span className="orion-pagination-text">{i18n.of}</span>
+            <span className="orion-pagination-value">{i18n.value}</span>
+            <span className="orion-pagination-text">{i18n.results}</span>
+          </>
+        ) : (
+          <span className="orion-pagination-text">{i18n.results}</span>
+        )}
       </div>
       {hasMultiplePages && (
         <div className="orion-pagination-actions">
@@ -94,7 +100,7 @@ const PaginationEndless = ({
   )
 }
 
-PaginationEndless.propTypes = {
+PaginationWithHasNextPage.propTypes = {
   activePage: PropTypes.number.isRequired,
   activePageItemCount: PropTypes.number.isRequired,
   pageSize: PropTypes.number.isRequired,
@@ -104,8 +110,9 @@ PaginationEndless.propTypes = {
   disabled: PropTypes.bool,
   loading: PropTypes.bool,
   i18n: PropTypes.shape({
-    singlePageLabel: PropTypes.node.isRequired,
-    label: PropTypes.node.isRequired
+    of: PropTypes.string,
+    value: PropTypes.node,
+    results: PropTypes.string
   }),
   onPageChange: PropTypes.func,
   onPrevPage: PropTypes.func,
@@ -113,15 +120,16 @@ PaginationEndless.propTypes = {
   size: sizePropType
 }
 
-PaginationEndless.defaultProps = {
+PaginationWithHasNextPage.defaultProps = {
   activePage: 1,
   pageSize: 10,
   hasNextPage: false,
   size: Sizes.DEFAULT,
   i18n: {
-    singlePageLabel: '',
-    label: ''
+    of: 'of',
+    value: 'many',
+    results: 'results'
   }
 }
 
-export default PaginationEndless
+export default PaginationWithHasNextPage
