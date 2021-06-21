@@ -9,7 +9,7 @@ import Button from '../Button'
 const ACTIVE_PAGE_MIN = 1
 
 const PaginationEndless = ({
-  activePage: activePageProp,
+  activePage,
   activePageItemCount,
   pageSize,
   hasNextPage,
@@ -45,11 +45,12 @@ const PaginationEndless = ({
     'orion-pagination-content-disabled': disabled
   })
 
-  const activePage = Math.max(ACTIVE_PAGE_MIN, activePageProp)
-  const isFirstPage = activePage === ACTIVE_PAGE_MIN
+  const validActivePage = Math.max(ACTIVE_PAGE_MIN, activePage)
+  const isFirstPage = validActivePage === ACTIVE_PAGE_MIN
   const hasMultiplePages = !isFirstPage || hasNextPage
-  const firstPageItemIndex = pageSize * (activePage - 1) + 1
-  const lastPageItemIndex = pageSize * (activePage - 1) + activePageItemCount
+  const firstPageItemIndex = pageSize * (validActivePage - 1) + 1
+  const lastPageItemIndex =
+    pageSize * (validActivePage - 1) + activePageItemCount
 
   return (
     <div className={orionPaginationClasses} {...otherProps}>
@@ -66,12 +67,12 @@ const PaginationEndless = ({
       {hasMultiplePages && (
         <div className="orion-pagination-actions">
           <Button
-            disabled={disabled || activePage === ACTIVE_PAGE_MIN}
+            disabled={disabled || validActivePage === ACTIVE_PAGE_MIN}
             icon="keyboard_arrow_left"
             data-testid="previous"
             onClick={e => {
               if (onPageChange) {
-                onPageChange(e, { activePage: activePage - 1 })
+                onPageChange(e, { activePage: validActivePage - 1 })
               }
               if (onPrevPage) onPrevPage(e)
             }}
@@ -82,7 +83,7 @@ const PaginationEndless = ({
             data-testid="next"
             onClick={e => {
               if (onPageChange) {
-                onPageChange(e, { activePage: activePage + 1 })
+                onPageChange(e, { activePage: validActivePage + 1 })
               }
               if (onNextPage) onNextPage(e)
             }}

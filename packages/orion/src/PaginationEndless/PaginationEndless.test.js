@@ -115,8 +115,8 @@ describe('Endless Pagination', () => {
         />
       )
 
-      expect(screen.queryByTestId('previous')).toBeFalsy()
-      expect(screen.queryByTestId('next')).toBeFalsy()
+      expect(screen.queryByTestId('previous')).not.toBeInTheDocument()
+      expect(screen.queryByTestId('next')).not.toBeInTheDocument()
     })
 
     it('should call "onChange" with the next active page when the "next" button is clicked', () => {
