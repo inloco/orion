@@ -6,7 +6,7 @@ import EndlessPagination from '../PaginationEndless'
 const ACTIVE_PAGE_MIN = 1
 
 const Pagination = ({
-  activePage: activePageProp,
+  activePage,
   i18n,
   loading,
   pageSize,
@@ -16,19 +16,19 @@ const Pagination = ({
   if (!loading && pageSize < 1) return null
 
   const activePageMax = Math.ceil(totalItems / pageSize)
-  const activePage = Math.min(
-    Math.max(ACTIVE_PAGE_MIN, activePageProp),
+  const validActivePage = Math.min(
+    Math.max(ACTIVE_PAGE_MIN, activePage),
     activePageMax
   )
 
-  const hasNextPage = activePage < activePageMax
+  const hasNextPage = validActivePage < activePageMax
   const activePageItemCount = hasNextPage
     ? pageSize
-    : totalItems - (activePage - 1) * pageSize
+    : totalItems - (validActivePage - 1) * pageSize
 
   return (
     <EndlessPagination
-      activePage={activePage}
+      activePage={validActivePage}
       activePageItemCount={activePageItemCount}
       pageSize={pageSize}
       hasNextPage={hasNextPage}
