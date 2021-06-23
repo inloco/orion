@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import _ from 'lodash'
 
 import PaginationWithTotalItems from './PaginationWithTotaltems'
 import PaginationWithHasNextPage from './PaginationWithHasNextPage'
@@ -13,20 +14,20 @@ const Pagination = ({
   totalItems,
   ...otherProps
 }) => {
-  return totalItems ? (
-    <PaginationWithTotalItems
-      activePage={activePage}
-      pageSize={pageSize}
-      totalItems={totalItems}
-      i18n={i18n}
-      {...otherProps}
-    />
-  ) : (
+  return _.isNil(totalItems) ? (
     <PaginationWithHasNextPage
       activePage={activePage}
       pageSize={pageSize}
       hasNextPage={hasNextPage}
       activePageItemCount={activePageItemCount}
+      i18n={i18n}
+      {...otherProps}
+    />
+  ) : (
+    <PaginationWithTotalItems
+      activePage={activePage}
+      pageSize={pageSize}
+      totalItems={totalItems}
       i18n={i18n}
       {...otherProps}
     />
