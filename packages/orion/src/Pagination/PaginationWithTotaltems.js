@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import _ from 'lodash'
 
 import PaginationWithHasNextPage from './PaginationWithHasNextPage'
 
@@ -15,16 +16,16 @@ const PaginationWithTotalItems = ({
 }) => {
   if (!loading && pageSize < 1) return null
 
-  const activePageMax = Math.ceil(totalItems / pageSize)
-  const validActivePage = Math.min(
-    Math.max(ACTIVE_PAGE_MIN, activePage),
-    activePageMax
-  )
+  const validTotalItems = Math.max(0, totalItems)
+  const activePageMax = Math.ceil(validTotalItems / pageSize)
 
+  const validActivePage = _.clamp(activePage, ACTIVE_PAGE_MIN, activePageMax)
   const hasNextPage = validActivePage < activePageMax
   const activePageItemCount = hasNextPage
     ? pageSize
-    : totalItems - (validActivePage - 1) * pageSize
+    : validTotalItems <= 0
+    ? 0
+    : validTotalItems - (validActivePage - 1) * pageSize
 
   return (
     <PaginationWithHasNextPage
@@ -34,7 +35,7 @@ const PaginationWithTotalItems = ({
       hasNextPage={hasNextPage}
       i18n={{
         ...i18n,
-        value: totalItems.toLocaleString(i18n.language)
+        value: validTotalItems.toLocaleString(i18n.language)
       }}
       loading={loading}
       {...otherProps}

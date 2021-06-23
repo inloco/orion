@@ -31,6 +31,14 @@ describe('Using TotalItems', () => {
     it('should render one page if totalItems <= 1', () => {
       render(<Pagination totalItems={-1} />)
 
+      expect(screen.getByText('0')).toBeInTheDocument()
+      expect(screen.getByText('results')).toBeInTheDocument()
+    })
+
+    it('should render one page if totalItems == 0', () => {
+      render(<Pagination totalItems={0} />)
+
+      expect(screen.getByText('0')).toBeInTheDocument()
       expect(screen.getByText('results')).toBeInTheDocument()
     })
 
