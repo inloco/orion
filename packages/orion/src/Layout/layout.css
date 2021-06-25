@@ -15,8 +15,7 @@
  */
 .orion.layout .layout-topbar {
   @apply fixed top-0 z-40 px-24;
-  @apply items-center h-64 bg-white flex justify-center;
-  @apply border-b-1 border-gray-900-16;
+  @apply items-center h-64 flex justify-center;
   width: calc(100% - 238px);
 }
 
@@ -37,7 +36,7 @@
  * Sidebar
  */
 .orion.layout .layout-sidebar {
-  @apply fixed top-0 left-0 z-40 h-full bg-white p-24 overflow-y-scroll;
+  @apply fixed top-0 left-0 z-40 h-full bg-white p-24 pr-16 overflow-y-scroll;
   @apply border-r-1 border-gray-900-16;
   width: 238px;
 }
@@ -74,7 +73,7 @@
  */
 
 .orion.layout .layout-main {
-  @apply flex flex-col w-full justify-start;
+  @apply flex flex-col w-full justify-start bg-gray-50;
   margin-left: 230px;
 }
 
@@ -168,7 +167,7 @@
  * Alert
  */
 .orion.layout .layout-alert {
-  @apply fixed top-0 flex justify-center border-b-1 border-gray-900-16;
+  @apply fixed top-0 flex justify-center;
   top: 64px;
   padding: 10px 0;
   width: calc(100% - 238px);
