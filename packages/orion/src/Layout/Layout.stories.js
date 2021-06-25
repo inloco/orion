@@ -7,7 +7,7 @@ import { text, boolean, object, radios } from '@storybook/addon-knobs'
 import incognia from '../../storyImages/incognia.svg'
 import myapps from '../../storyImages/myapps.svg'
 import appImage from '../../storyImages/app.png'
-import { Divider, Icon, Layout, Menu } from '../'
+import { Icon, Layout, Menu } from '../'
 
 const storyMetadata = {
   title: 'Layout'
