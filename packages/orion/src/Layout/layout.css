@@ -14,7 +14,7 @@
  * Topbar
  */
 .orion.layout .layout-topbar {
-  @apply fixed top-0 z-40 px-24;
+  @apply fixed top-0 z-40 px-24 bg-gray-50;
   @apply items-center h-64 flex justify-center;
   width: calc(100% - 238px);
 }
