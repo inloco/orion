@@ -1,6 +1,6 @@
 import keyboardKey from 'keyboard-key'
 import React from 'react'
-import { fireEvent, render } from '@testing-library/react'
+import { fireEvent, render, screen } from '@testing-library/react'
 
 import Filter from './'
 
@@ -239,6 +239,32 @@ describe("when the filter's value changes", () => {
 
     it('should call "onChange" with "null"', () => {
       expect(onChange).toHaveBeenCalledWith(null)
+    })
+  })
+})
+
+describe('when the filter is not clearable', () => {
+  const value = 'Controlled value'
+
+  beforeEach(() => {
+    render(
+      <Filter text="Open" value={value} clearable={false}>
+        {childFn}
+      </Filter>
+    )
+  })
+
+  it('should not render a cancel icon', () => {
+    expect(screen.queryByText('clear')).not.toBeInTheDocument()
+  })
+
+  describe('when the popup is open', () => {
+    it('should not render the clear button', () => {
+      fireEvent.click(screen.getByText(value))
+
+      expect(
+        screen.queryByRole('button', { name: 'Clear' }).closest('div')
+      ).toHaveClass('invisible')
     })
   })
 })
