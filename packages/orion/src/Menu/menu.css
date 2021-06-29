@@ -74,6 +74,17 @@
   @apply mr-8;
 }
 
+/**
+ * Upward
+ */
+.orion.vertical.menu .dropdown.item.upward .menu {
+  @apply bottom-0;
+}
+
+.orion.vertical.menu .dropdown.item:not(.upward) .menu {
+  @apply top-0;
+}
+
 /* Header */
 
 .orion.menu .header {
