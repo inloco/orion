@@ -33,6 +33,22 @@ const orgOptions = [
   }
 ]
 
+const Footer = (
+  <div className="flex justify-center items-center p-8 border-t-1 border-gray-900-16 space-x-8">
+    <a href="/help" className="text-sm font-normal text-gray-800">
+      Help
+    </a>
+    <div className="bg-gray-800 w-4 h-4 rounded-full" />
+    <a href="/privacy-policy" className="text-sm font-normal text-gray-800">
+      Privacy Policy
+    </a>
+    <div className="bg-gray-800 w-4 h-4 rounded-full" />
+    <a href="/terms-of-use" className="text-sm font-normal text-gray-800">
+      Terms of Use
+    </a>
+  </div>
+)
+
 export const basic = () => (
   <Layout className="flex w-full">
     <Layout.Sidebar>
@@ -100,6 +116,7 @@ export const basic = () => (
           name={text('Name', 'Mark Weiser', 'UserProfile')}
           label={text('Label', 'Incognia', 'UserProfile')}
           email={text('Email', 'mark.weiser@incognia.com', 'UserProfile')}
+          footer={Footer}
           logoutUrl={text('Logout URL', '#', 'UserProfile')}
           logoutText={text('Logout Text', 'Logout', 'UserProfile')}
           imageUrl={text('Image URL', appImage, 'UserProfile')}>

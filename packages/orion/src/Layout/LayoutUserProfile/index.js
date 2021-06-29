@@ -16,6 +16,7 @@ const LayoutUserProfile = ({
   children,
   name,
   email,
+  footer,
   label,
   logoutUrl,
   logoutText,
@@ -94,6 +95,7 @@ const LayoutUserProfile = ({
             {logoutText}
           </button>
         </form>
+        {footer}
       </Dropdown.Menu>
     </Dropdown>
   )
@@ -104,6 +106,7 @@ LayoutUserProfile.propTypes = {
   children: PropTypes.node,
   name: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
+  footer: PropTypes.node,
   label: PropTypes.string,
   logoutUrl: PropTypes.string,
   logoutText: PropTypes.string,
