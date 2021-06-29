@@ -29,6 +29,7 @@ const Filter = ({
   trigger,
   value: propValue,
   tooltipProps,
+  clearable,
   ...otherProps
 }) => {
   const [open, setOpen] = useState(false)
@@ -86,7 +87,8 @@ const Filter = ({
 
   const triggerClasses = cx('filter-trigger', {
     active: open,
-    selected: isSelected
+    selected: isSelected,
+    clearable
   })
 
   const defaultTooltipTrigger = (
@@ -95,7 +97,9 @@ const Filter = ({
         <span className="filter-trigger-prefix">{prefix}</span>
       )}
       {isSelected ? selectedText(value) : text}
-      {isSelected && <FilterClearIcon onClick={handleClearIconClick} />}
+      {isSelected && clearable && (
+        <FilterClearIcon onClick={handleClearIconClick} />
+      )}
     </Button>
   )
 
@@ -129,7 +133,10 @@ const Filter = ({
         </div>
         {(clearButton || applyButton || extraFooterContent) && (
           <div className="filter-buttons">
-            <div className={cx({ invisible: _.isEmpty(localValue) })}>
+            <div
+              className={cx({
+                invisible: !clearable || _.isEmpty(localValue)
+              })}>
               {Button.create(clearButton, {
                 autoGenerateKey: false,
                 defaultProps: {
@@ -178,13 +185,15 @@ Filter.propTypes = {
   text: PropTypes.string,
   value: PropTypes.any,
   tooltipProps: PropTypes.object,
-  trigger: PropTypes.node
+  trigger: PropTypes.node,
+  clearable: PropTypes.bool
 }
 
 Filter.defaultProps = {
   applyButton: 'Apply',
   clearButton: 'Clear',
-  selectedText: value => value
+  selectedText: value => value,
+  clearable: true
 }
 
 export default Filter

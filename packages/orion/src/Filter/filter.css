@@ -19,6 +19,9 @@
 
 .orion.button.filter-trigger.selected {
   @apply bg-purple-100 border-none text-purple-800;
+}
+
+.orion.button.filter-trigger.selected.clearable {
   @apply pr-8;
 }
 

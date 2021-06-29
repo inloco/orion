@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { object, text } from '@storybook/addon-knobs'
+import { object, text, boolean } from '@storybook/addon-knobs'
 import PropTypes from 'prop-types'
 import _ from 'lodash'
 
@@ -25,6 +25,7 @@ export const withInput = () => (
     text={text('Label', 'Open')}
     extraFooterContent={text('Extra footer content', '')}
     prefix={text('Prefix', '')}
+    clearable={boolean('Clearable', true)}
     {...actions}>
     {filterProps => (
       <FilterStoryInput {...filterProps} placeholder="Type your name" />
@@ -42,6 +43,7 @@ export const withDropdown = () => {
       prefix={text('Prefix', '')}
       text={text('Label', 'Open')}
       selectedText={value => value.map(index => options[index].text).join(', ')}
+      clearable={boolean('Clearable', true)}
       {...actions}>
       {({ onChange, value }) => (
         <React.Fragment>
@@ -85,6 +87,7 @@ export const withHover = () => (
       position: text('Tooltip position', 'right center'),
       content: text('Hover Content', 'This is a filter')
     }}
+    clearable={boolean('Clearable', true)}
     {...actions}>
     {filterProps => (
       <FilterStoryInput {...filterProps} placeholder="Type your name" />
@@ -111,6 +114,7 @@ export const customApply = () => {
       text={text('Label', 'Filter')}
       applyButton={null}
       clearButton={null}
+      clearable={boolean('Clearable', true)}
       {...actions}>
       {({ handleApply }) => (
         <Button
