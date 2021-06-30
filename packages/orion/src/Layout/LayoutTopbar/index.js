@@ -3,27 +3,23 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 import TopbarDivider from './TopbarDivider'
-import LayoutCenter from '../LayoutCenter'
-import Logo from '../../Logo'
 import { Alert, useAlert } from '../LayoutAlert'
 
-const LayoutTopbar = ({ className, children, logo, dimmed, ...otherProps }) => {
+const LayoutTopbar = ({ className, children, dimmed, ...otherProps }) => {
   const classes = cx('layout-topbar', { dimmed }, className)
   const alertProps = useAlert()
 
   return (
-    <LayoutCenter className={classes} {...otherProps}>
-      {logo || <Logo className="mb-4" />}
+    <div className={classes} {...otherProps}>
       {children}
       {!!alertProps && <Alert {...alertProps} />}
-    </LayoutCenter>
+    </div>
   )
 }
 
 LayoutTopbar.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
-  logo: PropTypes.node,
   dimmed: PropTypes.bool
 }
 

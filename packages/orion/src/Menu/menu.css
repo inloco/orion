@@ -49,11 +49,46 @@
 }
 
 .orion.menu .item.active > .icon {
-  @apply text-purple-600;
+  @apply text-purple-700;
 }
 
 .orion.menu .item.active > svg.icon {
-  @apply fill-purple-600;
+  @apply fill-purple-700;
+}
+
+/** Vertical Menu **/
+
+.orion.menu.vertical {
+  @apply flex-col;
+}
+
+.orion.menu.vertical .item {
+  @apply ml-0 mt-16;
+}
+
+.orion.menu.vertical .item:first-child {
+  @apply mt-0;
+}
+
+.orion.menu.vertical .item > .icon {
+  @apply mr-8;
+}
+
+/**
+ * Upward
+ */
+.orion.vertical.menu .dropdown.item.upward .menu {
+  @apply bottom-0;
+}
+
+.orion.vertical.menu .dropdown.item:not(.upward) .menu {
+  @apply top-0;
+}
+
+/* Header */
+
+.orion.menu .header {
+  @apply font-medium text-sm mb-8 text-gray-800;
 }
 
 /** Vertical Menu **/

@@ -3,8 +3,3 @@
   transition-timing-function: cubic-bezier(0.64, 0, 0.35, 1);
   transition-property: all;
 }
-
-.layout-content {
-  @apply mx-24 w-full;
-  max-width: 1024px;
-}

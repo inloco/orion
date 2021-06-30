@@ -181,7 +181,7 @@
  * Dropdown Logout option
  */
 .orion.layout .layout-user-profile-logout {
-  @apply flex justify-center w-full p-8 cursor-auto;
+  @apply bg-gray-100 flex justify-center w-full p-8 cursor-auto;
 }
 
 .orion.layout .layout-user-profile-logout > button {
