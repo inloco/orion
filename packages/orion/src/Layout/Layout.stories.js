@@ -7,7 +7,7 @@ import { text, boolean, object, radios } from '@storybook/addon-knobs'
 import incognia from '../../storyImages/incognia.svg'
 import myapps from '../../storyImages/myapps.svg'
 import appImage from '../../storyImages/app.png'
-import { Icon, Layout, Menu } from '../'
+import { Icon, Layout, Menu, OrgDropdown } from '../'
 
 const storyMetadata = {
   title: 'Layout'
@@ -18,6 +18,20 @@ export default storyMetadata
 const paragraphs = _.times(10, () =>
   loremIpsum({ count: 1, units: 'paragraph' })
 )
+
+const orgOptions = [
+  {
+    value: 1,
+    text: 'Incognia',
+    label: 'Admin',
+    image: { as: () => <img alt="app" src={incognia} /> }
+  },
+  {
+    value: 2,
+    text: 'Inloco',
+    label: 'Developer'
+  }
+]
 
 const Footer = (
   <div className="flex justify-center items-center p-8 border-t-1 border-gray-900-16 space-x-8">
@@ -38,27 +52,38 @@ const Footer = (
 export const basic = () => (
   <Layout className="flex w-full">
     <Layout.Sidebar>
-      <Menu vertical>
-        <Menu.Header>Risk Assessments</Menu.Header>
-        <Menu.Item name="Onboarding" icon="account_circle" active />
-        <Menu.Item name="Logins" icon="login" />
-        <Menu.Item name="Payments" icon="payment" />
-        <Menu.Item name="Files" icon="folder_open" />
-      </Menu>
-      <Layout.Sidebar.Divider />
-      <Menu vertical>
-        <Menu.Header>SDK</Menu.Header>
-        <Menu.Item name="Apps" icon="developer_mode" />
-        <Menu.Item name="Installations" icon="smartphone" />
-      </Menu>
-      <Layout.Sidebar.Divider />
-      <Menu vertical>
-        <Menu.Header>API</Menu.Header>
-        <Menu.Item name="Credentials" icon="vpn_key" />
-        <Menu.Item name="Usage" icon="data_usage" />
-        <Menu.Item name="API Reference" icon="code" />
-      </Menu>
-      <Layout.Sidebar.Divider />
+      <Layout.Sidebar.Content>
+        <Menu vertical>
+          <Menu.Header>Risk Assessments</Menu.Header>
+          <Menu.Item name="Onboarding" icon="account_circle" active />
+          <Menu.Item name="Logins" icon="login" />
+          <Menu.Item name="Payments" icon="payment" />
+          <Menu.Item name="Files" icon="folder_open" />
+        </Menu>
+        <Layout.Sidebar.Divider />
+        <Menu vertical>
+          <Menu.Header>SDK</Menu.Header>
+          <Menu.Item name="Apps" icon="developer_mode" />
+          <Menu.Item name="Installations" icon="smartphone" />
+        </Menu>
+        <Layout.Sidebar.Divider />
+        <Menu vertical>
+          <Menu.Header>API</Menu.Header>
+          <Menu.Item name="Credentials" icon="vpn_key" />
+          <Menu.Item name="Usage" icon="data_usage" />
+          <Menu.Item name="API Reference" icon="code" />
+        </Menu>
+      </Layout.Sidebar.Content>
+      <Layout.Sidebar.Footer>
+        <Layout.Sidebar.Divider className="mb-0" />
+        <OrgDropdown
+          style={{
+            padding: '0 16px 0 0'
+          }}
+          options={orgOptions}
+          upward
+        />
+      </Layout.Sidebar.Footer>
     </Layout.Sidebar>
     <Layout.Main>
       <Layout.Topbar dimmed={boolean('Dimmed', false, 'Topbar')}>

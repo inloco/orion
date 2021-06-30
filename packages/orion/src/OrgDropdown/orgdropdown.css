@@ -1,0 +1,43 @@
+.orion .orgdropdown.active {
+  @apply bg-gray-300;
+}
+
+.orion .orgdropdown-trigger {
+  @apply p-16;
+}
+
+.orion .orgdropdown-content {
+  @apply flex items-center;
+}
+
+.orion .orgdropdown-image {
+  @apply rounded-full w-40 h-40 mr-8 bg-gray-400 flex items-center justify-center overflow-hidden;
+}
+
+.orion .orgdropdown-trigger .orgdropdown-image {
+  @apply h-32 w-32 ml-4 mr-12;
+}
+
+.orion .orgdropdown-image > img {
+  @apply h-full w-full object-cover;
+}
+
+.orion.orgdropdown .menu > .item,
+.orion.orgdropdown .menu > .message {
+  @apply p-16;
+}
+
+.orion.orgdropdown .menu > .item.selected {
+  @apply bg-white pointer-events-none cursor-default;
+}
+
+.orion.orgdropdown .menu > .item:not(.selected) {
+  @apply bg-gray-100;
+}
+
+.orion.orgdropdown .menu > .item:not(.selected):hover {
+  @apply bg-gray-200;
+}
+.orion .orgdropdown .item.selected .orgdropdown-text div {
+  @apply font-medium;
+}

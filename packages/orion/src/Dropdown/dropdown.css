@@ -239,3 +239,67 @@
 .orion.dropdown .label-text {
   @apply flex items-center;
 }
+
+/**
+ * Upward
+ */
+
+/* Upward Main Menu */
+
+.orion.upward.dropdown > .menu {
+  @apply top-auto shadow;
+  bottom: 100%;
+  border-radius: 8px 8px 0 0 !important;
+}
+
+/* Upward Sub Menu */
+
+.orion.dropdown .upward.menu {
+  @apply bottom-0 top-auto;
+}
+
+/* Active Upward */
+
+.orion.simple.upward.active.dropdown,
+.orion.simple.upward.dropdown:hover {
+  border-radius: 8px 8px 0 0 !important;
+}
+
+.orion.upward.dropdown.button:not(.pointing):not(.floating).active {
+  border-radius: 8px 8px 0 0;
+}
+
+/* Selection */
+
+.orion.upward.selection.dropdown .menu {
+  @apply shadow-200;
+  border-top-width: 1px !important;
+  border-bottom-width: 0px !important;
+}
+
+.orion.upward.selection.dropdown:hover {
+  @apply shadow-100;
+}
+
+/* Active Upward */
+
+.orion.active.upward.selection.dropdown {
+  border-radius: 0 0 8px 8px !important;
+}
+
+/* Visible Upward */
+
+.orion.upward.selection.dropdown.visible {
+  @apply shadow;
+  border-radius: 0em 0em 8px 8px !important;
+}
+
+/* Visible Hover Upward */
+
+.orion.upward.active.selection.dropdown:hover {
+  @apply shadow;
+}
+
+.orion.upward.active.selection.dropdown:hover .menu {
+  @apply shadow-200;
+}
