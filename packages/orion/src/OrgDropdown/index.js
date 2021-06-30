@@ -7,22 +7,20 @@ import Dropdown from '../Dropdown'
 
 import OrgItem from './OrgItem'
 
-const OrgDropdown = ({ className, ...otherProps }) => {
+const OrgDropdown = ({ className, options, ...otherProps }) => {
   const selectedValue = otherProps?.value || otherProps?.defaultValue
   const selectedOption = _.omit(
-    selectedValue
-      ? _.find(otherProps?.options, { value: selectedValue })
-      : otherProps?.options?.[0],
+    selectedValue ? _.find(options, { value: selectedValue }) : options?.[0],
     'label'
   )
 
-  const orgOptions = _.map(otherProps?.options, option =>
+  const orgOptions = _.map(options, option =>
     _.omit(
       {
         ...option,
         content: <OrgItem {...option} />
       },
-      'image'
+      ['image', 'label']
     )
   )
 
@@ -43,7 +41,8 @@ const OrgDropdown = ({ className, ...otherProps }) => {
 }
 
 OrgDropdown.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
+  options: PropTypes.array
 }
 
 export default OrgDropdown
