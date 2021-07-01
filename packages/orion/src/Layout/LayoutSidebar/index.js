@@ -9,7 +9,7 @@ import Logo from '../../Logo'
 
 const LayoutSidebar = ({ className, children, logo, ...otherProps }) => (
   <div className={cx('layout-sidebar', className)} {...otherProps}>
-    {logo || <Logo className="sidebar-logo" />}
+    <div className="sidebar-logo">{logo || <Logo />}</div>
     {children}
   </div>
 )
