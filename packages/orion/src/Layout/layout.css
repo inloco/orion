@@ -43,7 +43,7 @@
 
 /* Sidebar Logo */
 .orion.layout .layout-sidebar .sidebar-logo {
-  @apply mx-24 mt-16 mb-24 flex-shrink-0;
+  @apply flex items-center h-64 px-24 flex-shrink-0;
 }
 
 /* Sidebar Content */

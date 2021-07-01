@@ -52,7 +52,7 @@ const Footer = (
 export const basic = () => (
   <Layout className="flex w-full">
     <Layout.Sidebar>
-      <Layout.Sidebar.Content>
+      <Layout.Sidebar.Content className="pt-0">
         <Menu vertical>
           <Menu.Header>Risk Assessments</Menu.Header>
           <Menu.Item name="Onboarding" icon="account_circle" active />
