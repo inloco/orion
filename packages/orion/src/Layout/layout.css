@@ -48,15 +48,14 @@
 
 /* Sidebar Content */
 .orion.layout .layout-sidebar .sidebar-content {
-  @apply flex-grow p-24 pr-16 overflow-y-scroll;
-}
-
-/* Sidebar Footer */
-.orion.layout .layout-sidebar .sidebar-content {
-  @apply flex-grow p-24 pr-16 overflow-y-scroll;
+  @apply flex-grow overflow-y-scroll;
 }
 
 /* Sidebar Menu */
+.orion.layout .layout-sidebar .orion.menu {
+  padding: 16px 16px 16px 24px;
+}
+
 .orion.layout .layout-sidebar .orion.menu .item {
   @apply px-12 py-8 rounded-small mt-4;
   margin-left: -12px;
@@ -74,8 +73,7 @@
 /* Sidebar Divider */
 
 .orion.layout .layout-sidebar .sidebar-divider {
-  @apply my-16;
-  margin-left: -24px;
+  @apply mr-16;
 }
 
 /**
