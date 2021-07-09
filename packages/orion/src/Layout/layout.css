@@ -62,9 +62,13 @@
   padding: 16px 16px 16px 24px;
 }
 
+.orion.layout .layout-sidebar .orion.menu .header {
+  @apply mb-2;
+}
+
 .orion.layout .layout-sidebar .orion.menu .item {
-  @apply px-12 py-8 rounded-small mt-4;
-  margin-left: -12px;
+  @apply px-12 h-40 rounded mt-0;
+  margin-left: -16px;
 }
 
 .orion.layout .layout-sidebar .orion.menu .item:hover,
