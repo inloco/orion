@@ -67,10 +67,6 @@
   transform: rotate(-180deg);
 }
 
-.dropdown-icon {
-  @apply transition-default;
-}
-
 /**
  * Search
  */

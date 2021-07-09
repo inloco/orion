@@ -189,9 +189,8 @@
  * Alert
  */
 .orion.layout .layout-alert {
-  @apply fixed top-0 flex justify-center w-full;
+  @apply fixed top-0 flex w-full px-24 h-40 items-center;
   top: 64px;
-  padding: 10px 0;
 }
 
 .orion.layout .layout-alert > .icon {
