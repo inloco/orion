@@ -69,7 +69,12 @@
 
 .orion.layout .layout-sidebar .orion.menu .item:hover,
 .orion.layout .layout-sidebar .orion.menu .item:focus {
-  @apply bg-purple-50;
+  @apply bg-gray-200 text-purple-800 font-medium;
+}
+
+.orion.layout .layout-sidebar .orion.menu .item:hover > .icon,
+.orion.layout .layout-sidebar .orion.menu .item:focus > .icon {
+  @apply text-purple-700;
 }
 
 .orion.layout .layout-sidebar .orion.menu .item.active {
