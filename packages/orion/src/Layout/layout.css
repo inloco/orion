@@ -14,9 +14,8 @@
  * Topbar
  */
 .orion.layout .layout-topbar {
-  @apply fixed top-0 z-40 px-24 bg-gray-50;
+  @apply fixed top-0 z-40 px-24 bg-gray-50 w-full;
   @apply items-center h-64 flex justify-center;
-  width: calc(100% - 238px);
 }
 
 .orion.layout .layout-topbar.dimmed {
@@ -35,6 +34,13 @@
 /**
  * Sidebar
  */
+.orion.layout.with-sidebar .layout-topbar,
+.orion.layout.with-sidebar .layout-alert {
+  width: calc(100% - 238px);
+}
+.orion.layout.with-sidebar .layout-main {
+  margin-left: 238px;
+}
 .orion.layout .layout-sidebar {
   @apply fixed top-0 left-0 z-40 h-full bg-white flex flex-col;
   @apply border-r-1 border-gray-900-16;
@@ -82,7 +88,6 @@
 
 .orion.layout .layout-main {
   @apply flex flex-col justify-start bg-gray-50;
-  margin-left: 238px;
 }
 
 /**
@@ -175,10 +180,9 @@
  * Alert
  */
 .orion.layout .layout-alert {
-  @apply fixed top-0 flex justify-center;
+  @apply fixed top-0 flex justify-center w-full;
   top: 64px;
   padding: 10px 0;
-  width: calc(100% - 238px);
 }
 
 .orion.layout .layout-alert > .icon {
