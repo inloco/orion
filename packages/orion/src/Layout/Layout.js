@@ -4,10 +4,11 @@ import React from 'react'
 
 import { useAlert } from './LayoutAlert'
 
-const Layout = ({ className, children, ...otherProps }) => {
+const Layout = ({ className, sidebar, children, ...otherProps }) => {
   const alert = useAlert()
   const classes = cx('orion layout', className, {
-    'with-alert': !!alert
+    'with-alert': !!alert,
+    'with-sidebar': sidebar
   })
   return (
     <div className={classes} {...otherProps}>
@@ -18,7 +19,12 @@ const Layout = ({ className, children, ...otherProps }) => {
 
 Layout.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.node
+  children: PropTypes.node,
+  sidebar: PropTypes.bool
+}
+
+Layout.defaultProps = {
+  sidebar: true
 }
 
 export default Layout
