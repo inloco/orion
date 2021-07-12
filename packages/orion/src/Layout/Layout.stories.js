@@ -90,7 +90,7 @@ export const basic = () => {
         </Layout.Sidebar>
       )}
       <Layout.Main>
-        <Layout.Topbar dimmed={boolean('Dimmed', false, 'Topbar')}>
+        <Layout.Topbar>
           <h1 className="font-display font-medium text-lg text-gray-800 mr-auto">
             Onboarding
           </h1>
