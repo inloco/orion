@@ -25,7 +25,7 @@ const LayoutTopbar = ({ className, children, ...otherProps }) => {
 
   const style = {
     backgroundColor: `rgba(255, 255, 255, ${opacity})`,
-    boxShadow: `0 4px 6px -1px rgba(61, 63, 62, ${0.16 * opacity})`
+    borderBottom: `1px solid rgba(61, 63, 62, ${0.16 * opacity})`
   }
 
   return (
