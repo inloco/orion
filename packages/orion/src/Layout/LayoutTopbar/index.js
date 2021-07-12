@@ -5,22 +5,42 @@ import React from 'react'
 import TopbarDivider from './TopbarDivider'
 import { Alert, useAlert } from '../LayoutAlert'
 
-const LayoutTopbar = ({ className, children, dimmed, ...otherProps }) => {
-  const classes = cx('layout-topbar', { dimmed }, className)
+const mainPaddingTop = 24
+
+const LayoutTopbar = ({ className, children, ...otherProps }) => {
+  const [opacity, setOpacity] = React.useState(0)
+  const classes = cx('layout-topbar', className)
   const alertProps = useAlert()
 
+  React.useEffect(() => {
+    const listenScrollEvent = event => {
+      const whiteOpacity =
+        Math.min(window.scrollY, mainPaddingTop) / mainPaddingTop
+      setOpacity(whiteOpacity)
+    }
+    window.addEventListener('scroll', listenScrollEvent)
+
+    return () => window.removeEventListener('scroll', listenScrollEvent)
+  }, [])
+
+  const style = {
+    backgroundColor: `rgba(255, 255, 255, ${opacity})`,
+    boxShadow: `0 4px 6px -1px rgba(61, 63, 62, ${0.16 * opacity})`
+  }
+
   return (
-    <div className={classes} {...otherProps}>
-      {children}
-      {!!alertProps && <Alert {...alertProps} />}
-    </div>
+    <>
+      <div className={classes} {...otherProps} style={style}>
+        {children}
+        {!!alertProps && <Alert {...alertProps} />}
+      </div>
+    </>
   )
 }
 
 LayoutTopbar.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.node,
-  dimmed: PropTypes.bool
+  children: PropTypes.node
 }
 
 LayoutTopbar.Divider = TopbarDivider
