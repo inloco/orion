@@ -54,7 +54,7 @@
 
 /* Sidebar Content */
 .orion.layout .layout-sidebar .sidebar-content {
-  @apply flex-grow overflow-y-scroll;
+  @apply flex-grow overflow-y-auto;
 }
 
 /* Sidebar Menu */
