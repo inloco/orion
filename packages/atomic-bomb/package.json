@@ -22,7 +22,7 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "color": "^3.1.2"
+    "color": "^4.0.0"
   },
   "gitHead": "eb46743f9372724a7cbf8577d0048f3713028243"
 }
