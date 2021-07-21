@@ -12,7 +12,7 @@
   "author": "Incognia Team",
   "license": "MIT",
   "devDependencies": {
-    "autoprefixer": "^9.5.1",
+    "autoprefixer": "^10.3.1",
     "parcel-bundler": "^1.12.3",
     "postcss-import": "^14.0.2",
     "tailwindcss": "^1.0.1"
